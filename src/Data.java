@@ -17,7 +17,7 @@ public class Data {
         book[INDEX_DATEDUE] = dateDue;
         book[INDEX_REMOVED] = false;
         books.add(book);
-        System.out.println("Stored!");
+        System.out.println("Stored Yay!");
         return true;
     }
 }

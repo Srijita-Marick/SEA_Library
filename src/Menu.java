@@ -9,8 +9,7 @@ public class Menu {
         options.add("Exit");
     }
     private static String optMessage = """
-            Store and access groups for projects in CPSC 219 AND 233.
-            \t Menu Options
+            Menu Options
             """;
     static{
         StringBuilder sb = new StringBuilder();

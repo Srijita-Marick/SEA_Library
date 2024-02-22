@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
         Menu.menuLoop();
-        System.out.println("Sriji Test");
+        System.out.println("TESTING");
     }
 }
