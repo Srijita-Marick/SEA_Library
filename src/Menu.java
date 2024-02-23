@@ -56,8 +56,7 @@ public class Menu {
     }
 
     private static void menuEnterNewBook(){
-        String title = null();
-
+        String title = null;
     }
 
     private static String getDateDue() {
@@ -65,7 +64,7 @@ public class Menu {
     }
 
     private static String getAvailabilityStatus() {
-        return null;
+        return "available";  // by default, new books should be available
     }
 
     private static String getGenre() {
