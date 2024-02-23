@@ -55,6 +55,11 @@ public class Menu {
         } while(!success);
     }
 
+    private static void menuEnterNewBook(){
+        String title = null();
+
+    }
+
     private static String getDateDue() {
         return null;
     }
@@ -68,7 +73,12 @@ public class Menu {
     }
 
     private static String getAuthor() {
-        return null;
+        System.out.println("Enter Author Name: ");
+        String author;
+        do{
+            author = scanner.nextLine().trim();
+        } while (author.isEmpty());
+        return author;
     }
 
     private static String getTitle() {
