@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added code to getAvailabilityStatus">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="removed all mentions of &quot;date due&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
@@ -97,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708658686152</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="removed all mentions of &quot;date due&quot;">
+      <option name="closed" value="true" />
+      <created>1708661058788</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708661058789</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,6 +125,7 @@
     <MESSAGE value="small debug in menuLoop" />
     <MESSAGE value="added code to getAuthor" />
     <MESSAGE value="added code to getAvailabilityStatus" />
-    <option name="LAST_COMMIT_MESSAGE" value="added code to getAvailabilityStatus" />
+    <MESSAGE value="removed all mentions of &quot;date due&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed all mentions of &quot;date due&quot;" />
   </component>
 </project>
