@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Menu {
@@ -50,8 +51,8 @@ public class Menu {
             String author = getAuthor();
             String genre = getGenre();
             String availabilityStatus = getAvailabilityStatus();
-            String dateDue = getDateDue();
-            success = Data.storeNewBook(title, author, genre, availabilityStatus, dateDue);
+            //String dateDue = getDateDue();
+            success = Data.storeNewBook(title, author, genre, availabilityStatus);
         } while(!success);
     }
 
