@@ -64,9 +64,9 @@ public class Menu {
         String title = null;
     }
 
-    private static String getDateDue() {
-        return null;
-    }
+//    private static String getDateDue() {
+//        return null;
+//    }
 
     private static String getAvailabilityStatus() {
         return "available";  // by default, new books should be available
