@@ -33,7 +33,7 @@ public class Menu {
             switch (option + 1){
                 case 1 -> menuLibraryData();
                 case 2 -> menuMemberData();
-                default -> System.out.printf("Option %d not recognized!%n", option + 1);
+                default -> System.out.printf("Option %d not recognized!%n", option);
             }
             System.out.println("Press any key to continue...");
             scanner.nextLine();
