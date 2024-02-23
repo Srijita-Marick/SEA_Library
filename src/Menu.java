@@ -9,7 +9,7 @@ public class Menu {
         options.add("Member Data");
         options.add("Exit");
     }
-
+//random comment
     private static String optMessage = """
             Menu Options
             """;
