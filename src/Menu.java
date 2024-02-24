@@ -126,11 +126,20 @@ public class Menu {
     }
 
     private static void menuMemberData() {
-        
+
     }
 
     private static void menuEnterNewMember(){
         String name = null;
+    }
+
+    private static String getNewMember() {
+        System.out.println("Enter Member Name: ");
+        String member;
+        do {
+            member = scanner.nextLine().trim();
+        } while (member.isEmpty());
+        return member;
     }
 
 
