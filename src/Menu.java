@@ -193,17 +193,13 @@ public class Menu {
 
 
     private static void menuMemberData() {
-
-    }
-
-
-
         //case 1 -> menuAddMember()
         //case 2 -> menuRemoveMember()
         //case 3 -> menuSearchMembers
         //case 4 -> menuViewAllMembers()
         //case 5 -> menuExitToMainMenu()
     }
+
 
     private static void menuAddMember(){}
     private static void menuRemoveMember(){}
