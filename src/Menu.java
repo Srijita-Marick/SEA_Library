@@ -195,6 +195,7 @@ public class Menu {
     private static final ArrayList<String> options2 = new ArrayList<>();
 
     static {
+        options2.add("Blank"); //placeholder for indexing purposes that is never seen by user
         options2.add("Add Member");
         options2.add("Remove Member");
         options2.add("View All Members");
@@ -208,8 +209,8 @@ public class Menu {
     static {
         StringBuilder sb2 = new StringBuilder();
         sb2.append(optMessage2);
-        for (int i = 0; i < options2.size(); i++) {
-            sb2.append(String.format("\t%d.%s\n", i + 1, options2.get(i)));
+        for (int i = 1; i < options2.size(); i++) {
+            sb2.append(String.format("\t%d.%s\n", i, options2.get(i)));
         }
         optMessage2 = sb2.toString();
     }
@@ -217,14 +218,15 @@ public class Menu {
         System.out.println(optMessage2);
         String memchoice = scanner.nextLine();
         int option2 = Integer.parseInt(memchoice);
-        option2 +=-1;
-        while (option2 != -1) {
-            if (option2 > -1 && option2 < options2.size()) {
-                System.out.printf("Selected option %d.%s%n", option2 + 1, options2.get(option2));
+        boolean run = true;
+        while (run) {
+            if (option2 > 0 && option2 < options2.size()) {
+                System.out.printf("Selected option %d.%s%n", option2, options2.get(option2));
                 System.out.println("Press any key to continue...");
                 scanner.nextLine();
+                run = false;
             }
-            switch (option2 + 1) {
+            switch (option2) {
                 case 1 -> menuAddMember();
                 case 2 -> menuRemoveMember();
                 case 3 -> menuSearchMembers();
