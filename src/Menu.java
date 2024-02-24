@@ -22,9 +22,17 @@ public class Menu {
         optMessage = sb.toString();
     }
 
+    private static String getOption(){
+        String option;
+        do {
+            option = scanner.nextLine().trim();
+        }while(option.isEmpty());
+        return option;
+    }
+
     public static void menuLoop() {
         System.out.println(optMessage);
-        String choice = scanner.nextLine();
+        String choice = getOption();
         int option = Integer.parseInt(choice);
         option += -1;
         while (option != -1) {
