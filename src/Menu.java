@@ -141,6 +141,14 @@ public class Menu {
         } while (member.isEmpty());
         return member;
     }
+    private static int getId() {
+        String memberId;
+        do {
+            System.out.println("Enter Member Id: ");
+            memberId = scanner.nextLine().trim();
+        }while (memberId.isEmpty());
+        return Integer.parseInt(memberId);
+    }
 
 
 }
