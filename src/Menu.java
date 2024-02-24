@@ -193,6 +193,11 @@ public class Menu {
 
 
     private static void menuMemberData() {
+
+    }
+
+
+
         //case 1 -> menuAddMember()
         //case 2 -> menuRemoveMember()
         //case 3 -> menuSearchMembers
@@ -205,5 +210,22 @@ public class Menu {
     private static void menuViewAllMembers(){}
     private static void menuSearchMembers(){}
     private static void menuExitToMainMenu(){}
+
+    private static String getNewMember() {
+        System.out.println("Enter New Member Name: ");
+        String member;
+        do {
+            member = scanner.nextLine().trim();
+        } while (member.isEmpty());
+        return member;
+    }
+    private static int getId() {
+        String memberId;
+        do {
+            System.out.println("Enter Member Id: ");
+            memberId = scanner.nextLine().trim();
+        }while (memberId.isEmpty());
+        return Integer.parseInt(memberId);
+    }
 
 }
