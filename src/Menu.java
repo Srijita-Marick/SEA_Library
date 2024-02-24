@@ -127,6 +127,7 @@ public class Menu {
             //String dateDue = getDateDue();
             success = Data.storeNewBook(title, author, genre, availabilityStatus);
         } while (!success);
+        System.out.println("Stored a new book!");
     }
 
 //    private static String getDateDue() {
