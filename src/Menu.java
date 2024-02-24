@@ -9,7 +9,6 @@ public class Menu {
         options.add("Member Data");
         options.add("Exit");
     }
-//random comment
     private static String optMessage = """
             Menu Options
             """;
@@ -47,7 +46,78 @@ public class Menu {
         }
     }
 
+    private static final ArrayList<String> options1 = new ArrayList<>();
+
+    static {
+        options1.add("Add Book");
+        options1.add("Remove Book");
+        options1.add("Checkout Books");
+        options1.add("View All Books");
+        options1.add("View Available Books");
+        options1.add("View Unavailable Books");
+        options1.add("Search");
+        options1.add("Exit to Main Menu");
+    }
+    private static String optMessage1 = """
+            Library Data Options
+           """;
+
+    static {
+        StringBuilder sb1 = new StringBuilder();
+        sb1.append(optMessage1);
+        for (int i = 0; i < options1.size(); i++) {
+            sb1.append(String.format("\t%d.%s\n", i + 1, options1.get(i)));
+        }
+        optMessage1 = sb1.toString();
+    }
     private static void menuLibraryData() {
+        System.out.println(optMessage1);
+        String libchoice = scanner.nextLine();
+        int option1 = Integer.parseInt(libchoice);
+        option1 +=-1;
+        while (option1 != -1) {
+            if (option1 > -1 && option1 < options1.size()) {
+                System.out.printf("Selected option %d.%s%n", option1 + 1, options1.get(option1));
+                System.out.println("Press any key to continue...");
+                scanner.nextLine();
+            }
+            switch (option1 + 1) {
+                case 1 -> menuEnterNewBook();
+                case 2 -> menuRemoveBook();
+                case 3 -> menuCheckoutBooks();
+                case 4 -> menuViewAll();
+                case 5 -> menuViewAvailable();
+                case 6 -> menuViewUnavailable();
+                case 7 -> menuSearch();
+                default -> System.out.printf("Option %d not recognized!%n", option1);
+            }
+            System.out.println("Press any key to continue...");
+            scanner.nextLine();
+            System.out.println(optMessage1);
+            libchoice = scanner.nextLine();
+            option1 = Integer.parseInt(libchoice);
+        }
+    }
+
+    private static void menuSearch() {
+    }
+
+    private static void menuViewUnavailable() {
+    }
+
+    private static void menuViewAvailable() {
+    }
+
+    private static void menuViewAll() {
+    }
+
+    private static void menuCheckoutBooks() {
+    }
+
+    private static void menuRemoveBook() {
+    }
+
+    private static void menuEnterNewBook() {
         boolean success;
         do {
             String title = getTitle();
@@ -57,10 +127,6 @@ public class Menu {
             //String dateDue = getDateDue();
             success = Data.storeNewBook(title, author, genre, availabilityStatus);
         } while (!success);
-    }
-
-    private static void menuEnterNewBook() {
-        String title = null;
     }
 
 //    private static String getDateDue() {
@@ -129,12 +195,24 @@ public class Menu {
 
     }
 
-    private static void menuEnterNewMember(){
-        String name = null;
+
+
+        //case 1 -> menuAddMember()
+        //case 2 -> menuRemoveMember()
+        //case 3 -> menuViewAllMembers
+        //case 4 -> menuSearchUsers()
+        //case 5 -> menuExitToMainMenu()
     }
 
+    private static void menuAddMember(){}
+
+    private static void menuRemoveMember(){}
+    private static void menuViewAllMembers(){}
+    private static void menuSearchUsers(){}
+    private static void menuExitToMainMenu(){}
+
     private static String getNewMember() {
-        System.out.println("Enter Member Name: ");
+        System.out.println("Enter New Member Name: ");
         String member;
         do {
             member = scanner.nextLine().trim();
@@ -149,6 +227,5 @@ public class Menu {
         }while (memberId.isEmpty());
         return Integer.parseInt(memberId);
     }
-
 
 }
