@@ -247,8 +247,8 @@ public class Menu {
     private static void menuSearchMembers(){}
     private static void menuExitToMainMenu(){}
 
-    private static String getNewMember() {
-        System.out.println("Enter New Member Name: ");
+    private static String getMember() {
+        System.out.println("Enter Member Name: ");
         String member;
         do {
             member = scanner.nextLine().trim();
@@ -262,6 +262,15 @@ public class Menu {
             memberId = scanner.nextLine().trim();
         }while (memberId.isEmpty());
         return Integer.parseInt(memberId);
+    }
+
+    private static double getFines() {
+        String memberFines;
+        do {
+            System.out.println("Enter Member Fines: ");
+            memberFines = scanner.nextLine().trim();
+        }while (memberFines.isEmpty());
+        return Double.parseDouble(memberFines);
     }
 
 }
