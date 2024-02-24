@@ -93,10 +93,10 @@ public class Menu {
                 case 1 -> menuEnterNewBook();
                 case 2 -> menuRemoveBook();
                 case 3 -> menuCheckoutBooks();
-                case 4 -> menuViewAll();
+                case 4 -> menuViewAllBooks();
                 case 5 -> menuViewAvailable();
                 case 6 -> menuViewUnavailable();
-                case 7 -> menuSearch();
+                case 7 -> menuSearchBooks();
                 default -> System.out.printf("Option %d not recognized!%n", option1);
             }
             System.out.println("Press any key to continue...");
@@ -107,7 +107,7 @@ public class Menu {
         }
     }
 
-    private static void menuSearch() {
+    private static void menuSearchBooks() {
     }
 
     private static void menuViewUnavailable() {
@@ -116,7 +116,7 @@ public class Menu {
     private static void menuViewAvailable() {
     }
 
-    private static void menuViewAll() {
+    private static void menuViewAllBooks() {
     }
 
     private static void menuCheckoutBooks() {
