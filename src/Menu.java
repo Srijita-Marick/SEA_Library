@@ -126,6 +126,10 @@ public class Menu {
     }
 
     private static void menuMemberData() {
+        
     }
-// Big Project of sea
+
+    private static void menuEnterNewMember(){
+        String name = null;
+    }
 }
