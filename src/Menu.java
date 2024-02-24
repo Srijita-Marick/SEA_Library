@@ -191,19 +191,58 @@ public class Menu {
         return title;
     }
 
+    private static final ArrayList<String> options2 = new ArrayList<>();
+
+    static {
+        options2.add("Add Member");
+        options2.add("Remove Member");
+        options2.add("View All Members");
+        options2.add("Remove Member");
+        options2.add("Search Members");
+    }
+    private static String optMessage2 = """
+            Member Data Options
+           """;
+
+    static {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(optMessage2);
+        for (int i = 0; i < options2.size(); i++) {
+            sb2.append(String.format("\t%d.%s\n", i + 1, options2.get(i)));
+        }
+        optMessage2 = sb2.toString();
+    }
     private static void menuMemberData() {
-        //case 1 -> menuAddMember()
-        //case 2 -> menuRemoveMember()
-        //case 3 -> menuViewAllMembers
-        //case 4 -> menuSearchUsers()
-        //case 5 -> menuExitToMainMenu()
+        System.out.println(optMessage2);
+        String memchoice = scanner.nextLine();
+        int option2 = Integer.parseInt(memchoice);
+        option2 +=-1;
+        while (option2 != -1) {
+            if (option2 > -1 && option2 < options2.size()) {
+                System.out.printf("Selected option %d.%s%n", option2 + 1, options2.get(option2));
+                System.out.println("Press any key to continue...");
+                scanner.nextLine();
+            }
+            switch (option2 + 1) {
+                case 1 -> menuAddMember();
+                case 2 -> menuRemoveMember();
+                case 3 -> menuSearchMembers();
+                case 4 -> menuViewAllMembers();
+                case 5 -> menuExitToMainMenu();
+                default -> System.out.printf("Option %d not recognized!%n", option2);
+            }
+            System.out.println("Press any key to continue...");
+            scanner.nextLine();
+            System.out.println(optMessage2);
+            memchoice = scanner.nextLine();
+            option2 = Integer.parseInt(memchoice);
+        }
     }
 
     private static void menuAddMember(){}
-
     private static void menuRemoveMember(){}
     private static void menuViewAllMembers(){}
-    private static void menuSearchUsers(){}
+    private static void menuSearchMembers(){}
     private static void menuExitToMainMenu(){}
 
 }
