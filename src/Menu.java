@@ -116,16 +116,35 @@ public class Menu {
 
 
     private static void menuViewAvailable() {
-
+        viewAnyBookList("menuViewAvailableBooks");
     }
 
     private static void menuViewAllBooks() {
-        String viewBooksMessage = """
-            Library Books:""";
-        ArrayList<Object[]> listOfAllBooks = Data.getAllBooks();
+        viewAnyBookList("menuViewAllBooks");
+    }
+
+
+    /**
+     * called on by menuViewAllBooks, menuViewAvailableBooks, etc.
+     * prints the desired type of list
+     * @param listType determines which type of list is to be printed
+     */
+    private static void viewAnyBookList(String listType){
+        String viewBooksMessage = "";
+        ArrayList<Object[]> listOfBooks = new ArrayList<>();
+        if (listType.equals("menuViewAllBooks")) {
+            viewBooksMessage = """
+            ALl library Books:""";
+            listOfBooks = Data.getAllBooks();
+        }
+        else if (listType.equals("menuViewAvailableBooks")){
+            viewBooksMessage = """
+            Available Books:""";
+           listOfBooks = Data.getAvailableBooks();
+        }
         StringBuilder booksString = new StringBuilder();
         booksString.append(viewBooksMessage);
-        for (Object[] book :listOfAllBooks){
+        for (Object[] book :listOfBooks){
             booksString.append("\n "); // for formatting purposes
             booksString.append("\nTitle: ").append(book[Data.INDEX_TITLE]);
             booksString.append("\nAuthor: ").append(book[Data.INDEX_AUTHOR]);
@@ -134,6 +153,7 @@ public class Menu {
         }
         System.out.println(booksString);
     }
+
 
     private static void menuCheckoutBooks() {
     }

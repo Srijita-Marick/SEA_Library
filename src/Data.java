@@ -41,5 +41,8 @@ public class Data {
     public static ArrayList <Object[]> getAllBooks(){
         return books;
     }
+    public static ArrayList <Object[]> getAvailableBooks(){
+        return availableBooks;
+    }
 
 }
