@@ -58,6 +58,7 @@ public class Menu {
     private static final ArrayList<String> options1 = new ArrayList<>();
 
     static {
+        options1.add("Blank"); //placeholder for indexing purposes that is never seen by user
         options1.add("Add Book");
         options1.add("Remove Book");
         options1.add("Checkout Books");
@@ -74,8 +75,8 @@ public class Menu {
     static {
         StringBuilder sb1 = new StringBuilder();
         sb1.append(optMessage1);
-        for (int i = 0; i < options1.size(); i++) {
-            sb1.append(String.format("\t%d.%s\n", i + 1, options1.get(i)));
+        for (int i = 1; i < options1.size(); i++) {
+            sb1.append(String.format("\t%d.%s\n", i, options1.get(i)));
         }
         optMessage1 = sb1.toString();
     }
@@ -83,14 +84,15 @@ public class Menu {
         System.out.println(optMessage1);
         String libchoice = scanner.nextLine();
         int option1 = Integer.parseInt(libchoice);
-        option1 +=-1;
-        while (option1 != -1) {
-            if (option1 > -1 && option1 < options1.size()) {
-                System.out.printf("Selected option %d.%s%n", option1 + 1, options1.get(option1));
+        boolean run = true;
+        while (run) {
+            if (option1 > 0 && option1 < options1.size()) {
+                System.out.printf("Selected option %d.%s%n", option1, options1.get(option1));
                 System.out.println("Press any key to continue...");
                 scanner.nextLine();
+                run = false;
             }
-            switch (option1 + 1) {
+            switch (option1) {
                 case 1 -> menuEnterNewBook();
                 case 2 -> menuRemoveBook();
                 case 3 -> menuCheckoutBooks();
