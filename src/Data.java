@@ -77,4 +77,13 @@ public class Data {
     public static boolean removeMember(Integer id, String name, ArrayList<String> borrowed, Double fines) {
         return false;
     }
+
+    public static String[] getBorrowedBooks(Integer id){
+        for (Object[] member: members){
+            if (member[INDEX_ID]==id){
+                return (String[]) member[INDEX_BORROWED];
+            }
+        }
+        return new String[]{null};
+    }
 }

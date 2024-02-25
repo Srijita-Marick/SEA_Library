@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added code to menuViewAllBooks">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Added code for storeNewMember and associated ArrayLists">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
@@ -178,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708821237161</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added code for storeNewMember and associated ArrayLists">
+      <option name="closed" value="true" />
+      <created>1708891134193</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708891134193</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,6 +225,7 @@
     <MESSAGE value="added code for Member Data Menu" />
     <MESSAGE value="renamed searchBooks and viewAllBooks for clarity" />
     <MESSAGE value="added code to menuViewAllBooks" />
-    <option name="LAST_COMMIT_MESSAGE" value="added code to menuViewAllBooks" />
+    <MESSAGE value="Added code for storeNewMember and associated ArrayLists" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added code for storeNewMember and associated ArrayLists" />
   </component>
 </project>

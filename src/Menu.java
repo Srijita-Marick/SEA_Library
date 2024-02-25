@@ -116,11 +116,11 @@ public class Menu {
 
 
     private static void menuViewAvailable() {
-        viewAnyBookList("menuViewAvailableBooks");
+        System.out.println(viewAnyBookList("menuViewAvailableBooks"));
     }
 
     private static void menuViewAllBooks() {
-        viewAnyBookList("menuViewAllBooks");
+        System.out.println(viewAnyBookList("menuViewAllBooks"));
     }
 
 
@@ -129,7 +129,7 @@ public class Menu {
      * prints the desired type of list
      * @param listType determines which type of list is to be printed
      */
-    private static void viewAnyBookList(String listType){
+    private static String viewAnyBookList(String listType){
         String viewBooksMessage = "";
         ArrayList<Object[]> listOfBooks = new ArrayList<>();
         if (listType.equals("menuViewAllBooks")) {
@@ -151,7 +151,7 @@ public class Menu {
             booksString.append("\nGenre: ").append(book[Data.INDEX_GENRE]);
             booksString.append("\nStatus: ").append(book[Data.INDEX_STATUS]);
         }
-        System.out.println(booksString);
+        return (booksString.toString());
     }
 
 
@@ -322,7 +322,6 @@ public class Menu {
         System.out.println("Deleted a new member!");
     }
     private static void menuViewAllMembers(){
-
     }
     private static void menuSearchMembers(){}
     private static void menuExitToMainMenu(){}
