@@ -299,7 +299,7 @@ public class Menu {
             String name = getMember();
             ArrayList<String> borrowed = getBorrowed();
             Double fines = getFines();
-            success = Data.storeNewMember(ID, name, borrowed, String.valueOf(fines));
+            success = Data.storeNewMember(ID, name, borrowed, (fines));
             if (!success){
                 System.out.println("Member already exists in Membership List. Please try again.");
             }

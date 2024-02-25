@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="test commit">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added code to menuViewAllBooks">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
@@ -61,7 +61,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
       </set>
     </attachedChunks>
   </component>
@@ -138,15 +138,47 @@
       <option name="project" value="LOCAL" />
       <updated>1708726539345</updated>
     </task>
-    <task id="LOCAL-00009" summary="test commit">
+    <task id="LOCAL-00009" summary="added functions relating to the Member Data menu">
       <option name="closed" value="true" />
-      <created>1708727996936</created>
+      <created>1708751877652</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1708727996937</updated>
+      <updated>1708751877652</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="merged with emily">
+      <option name="closed" value="true" />
+      <created>1708804280080</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708804280080</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added code for Member Data Menu">
+      <option name="closed" value="true" />
+      <created>1708804474526</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708804474526</updated>
+    </task>
+    <task id="LOCAL-00012" summary="renamed searchBooks and viewAllBooks for clarity">
+      <option name="closed" value="true" />
+      <created>1708817706709</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708817706709</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added code to menuViewAllBooks">
+      <option name="closed" value="true" />
+      <created>1708821237160</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708821237161</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +212,11 @@
     <MESSAGE value="added code to getAvailabilityStatus" />
     <MESSAGE value="removed all mentions of &quot;date due&quot;" />
     <MESSAGE value="test commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="test commit" />
+    <MESSAGE value="added functions relating to the Member Data menu" />
+    <MESSAGE value="merged with emily" />
+    <MESSAGE value="added code for Member Data Menu" />
+    <MESSAGE value="renamed searchBooks and viewAllBooks for clarity" />
+    <MESSAGE value="added code to menuViewAllBooks" />
+    <option name="LAST_COMMIT_MESSAGE" value="added code to menuViewAllBooks" />
   </component>
 </project>
