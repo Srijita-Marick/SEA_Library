@@ -74,7 +74,7 @@ public class Data {
         return memberIDs.contains(id);
     }
 
-    public static boolean removeMember(Integer id, String name, ArrayList<String> borrowed, Double fines) {
+    public static boolean removeMember(Integer id, String name) {
         return false;
     }
 

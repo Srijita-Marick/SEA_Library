@@ -36,13 +36,11 @@ public class Menu {
         System.out.println(optMessage);
         String choice = getOption();
         int option = Integer.parseInt(choice);
-        boolean run = true;
-        while (run) {
+        while (option != 0) {
             if (option > 0 && option < options.size()) {
                 System.out.printf("Selected option %d.%s%n", option, options.get(option));
                 System.out.println("Press any key to continue...");
                 scanner.nextLine();
-                run = false;
             }
             switch (option) {
                 case 1 -> menuLibraryData();
@@ -86,13 +84,11 @@ public class Menu {
         System.out.println(optMessage1);
         String libchoice = scanner.nextLine();
         int option1 = Integer.parseInt(libchoice);
-        boolean run = true;
-        while (run) {
+        while (option1 != 0) {
             if (option1 > 0 && option1 < options1.size()) {
                 System.out.printf("Selected option %d.%s%n", option1, options1.get(option1));
                 System.out.println("Press any key to continue...");
                 scanner.nextLine();
-                run = false;
             }
             switch (option1) {
                 case 1 -> menuEnterNewBook();
@@ -316,9 +312,7 @@ public class Menu {
         do {
             Integer ID = getId();
             String name = getMember();
-            ArrayList<String> borrowed = getBorrowed();
-            Double fines = getFines();
-            success = Data.removeMember(ID, name, borrowed, fines);
+            success = Data.removeMember(ID, name);
             if (!success){
                 System.out.println("Member does not exist in Membership List. Please try again.");
             }
