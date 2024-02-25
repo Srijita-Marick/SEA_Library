@@ -46,8 +46,10 @@ public class Data {
     }
 
     public static boolean storeNewMember(Integer id, String name, ArrayList<String> borrowed, String availabilityStatus) {
+        return false;
     }
 
     public static boolean removeMember(Integer id, String name, ArrayList<String> borrowed, Double fines) {
+        return false;
     }
 }

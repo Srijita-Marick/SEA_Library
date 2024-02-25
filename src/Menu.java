@@ -299,7 +299,7 @@ public class Menu {
             String name = getMember();
             ArrayList<String> borrowed = getBorrowed();
             Double fines = getFines();
-            success = Data.storeNewMember(ID, name, borrowed, fines);
+            success = Data.storeNewMember(ID, name, borrowed, String.valueOf(fines));
             if (!success){
                 System.out.println("Member already exists in Membership List. Please try again.");
             }
@@ -321,7 +321,9 @@ public class Menu {
         } while (!success);
         System.out.println("Deleted a new member!");
     }
-    private static void menuViewAllMembers(){}
+    private static void menuViewAllMembers(){
+
+    }
     private static void menuSearchMembers(){}
     private static void menuExitToMainMenu(){}
 
@@ -343,6 +345,10 @@ public class Menu {
     }
 
     private static ArrayList<String> getBorrowed() {
+        ArrayList<String> borrowedBooks = new ArrayList<>();
+        borrowedBooks.add("Random");
+        borrowedBooks.add("Filler");
+        return borrowedBooks;
     }
     private static double getFines() {
         String memberFines;
