@@ -6,6 +6,7 @@ public class Menu {
     private static final ArrayList<String> options = new ArrayList<>();
 
     static {
+        options.add("Blank"); //placeholder for indexing purposes that is never seen by user
         options.add("Library Data");
         options.add("Member Data");
         options.add("Exit");
@@ -17,8 +18,8 @@ public class Menu {
     static {
         StringBuilder sb = new StringBuilder();
         sb.append(optMessage);
-        for (int i = 0; i < options.size(); i++) {
-            sb.append(String.format("\t%d.%s\n", i + 1, options.get(i)));
+        for (int i = 1; i < options.size(); i++) {
+            sb.append(String.format("\t%d.%s\n", i, options.get(i)));
         }
         optMessage = sb.toString();
     }
@@ -35,14 +36,15 @@ public class Menu {
         System.out.println(optMessage);
         String choice = getOption();
         int option = Integer.parseInt(choice);
-        option += -1;
-        while (option != -1) {
-            if (option > -1 && option < options.size()) {
-                System.out.printf("Selected option %d.%s%n", option + 1, options.get(option));
+        boolean run = true;
+        while (run) {
+            if (option > 0 && option < options.size()) {
+                System.out.printf("Selected option %d.%s%n", option, options.get(option));
                 System.out.println("Press any key to continue...");
                 scanner.nextLine();
+                run = false;
             }
-            switch (option + 1) {
+            switch (option) {
                 case 1 -> menuLibraryData();
                 case 2 -> menuMemberData();
                 default -> System.out.printf("Option %d not recognized!%n", option);
