@@ -308,7 +308,18 @@ public class Menu {
     }
 
     private static void menuRemoveMember(){
-
+        boolean success;
+        do {
+            Integer ID = getId();
+            String name = getMember();
+            ArrayList<String> borrowed = getBorrowed();
+            Double fines = getFines();
+            success = Data.removeMember(ID, name, borrowed, fines);
+            if (!success){
+                System.out.println("Member does not exist in Membership List. Please try again.");
+            }
+        } while (!success);
+        System.out.println("Deleted a new member!");
     }
     private static void menuViewAllMembers(){}
     private static void menuSearchMembers(){}
