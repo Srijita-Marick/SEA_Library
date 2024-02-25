@@ -298,8 +298,8 @@ public class Menu {
             Integer ID = getId();
             String name = getMember();
             ArrayList<String> borrowed = getBorrowed();
-            Double fines = getFines();
-            success = Data.storeNewMember(ID, name, borrowed, (fines));
+            double fines = getFines();
+            success = Data.storeNewMember(ID, name, borrowed, fines);
             if (!success){
                 System.out.println("Member already exists in Membership List. Please try again.");
             }
