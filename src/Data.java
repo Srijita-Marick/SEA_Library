@@ -1,8 +1,10 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Data {
     private static final ArrayList<Object[]> books = new ArrayList<>();
     private static final ArrayList<Object[]> availableBooks = new ArrayList<>();
+    private static final ArrayList<Object[]> unavailableBooks = new ArrayList<>();
     private static final ArrayList<String> titles = new ArrayList<>();
 
     private static final ArrayList<String> authors = new ArrayList<>();
@@ -42,8 +44,9 @@ public class Data {
     public static ArrayList <Object[]> getAvailableBooks(){
         return availableBooks;
     }
-
-
+    public static ArrayList<Object[]> getUnavailableBooks() {
+        return unavailableBooks;
+    }
     //  EVERYTHING BELOW HERE IS TO STORE MEMBER DATA
 
     static final ArrayList<Object[]> members = new ArrayList<>();

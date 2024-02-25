@@ -112,6 +112,7 @@ public class Menu {
     }
 
     private static void menuViewUnavailable() {
+        System.out.println(viewAnyBookList("menuViewUnavailableBooks"));
     }
 
 
@@ -141,6 +142,11 @@ public class Menu {
             viewBooksMessage = """
             Available Books:""";
            listOfBooks = Data.getAvailableBooks();
+        }
+        else if (listType.equals("menuViewUnavailableBooks")){
+            viewBooksMessage = """
+            Unavailable Books:""";
+            listOfBooks = Data.getUnavailableBooks();
         }
         StringBuilder booksString = new StringBuilder();
         booksString.append(viewBooksMessage);
