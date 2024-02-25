@@ -292,8 +292,24 @@ public class Menu {
     }
 
 
-    private static void menuAddMember(){}
-    private static void menuRemoveMember(){}
+    private static void menuAddMember(){
+        boolean success;
+        do {
+            Integer ID = getId();
+            String name = getMember();
+            ArrayList<String> borrowed = getBorrowed();
+            Double fines = getFines();
+            success = Data.storeNewMember(ID, name, borrowed, fines);
+            if (!success){
+                System.out.println("Member already exists in Membership List. Please try again.");
+            }
+        } while (!success);
+        System.out.println("Stored a new member!");
+    }
+
+    private static void menuRemoveMember(){
+
+    }
     private static void menuViewAllMembers(){}
     private static void menuSearchMembers(){}
     private static void menuExitToMainMenu(){}
@@ -315,6 +331,8 @@ public class Menu {
         return Integer.parseInt(memberId);
     }
 
+    private static ArrayList<String> getBorrowed() {
+    }
     private static double getFines() {
         String memberFines;
         do {

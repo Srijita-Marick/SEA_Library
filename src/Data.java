@@ -45,4 +45,8 @@ public class Data {
         return availableBooks;
     }
 
+    public static boolean storeNewMember(Integer id, String name, ArrayList<String> borrowed, String availabilityStatus) {
+    }
+
+
 }
