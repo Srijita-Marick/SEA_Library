@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class Data {
     private static final ArrayList<Object[]> books = new ArrayList<>();
-
+    private static final ArrayList<Object[]> availableBooks = new ArrayList<>();
     private static final ArrayList<String> titles = new ArrayList<>();
 
     private static final ArrayList<String> authors = new ArrayList<>();
@@ -23,7 +23,8 @@ public class Data {
             book[INDEX_STATUS] = availabilityStatus;
             //book[INDEX_DATEDUE] = dateDue;
             book[INDEX_REMOVED] = false;
-            books.add(book);
+            books.add(book); //adding to list of all books
+            availableBooks.add(book); //since all books are by default available when created
             titles.add(title);
             authors.add(author);
             System.out.println("Stored Yay!");
@@ -34,7 +35,11 @@ public class Data {
     }
 
     private static boolean checkExistBook(String title , String author){
-        return titles.contains(title) || authors.contains(author);
+        return titles.contains(title) && authors.contains(author);
+    }
+
+    public static ArrayList <Object[]> getAllBooks(){
+        return books;
     }
 
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 public class Menu {
     private static final Scanner scanner = new Scanner(System.in);
@@ -113,10 +114,25 @@ public class Menu {
     private static void menuViewUnavailable() {
     }
 
+
     private static void menuViewAvailable() {
+
     }
 
     private static void menuViewAllBooks() {
+        String viewBooksMessage = """
+            Library Books:""";
+        ArrayList<Object[]> listOfAllBooks = Data.getAllBooks();
+        StringBuilder booksString = new StringBuilder();
+        booksString.append(viewBooksMessage);
+        for (Object[] book :listOfAllBooks){
+            booksString.append("\n "); // for formatting purposes
+            booksString.append("\nTitle: ").append(book[Data.INDEX_TITLE]);
+            booksString.append("\nAuthor: ").append(book[Data.INDEX_AUTHOR]);
+            booksString.append("\nGenre: ").append(book[Data.INDEX_GENRE]);
+            booksString.append("\nStatus: ").append(book[Data.INDEX_STATUS]);
+        }
+        System.out.println(booksString);
     }
 
     private static void menuCheckoutBooks() {
@@ -124,6 +140,7 @@ public class Menu {
 
     private static void menuRemoveBook() {
     }
+
 
     private static void menuEnterNewBook() {
         boolean success;
@@ -134,6 +151,9 @@ public class Menu {
             String availabilityStatus = getAvailabilityStatus();
             //String dateDue = getDateDue();
             success = Data.storeNewBook(title, author, genre, availabilityStatus);
+            if (!success){
+                System.out.println("Book already exists in library. Try again.");
+            }
         } while (!success);
         System.out.println("Stored a new book!");
     }
@@ -143,7 +163,7 @@ public class Menu {
 //    }
 
     private static String getAvailabilityStatus() {
-        return "available";  // by default, new books should be available
+        return "Available";  // by default, new books should be available
     }
 
     private static String getGenre() {
