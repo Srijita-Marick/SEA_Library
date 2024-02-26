@@ -42,6 +42,9 @@ public class Menu {
         return option;
     }
 
+    /**
+     * Used in Main.java to run the main program
+     */
     public static void menuLoop() {
         int option = 0;
         boolean run = true;
@@ -93,6 +96,10 @@ public class Menu {
         }
         optMessage1 = sb1.toString();
     }
+
+    /**
+     * Used in menuLoop as a sub-menu to access Library resources
+     */
     private static void menuLibraryData() {
         int option1 = 0;
         boolean run = true;
@@ -275,7 +282,9 @@ public class Menu {
         } while (!success);
     }
 
-
+    /**
+     * Used in menuLibraryData to add books to the Library's main dataset
+     */
     private static void menuEnterNewBook() {
         boolean success;
         do {
@@ -345,6 +354,10 @@ public class Menu {
         return author;
     }
 
+    /**
+     * Used in menuCheckoutBooks, menuReturnBooks, etc.
+     * @return the name of the book
+     */
     private static String getTitle() {
         System.out.println("Enter Book Title: ");
         String title;
@@ -403,7 +416,9 @@ public class Menu {
         }
     }
 
-
+    /**
+     * Used in menuMemberData to add a new member to the Library's member list
+     */
     private static void menuAddMember(){
         boolean success;
         do {
@@ -419,6 +434,9 @@ public class Menu {
         System.out.println("Stored a new member!");
     }
 
+    /**
+     * Used in menuMemberData to remove a member from the member list
+     */
     private static void menuRemoveMember(){
         boolean success;
         do {
@@ -446,6 +464,9 @@ public class Menu {
         System.out.println(memString);
     }
 
+    /**
+     * Used in menuMemberData to search for a member in the member list
+     */
     private static void menuSearchMembers() {
         ArrayList<String> searchOptions = new ArrayList<>(); //each search option is a string in this list
         searchOptions.add("Blank"); //this is a placeholder that is never displayed to user
@@ -473,6 +494,10 @@ public class Menu {
             }
         }
     }
+
+    /**
+     * Used in menuSearchMembers to look for a member by name only
+     */
     private static void searchByName() {
         String name = getMember();
         String viewMembersMessage = """
@@ -480,6 +505,10 @@ public class Menu {
         ArrayList<Object[]> bookList = Data.getBooksByTitle(name);
         System.out.println(viewAnyMemberList(viewMembersMessage, bookList));
     }
+
+    /**
+     * Used in menuSearchMembers to look for a member by Id only
+     */
     private static void searchById(){
         int id = getId();
         String ID = Integer.toString(id);
