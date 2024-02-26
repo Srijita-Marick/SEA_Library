@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added code to menuRemoveBook" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="removing functionality complete">
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -238,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708917125606</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="removing functionality complete">
+      <option name="closed" value="true" />
+      <created>1708917152855</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1708917152855</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -285,6 +295,7 @@
     <MESSAGE value="added code to removeMember" />
     <MESSAGE value="added code to removeBook" />
     <MESSAGE value="added code to menuRemoveBook" />
-    <option name="LAST_COMMIT_MESSAGE" value="added code to menuRemoveBook" />
+    <MESSAGE value="removing functionality complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing functionality complete" />
   </component>
 </project>

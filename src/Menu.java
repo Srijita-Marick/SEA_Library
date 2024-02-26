@@ -112,45 +112,68 @@ public class Menu {
     }
 
     private static void menuSearchBooks() {
+        ArrayList<String> searchOptions = new ArrayList<>(); //each search option is a string in this list
+        searchOptions.add("Blank"); //this is a placeholder that is never displayed to user
+        searchOptions.add("Title");
+        searchOptions.add("Author");
+        searchOptions.add("Genre");
+        StringBuilder searchString = new StringBuilder(); // formatted list of the search options with instruction
+        searchString.append("How would you like to search for books?\n");
+        for (int i = 1; i < searchOptions.size(); i++) {
+            searchString.append(String.format("\t%d.%s\n", i, searchOptions.get(i)));
+        }
+        System.out.println(searchString);
+        String choice = ""; // will be used to store user input for genre index
+        boolean run = true; // tracks when the while loop should run or not
+        while (run) {
+            choice = scanner.nextLine(); // gets input from user
+            int option = Integer.parseInt(choice); // converts into to an int
+            if (option > 0 && option < searchOptions.size()) { // checks if selection is valid
+                System.out.printf("Searching by %d.%s%n", option, searchOptions.get(option));
+                run = false; // stop while-loop
+            }
+            switch(option){
+                case 1 -> searchByTitle();//title
+                case 2 -> searchByAuthor();//author
+                case 3 -> searchByGenre();//genre
+                default -> System.out.printf("Option %d not recognized!%n", option);
+            }
+        }
     }
+    private static void searchByTitle(){}
+    private static void searchByAuthor(){}
+    private static void searchByGenre(){}
+
 
     private static void menuViewUnavailable() {
-        System.out.println(viewAnyBookList("menuViewUnavailableBooks"));
+        String viewBooksMessage = """
+            Unavailable Books:""";
+        ArrayList<Object[]> bookList = Data.getUnavailableBooks();
+        System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
-
     private static void menuViewAvailable() {
-        System.out.println(viewAnyBookList("menuViewAvailableBooks"));
+        String viewBooksMessage = """
+            Available Books:""";
+        ArrayList<Object[]> bookList = Data.getAvailableBooks();
+        System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
     private static void menuViewAllBooks() {
-        System.out.println(viewAnyBookList("menuViewAllBooks"));
+        String viewBooksMessage= """
+            ALl library Books:""";
+        ArrayList<Object[]> bookList = Data.getAllBooks();
+        System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
 
     /**
      * called on by menuViewAllBooks, menuViewAvailableBooks, etc.
      * prints the desired type of list
-     * @param listType determines which type of list is to be printed
+     * @param viewBooksMessage is the instructions messages
+     * @param listOfBooks is the list of books being displayed
      */
-    private static String viewAnyBookList(String listType){
-        String viewBooksMessage = "";
-        ArrayList<Object[]> listOfBooks = new ArrayList<>();
-        if (listType.equals("menuViewAllBooks")) {
-            viewBooksMessage = """
-            ALl library Books:""";
-            listOfBooks = Data.getAllBooks();
-        }
-        else if (listType.equals("menuViewAvailableBooks")){
-            viewBooksMessage = """
-            Available Books:""";
-           listOfBooks = Data.getAvailableBooks();
-        }
-        else if (listType.equals("menuViewUnavailableBooks")){
-            viewBooksMessage = """
-            Unavailable Books:""";
-            listOfBooks = Data.getUnavailableBooks();
-        }
+    private static String viewAnyBookList(String viewBooksMessage, ArrayList<Object[]> listOfBooks){
         StringBuilder booksString = new StringBuilder();
         booksString.append(viewBooksMessage);
         for (Object[] book :listOfBooks){
