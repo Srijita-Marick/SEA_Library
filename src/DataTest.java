@@ -112,8 +112,10 @@ class DataTest {
         Data.storeNewBook("Hell Bent","Leigh Bardugo","Fantasy","Available");
         Data.storeNewBook("In the Lives of Puppets","T.J. Klune","Science Fiction","Unavailable");
         Data.storeNewBook("Holly","Stephen King","Horror","Available");
+        Data.storeNewBook("Joyland","Stephen King","Thriller","Unavailable");
         Data.storeNewBook("Poverty, by America","Matthew Desmond","Non-fiction","Unavailable");
         Data.storeNewBook("Arsenic and Adobo","Mia P. Manansala","Mystery","Available");
+        Data.storeNewBook("Joyland","Emily Schultz","Literary","Available");
     }
     @Test
     void checkExistBook() {
@@ -146,7 +148,7 @@ class DataTest {
     @Test
     void testGetAllBooks() {
         ArrayList<Object[]> allBooks = Data.getAllBooks();
-        assertEquals(12, allBooks.size());
+        assertEquals(14, allBooks.size());
     }
 
     @Test
@@ -190,7 +192,9 @@ class DataTest {
     }
 
     @Test
-    void getBooksByTitle() {
+    public void getBooksByTitleReturnsCorrectNumberOfBooks() {
+        ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("Joyland");
+        assertEquals(2, booksWithTitle.size());
     }
 
     @Test
