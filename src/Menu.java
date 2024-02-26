@@ -289,6 +289,14 @@ public class Menu {
         return "Available";  // by default, new books should be available
     }
 
+    public static int getDaysOverdue(){
+        System.out.println("How many days overdue is the book?");
+        String days;
+        do {
+            days = scanner.nextLine().trim();
+        } while (days.isEmpty()||days.contains("-")||days.contains("."));
+        return Integer.parseInt(days);
+    }
     private static String getGenre() {
         ArrayList<String> genres = new ArrayList<>(); //each genre option is a string in this list
             genres.add("Blank"); //this is a placeholder that is never displayed to user
