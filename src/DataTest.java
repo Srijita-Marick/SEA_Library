@@ -261,14 +261,20 @@ class DataTest {
 
     @Test
     public void getBooksByAuthorWhenAuthorNotFound() {
-        ArrayList<Object[]> booksWithAuthor = Data.getBooksByAuthor("John Milton");
-        assertTrue(booksWithAuthor.isEmpty());
+        ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor("John Milton");
+        assertTrue(booksByAuthor.isEmpty());
     }
 
     @Test
     public void getBooksByAuthorReturnsCorrectNumberOfBooks1(){
         ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor("Freida McFadden");
         assertEquals(1, booksByAuthor.size());
+    }
+
+    @Test
+    public void getBooksByAuthorEmptyAuthor(){
+        ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor(" ");
+        assertTrue(booksByAuthor.isEmpty());
     }
     @Test
     void getBooksByGenre() {
