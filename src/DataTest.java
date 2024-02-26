@@ -155,6 +155,7 @@ class DataTest {
     }
     @Test
     void checkBookAvailable() {
+        assertTrue(Data.checkBookAvailable("Joyland", "Emily Schultz"));
     }
 
     @Test
