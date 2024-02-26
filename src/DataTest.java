@@ -116,6 +116,22 @@ class DataTest {
         Data.storeNewBook(title, author, genre, availabilityStatus);
         assertFalse(Data.checkExistBook(" ", " "));
     }
+
+    @Test
+    void checkExistBookTitleWithNullAuthor(){
+        Data.reset();
+        String title = "The Fault in Our Stars";
+        String author = "John Green";
+        String genre = "Romance";
+        String availabilityStatus = "Unavailable";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        title = "The Blood of Olympus";
+        author = "Rick Riordan";
+        genre = "Fantasy";
+        availabilityStatus = "Unavailable";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertFalse(Data.checkExistBook("The Blood of Olympus", null));
+    }
     @Test
     void checkBookAvailable() {
     }

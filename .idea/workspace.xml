@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added checkExistBookAuthorMismatch test">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added checkExistBookEmptyTitleAndAuthor test">
       <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -321,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708969531881</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="added checkExistBookEmptyTitleAndAuthor test">
+      <option name="closed" value="true" />
+      <created>1708969786615</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1708969786615</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -348,7 +356,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added code to getAvailabilityStatus" />
     <MESSAGE value="removed all mentions of &quot;date due&quot;" />
     <MESSAGE value="test commit" />
     <MESSAGE value="added functions relating to the Member Data menu" />
@@ -373,6 +380,7 @@
     <MESSAGE value="added checkExistBook test" />
     <MESSAGE value="added checkBookDoesNotExist test" />
     <MESSAGE value="added checkExistBookAuthorMismatch test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added checkExistBookAuthorMismatch test" />
+    <MESSAGE value="added checkExistBookEmptyTitleAndAuthor test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added checkExistBookEmptyTitleAndAuthor test" />
   </component>
 </project>
