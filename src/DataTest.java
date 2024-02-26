@@ -202,6 +202,13 @@ class DataTest {
         assertEquals("Historical Fiction", firstBook[Data.INDEX_GENRE]);
         assertEquals("Available", firstBook[Data.INDEX_STATUS]);
     }
+
+    @Test
+    void testGetAllBooksEmptyLibrary(){
+        Data.reset(); // Clear existing data to simulate no books
+        ArrayList<Object[]> allBooks = Data.getAllBooks();
+        assertTrue(allBooks.isEmpty());
+    }
     @Test
     void testGetAvailableBooks() {
     }
