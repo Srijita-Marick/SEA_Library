@@ -461,6 +461,13 @@ public class Menu {
             }
         }
     }
+    private static void searchByName() {
+        String name = getMember();
+        String viewMembersMessage = """
+                All members with that name:""";
+        ArrayList<Object[]> bookList = Data.getBooksByTitle(name);
+        System.out.println(viewAnyMemberList(viewMembersMessage, bookList));
+    }
 
     private static String getMember() {
         System.out.println("Enter Member Name: ");
