@@ -35,7 +35,10 @@ public class Menu {
     public static void menuLoop() {
         System.out.println(optMessage);
         String choice = getOption();
-        int option = Integer.parseInt(choice);
+        int option = 0;
+        if (choice != null){
+            option = Integer.parseInt(choice);
+        }
         while (option != 0) {
             if (option > 0 && option < options.size()) {
                 System.out.printf("Selected option %d.%s%n", option, options.get(option));
@@ -187,7 +190,7 @@ public class Menu {
 
     /**
      * called on by menuViewAllBooks, menuViewAvailableBooks, etc.
-     * prints the desired type of list
+     * Any time a list of books is required, it returns the desired type of list
      * @param viewBooksMessage is the instructions messages
      * @param listOfBooks is the list of books being displayed
      */
@@ -421,6 +424,18 @@ public class Menu {
         System.out.println("Deleted a new member!");
     }
     private static void menuViewAllMembers(){
+        ArrayList<Object[]> members = Data.getAllMembers();
+        StringBuilder memString = new StringBuilder();
+        String memMessage = """
+            All Library Member:""";
+        memString.append(memMessage);
+        for (Object[] member: members){
+            memString.append("\n "); // for formatting purposes
+            memString.append("\nID: ").append(member[Data.INDEX_ID]);
+            memString.append("\nName: ").append(member[Data.INDEX_NAME]);
+            memString.append("\nBooks Borrowed:\n").append(member[Data.INDEX_BORROWED]);
+        }
+        System.out.println(memString);
     }
     private static void menuSearchMembers(){}
     private static void menuExitToMainMenu(){

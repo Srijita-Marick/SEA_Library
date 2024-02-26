@@ -13,7 +13,6 @@ public class Data {
     public static final int INDEX_AUTHOR = 1;
     public static final int INDEX_GENRE = 2;
     public static final int INDEX_STATUS = 3;
-    //public static final int INDEX_DATEDUE = 4;
     public static final int INDEX_REMOVED = 4;
     public static boolean storeNewBook(String title, String author, String genre, String availabilityStatus) {
         if (!checkExistBook(title, author)) {
@@ -22,7 +21,6 @@ public class Data {
             book[INDEX_AUTHOR] = author;
             book[INDEX_GENRE] = genre;
             book[INDEX_STATUS] = availabilityStatus;
-            //book[INDEX_DATEDUE] = dateDue;
             book[INDEX_REMOVED] = false;
             books.add(book); //adding to list of all books
             availableBooks.add(book); //since all books are by default available when created
@@ -167,13 +165,17 @@ public class Data {
     public static boolean removeMember(Integer id, String name) {
         if (checkExistMember(id)){
             for (Object[] member: members){
-                if (member[INDEX_ID].equals(id)&&member[INDEX_NAME].equals(name)){
+                if (member[INDEX_ID]==(id)&&member[INDEX_NAME].equals(name)){
                     members.remove(member);
                     return true;
                 }
             }
         }
         return false;
+    }
+
+    public static ArrayList<Object[]> getAllMembers(){
+        return members;
     }
 
     public static String[] getBorrowedBooks(Integer id){
