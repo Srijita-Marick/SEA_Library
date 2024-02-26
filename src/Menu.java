@@ -162,6 +162,19 @@ public class Menu {
 
 
     private static void menuCheckoutBooks() {
+        int id = getId();
+        while (!Data.checkExistMember(id)){
+            System.out.println("Member does not exist. Please try again.");
+            id = getId();
+        }
+        String title = getTitle();
+        String author = getAuthor();
+        while (!Data.checkExistBook(title,author)){
+            System.out.println("The library does not own this book. Please try again.");
+            title = getTitle();
+            author = getAuthor();
+        }
+        Data.checkoutBook(id, title, author);
     }
 
     private static void menuRemoveBook() {

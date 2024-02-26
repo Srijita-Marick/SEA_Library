@@ -1,9 +1,11 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Data {
     private static final ArrayList<Object[]> books = new ArrayList<>();
     private static final ArrayList<Object[]> availableBooks = new ArrayList<>();
+    private static final ArrayList<Object[]> unAvailableBooks = new ArrayList<>();
     private static final ArrayList<Object[]> unavailableBooks = new ArrayList<>();
     private static final ArrayList<String> titles = new ArrayList<>();
 
@@ -16,7 +18,7 @@ public class Data {
     public static final int INDEX_REMOVED = 4;
     public static boolean storeNewBook(String title, String author, String genre, String availabilityStatus) {
         if (!checkExistBook(title, author)) {
-            Object[] book = new Object[6];
+            Object[] book = new Object[5];
             book[INDEX_TITLE] = title;
             book[INDEX_AUTHOR] = author;
             book[INDEX_GENRE] = genre;
@@ -34,7 +36,7 @@ public class Data {
         }
     }
 
-    private static boolean checkExistBook(String title , String author){
+    public static boolean checkExistBook(String title , String author){
         return titles.contains(title) && authors.contains(author);
     }
 
@@ -47,6 +49,22 @@ public class Data {
     public static ArrayList<Object[]> getUnavailableBooks() {
         return unavailableBooks;
     }
+
+    public static void checkoutBook(Integer id, String title, String author){
+        for (Object[] book: books){
+            if (book[INDEX_TITLE].equals(title) && book[INDEX_AUTHOR].equals(author)){
+                availableBooks.remove(book);
+                unAvailableBooks.add(book);
+                for (Object[] member: members){
+                    if (member[INDEX_ID]==id){
+                        ((ArrayList<String>)member[INDEX_BORROWED]).add(title+" by "+author);
+                    }
+                }
+            }
+        }
+
+    }
+
     //  EVERYTHING BELOW HERE IS TO STORE MEMBER DATA
 
     static final ArrayList<Object[]> members = new ArrayList<>();
@@ -59,7 +77,7 @@ public class Data {
 
     public static boolean storeNewMember(Integer id, String name, ArrayList<String> borrowed, Double fines) {
         if (!checkExistMember(id)) {
-            Object[] member = new Object[6];
+            Object[] member = new Object[4];
             member[INDEX_ID] = id;
             member[INDEX_NAME] = name;
             member[INDEX_BORROWED] = borrowed;
@@ -73,7 +91,7 @@ public class Data {
         }
     }
 
-    private static boolean checkExistMember(Integer id) {
+    public static boolean checkExistMember(Integer id) {
         return memberIDs.contains(id);
     }
 
