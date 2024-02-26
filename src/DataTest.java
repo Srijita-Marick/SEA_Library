@@ -155,13 +155,25 @@ class DataTest {
     }
     @Test
     void checkBookAvailable() {
-        assertTrue(Data.checkBookAvailable("Joyland", "Emily Schultz"));
+        assertTrue(Data.checkBookAvailable("Hell Bent","Leigh Bardugo"));
     }
 
     @Test
     void checkBookUnavailable(){
         assertTrue(Data.checkBookAvailable("In the Lives of Puppets","T.J. Klune"));
     }
+
+    @Test
+    void checkBookAvailableTitleWithNullAuthor(){
+        assertFalse(Data.checkBookAvailable("Joyland",null));
+    }
+
+    @Test
+    void checkBookAvailableEmptyTitle(){
+        assertFalse(Data.checkBookAvailable(" ", "Rick Riordan"));
+    }
+
+
 
     @Test
     void testGetAllBooks() {
