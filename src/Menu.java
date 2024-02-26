@@ -1,3 +1,14 @@
+/**
+ * CPSC 233 W24 Group Project
+ * Library Management System
+ * @author Anna Littkemann, Emily Ngkwongsang, Srijita Marick
+ * @email anna.littkemann@ucalgary.ca, emily.ngkwongsang@ucalgary.ca,
+ * srijita.marick@ucalgary.ca
+ * @UCID 30212220, 30230290, 30230880
+ * @date Feb 21-27 2024 (DEMO 1)
+ * @tutorial T03 Tue  3:00PM -  4:50PM
+ */
+
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Menu {
