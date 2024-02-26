@@ -198,6 +198,15 @@ class DataTest {
     }
 
     @Test
+    public void getBooksByTitleReturnsCorrectBookInfo() {
+        ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("The Blood of Olympus");
+        Object[] firstBook = booksWithTitle.get(0);
+        assertEquals("The Blood of Olympus", firstBook[Data.INDEX_TITLE]);
+        assertEquals("Rick Riordan", firstBook[Data.INDEX_AUTHOR]);
+        assertEquals("Fantasy", firstBook[Data.INDEX_GENRE]);
+        assertEquals("Unavailable", firstBook[Data.INDEX_STATUS]);
+    }
+    @Test
     void getBooksByAuthor() {
     }
 
