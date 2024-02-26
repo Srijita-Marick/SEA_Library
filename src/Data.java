@@ -61,13 +61,31 @@ public class Data {
         return unavailableBooks;
     }
     public static ArrayList<Object[]> getBooksByTitle(String title) {
-        return books;
+        ArrayList<Object[]> booksWithTitle = new ArrayList<>();
+        for (Object[] book: books){
+            if (book[INDEX_TITLE].equals(title)) {
+                booksWithTitle.add(book);
+            }
+        }
+        return booksWithTitle;
     }
     public static ArrayList<Object[]> getBooksByAuthor(String author) {
-        return books;
+        ArrayList<Object[]> booksByAuthor = new ArrayList<>();
+        for (Object[] book: books){
+            if (book[INDEX_AUTHOR].equals(author)) {
+                booksByAuthor.add(book);
+            }
+        }
+        return booksByAuthor;
     }
     public static ArrayList<Object[]> getBooksByGenre(String genre) {
-        return books;
+        ArrayList<Object[]> booksInGenre = new ArrayList<>();
+        for (Object[] book: books){
+            if (book[INDEX_GENRE].equals(genre)) {
+                booksInGenre.add(book);
+            }
+        }
+        return booksInGenre;
     }
 
     public static void checkoutBook(Integer id, String title, String author){
