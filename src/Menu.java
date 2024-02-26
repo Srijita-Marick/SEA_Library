@@ -191,6 +191,7 @@ public class Menu {
      * Any time a list of books is required, it returns the desired type of list
      * @param viewBooksMessage is the instructions messages
      * @param listOfBooks is the list of books being displayed
+     * @return String containing all the required books
      */
     private static String viewAnyBookList(String viewBooksMessage, ArrayList<Object[]> listOfBooks){
         StringBuilder booksString = new StringBuilder();
@@ -477,6 +478,12 @@ public class Menu {
         System.out.println(viewAnyMemberList(viewMembersMessage, bookList));
     }
 
+    /**
+     * called on by searchByName and searchById
+     * @param viewMembersMessage is the instructions message
+     * @param listOfMembers is the list of members being displayed
+     * @return String containing all the required members
+     */
     private static String viewAnyMemberList(String viewMembersMessage, ArrayList<Object[]> listOfMembers) {
         StringBuilder membersString = new StringBuilder();
         membersString.append(viewMembersMessage);

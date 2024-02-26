@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="created searchByName for Search">
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-    </list>
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="created ViewAnyMemberList to be used in search" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -272,7 +270,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708966636669</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="created searchByID for Search">
+      <option name="closed" value="true" />
+      <created>1708966801286</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1708966801286</updated>
+    </task>
+    <task id="LOCAL-00027" summary="created ViewAnyMemberList to be used in search">
+      <option name="closed" value="true" />
+      <created>1708966998098</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1708966998098</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -322,6 +336,8 @@
     <MESSAGE value="reformatting optMessages" />
     <MESSAGE value="created menuSearchMembers" />
     <MESSAGE value="created searchByName for Search" />
-    <option name="LAST_COMMIT_MESSAGE" value="created searchByName for Search" />
+    <MESSAGE value="created searchByID for Search" />
+    <MESSAGE value="created ViewAnyMemberList to be used in search" />
+    <option name="LAST_COMMIT_MESSAGE" value="created ViewAnyMemberList to be used in search" />
   </component>
 </project>
