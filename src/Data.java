@@ -122,6 +122,14 @@ public class Data {
     }
 
     public static boolean removeMember(Integer id, String name) {
+        if (checkExistMember(id)){
+            for (Object[] member: members){
+                if (member[INDEX_ID].equals(id)&&member[INDEX_NAME].equals(name)){
+                    members.remove(member);
+                    return true;
+                }
+            }
+        }
         return false;
     }
 

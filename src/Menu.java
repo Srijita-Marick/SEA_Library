@@ -100,6 +100,7 @@ public class Menu {
                 case 6 -> menuViewAvailable();
                 case 7 -> menuViewUnavailable();
                 case 8 -> menuSearchBooks();
+                case 9 -> menuExitToMainMenu();
                 default -> System.out.printf("Option %d not recognized!%n", option1);
             }
             System.out.println("Press any key to continue...");
@@ -187,19 +188,19 @@ public class Menu {
 
     private static void menuReturnBooks(){
         int id = getId();
-        while (!Data.checkExistMember(id)){
+        while (!Data.checkExistMember(id)){  //makes sure that this id corresponds to an existing member
             System.out.println("Member does not exist. Please try again.");
             id = getId();
         }
         String title = getTitle();
         String author = getAuthor();
-        if (!Data.checkExistBook(title,author)){
+        if (!Data.checkExistBook(title,author)){ //if the books isn't in the system, no action is taken
             System.out.printf("The library does not own %s by %s. Please try again.",title,author);
         }
-        else if (Data.checkBookAvailable(title,author)){
+        else if (Data.checkBookAvailable(title,author)){ //if the book has already been returned, no action is taken
             System.out.printf("%s by %s is not currently checked out by anyone. That is not our book.",title,author);
         }
-        else {
+        else { //if the book both exists and is not checked out, then it is returned to the library
             System.out.printf("%s by %s has been returned to the library.",title,author);
             Data.returnBook(id,title,author);
         }
@@ -295,8 +296,8 @@ public class Menu {
         options2.add("Add Member");
         options2.add("Remove Member");
         options2.add("View All Members");
-        options2.add("Remove Member");
         options2.add("Search Members");
+        options2.add("Exit to Main Menu");
     }
     private static String optMessage2 = """
  Member Data Options
@@ -316,7 +317,7 @@ public class Menu {
         int option2 = Integer.parseInt(memchoice);
         boolean run = true;
         while (run) {
-            if (option2 > 0 && option2 < options2.size()) {
+            if (option2 > 0 && option2 <= options2.size()) {
                 System.out.printf("Selected option %d.%s%n", option2, options2.get(option2));
                 System.out.println("Press any key to continue...");
                 scanner.nextLine();
@@ -325,8 +326,8 @@ public class Menu {
             switch (option2) {
                 case 1 -> menuAddMember();
                 case 2 -> menuRemoveMember();
-                case 3 -> menuSearchMembers();
-                case 4 -> menuViewAllMembers();
+                case 3 -> menuViewAllMembers();
+                case 4 -> menuSearchMembers();
                 case 5 -> menuExitToMainMenu();
                 default -> System.out.printf("Option %d not recognized!%n", option2);
             }
@@ -369,7 +370,8 @@ public class Menu {
     private static void menuViewAllMembers(){
     }
     private static void menuSearchMembers(){}
-    private static void menuExitToMainMenu(){}
+    private static void menuExitToMainMenu(){
+    }
 
     private static String getMember() {
         System.out.println("Enter Member Name: ");
