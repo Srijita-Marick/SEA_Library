@@ -90,6 +90,23 @@ public class Data {
             }
         }
     }
+    public static boolean removeBook(String title, String author) {
+        if (checkExistBook(title,author)){
+            for (Object[] book: books){
+                if (book[INDEX_TITLE].equals(title)&&book[INDEX_AUTHOR].equals(author)){
+                    books.remove(book);
+                    if (checkBookAvailable(title,author)){
+                        availableBooks.remove(book);
+                    }
+                    else {
+                        unavailableBooks.remove(book);
+                    }
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     //  EVERYTHING BELOW HERE IS TO STORE MEMBER DATA
 
