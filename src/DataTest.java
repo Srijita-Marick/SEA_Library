@@ -250,7 +250,7 @@ class DataTest {
     }
 
     @Test
-    public void getBooksByAuthorReturnsCorrectBookInformation() {
+    public void getBooksByAuthorReturnsCorrectBookInfo() {
         ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor("Emily Henry");
         Object[] book = booksByAuthor.get(0);
         assertEquals("Happy Place", book[Data.INDEX_TITLE]);
@@ -282,6 +282,15 @@ class DataTest {
         assertEquals(2, booksByGenre.size());
     }
 
+    @Test
+    public void getBooksByGenreReturnsCorrectBookInfo() {
+        ArrayList<Object[]> booksByGenre = Data.getBooksByGenre("Literary");
+        Object[] book = booksByGenre.get(1);
+        assertEquals("The Great Gatsby", book[Data.INDEX_TITLE]);
+        assertEquals("F. Scott Fitzgerald", book[Data.INDEX_AUTHOR]);
+        assertEquals("Literary", book[Data.INDEX_GENRE]);
+        assertEquals("Available", book[Data.INDEX_STATUS]);
+    }
     @Test
     void checkoutBook() {
     }

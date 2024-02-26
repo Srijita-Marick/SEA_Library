@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added getBooksByAuthorReturnsCorrectNumberOfBooks1 test">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added getBooksByGenreReturnsCorrectNumberOfBooks test">
       <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -450,7 +450,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708990838312</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="added getBooksByAuthorEmptyAuthor test">
+      <option name="closed" value="true" />
+      <created>1708990966014</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1708990966014</updated>
+    </task>
+    <task id="LOCAL-00049" summary="added getBooksByGenreReturnsCorrectNumberOfBooks test">
+      <option name="closed" value="true" />
+      <created>1708991217507</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1708991217507</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -477,8 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reformatting optMessages" />
-    <MESSAGE value="created menuSearchMembers" />
     <MESSAGE value="created searchByName for Search" />
     <MESSAGE value="created searchByID for Search" />
     <MESSAGE value="created ViewAnyMemberList to be used in search" />
@@ -502,6 +516,8 @@
     <MESSAGE value="added getBooksByTitleEmptyTitle test" />
     <MESSAGE value="added getBooksByAuthorWhenAuthorNotFound test" />
     <MESSAGE value="added getBooksByAuthorReturnsCorrectNumberOfBooks1 test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added getBooksByAuthorReturnsCorrectNumberOfBooks1 test" />
+    <MESSAGE value="added getBooksByAuthorEmptyAuthor test" />
+    <MESSAGE value="added getBooksByGenreReturnsCorrectNumberOfBooks test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getBooksByGenreReturnsCorrectNumberOfBooks test" />
   </component>
 </project>
