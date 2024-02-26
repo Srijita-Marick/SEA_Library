@@ -35,7 +35,6 @@ public class Data {
             availableBooks.add(book); //since all books are by default available when created
             titles.add(title);
             authors.add(author);
-            System.out.println("Stored Yay!");
             return true;
         } else {
             return false;
@@ -161,7 +160,6 @@ public class Data {
             member[INDEX_FINES] = 0.0; // when someone joins library for the first time they should have no fine
             memberIDs.add(id);
             members.add(member); //adding to list of all members
-            System.out.println("Stored Yay!");
             return true;
         } else {
             return false;
