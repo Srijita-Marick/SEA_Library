@@ -50,6 +50,18 @@ class DataTest {
 
     @Test
     void checkExistBook() {
+        Data.reset();
+        String title = "The Great Gatsby";
+        String author = "F. Scott Fitzgerald";
+        String genre = "Literary";
+        String availabilityStatus = "Available";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        title = "Moby Dick";
+        author = "Herman Melville";
+        genre = "Literary";
+        availabilityStatus = "Available";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertTrue(Data.checkExistBook("The Great Gatsby", "F. Scott Fitzgerald"));
     }
 
     @Test
