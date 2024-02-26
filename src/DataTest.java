@@ -266,6 +266,11 @@ class DataTest {
     }
 
     @Test
+    public void getBooksByAuthorReturnsCorrectNumberOfBooks1(){
+        ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor("Freida McFadden");
+        assertEquals(1, booksByAuthor.size());
+    }
+    @Test
     void getBooksByGenre() {
     }
 
