@@ -12,7 +12,7 @@ public class Menu {
         options.add("Exit");
     }
     private static String optMessage = """
-            Menu Options
+            -------------WELCOME TO LIBRARY-------------
             """;
 
     static {
@@ -72,7 +72,7 @@ public class Menu {
         options1.add("Exit to Main Menu");
     }
     private static String optMessage1 = """
-            Library Data Options
+            -------------LIBRARY DATA-------------
            """;
 
     static {
@@ -355,8 +355,8 @@ public class Menu {
         options2.add("Exit to Main Menu");
     }
     private static String optMessage2 = """
- Member Data Options
- """;
+    -------------MEMBER DATA-------------
+    """;
 
     static {
         StringBuilder sb2 = new StringBuilder();
