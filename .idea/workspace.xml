@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added code to removeMember" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added code to menuRemoveBook" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -222,7 +222,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708916227497</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added code to removeBook">
+      <option name="closed" value="true" />
+      <created>1708916524016</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1708916524016</updated>
+    </task>
+    <task id="LOCAL-00021" summary="added code to menuRemoveBook">
+      <option name="closed" value="true" />
+      <created>1708917125606</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1708917125606</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,6 +283,8 @@
     <MESSAGE value="now user can only checkout books that are available" />
     <MESSAGE value="added a complete returnBooks function" />
     <MESSAGE value="added code to removeMember" />
-    <option name="LAST_COMMIT_MESSAGE" value="added code to removeMember" />
+    <MESSAGE value="added code to removeBook" />
+    <MESSAGE value="added code to menuRemoveBook" />
+    <option name="LAST_COMMIT_MESSAGE" value="added code to menuRemoveBook" />
   </component>
 </project>
