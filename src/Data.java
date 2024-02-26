@@ -65,6 +65,7 @@ public class Data {
         for (Object[] book: books){
             if (book[INDEX_TITLE].equals(title) && book[INDEX_AUTHOR].equals(author)){
                 availableBooks.remove(book);
+                book[INDEX_STATUS]= "Unavailable";
                 unAvailableBooks.add(book);
                 for (Object[] member: members){
                     if (member[INDEX_ID]==id){
@@ -73,7 +74,21 @@ public class Data {
                 }
             }
         }
+    }
 
+    public static void returnBook(Integer id, String title, String author) {
+        for (Object[] book: books){
+            if (book[INDEX_TITLE].equals(title) && book[INDEX_AUTHOR].equals(author)){
+                unAvailableBooks.remove(book);
+                book[INDEX_STATUS]= "Available";
+                availableBooks.add(book);
+                for (Object[] member: members){
+                    if (member[INDEX_ID]==id){
+                        ((ArrayList<String>)member[INDEX_BORROWED]).remove(title+" by "+author);
+                    }
+                }
+            }
+        }
     }
 
     //  EVERYTHING BELOW HERE IS TO STORE MEMBER DATA

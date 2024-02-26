@@ -62,6 +62,7 @@ public class Menu {
         options1.add("Add Book");
         options1.add("Remove Book");
         options1.add("Checkout Books");
+        options1.add("Return Books");
         options1.add("View All Books");
         options1.add("View Available Books");
         options1.add("View Unavailable Books");
@@ -94,10 +95,11 @@ public class Menu {
                 case 1 -> menuEnterNewBook();
                 case 2 -> menuRemoveBook();
                 case 3 -> menuCheckoutBooks();
-                case 4 -> menuViewAllBooks();
-                case 5 -> menuViewAvailable();
-                case 6 -> menuViewUnavailable();
-                case 7 -> menuSearchBooks();
+                case 4 -> menuReturnBooks();
+                case 5 -> menuViewAllBooks();
+                case 6 -> menuViewAvailable();
+                case 7 -> menuViewUnavailable();
+                case 8 -> menuSearchBooks();
                 default -> System.out.printf("Option %d not recognized!%n", option1);
             }
             System.out.println("Press any key to continue...");
@@ -181,6 +183,26 @@ public class Menu {
             System.out.printf("%s by %s is currently checked out by another user." ,title,author);
         }
 
+    }
+
+    private static void menuReturnBooks(){
+        int id = getId();
+        while (!Data.checkExistMember(id)){
+            System.out.println("Member does not exist. Please try again.");
+            id = getId();
+        }
+        String title = getTitle();
+        String author = getAuthor();
+        if (!Data.checkExistBook(title,author)){
+            System.out.printf("The library does not own %s by %s. Please try again.",title,author);
+        }
+        else if (Data.checkBookAvailable(title,author)){
+            System.out.printf("%s by %s is not currently checked out by anyone. That is not our book.",title,author);
+        }
+        else {
+            System.out.printf("%s by %s has been returned to the library.",title,author);
+            Data.returnBook(id,title,author);
+        }
     }
 
     private static void menuRemoveBook() {
