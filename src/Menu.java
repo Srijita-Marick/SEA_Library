@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 public class Menu {
     private static final Scanner scanner = new Scanner(System.in);
@@ -434,7 +433,34 @@ public class Menu {
         }
         System.out.println(memString);
     }
-    private static void menuSearchMembers(){}
+
+    private static void menuSearchMembers() {
+        ArrayList<String> searchOptions = new ArrayList<>(); //each search option is a string in this list
+        searchOptions.add("Blank"); //this is a placeholder that is never displayed to user
+        searchOptions.add("Member Name");
+        searchOptions.add("Member Id");
+        StringBuilder searchString = new StringBuilder(); // formatted list of the search options with instruction
+        searchString.append("How would you like to search for members?\n");
+        for (int i = 1; i < searchOptions.size(); i++) {
+            searchString.append(String.format("\t%d.%s\n", i, searchOptions.get(i)));
+        }
+        System.out.println(searchString);
+        String choice; // will be used to store user input
+        boolean run = true; // tracks when the while loop should run or not
+        while (run) {
+            choice = scanner.nextLine(); // gets input from user
+            int option = Integer.parseInt(choice); // converts into to an int
+            if (option > 0 && option < searchOptions.size()) { // checks if selection is valid
+                System.out.printf("Searching by %d.%s%n", option, searchOptions.get(option));
+                run = false; // stop while-loop
+            }
+            switch(option){
+                case 1 -> searchByName();//member name
+                case 2 -> searchById();//member id
+                default -> System.out.printf("Option %d not recognized!%n", option);
+            }
+        }
+    }
 
     private static String getMember() {
         System.out.println("Enter Member Name: ");

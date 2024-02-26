@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="edited DataTest.java according to updated methods in Data.java">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="reformatting optMessages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
@@ -249,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708927118961</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="reformatting optMessages">
+      <option name="closed" value="true" />
+      <created>1708927583191</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1708927583191</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,6 +304,7 @@
     <MESSAGE value="edited menuLibraryData to make exit work" />
     <MESSAGE value="edited menuMemberData to make exit work" />
     <MESSAGE value="edited DataTest.java according to updated methods in Data.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="edited DataTest.java according to updated methods in Data.java" />
+    <MESSAGE value="reformatting optMessages" />
+    <option name="LAST_COMMIT_MESSAGE" value="reformatting optMessages" />
   </component>
 </project>
