@@ -59,6 +59,7 @@ public class Menu {
         }
     }
 
+    // Temp function for exiting menu
     private static void menuExit() {
     }
 
