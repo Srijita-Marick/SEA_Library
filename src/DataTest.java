@@ -168,6 +168,12 @@ class DataTest {
         assertFalse(Data.checkBookAvailable("Joyland",null));
     }
 
+    @Test
+    void checkBookAvailableEmptyTitle(){
+        assertFalse(Data.checkBookAvailable(" ", "Rick Riordan"));
+    }
+
+
 
     @Test
     void testGetAllBooks() {
