@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="edited javadoc comments">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added checkExistBook test">
       <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -298,7 +297,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708967434180</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="added checkExistBook test">
+      <option name="closed" value="true" />
+      <created>1708968899793</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1708968899793</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -325,7 +332,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="anna commint 2" />
     <MESSAGE value="small debug in menuLoop" />
     <MESSAGE value="added code to getAuthor" />
     <MESSAGE value="added code to getAvailabilityStatus" />
@@ -350,6 +356,7 @@
     <MESSAGE value="created searchByID for Search" />
     <MESSAGE value="created ViewAnyMemberList to be used in search" />
     <MESSAGE value="edited javadoc comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="edited javadoc comments" />
+    <MESSAGE value="added checkExistBook test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added checkExistBook test" />
   </component>
 </project>

@@ -65,6 +65,21 @@ class DataTest {
     }
 
     @Test
+    void checkBookDoesNotExist(){
+        Data.reset();
+        String title = "To Kill a Mockingbird";
+        String author = "Harper Lee";
+        String genre = "General Fiction";
+        String availabilityStatus = "Available";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        title = "1984";
+        author = "George Orwell";
+        genre = "Science Fiction";
+        availabilityStatus = "Unavailable";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertFalse(Data.checkExistBook("The Catcher in the Rye", "J.D. Salinger"));
+    }
+    @Test
     void checkBookAvailable() {
     }
 
