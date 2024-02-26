@@ -109,7 +109,7 @@ public class Menu {
             } else{
                 System.out.printf("Option %d not recognized!%n", option1);
             }
-            System.out.println("Exiting Library Data");
+            System.out.println("Exiting Library Data...");
         }
     }
 
@@ -367,30 +367,28 @@ public class Menu {
         optMessage2 = sb2.toString();
     }
     private static void menuMemberData() {
-        System.out.println(optMessage2);
-        String memchoice = scanner.nextLine();
-        int option2 = Integer.parseInt(memchoice);
+        int option2 = 0;
         boolean run = true;
         while (run) {
+            System.out.println(optMessage2);
+            String memchoice = scanner.nextLine();
+            if(!memchoice.isEmpty() && !memchoice.equals("0")){
+                option2 = Integer.parseInt(memchoice);
+            }
             if (option2 > 0 && option2 <= options2.size()) {
                 System.out.printf("Selected option %d.%s%n", option2, options2.get(option2));
-                System.out.println("Press any key to continue...");
-                scanner.nextLine();
-                run = false;
+                switch (option2) {
+                    case 1 -> menuAddMember();
+                    case 2 -> menuRemoveMember();
+                    case 3 -> menuViewAllMembers();
+                    case 4 -> menuSearchMembers();
+                    case 5 -> run = false;
+                    default -> System.out.printf("Option %d not recognized!%n", option2);
+                }
+            } else {
+                System.out.printf("Option %d not recognized!%n", option2);
             }
-            switch (option2) {
-                case 1 -> menuAddMember();
-                case 2 -> menuRemoveMember();
-                case 3 -> menuViewAllMembers();
-                case 4 -> menuSearchMembers();
-                case 5 -> menuExitToMainMenu();
-                default -> System.out.printf("Option %d not recognized!%n", option2);
-            }
-            System.out.println("Press any key to continue...");
-            scanner.nextLine();
-            System.out.println(optMessage2);
-            memchoice = scanner.nextLine();
-            option2 = Integer.parseInt(memchoice);
+            System.out.println("Exiting Member Data...");
         }
     }
 
