@@ -277,7 +277,9 @@ class DataTest {
         assertTrue(booksByAuthor.isEmpty());
     }
     @Test
-    void getBooksByGenre() {
+    public void getBooksByGenreReturnsCorrectNumberOfBooks() {
+        ArrayList<Object[]> booksByGenre = Data.getBooksByGenre("Fantasy");
+        assertEquals(2, booksByGenre.size());
     }
 
     @Test
