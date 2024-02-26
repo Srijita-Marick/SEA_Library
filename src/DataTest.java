@@ -1,11 +1,6 @@
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataTest {
@@ -103,6 +98,18 @@ class DataTest {
         assertEquals(1,Data.getAllBooks().size());
         assertFalse(success);
     }
+    @org.junit.jupiter.api.Test
+     void storeEmptyTitle(){
+        Data.reset();
+        String title = "";
+        String author = "Mary Shelley";
+        String genre = "Horror";
+        String availabilityStatus = "Unavailable";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        boolean success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertEquals(0,Data.getAllBooks().size());
+        assertFalse(success);
+    }
 
     @BeforeEach
     public void setUpLibrary() {
@@ -117,8 +124,10 @@ class DataTest {
         Data.storeNewBook("Hell Bent","Leigh Bardugo","Fantasy","Available");
         Data.storeNewBook("In the Lives of Puppets","T.J. Klune","Science Fiction","Unavailable");
         Data.storeNewBook("Holly","Stephen King","Horror","Available");
+        Data.storeNewBook("Joyland","Stephen King","Thriller","Unavailable");
         Data.storeNewBook("Poverty, by America","Matthew Desmond","Non-fiction","Unavailable");
         Data.storeNewBook("Arsenic and Adobo","Mia P. Manansala","Mystery","Available");
+        Data.storeNewBook("Joyland","Emily Schultz","Literary","Available");
     }
     @Test
     void checkExistBook() {
@@ -146,12 +155,13 @@ class DataTest {
     }
     @Test
     void checkBookAvailable() {
+        assertTrue(Data.checkBookAvailable("Joyland", "Emily Schultz"));
     }
 
     @Test
     void testGetAllBooks() {
         ArrayList<Object[]> allBooks = Data.getAllBooks();
-        assertEquals(12, allBooks.size());
+        assertEquals(14, allBooks.size());
     }
 
     @Test
@@ -195,11 +205,43 @@ class DataTest {
     }
 
     @Test
-    void getBooksByTitle() {
+    public void getBooksByTitleReturnsCorrectNumberOfBooks() {
+        ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("Joyland");
+        assertEquals(2, booksWithTitle.size());
     }
 
     @Test
-    void getBooksByAuthor() {
+    public void getBooksByTitleReturnsCorrectBookInfo() {
+        ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("The Blood of Olympus");
+        Object[] firstBook = booksWithTitle.get(0);
+        assertEquals("The Blood of Olympus", firstBook[Data.INDEX_TITLE]);
+        assertEquals("Rick Riordan", firstBook[Data.INDEX_AUTHOR]);
+        assertEquals("Fantasy", firstBook[Data.INDEX_GENRE]);
+        assertEquals("Unavailable", firstBook[Data.INDEX_STATUS]);
+    }
+
+    @Test
+    public void getBooksByTitleWhenTitleNotFound() {
+        ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("American Gods");
+        assertTrue(booksWithTitle.isEmpty());
+    }
+
+    @Test
+    public void getBooksByTitleReturnsCorrectNumberOfBooks1(){
+        ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("Poverty, by America");
+        assertEquals(1, booksWithTitle.size());
+    }
+
+    @Test
+    public void getBooksByTitleEmptyTitle(){
+        ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle(" ");
+        assertTrue(booksWithTitle.isEmpty());
+    }
+
+    @Test
+    void getBooksByAuthorReturnsCorrectNumberOfBooks() {
+        ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor("Stephen King");
+        assertEquals(2, booksByAuthor.size());
     }
 
     @Test
