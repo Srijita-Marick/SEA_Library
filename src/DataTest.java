@@ -212,6 +212,12 @@ class DataTest {
         ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("American Gods");
         assertTrue(booksWithTitle.isEmpty());
     }
+
+    @Test
+    public void getBooksByTitleReturnsCorrectNumberOfBooks1(){
+        ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("Poverty, by America");
+        assertEquals(1, booksWithTitle.size());
+    }
     @Test
     void getBooksByAuthor() {
     }
