@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added getBooksByTitleReturnsCorrectNumberOfBooks1 test">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added getBooksByTitleEmptyTitle test">
       <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -426,7 +426,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708988828065</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="added getBooksByTitleEmptyTitle test">
+      <option name="closed" value="true" />
+      <created>1708989279777</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1708989279777</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -453,7 +461,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edited menuLibraryData to make exit work" />
     <MESSAGE value="edited menuMemberData to make exit work" />
     <MESSAGE value="edited DataTest.java according to updated methods in Data.java" />
     <MESSAGE value="reformatting optMessages" />
@@ -478,6 +485,7 @@
     <MESSAGE value="added getBooksByTitleReturnsCorrectBookInfo test" />
     <MESSAGE value="added getBooksByTitleWhenTitleNotFound test" />
     <MESSAGE value="added getBooksByTitleReturnsCorrectNumberOfBooks1 test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added getBooksByTitleReturnsCorrectNumberOfBooks1 test" />
+    <MESSAGE value="added getBooksByTitleEmptyTitle test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getBooksByTitleEmptyTitle test" />
   </component>
 </project>
