@@ -303,6 +303,12 @@ class DataTest {
         assertEquals("Literary", book[Data.INDEX_GENRE]);
         assertEquals("Available", book[Data.INDEX_STATUS]);
     }
+
+    @Test
+    public void getBooksByGenreWhenNoBooksOfGenre() {
+        ArrayList<Object[]> booksByGenre = Data.getBooksByGenre("Poetry");
+        assertTrue(booksByGenre.isEmpty());
+    }
     @Test
     void checkoutBook() {
     }
