@@ -85,6 +85,24 @@ class DataTest {
             assertEquals(author, book[1]);
         }
     }
+    @org.junit.jupiter.api.Test
+     void storeDuplicateBooks(){
+        Data.reset();
+        String title = "Atomic Habits";
+        String author = "James Clear";
+        String genre = "Non-fiction";
+        String availabilityStatus = "Unavailable";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        boolean success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertFalse(success);
+        title = "Atomic Habits";
+        author = "James Clear";
+        genre = "Non-fiction";
+        availabilityStatus = "Unavailable";
+        success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertEquals(1,Data.getAllBooks().size());
+        assertFalse(success);
+    }
 
     @Test
     void checkExistBook() {
