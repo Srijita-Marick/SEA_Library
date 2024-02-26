@@ -468,6 +468,15 @@ public class Menu {
         ArrayList<Object[]> bookList = Data.getBooksByTitle(name);
         System.out.println(viewAnyMemberList(viewMembersMessage, bookList));
     }
+    private static void searchById(){
+        int id = getId();
+        String ID = Integer.toString(id);
+        String viewMembersMessage = """
+             Member with given ID:""";
+        ArrayList<Object[]> bookList = Data.getBooksByAuthor(ID);
+        System.out.println(viewAnyMemberList(viewMembersMessage, bookList));
+    }
+
 
     private static String getMember() {
         System.out.println("Enter Member Name: ");
