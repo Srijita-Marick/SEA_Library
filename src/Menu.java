@@ -33,35 +33,29 @@ public class Menu {
     }
 
     public static void menuLoop() {
-        System.out.println(optMessage);
-        String choice = getOption();
         int option = 0;
-        if (choice != null){
-            option = Integer.parseInt(choice);
-        }
-        while (option != 0) {
+        boolean run = true;
+        while (run) {
+            System.out.println(optMessage);
+            String choice = getOption();
+            if (!choice.isEmpty()) {
+                option = Integer.parseInt(choice);
+            }
             if (option > 0 && option < options.size()) {
                 System.out.printf("Selected option %d.%s%n", option, options.get(option));
-                System.out.println("Press any key to continue...");
-                scanner.nextLine();
+                switch (option) {
+                    case 1 -> menuLibraryData();
+                    case 2 -> menuMemberData();
+                    case 3 -> run = false;
+                    default -> System.out.printf("Option %d not recognized!%n", option);
+                }
+            } else {
+                System.out.printf("Option %d not recognized!%n", option);
             }
-            switch (option) {
-                case 1 -> menuLibraryData();
-                case 2 -> menuMemberData();
-                case 3 -> menuExit();
-                default -> System.out.printf("Option %d not recognized!%n", option);
-            }
-            System.out.println("Press any key to continue...");
-            scanner.nextLine();
-            System.out.println(optMessage);
-            choice = scanner.nextLine();
-            option = Integer.parseInt(choice);
         }
+        System.out.println("Exiting program...");
     }
 
-    // Temp function for exiting menu
-    private static void menuExit() {
-    }
 
     private static final ArrayList<String> options1 = new ArrayList<>();
 
