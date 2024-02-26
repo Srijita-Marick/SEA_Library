@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added checkExistBookEmptyTitleAndAuthor test">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added javadoc comments to Menu.java">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +52,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "JUnit.DataTest.executor": "Run",
+    "JUnit.DataTest.testGetAllBooksMatchAllDetails.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -329,7 +331,63 @@
       <option name="project" value="LOCAL" />
       <updated>1708969786615</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="added checkExistBookTitleWithNullAuthor test">
+      <option name="closed" value="true" />
+      <created>1708970067342</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1708970067342</updated>
+    </task>
+    <task id="LOCAL-00034" summary="added testGetAllBooks test">
+      <option name="closed" value="true" />
+      <created>1708976472458</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1708976472458</updated>
+    </task>
+    <task id="LOCAL-00035" summary="added testGetAllBooksAndReturnBookInfo test">
+      <option name="closed" value="true" />
+      <created>1708976690984</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1708976690984</updated>
+    </task>
+    <task id="LOCAL-00036" summary="added testGetAllBooksEmptyLibrary test">
+      <option name="closed" value="true" />
+      <created>1708976784337</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1708976784337</updated>
+    </task>
+    <task id="LOCAL-00037" summary="reformatted DataTest and added setUpLibrary">
+      <option name="closed" value="true" />
+      <created>1708980651145</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1708980651145</updated>
+    </task>
+    <task id="LOCAL-00038" summary="added contributors at the top (comment)">
+      <option name="closed" value="true" />
+      <created>1708981698728</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1708981698728</updated>
+    </task>
+    <task id="LOCAL-00039" summary="added javadoc comments to Menu.java">
+      <option name="closed" value="true" />
+      <created>1708982413682</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1708982413682</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -356,13 +414,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="removed all mentions of &quot;date due&quot;" />
-    <MESSAGE value="test commit" />
-    <MESSAGE value="added functions relating to the Member Data menu" />
-    <MESSAGE value="merged with emily" />
-    <MESSAGE value="added code for Member Data Menu" />
-    <MESSAGE value="renamed searchBooks and viewAllBooks for clarity" />
-    <MESSAGE value="added code to menuViewAllBooks" />
     <MESSAGE value="fixed bug in Library Data Menu" />
     <MESSAGE value="fixed bug in Main Menu" />
     <MESSAGE value="Created file DataTest.java" />
@@ -381,6 +432,13 @@
     <MESSAGE value="added checkBookDoesNotExist test" />
     <MESSAGE value="added checkExistBookAuthorMismatch test" />
     <MESSAGE value="added checkExistBookEmptyTitleAndAuthor test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added checkExistBookEmptyTitleAndAuthor test" />
+    <MESSAGE value="added checkExistBookTitleWithNullAuthor test" />
+    <MESSAGE value="added testGetAllBooks test" />
+    <MESSAGE value="added testGetAllBooksAndReturnBookInfo test" />
+    <MESSAGE value="added testGetAllBooksEmptyLibrary test" />
+    <MESSAGE value="reformatted DataTest and added setUpLibrary" />
+    <MESSAGE value="added contributors at the top (comment)" />
+    <MESSAGE value="added javadoc comments to Menu.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added javadoc comments to Menu.java" />
   </component>
 </project>
