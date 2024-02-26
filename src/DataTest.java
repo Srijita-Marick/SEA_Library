@@ -98,6 +98,18 @@ class DataTest {
         assertEquals(1,Data.getAllBooks().size());
         assertFalse(success);
     }
+    @org.junit.jupiter.api.Test
+     void storeEmptyTitle(){
+        Data.reset();
+        String title = "";
+        String author = "Mary Shelley";
+        String genre = "Horror";
+        String availabilityStatus = "Unavailable";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        boolean success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertEquals(0,Data.getAllBooks().size());
+        assertFalse(success);
+    }
 
     @BeforeEach
     public void setUpLibrary() {
