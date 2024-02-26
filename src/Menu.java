@@ -244,8 +244,9 @@ public class Menu {
             System.out.printf("%s by %s is not currently checked out by anyone. That is not our book.",title,author);
         }
         else { //if the book both exists and is not checked out, then it is returned to the library
+            int daysOverdue = getDaysOverdue();
             System.out.printf("%s by %s has been returned to the library.",title,author);
-            Data.returnBook(id,title,author);
+            Data.returnBook(id,title,author,daysOverdue);
         }
     }
 
@@ -264,7 +265,6 @@ public class Menu {
         } while (!success);
     }
 
-
     private static void menuEnterNewBook() {
         boolean success;
         do {
@@ -280,10 +280,6 @@ public class Menu {
         } while (!success);
         System.out.println("Stored a new book!");
     }
-
-//    private static String getDateDue() {
-//        return null;
-//    }
 
     private static String getAvailabilityStatus() {
         return "Available";  // by default, new books should be available
@@ -374,6 +370,10 @@ public class Menu {
         }
         optMessage2 = sb2.toString();
     }
+
+
+    //BELOW THIS POINT IS MEMBER MENU
+
     private static void menuMemberData() {
         int option2 = 0;
         boolean run = true;
@@ -438,6 +438,7 @@ public class Menu {
             memString.append("\nID: ").append(member[Data.INDEX_ID]);
             memString.append("\nName: ").append(member[Data.INDEX_NAME]);
             memString.append("\nBooks Borrowed:\n").append(member[Data.INDEX_BORROWED]);
+            memString.append("\nFines: ").append(member[Data.INDEX_FINES]);
         }
         System.out.println(memString);
     }

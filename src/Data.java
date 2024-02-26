@@ -109,7 +109,7 @@ public class Data {
         }
     }
 
-    public static void returnBook(Integer id, String title, String author) {
+    public static void returnBook(Integer id, String title, String author, int daysOverdue) {
         for (Object[] book: books){
             if (book[INDEX_TITLE].equals(title) && book[INDEX_AUTHOR].equals(author)){
                 unAvailableBooks.remove(book);
@@ -118,6 +118,7 @@ public class Data {
                 for (Object[] member: members){
                     if (member[INDEX_ID]==id){
                         ((ArrayList<String>)member[INDEX_BORROWED]).remove(title+" by "+author);
+                        member[INDEX_FINES] = (double)member[INDEX_FINES] + calculateFines(daysOverdue);
                     }
                 }
             }
@@ -196,4 +197,13 @@ public class Data {
         }
         return new String[]{null};
     }
+
+    /**
+     * @param daysOverDue is the number of days the user had the book past the due date
+     * @return the fines accrued from being overdue
+     */
+    private static double calculateFines(int daysOverDue){
+        return ((double)daysOverDue)*0.05; //five cents are added to fines per day overdue
+    }
+
 }
