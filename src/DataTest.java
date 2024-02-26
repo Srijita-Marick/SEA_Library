@@ -1,32 +1,73 @@
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataTest {
-
-    @org.junit.jupiter.api.Test
-    void storeNewBook() {
+    @Test
+    void testStoreNewBook() {
     }
 
-    @org.junit.jupiter.api.Test
-    void getAllBooks() {
+    @Test
+    void checkExistBook() {
     }
 
-    @org.junit.jupiter.api.Test
-    void getAvailableBooks() {
+    @Test
+    void checkBookAvailable() {
     }
 
-    @org.junit.jupiter.api.Test
-    void getUnavailableBooks() {
+    @Test
+    void testGetAllBooks() {
     }
 
-    @org.junit.jupiter.api.Test
-    void storeNewMember() {
+    @Test
+    void testGetAvailableBooks() {
     }
 
-    @org.junit.jupiter.api.Test
-    void removeMember() {
+    @Test
+    void testGetUnavailableBooks() {
     }
 
-    @org.junit.jupiter.api.Test
-    void getBorrowedBooks() {
+    @Test
+    void getBooksByTitle() {
+    }
+
+    @Test
+    void getBooksByAuthor() {
+    }
+
+    @Test
+    void getBooksByGenre() {
+    }
+
+    @Test
+    void checkoutBook() {
+    }
+
+    @Test
+    void returnBook() {
+    }
+
+    @Test
+    void removeBook() {
+    }
+
+    @Test
+    void testStoreNewMember() {
+    }
+
+    @Test
+    void checkExistMember() {
+    }
+
+    @Test
+    void testRemoveMember() {
+    }
+
+    @Test
+    void getAllMembers() {
+    }
+
+    @Test
+    void testGetBorrowedBooks() {
     }
 }
