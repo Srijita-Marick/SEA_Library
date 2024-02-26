@@ -48,6 +48,7 @@ public class Menu {
             switch (option) {
                 case 1 -> menuLibraryData();
                 case 2 -> menuMemberData();
+                case 3 -> menuExit();
                 default -> System.out.printf("Option %d not recognized!%n", option);
             }
             System.out.println("Press any key to continue...");
@@ -56,6 +57,9 @@ public class Menu {
             choice = scanner.nextLine();
             option = Integer.parseInt(choice);
         }
+    }
+
+    private static void menuExit() {
     }
 
     private static final ArrayList<String> options1 = new ArrayList<>();
