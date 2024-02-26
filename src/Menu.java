@@ -170,11 +170,17 @@ public class Menu {
         String title = getTitle();
         String author = getAuthor();
         while (!Data.checkExistBook(title,author)){
-            System.out.println("The library does not own this book. Please try again.");
+            System.out.printf("The library does not own %s by %s. Please try again.",title,author);
             title = getTitle();
             author = getAuthor();
         }
-        Data.checkoutBook(id, title, author);
+        if (Data.checkBookAvailable(title,author)){
+            Data.checkoutBook(id, title, author);
+        }
+        else {
+            System.out.printf("%s by %s is currently checked out by another user." ,title,author);
+        }
+
     }
 
     private static void menuRemoveBook() {

@@ -40,6 +40,17 @@ public class Data {
         return titles.contains(title) && authors.contains(author);
     }
 
+    public static boolean checkBookAvailable(String title, String author){
+        if (checkExistBook(title,author)) {
+            for (Object[] book : availableBooks) {
+                if (book[INDEX_TITLE].equals(title) && book[INDEX_AUTHOR].equals(author)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public static ArrayList <Object[]> getAllBooks(){
         return books;
     }
