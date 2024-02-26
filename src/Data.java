@@ -144,20 +144,20 @@ public class Data {
     //  EVERYTHING BELOW HERE IS TO STORE MEMBER DATA
 
     static final ArrayList<Object[]> members = new ArrayList<>();
-    static final ArrayList<Integer> memberIDs = new ArrayList<Integer>(); // all of the ids currently in use
+    static final ArrayList<Integer> memberIDs = new ArrayList<Integer>(); // all the ids currently in use
     public static final int INDEX_ID = 0;
     public static final int INDEX_NAME = 1;
     public static final int INDEX_BORROWED = 2; // borrowed should be list of their borrowed books
     public static final int INDEX_FINES = 3;
 
 
-    public static boolean storeNewMember(Integer id, String name, ArrayList<String> borrowed, Double fines) {
+    public static boolean storeNewMember(Integer id, String name, ArrayList<String> borrowed) {
         if (!checkExistMember(id)) {
             Object[] member = new Object[4];
             member[INDEX_ID] = id;
             member[INDEX_NAME] = name;
             member[INDEX_BORROWED] = borrowed;
-            member[INDEX_FINES] = fines;
+            member[INDEX_FINES] = 0.0; // when someone joins library for the first time they should have no fine
             memberIDs.add(id);
             members.add(member); //adding to list of all members
             System.out.println("Stored Yay!");
@@ -176,6 +176,7 @@ public class Data {
             for (Object[] member: members){
                 if (member[INDEX_ID]==(id)&&member[INDEX_NAME].equals(name)){
                     members.remove(member);
+                    memberIDs.remove(member[INDEX_ID]);
                     return true;
                 }
             }

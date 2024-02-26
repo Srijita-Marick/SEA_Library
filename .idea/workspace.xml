@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added checkExistBookEmptyTitleAndAuthor test">
-      <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="debugging">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,20 +47,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "JUnit.DataTest.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
       </set>
     </attachedChunks>
   </component>
@@ -193,143 +192,95 @@
       <option name="project" value="LOCAL" />
       <updated>1708898098769</updated>
     </task>
-    <task id="LOCAL-00016" summary="Created file DataTest.java">
+    <task id="LOCAL-00016" summary="added checkOutBook functionalities">
       <option name="closed" value="true" />
-      <created>1708923771183</created>
+      <created>1708907695207</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1708923771183</updated>
+      <updated>1708907695207</updated>
     </task>
-    <task id="LOCAL-00017" summary="Created file DataTest.java">
+    <task id="LOCAL-00017" summary="now user can only checkout books that are available">
       <option name="closed" value="true" />
-      <created>1708925214627</created>
+      <created>1708908653705</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1708925214627</updated>
+      <updated>1708908653705</updated>
     </task>
-    <task id="LOCAL-00018" summary="created menuExit">
+    <task id="LOCAL-00018" summary="added a complete returnBooks function">
       <option name="closed" value="true" />
-      <created>1708925253700</created>
+      <created>1708911157273</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1708925253700</updated>
+      <updated>1708911157273</updated>
     </task>
-    <task id="LOCAL-00019" summary="edited menuLoop to make exit work">
+    <task id="LOCAL-00019" summary="added code to removeMember">
       <option name="closed" value="true" />
-      <created>1708926099927</created>
+      <created>1708916227496</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1708926099927</updated>
+      <updated>1708916227497</updated>
     </task>
-    <task id="LOCAL-00020" summary="edited menuLibraryData to make exit work">
+    <task id="LOCAL-00020" summary="added code to removeBook">
       <option name="closed" value="true" />
-      <created>1708926614685</created>
+      <created>1708916524016</created>
       <option name="number" value="00020" />
       <option name="presentableId" value="LOCAL-00020" />
       <option name="project" value="LOCAL" />
-      <updated>1708926614685</updated>
+      <updated>1708916524016</updated>
     </task>
-    <task id="LOCAL-00021" summary="edited menuMemberData to make exit work">
+    <task id="LOCAL-00021" summary="added code to menuRemoveBook">
       <option name="closed" value="true" />
-      <created>1708926926356</created>
+      <created>1708917125606</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1708926926356</updated>
+      <updated>1708917125606</updated>
     </task>
-    <task id="LOCAL-00022" summary="edited DataTest.java according to updated methods in Data.java">
+    <task id="LOCAL-00022" summary="removing functionality complete">
       <option name="closed" value="true" />
-      <created>1708927118961</created>
+      <created>1708917152855</created>
       <option name="number" value="00022" />
       <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1708927118961</updated>
+      <updated>1708917152855</updated>
     </task>
-    <task id="LOCAL-00023" summary="reformatting optMessages">
+    <task id="LOCAL-00023" summary="added code to menuSeachBooks">
       <option name="closed" value="true" />
-      <created>1708927583191</created>
+      <created>1708919959872</created>
       <option name="number" value="00023" />
       <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1708927583191</updated>
+      <updated>1708919959872</updated>
     </task>
-    <task id="LOCAL-00024" summary="created menuSearchMembers">
+    <task id="LOCAL-00024" summary="added code to 'searchBy-' functions">
       <option name="closed" value="true" />
-      <created>1708965895759</created>
+      <created>1708920499253</created>
       <option name="number" value="00024" />
       <option name="presentableId" value="LOCAL-00024" />
       <option name="project" value="LOCAL" />
-      <updated>1708965895759</updated>
+      <updated>1708920499253</updated>
     </task>
-    <task id="LOCAL-00025" summary="created searchByName for Search">
+    <task id="LOCAL-00025" summary="added code to 'getBooksBy-' functions">
       <option name="closed" value="true" />
-      <created>1708966636669</created>
+      <created>1708920956117</created>
       <option name="number" value="00025" />
       <option name="presentableId" value="LOCAL-00025" />
       <option name="project" value="LOCAL" />
-      <updated>1708966636669</updated>
+      <updated>1708920956117</updated>
     </task>
-    <task id="LOCAL-00026" summary="created searchByID for Search">
+    <task id="LOCAL-00026" summary="debugging">
       <option name="closed" value="true" />
-      <created>1708966801286</created>
+      <created>1708921144294</created>
       <option name="number" value="00026" />
       <option name="presentableId" value="LOCAL-00026" />
       <option name="project" value="LOCAL" />
-      <updated>1708966801286</updated>
+      <updated>1708921144294</updated>
     </task>
-    <task id="LOCAL-00027" summary="created ViewAnyMemberList to be used in search">
-      <option name="closed" value="true" />
-      <created>1708966998098</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1708966998098</updated>
-    </task>
-    <task id="LOCAL-00028" summary="edited javadoc comments">
-      <option name="closed" value="true" />
-      <created>1708967434180</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1708967434180</updated>
-    </task>
-    <task id="LOCAL-00029" summary="added checkExistBook test">
-      <option name="closed" value="true" />
-      <created>1708968899793</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1708968899793</updated>
-    </task>
-    <task id="LOCAL-00030" summary="added checkBookDoesNotExist test">
-      <option name="closed" value="true" />
-      <created>1708969220378</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1708969220378</updated>
-    </task>
-    <task id="LOCAL-00031" summary="added checkExistBookAuthorMismatch test">
-      <option name="closed" value="true" />
-      <created>1708969531881</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1708969531881</updated>
-    </task>
-    <task id="LOCAL-00032" summary="added checkExistBookEmptyTitleAndAuthor test">
-      <option name="closed" value="true" />
-      <created>1708969786615</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1708969786615</updated>
-    </task>
-    <option name="localTasksCounter" value="33" />
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -356,6 +307,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="anna commint" />
+    <MESSAGE value="anna commint 2" />
+    <MESSAGE value="small debug in menuLoop" />
+    <MESSAGE value="added code to getAuthor" />
+    <MESSAGE value="added code to getAvailabilityStatus" />
     <MESSAGE value="removed all mentions of &quot;date due&quot;" />
     <MESSAGE value="test commit" />
     <MESSAGE value="added functions relating to the Member Data menu" />
@@ -365,22 +321,17 @@
     <MESSAGE value="added code to menuViewAllBooks" />
     <MESSAGE value="fixed bug in Library Data Menu" />
     <MESSAGE value="fixed bug in Main Menu" />
-    <MESSAGE value="Created file DataTest.java" />
-    <MESSAGE value="created menuExit" />
-    <MESSAGE value="edited menuLoop to make exit work" />
-    <MESSAGE value="edited menuLibraryData to make exit work" />
-    <MESSAGE value="edited menuMemberData to make exit work" />
-    <MESSAGE value="edited DataTest.java according to updated methods in Data.java" />
-    <MESSAGE value="reformatting optMessages" />
-    <MESSAGE value="created menuSearchMembers" />
-    <MESSAGE value="created searchByName for Search" />
-    <MESSAGE value="created searchByID for Search" />
-    <MESSAGE value="created ViewAnyMemberList to be used in search" />
-    <MESSAGE value="edited javadoc comments" />
-    <MESSAGE value="added checkExistBook test" />
-    <MESSAGE value="added checkBookDoesNotExist test" />
-    <MESSAGE value="added checkExistBookAuthorMismatch test" />
-    <MESSAGE value="added checkExistBookEmptyTitleAndAuthor test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added checkExistBookEmptyTitleAndAuthor test" />
+    <MESSAGE value="added checkOutBook functionalities" />
+    <MESSAGE value="now user can only checkout books that are available" />
+    <MESSAGE value="added a complete returnBooks function" />
+    <MESSAGE value="added code to removeMember" />
+    <MESSAGE value="added code to removeBook" />
+    <MESSAGE value="added code to menuRemoveBook" />
+    <MESSAGE value="removing functionality complete" />
+    <MESSAGE value="added code to menuSeachBooks" />
+    <MESSAGE value="added code to 'searchBy-' functions" />
+    <MESSAGE value="added code to 'getBooksBy-' functions" />
+    <MESSAGE value="debugging" />
+    <option name="LAST_COMMIT_MESSAGE" value="debugging" />
   </component>
 </project>
