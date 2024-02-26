@@ -1,10 +1,16 @@
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataTest {
     @org.junit.jupiter.api.Test
-    void testStoreNewBook() {
+    void storeNewBook() {
         Data.reset();
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
@@ -20,7 +26,7 @@ class DataTest {
         assertTrue(success, "Add was successful");
     }
     @org.junit.jupiter.api.Test
-    void testStoreTwoBooks() {
+    void storeTwoBooks() {
         Data.reset();
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
@@ -47,89 +53,95 @@ class DataTest {
         assertEquals(genre, Data.getAllBooks().get(1)[2]);
         assertEquals(availabilityStatus, Data.getAllBooks().get(1)[3]);
     }
+    @org.junit.jupiter.api.Test
+    void storeTwoBooksSameAuthor() {
+        Data.reset();
+        String title = "Harry Potter and the Sorcerer's Stone";
+        String author = "J.K. Rowling";
+        String genre = "Fantasy";
+        String availabilityStatus = "Available";
+        assertEquals(0, Data.getAllBooks().size());
+        boolean success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertTrue(success);
+        assertEquals(1, Data.getAllBooks().size());
+        assertEquals(title, Data.getAllBooks().get(0)[0]);
+        assertEquals(author, Data.getAllBooks().get(0)[1]);
+        assertEquals(genre, Data.getAllBooks().get(0)[2]);
+        assertEquals(availabilityStatus, Data.getAllBooks().get(0)[3]);
+        assertTrue(success, "Add was successful");
+        title = "Harry Potter and the Chamber of Secrets";
+        author = "J.K. Rowling";
+        genre = "Fantasy";
+        availabilityStatus = "Available";
+        success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertTrue(success);
+        assertEquals(2, Data.getAllBooks().size());
+        assertEquals(title, Data.getAllBooks().get(1)[0]);
+        assertEquals(author, Data.getAllBooks().get(1)[1]);
+        assertEquals(genre, Data.getAllBooks().get(1)[2]);
+        assertEquals(availabilityStatus, Data.getAllBooks().get(1)[3]);
+        
+        for (Object[] book : Data.getAllBooks()){
+            assertEquals(author, book[1]);
+        }
+    }
+    @org.junit.jupiter.api.Test
+     void storeDuplicateBooks(){
+        Data.reset();
+        String title = "Atomic Habits";
+        String author = "James Clear";
+        String genre = "Non-fiction";
+        String availabilityStatus = "Unavailable";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        boolean success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertFalse(success);
+        title = "Atomic Habits";
+        author = "James Clear";
+        genre = "Non-fiction";
+        availabilityStatus = "Unavailable";
+        success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertEquals(1,Data.getAllBooks().size());
+        assertFalse(success);
+    }
 
+    @BeforeEach
+    public void setUpLibrary() {
+        Data.reset(); // Clear existing data
+        Data.storeNewBook("The Blood of Olympus","Rick Riordan","Fantasy","Unavailable");
+        Data.storeNewBook("Moby Dick","Herman Melville","Literary","Unavailable");
+        Data.storeNewBook("The Great Gatsby","F. Scott Fitzgerald","Literary","Available");
+        Data.storeNewBook("Weyward", "Emilia Hart", "Historical Fiction", "Available");
+        Data.storeNewBook("The Housemaid's Secret", "Freida McFadden", "Thriller", "Unavailable");
+        Data.storeNewBook("To Kill a Mockingbird", "Harper Lee", "General Fiction", "Available");
+        Data.storeNewBook("Happy Place","Emily Henry","Romance","Unavailable");
+        Data.storeNewBook("Hell Bent","Leigh Bardugo","Fantasy","Available");
+        Data.storeNewBook("In the Lives of Puppets","T.J. Klune","Science Fiction","Unavailable");
+        Data.storeNewBook("Holly","Stephen King","Horror","Available");
+        Data.storeNewBook("Poverty, by America","Matthew Desmond","Non-fiction","Unavailable");
+        Data.storeNewBook("Arsenic and Adobo","Mia P. Manansala","Mystery","Available");
+    }
     @Test
     void checkExistBook() {
-        Data.reset();
-        String title = "The Great Gatsby";
-        String author = "F. Scott Fitzgerald";
-        String genre = "Literary";
-        String availabilityStatus = "Available";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        title = "Moby Dick";
-        author = "Herman Melville";
-        genre = "Literary";
-        availabilityStatus = "Available";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
         assertTrue(Data.checkExistBook("The Great Gatsby", "F. Scott Fitzgerald"));
     }
 
     @Test
     void checkBookDoesNotExist(){
-        Data.reset();
-        String title = "To Kill a Mockingbird";
-        String author = "Harper Lee";
-        String genre = "General Fiction";
-        String availabilityStatus = "Available";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        title = "1984";
-        author = "George Orwell";
-        genre = "Science Fiction";
-        availabilityStatus = "Unavailable";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
         assertFalse(Data.checkExistBook("The Catcher in the Rye", "J.D. Salinger"));
     }
 
     @Test
     void checkExistBookAuthorMismatch(){
-        Data.reset();
-        String title = "The Da Vinci Code";
-        String author = "Dan Brown";
-        String genre = "Mystery";
-        String availabilityStatus = "Unavailable";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        title = "The Hobbit";
-        author = "J.R.R. Tolkien";
-        genre = "Fantasy";
-        availabilityStatus = "Unavailable";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        title = "Dracula";
-        author = "Bram Stoker";
-        genre = "Horror";
-        availabilityStatus = "Available";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        assertFalse(Data.checkExistBook("Dracula", "J.K. Rowling"));
+        assertFalse(Data.checkExistBook("Holly", "J.K. Rowling"));
     }
 
     @Test
     void checkExistBookEmptyTitleAndAuthor(){
-        Data.reset();
-        String title = "The Girl with the Dragon Tattoo";
-        String author = "Stieg Larsson";
-        String genre = "Mystery";
-        String availabilityStatus = "Available";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        title = "The Help";
-        author = "Kathryn Stockett";
-        genre = "Historical Fiction";
-        availabilityStatus = "Unavailable";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
         assertFalse(Data.checkExistBook(" ", " "));
     }
 
     @Test
     void checkExistBookTitleWithNullAuthor(){
-        Data.reset();
-        String title = "The Fault in Our Stars";
-        String author = "John Green";
-        String genre = "Romance";
-        String availabilityStatus = "Unavailable";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        title = "The Blood of Olympus";
-        author = "Rick Riordan";
-        genre = "Fantasy";
-        availabilityStatus = "Unavailable";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
         assertFalse(Data.checkExistBook("The Blood of Olympus", null));
     }
     @Test
@@ -138,6 +150,40 @@ class DataTest {
 
     @Test
     void testGetAllBooks() {
+        ArrayList<Object[]> allBooks = Data.getAllBooks();
+        assertEquals(12, allBooks.size());
+    }
+
+    @Test
+    void testGetAllBooksAndReturnBookInfo(){
+        ArrayList<Object[]> allBooks = Data.getAllBooks();
+        Object[] fourthBook = allBooks.get(3);
+        assertEquals("Weyward", fourthBook[Data.INDEX_TITLE]);
+        assertEquals("Emilia Hart", fourthBook[Data.INDEX_AUTHOR]);
+        assertEquals("Historical Fiction", fourthBook[Data.INDEX_GENRE]);
+        assertEquals("Available", fourthBook[Data.INDEX_STATUS]);
+    }
+
+    @Test
+    void testGetAllBooksEmptyLibrary(){
+        Data.reset(); // Clear existing data to simulate no books
+        ArrayList<Object[]> allBooks = Data.getAllBooks();
+        assertTrue(allBooks.isEmpty());
+    }
+
+    @Test
+    void testGetAllBooksMatchDetails(){
+        ArrayList<Object[]> allBooks = Data.getAllBooks();
+        Object[] sixthBook = allBooks.get(5);
+        assertEquals("To Kill a Mockingbird", sixthBook[Data.INDEX_TITLE]);
+        assertEquals("Harper Lee", sixthBook[Data.INDEX_AUTHOR]);
+        assertEquals("General Fiction", sixthBook[Data.INDEX_GENRE]);
+        assertEquals("Available", sixthBook[Data.INDEX_STATUS]);
+        Object[] eighthBook = allBooks.get(7);
+        assertEquals("Hell Bent", eighthBook[Data.INDEX_TITLE]);
+        assertEquals("Leigh Bardugo", eighthBook[Data.INDEX_AUTHOR]);
+        assertEquals("Fantasy", eighthBook[Data.INDEX_GENRE]);
+        assertEquals("Available", eighthBook[Data.INDEX_STATUS]);
     }
 
     @Test
