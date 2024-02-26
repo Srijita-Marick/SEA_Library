@@ -38,7 +38,7 @@ public class Menu {
         while (run) {
             System.out.println(optMessage);
             String choice = getOption();
-            if (!choice.isEmpty()) {
+            if (!choice.isEmpty() && !choice.equals("0")) {
                 option = Integer.parseInt(choice);
             }
             if (option > 0 && option < options.size()) {
@@ -84,32 +84,32 @@ public class Menu {
         optMessage1 = sb1.toString();
     }
     private static void menuLibraryData() {
-        System.out.println(optMessage1);
-        String libchoice = scanner.nextLine();
-        int option1 = Integer.parseInt(libchoice);
-        while (option1 != 0) {
+        int option1 = 0;
+        boolean run = true;
+        while (run) {
+            System.out.println(optMessage1);
+            String libchoice = scanner.nextLine();
+            if (!libchoice.isEmpty() && !libchoice.equals("0")) {
+                option1 = Integer.parseInt(libchoice);
+            }
             if (option1 > 0 && option1 < options1.size()) {
                 System.out.printf("Selected option %d.%s%n", option1, options1.get(option1));
-                System.out.println("Press any key to continue...");
-                scanner.nextLine();
+                switch (option1) {
+                    case 1 -> menuEnterNewBook();
+                    case 2 -> menuRemoveBook();
+                    case 3 -> menuCheckoutBooks();
+                    case 4 -> menuReturnBooks();
+                    case 5 -> menuViewAllBooks();
+                    case 6 -> menuViewAvailable();
+                    case 7 -> menuViewUnavailable();
+                    case 8 -> menuSearchBooks();
+                    case 9 -> run = false;
+                    default -> System.out.printf("Option %d not recognized!%n", option1);
+                }
+            } else{
+                System.out.printf("Option %d not recognized!%n", option1);
             }
-            switch (option1) {
-                case 1 -> menuEnterNewBook();
-                case 2 -> menuRemoveBook();
-                case 3 -> menuCheckoutBooks();
-                case 4 -> menuReturnBooks();
-                case 5 -> menuViewAllBooks();
-                case 6 -> menuViewAvailable();
-                case 7 -> menuViewUnavailable();
-                case 8 -> menuSearchBooks();
-                case 9 -> menuExitToMainMenu();
-                default -> System.out.printf("Option %d not recognized!%n", option1);
-            }
-            System.out.println("Press any key to continue...");
-            scanner.nextLine();
-            System.out.println(optMessage1);
-            libchoice = scanner.nextLine();
-            option1 = Integer.parseInt(libchoice);
+            System.out.println("Exiting Library Data");
         }
     }
 
@@ -437,8 +437,6 @@ public class Menu {
         System.out.println(memString);
     }
     private static void menuSearchMembers(){}
-    private static void menuExitToMainMenu(){
-    }
 
     private static String getMember() {
         System.out.println("Enter Member Name: ");

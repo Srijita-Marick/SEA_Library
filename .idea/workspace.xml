@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="created menuExit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="edited menuLoop to make exit work">
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -217,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708925253700</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="edited menuLoop to make exit work">
+      <option name="closed" value="true" />
+      <created>1708926099927</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1708926099927</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -260,6 +267,7 @@
     <MESSAGE value="fixed bug in Main Menu" />
     <MESSAGE value="Created file DataTest.java" />
     <MESSAGE value="created menuExit" />
-    <option name="LAST_COMMIT_MESSAGE" value="created menuExit" />
+    <MESSAGE value="edited menuLoop to make exit work" />
+    <option name="LAST_COMMIT_MESSAGE" value="edited menuLoop to make exit work" />
   </component>
 </project>
