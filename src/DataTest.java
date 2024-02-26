@@ -256,7 +256,7 @@ class DataTest {
     }
 
     @Test
-    public void testGetBooksByAuthor_ReturnsCorrectBookInformation() {
+    public void getBooksByAuthorReturnsCorrectBookInformation() {
         ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor("Emily Henry");
         Object[] book = booksByAuthor.get(0);
         assertEquals("Happy Place", book[Data.INDEX_TITLE]);
@@ -266,7 +266,26 @@ class DataTest {
     }
 
     @Test
-    void getBooksByGenre() {
+    public void getBooksByAuthorWhenAuthorNotFound() {
+        ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor("John Milton");
+        assertTrue(booksByAuthor.isEmpty());
+    }
+
+    @Test
+    public void getBooksByAuthorReturnsCorrectNumberOfBooks1(){
+        ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor("Freida McFadden");
+        assertEquals(1, booksByAuthor.size());
+    }
+
+    @Test
+    public void getBooksByAuthorEmptyAuthor(){
+        ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor(" ");
+        assertTrue(booksByAuthor.isEmpty());
+    }
+    @Test
+    public void getBooksByGenreReturnsCorrectNumberOfBooks() {
+        ArrayList<Object[]> booksByGenre = Data.getBooksByGenre("Fantasy");
+        assertEquals(2, booksByGenre.size());
     }
 
     @Test
