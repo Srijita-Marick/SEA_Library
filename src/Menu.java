@@ -140,9 +140,27 @@ public class Menu {
             }
         }
     }
-    private static void searchByTitle(){}
-    private static void searchByAuthor(){}
-    private static void searchByGenre(){}
+    private static void searchByTitle(){
+        String title = getTitle();
+        String viewBooksMessage = """
+             All books with that title:""";
+        ArrayList<Object[]> bookList = Data.getBooksByTitle(title);
+        System.out.println(viewAnyBookList(viewBooksMessage, bookList));
+    }
+    private static void searchByAuthor(){
+        String author = getAuthor();
+        String viewBooksMessage = """
+             All books by that author:""";
+        ArrayList<Object[]> bookList = Data.getBooksByAuthor(author);
+        System.out.println(viewAnyBookList(viewBooksMessage, bookList));
+    }
+    private static void searchByGenre(){
+        String genre = getGenre();
+        String viewBooksMessage = """
+             All books in that genre:""";
+        ArrayList<Object[]> bookList = Data.getBooksByGenre(genre);
+        System.out.println(viewAnyBookList(viewBooksMessage, bookList));
+    }
 
 
     private static void menuViewUnavailable() {

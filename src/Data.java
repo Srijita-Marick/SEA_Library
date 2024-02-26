@@ -60,6 +60,15 @@ public class Data {
     public static ArrayList<Object[]> getUnavailableBooks() {
         return unavailableBooks;
     }
+    public static ArrayList<Object[]> getBooksByTitle(String title) {
+        return books;
+    }
+    public static ArrayList<Object[]> getBooksByAuthor(String author) {
+        return books;
+    }
+    public static ArrayList<Object[]> getBooksByGenre(String genre) {
+        return books;
+    }
 
     public static void checkoutBook(Integer id, String title, String author){
         for (Object[] book: books){
