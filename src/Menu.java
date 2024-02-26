@@ -207,6 +207,18 @@ public class Menu {
     }
 
     private static void menuRemoveBook() {
+        boolean success;
+        do {
+            String title = getTitle();
+            String author = getAuthor();
+            success = Data.removeBook(title, author);
+            if (!success){
+                System.out.printf("%s by %s does not exist in library. Please try again.",title,author);
+            }
+            else {
+                System.out.printf("\"%s by %s was deleted from the library!",title,author);
+            }
+        } while (!success);
     }
 
 
