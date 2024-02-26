@@ -309,6 +309,12 @@ class DataTest {
         ArrayList<Object[]> booksByGenre = Data.getBooksByGenre("Poetry");
         assertTrue(booksByGenre.isEmpty());
     }
+
+    @Test
+    public void getBooksByGenreReturnsCorrectNumberOfBooks1(){
+        ArrayList<Object[]> booksByGenre = Data.getBooksByGenre("Literary");
+        assertEquals(3, booksByGenre.size());
+    }
     @Test
     void checkoutBook() {
     }
