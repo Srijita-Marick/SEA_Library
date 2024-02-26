@@ -6,7 +6,6 @@ public class Data {
     private static final ArrayList<Object[]> books = new ArrayList<>();
     private static final ArrayList<Object[]> availableBooks = new ArrayList<>();
     private static final ArrayList<Object[]> unAvailableBooks = new ArrayList<>();
-    private static final ArrayList<Object[]> unavailableBooks = new ArrayList<>();
     private static final ArrayList<String> titles = new ArrayList<>();
 
     private static final ArrayList<String> authors = new ArrayList<>();
@@ -58,7 +57,7 @@ public class Data {
         return availableBooks;
     }
     public static ArrayList<Object[]> getUnavailableBooks() {
-        return unavailableBooks;
+        return unAvailableBooks;
     }
     public static ArrayList<Object[]> getBooksByTitle(String title) {
         ArrayList<Object[]> booksWithTitle = new ArrayList<>();
@@ -126,7 +125,7 @@ public class Data {
                         availableBooks.remove(book);
                     }
                     else {
-                        unavailableBooks.remove(book);
+                        unAvailableBooks.remove(book);
                     }
                     return true;
                 }
