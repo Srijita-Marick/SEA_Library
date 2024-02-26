@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DataTest {
     @org.junit.jupiter.api.Test
-    void testStoreNewBook() {
+    void storeNewBook() {
         Data.reset();
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
@@ -20,7 +20,7 @@ class DataTest {
         assertTrue(success, "Add was successful");
     }
     @org.junit.jupiter.api.Test
-    void testStoreTwoBooks() {
+    void storeTwoBooks() {
         Data.reset();
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
@@ -46,6 +46,38 @@ class DataTest {
         assertEquals(author, Data.getAllBooks().get(1)[1]);
         assertEquals(genre, Data.getAllBooks().get(1)[2]);
         assertEquals(availabilityStatus, Data.getAllBooks().get(1)[3]);
+    }
+    @org.junit.jupiter.api.Test
+    void storeTwoBooksSameAuthor() {
+        Data.reset();
+        String title = "Harry Potter and the Sorcerer's Stone";
+        String author = "J.K. Rowling";
+        String genre = "Fantasy";
+        String availabilityStatus = "Available";
+        assertEquals(0, Data.getAllBooks().size());
+        boolean success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertTrue(success);
+        assertEquals(1, Data.getAllBooks().size());
+        assertEquals(title, Data.getAllBooks().get(0)[0]);
+        assertEquals(author, Data.getAllBooks().get(0)[1]);
+        assertEquals(genre, Data.getAllBooks().get(0)[2]);
+        assertEquals(availabilityStatus, Data.getAllBooks().get(0)[3]);
+        assertTrue(success, "Add was successful");
+        title = "Harry Potter and the Chamber of Secrets";
+        author = "J.K. Rowling";
+        genre = "Fantasy";
+        availabilityStatus = "Available";
+        success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertTrue(success);
+        assertEquals(2, Data.getAllBooks().size());
+        assertEquals(title, Data.getAllBooks().get(1)[0]);
+        assertEquals(author, Data.getAllBooks().get(1)[1]);
+        assertEquals(genre, Data.getAllBooks().get(1)[2]);
+        assertEquals(availabilityStatus, Data.getAllBooks().get(1)[3]);
+        
+        for (Object[] book : Data.getAllBooks()){
+            assertEquals(author, book[1]);
+        }
     }
 
     @Test
