@@ -372,6 +372,7 @@ public class Menu {
         return title;
     }
 
+    //BELOW THIS POINT IS MEMBER MENU
 
     private static final ArrayList<String> options2 = new ArrayList<>();
 
@@ -396,9 +397,6 @@ public class Menu {
         optMessage2 = sb2.toString();
     }
 
-
-    //BELOW THIS POINT IS MEMBER MENU
-
     private static void menuMemberData() {
         int option2 = 0;
         boolean run = true;
@@ -408,7 +406,7 @@ public class Menu {
             if(!memchoice.isEmpty() && !memchoice.equals("0")){
                 option2 = Integer.parseInt(memchoice);
             }
-            if (option2 > 0 && option2 <= options2.size()) {
+            if (option2 > 0 && option2 < options2.size()) {
                 System.out.printf("Selected option %d.%s%n", option2, options2.get(option2));
                 switch (option2) {
                     case 1 -> menuAddMember();
@@ -430,16 +428,16 @@ public class Menu {
      */
     private static void menuAddMember(){
         boolean success;
-        do {
-            Integer ID = getId();
-            String name = getMember();
-            ArrayList<String> borrowed = getBorrowed();
-            success = Data.storeNewMember(ID, name, borrowed);
-            if (!success){
-                System.out.println("Member already exists in Membership List. Please try again.");
-            }
-        } while (!success);
-        System.out.println("Stored a new member!");
+        Integer ID = getId();
+        String name = getMember();
+        ArrayList<String> borrowed = getBorrowed();
+        success = Data.storeNewMember(ID, name, borrowed);
+        if (!success){
+            System.out.println("You cannot have two members with the same information.");
+        }
+        else{
+            System.out.println("Stored a new member!");
+        }
     }
 
     /**
@@ -457,6 +455,9 @@ public class Menu {
         } while (!success);
         System.out.println("Deleted a new member!");
     }
+    /**
+     * Used in menuMemberData to print the entire list of library members
+     */
     private static void menuViewAllMembers(){
         ArrayList<Object[]> members = Data.getAllMembers();
         StringBuilder memString = new StringBuilder();
