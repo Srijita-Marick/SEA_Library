@@ -79,6 +79,27 @@ class DataTest {
         Data.storeNewBook(title, author, genre, availabilityStatus);
         assertFalse(Data.checkExistBook("The Catcher in the Rye", "J.D. Salinger"));
     }
+
+    @Test
+    void checkExistBookAuthorMismatch(){
+        Data.reset();
+        String title = "The Da Vinci Code";
+        String author = "Dan Brown";
+        String genre = "Mystery";
+        String availabilityStatus = "Unvailable";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        title = "The Hobbit";
+        author = "J.R.R. Tolkien";
+        genre = "Fantasy";
+        availabilityStatus = "Unavailable";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        title = "Dracula";
+        author = "Bram Stoker";
+        genre = "Horror";
+        availabilityStatus = "Available";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertFalse(Data.checkExistBook("Dracula", "J.K. Rowling"));
+    }
     @Test
     void checkBookAvailable() {
     }
