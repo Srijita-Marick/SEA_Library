@@ -3,6 +3,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Data {
+
+    public static void reset(){   //Resets and clears data storage facilitating testing
+        books.clear();
+        availableBooks.clear();
+        unAvailableBooks.clear();
+        titles.clear();
+        authors.clear();
+
+    }
     private static final ArrayList<Object[]> books = new ArrayList<>();
     private static final ArrayList<Object[]> availableBooks = new ArrayList<>();
     private static final ArrayList<Object[]> unAvailableBooks = new ArrayList<>();
