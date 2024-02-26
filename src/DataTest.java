@@ -194,6 +194,15 @@ class DataTest {
     }
 
     @Test
+    void testGetAllBooksAndReturnBookInfo(){
+        ArrayList<Object[]> allBooks = Data.getAllBooks();
+        Object[] firstBook = allBooks.get(0);
+        assertEquals("Weyward", firstBook[Data.INDEX_TITLE]);
+        assertEquals("Emilia Hart", firstBook[Data.INDEX_AUTHOR]);
+        assertEquals("Historical Fiction", firstBook[Data.INDEX_GENRE]);
+        assertEquals("Available", firstBook[Data.INDEX_STATUS]);
+    }
+    @Test
     void testGetAvailableBooks() {
     }
 
