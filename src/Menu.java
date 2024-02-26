@@ -423,7 +423,7 @@ public class Menu {
         ArrayList<Object[]> members = Data.getAllMembers();
         StringBuilder memString = new StringBuilder();
         String memMessage = """
-            All Library Member:""";
+            All Library Members:""";
         memString.append(memMessage);
         for (Object[] member: members){
             memString.append("\n "); // for formatting purposes
@@ -477,6 +477,18 @@ public class Menu {
         System.out.println(viewAnyMemberList(viewMembersMessage, bookList));
     }
 
+    private static String viewAnyMemberList(String viewMembersMessage, ArrayList<Object[]> listOfMembers) {
+        StringBuilder membersString = new StringBuilder();
+        membersString.append(viewMembersMessage);
+        for (Object[] member :listOfMembers){
+            membersString.append("\n "); // for formatting purposes
+            membersString.append("\nID: ").append(member[Data.INDEX_ID]);
+            membersString.append("\nName: ").append(member[Data.INDEX_NAME]);
+            membersString.append("\nBorrowed: ").append(member[Data.INDEX_BORROWED]);
+            membersString.append("\nFines: ").append(member[Data.INDEX_FINES]);
+        }
+        return (membersString.toString());
+    }
 
     private static String getMember() {
         System.out.println("Enter Member Name: ");
