@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Data {
 
-    public static void reset(){   //Resets and clears data storage facilitating testing
+    public static void reset(){   // Reset any existing data to ensure a clean state before test runs
         books.clear();
         availableBooks.clear();
         unAvailableBooks.clear();
@@ -24,6 +24,11 @@ public class Data {
     public static final int INDEX_STATUS = 3;
     public static final int INDEX_REMOVED = 4;
     public static boolean storeNewBook(String title, String author, String genre, String availabilityStatus) {
+        if (title.isEmpty() || author.isEmpty()){
+            System.out.println("Book cannot be stored.");
+            return false;
+        }
+
         if (!checkExistBook(title, author)) {
             Object[] book = new Object[5];
             book[INDEX_TITLE] = title;
