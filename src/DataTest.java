@@ -159,6 +159,11 @@ class DataTest {
     }
 
     @Test
+    void checkBookUnavailable(){
+        assertTrue(Data.checkBookAvailable("In the Lives of Puppets","T.J. Klune"));
+    }
+
+    @Test
     void testGetAllBooks() {
         ArrayList<Object[]> allBooks = Data.getAllBooks();
         assertEquals(14, allBooks.size());
