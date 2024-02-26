@@ -86,97 +86,12 @@ class DataTest {
         }
     }
 
-    @Test
-    void checkExistBook() {
-        Data.reset();
-        String title = "The Great Gatsby";
-        String author = "F. Scott Fitzgerald";
-        String genre = "Literary";
-        String availabilityStatus = "Available";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        title = "Moby Dick";
-        author = "Herman Melville";
-        genre = "Literary";
-        availabilityStatus = "Available";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        assertTrue(Data.checkExistBook("The Great Gatsby", "F. Scott Fitzgerald"));
-    }
-
-    @Test
-    void checkBookDoesNotExist(){
-        Data.reset();
-        String title = "To Kill a Mockingbird";
-        String author = "Harper Lee";
-        String genre = "General Fiction";
-        String availabilityStatus = "Available";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        title = "1984";
-        author = "George Orwell";
-        genre = "Science Fiction";
-        availabilityStatus = "Unavailable";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        assertFalse(Data.checkExistBook("The Catcher in the Rye", "J.D. Salinger"));
-    }
-
-    @Test
-    void checkExistBookAuthorMismatch(){
-        Data.reset();
-        String title = "The Da Vinci Code";
-        String author = "Dan Brown";
-        String genre = "Mystery";
-        String availabilityStatus = "Unavailable";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        title = "The Hobbit";
-        author = "J.R.R. Tolkien";
-        genre = "Fantasy";
-        availabilityStatus = "Unavailable";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        title = "Dracula";
-        author = "Bram Stoker";
-        genre = "Horror";
-        availabilityStatus = "Available";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        assertFalse(Data.checkExistBook("Dracula", "J.K. Rowling"));
-    }
-
-    @Test
-    void checkExistBookEmptyTitleAndAuthor(){
-        Data.reset();
-        String title = "The Girl with the Dragon Tattoo";
-        String author = "Stieg Larsson";
-        String genre = "Mystery";
-        String availabilityStatus = "Available";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        title = "The Help";
-        author = "Kathryn Stockett";
-        genre = "Historical Fiction";
-        availabilityStatus = "Unavailable";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        assertFalse(Data.checkExistBook(" ", " "));
-    }
-
-    @Test
-    void checkExistBookTitleWithNullAuthor(){
-        Data.reset();
-        String title = "The Fault in Our Stars";
-        String author = "John Green";
-        String genre = "Romance";
-        String availabilityStatus = "Unavailable";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        title = "The Blood of Olympus";
-        author = "Rick Riordan";
-        genre = "Fantasy";
-        availabilityStatus = "Unavailable";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        assertFalse(Data.checkExistBook("The Blood of Olympus", null));
-    }
-    @Test
-    void checkBookAvailable() {
-    }
-
     @BeforeEach
     public void setUpLibrary() {
         Data.reset(); // Clear existing data
+        Data.storeNewBook("The Blood of Olympus","Rick Riordan","Fantasy","Unavailable");
+        Data.storeNewBook("Moby Dick","Herman Melville","Literary","Available");
+        Data.storeNewBook("The Great Gatsby","F. Scott Fitzgerald","Literary","Available");
         Data.storeNewBook("Weyward", "Emilia Hart", "Historical Fiction", "Available");
         Data.storeNewBook("The Housemaid's Secret", "Freida McFadden", "Thriller", "Unavailable");
         Data.storeNewBook("To Kill a Mockingbird", "Harper Lee", "General Fiction", "Available");
@@ -188,19 +103,47 @@ class DataTest {
         Data.storeNewBook("Arsenic and Adobo","Mia P. Manansala","Mystery","Available");
     }
     @Test
+    void checkExistBook() {
+        assertTrue(Data.checkExistBook("The Great Gatsby", "F. Scott Fitzgerald"));
+    }
+
+    @Test
+    void checkBookDoesNotExist(){
+        assertFalse(Data.checkExistBook("The Catcher in the Rye", "J.D. Salinger"));
+    }
+
+    @Test
+    void checkExistBookAuthorMismatch(){
+        assertFalse(Data.checkExistBook("Holly", "J.K. Rowling"));
+    }
+
+    @Test
+    void checkExistBookEmptyTitleAndAuthor(){
+        assertFalse(Data.checkExistBook(" ", " "));
+    }
+
+    @Test
+    void checkExistBookTitleWithNullAuthor(){
+        assertFalse(Data.checkExistBook("The Blood of Olympus", null));
+    }
+    @Test
+    void checkBookAvailable() {
+    }
+
+    @Test
     void testGetAllBooks() {
         ArrayList<Object[]> allBooks = Data.getAllBooks();
-        assertEquals(9, allBooks.size());
+        assertEquals(12, allBooks.size());
     }
 
     @Test
     void testGetAllBooksAndReturnBookInfo(){
         ArrayList<Object[]> allBooks = Data.getAllBooks();
-        Object[] firstBook = allBooks.get(0);
-        assertEquals("Weyward", firstBook[Data.INDEX_TITLE]);
-        assertEquals("Emilia Hart", firstBook[Data.INDEX_AUTHOR]);
-        assertEquals("Historical Fiction", firstBook[Data.INDEX_GENRE]);
-        assertEquals("Available", firstBook[Data.INDEX_STATUS]);
+        Object[] fourthBook = allBooks.get(3);
+        assertEquals("Weyward", fourthBook[Data.INDEX_TITLE]);
+        assertEquals("Emilia Hart", fourthBook[Data.INDEX_AUTHOR]);
+        assertEquals("Historical Fiction", fourthBook[Data.INDEX_GENRE]);
+        assertEquals("Available", fourthBook[Data.INDEX_STATUS]);
     }
 
     @Test
@@ -208,6 +151,11 @@ class DataTest {
         Data.reset(); // Clear existing data to simulate no books
         ArrayList<Object[]> allBooks = Data.getAllBooks();
         assertTrue(allBooks.isEmpty());
+    }
+
+    @Test
+    void testGetAllBooks2(){
+
     }
     @Test
     void testGetAvailableBooks() {
