@@ -206,6 +206,12 @@ class DataTest {
         assertEquals("Fantasy", firstBook[Data.INDEX_GENRE]);
         assertEquals("Unavailable", firstBook[Data.INDEX_STATUS]);
     }
+
+    @Test
+    public void getBooksByTitleWhenTitleNotFound() {
+        ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("American Gods");
+        assertTrue(booksWithTitle.isEmpty());
+    }
     @Test
     void getBooksByAuthor() {
     }

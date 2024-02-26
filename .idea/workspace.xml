@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="got rid of unnecessary import statements">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added getBooksByTitleReturnsCorrectBookInfo test">
       <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -394,7 +394,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708987428635</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="added getBooksByTitleReturnsCorrectNumberOfBooks test">
+      <option name="closed" value="true" />
+      <created>1708988004548</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1708988004548</updated>
+    </task>
+    <task id="LOCAL-00042" summary="added getBooksByTitleReturnsCorrectBookInfo test">
+      <option name="closed" value="true" />
+      <created>1708988229014</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1708988229014</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -421,8 +437,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixed bug in Main Menu" />
-    <MESSAGE value="Created file DataTest.java" />
     <MESSAGE value="created menuExit" />
     <MESSAGE value="edited menuLoop to make exit work" />
     <MESSAGE value="edited menuLibraryData to make exit work" />
@@ -446,6 +460,8 @@
     <MESSAGE value="added contributors at the top (comment)" />
     <MESSAGE value="added javadoc comments to Menu.java" />
     <MESSAGE value="got rid of unnecessary import statements" />
-    <option name="LAST_COMMIT_MESSAGE" value="got rid of unnecessary import statements" />
+    <MESSAGE value="added getBooksByTitleReturnsCorrectNumberOfBooks test" />
+    <MESSAGE value="added getBooksByTitleReturnsCorrectBookInfo test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getBooksByTitleReturnsCorrectBookInfo test" />
   </component>
 </project>
