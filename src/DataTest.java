@@ -2,6 +2,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataTest {
@@ -170,8 +174,23 @@ class DataTest {
     void checkBookAvailable() {
     }
 
+    @BeforeEach
+    public void setUpLibrary() {
+        Data.reset(); // Clear existing data
+        Data.storeNewBook("Weyward", "Emilia Hart", "Historical Fiction", "Available");
+        Data.storeNewBook("The Housemaid's Secret", "Freida McFadden", "Thriller", "Unavailable");
+        Data.storeNewBook("To Kill a Mockingbird", "Harper Lee", "General Fiction", "Available");
+        Data.storeNewBook("Happy Place","Emily Henry","Romance","Unavailable");
+        Data.storeNewBook("Hell Bent","Leigh Bardugo","Fantasy","Available");
+        Data.storeNewBook("In the Lives of Puppets","T.J. Klune","Science Fiction","Unavailable");
+        Data.storeNewBook("Holly","Stephen King","Horror","Available");
+        Data.storeNewBook("Poverty, by America","Matthew Desmond","Non-fiction","Unavailable");
+        Data.storeNewBook("Arsenic and Adobo","Mia P. Manansala","Mystery","Available");
+    }
     @Test
     void testGetAllBooks() {
+        ArrayList<Object[]> allBooks = Data.getAllBooks();
+        assertEquals(9, allBooks.size());
     }
 
     @Test
