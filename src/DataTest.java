@@ -86,7 +86,7 @@ class DataTest {
         String title = "The Da Vinci Code";
         String author = "Dan Brown";
         String genre = "Mystery";
-        String availabilityStatus = "Unvailable";
+        String availabilityStatus = "Unavailable";
         Data.storeNewBook(title, author, genre, availabilityStatus);
         title = "The Hobbit";
         author = "J.R.R. Tolkien";
@@ -99,6 +99,22 @@ class DataTest {
         availabilityStatus = "Available";
         Data.storeNewBook(title, author, genre, availabilityStatus);
         assertFalse(Data.checkExistBook("Dracula", "J.K. Rowling"));
+    }
+
+    @Test
+    void checkExistBookEmptyTitleAndAuthor(){
+        Data.reset();
+        String title = "The Girl with the Dragon Tattoo";
+        String author = "Stieg Larsson";
+        String genre = "Mystery";
+        String availabilityStatus = "Available";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        title = "The Help";
+        author = "Kathryn Stockett";
+        genre = "Historical Fiction";
+        availabilityStatus = "Unavailable";
+        Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertFalse(Data.checkExistBook(" ", " "));
     }
     @Test
     void checkBookAvailable() {
