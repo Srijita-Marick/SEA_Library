@@ -5,12 +5,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataTest {
-    @org.junit.jupiter.api.BeforeEach
-    void BeforeEach(){
-        Data.reset();
-    }
     @org.junit.jupiter.api.Test
     void storeNewBook() {
+        Data.reset();
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
         String genre = "Fantasy";
@@ -26,6 +23,7 @@ class DataTest {
     }
     @org.junit.jupiter.api.Test
     void storeTwoBooks() {
+        Data.reset();
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
         String genre = "Fantasy";
@@ -53,6 +51,7 @@ class DataTest {
     }
     @org.junit.jupiter.api.Test
     void storeTwoBooksSameAuthor() {
+        Data.reset();
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
         String genre = "Fantasy";
