@@ -491,6 +491,14 @@ class DataTest {
     }
 
     @Test
+    void testGetMembersByNameReturnMemberInfo(){
+        ArrayList<Object[]> membersByName = Data.getMembersByName("Alice Wonderland");
+        assertEquals(1, membersByName.size());
+        Object[] member = membersByName.get(0);
+        assertEquals(104,member[Data.INDEX_ID]);
+        assertEquals("Alice Wonderland",member[Data.INDEX_NAME]);
+    }
+    @Test
     void testGetMembersById(){
         ArrayList<Object[]> membersById = Data.getMembersById(107);
         assertEquals(1, membersById.size());
