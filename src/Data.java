@@ -192,6 +192,24 @@ public class Data {
         return members;
     }
 
+    public static ArrayList<Object[]> getMembersByName(String name) {
+        ArrayList<Object[]> membersWithName = new ArrayList<>();
+        for (Object[] member: members){
+            if (member[INDEX_NAME].equals(name)) {
+                membersWithName.add(member);
+            }
+        }
+        return membersWithName;
+    }
+    public static ArrayList<Object[]> getMembersById(int id) {
+        ArrayList<Object[]> membersWithId = new ArrayList<>();
+        for (Object[] member: members){
+            if (member[INDEX_ID].equals(id)) {
+                membersWithId.add(member);
+            }
+        }
+        return membersWithId;
+    }
     public static ArrayList<String> getBorrowedBooks(Integer id){
         for (Object[] member: members){
             if (member[INDEX_ID]==id){

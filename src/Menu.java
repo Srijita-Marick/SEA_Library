@@ -515,8 +515,8 @@ public class Menu {
         String name = getMember();
         String viewMembersMessage = """
                 All members with that name:""";
-        ArrayList<Object[]> bookList = Data.getBooksByTitle(name);
-        System.out.println(viewAnyMemberList(viewMembersMessage, bookList));
+        ArrayList<Object[]> memberList = Data.getMembersByName(name);
+        System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
     }
 
     /**
@@ -524,11 +524,10 @@ public class Menu {
      */
     private static void searchById(){
         int id = getId();
-        String ID = Integer.toString(id);
         String viewMembersMessage = """
              Member with given ID:""";
-        ArrayList<Object[]> bookList = Data.getBooksByAuthor(ID);
-        System.out.println(viewAnyMemberList(viewMembersMessage, bookList));
+        ArrayList<Object[]> memberList = Data.getMembersById(id);
+        System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
     }
 
     /**
