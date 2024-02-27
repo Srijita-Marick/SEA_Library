@@ -567,8 +567,32 @@ class DataTest {
         assertEquals(4, allMembers.size());
     }
 
+    /**
+     * The following three functions are used to test Data.getBorrowedBooks
+     * Each checks a variation of books to be borrowed and whether the book
+     * status has been updated accordingly
+     */
     @Test
     void testGetBorrowedBooks() {
+        Data.storeNewBook("Nightcrawling", "Leila Mottley", "Literary", "Unavailable");
+        ArrayList<String> borrowedBooks = Data.getBorrowedBooks(1);
+        assertTrue(borrowedBooks.isEmpty());
+        Data.reset();
+    }
+
+    @Test
+    public void testGetBorrowedBooksOneBook() {
+        Data.checkoutBook(103, "Holly", "Stephen King");
+        ArrayList<String> borrowedBooks = Data.getBorrowedBooks(103);
+        assertEquals(1, borrowedBooks.size());
+        assertTrue(borrowedBooks.contains("Holly by Stephen King"));
+        Data.reset(); //make sure nothing changes
+    }
+
+    @Test
+    public void testGetBorrowedBooksNoBooksBorrowed() {
+        ArrayList<String> borrowedBooks = Data.getBorrowedBooks(101);
+        assertTrue(borrowedBooks.isEmpty());
     }
 
     /**
