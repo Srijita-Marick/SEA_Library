@@ -433,8 +433,6 @@ class DataTest {
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
 
-
-
     /**
      * The following three functions are to test Data.removeBook
      * Each checks a variation of books that can be removed from the Library

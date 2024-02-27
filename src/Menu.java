@@ -249,7 +249,9 @@ public class Menu {
         return (booksString.toString());
     }
 
-
+    /**
+     * Used in menuLibraryData to check out books
+     */
     private static void menuCheckoutBooks() {
         int id = getId();
         while (!Data.checkExistMember(id)){
@@ -272,6 +274,9 @@ public class Menu {
 
     }
 
+    /**
+     * Used in menuLibraryData to return books
+     */
     private static void menuReturnBooks(){
         int id = getId();
         while (!Data.checkExistMember(id)){  //makes sure that this id corresponds to an existing member
@@ -293,6 +298,9 @@ public class Menu {
         }
     }
 
+    /**
+     * Used in menuLibraryData to remove books
+     */
     private static void menuRemoveBook() {
         boolean success;
         do {
@@ -330,6 +338,10 @@ public class Menu {
         return "Available";  // by default, new books should be available
     }
 
+    /** Called on by menuReturnBooks
+     * Used to get the number of days a book is overdue from user input
+     * @return integer value of days obtained from user input
+     */
     public static int getDaysOverdue(){
         System.out.println("How many days overdue is the book? ");
         String days;
