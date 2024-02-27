@@ -406,7 +406,7 @@ class DataTest {
     }
 
     /**
-     * The following function is to test Data.returnBook
+     * The following two functions are to test Data.returnBook
      */
     @Test
     void returnBook() {
@@ -418,6 +418,22 @@ class DataTest {
         ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
+
+    @Test
+    void returnTwoBooks() {
+        ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
+
+        Data.returnBook(125 ,"To Kill a Mockingbird", "Harper Lee", 7);
+        assertTrue(Data.checkBookAvailable("To Kill a Mockingbird", "Harper Lee"));
+
+        Data.returnBook(123,"Joyland","Stephen King",16);
+        assertTrue(Data.checkBookAvailable("Joyland","Stephen King"));
+
+        ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
+        assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
+    }
+
+
 
     /**
      * The following three functions are to test Data.removeBook
