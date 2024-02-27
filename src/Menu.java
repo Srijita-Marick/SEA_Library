@@ -612,6 +612,11 @@ public class Menu {
         borrowedBooks.add("Filler"); // placeholder value
         return borrowedBooks;
     }
+
+    /**
+     * Used to get the fines owed by member
+     * @return double value of fines owed by member
+     */
     private static double getFines() {
         String memberFines;
         do {
