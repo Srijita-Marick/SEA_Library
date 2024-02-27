@@ -410,4 +410,9 @@ class DataTest {
     void testCalculateFinesOneDayOverdue() {
         assertEquals(0.05, Data.calculateFines(1));
     }
+
+    @Test
+    void testCalculateFinesMultipleDaysOverdue() {
+        assertEquals(1.0, Data.calculateFines(20));
+    }
 }
