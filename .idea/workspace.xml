@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added testGetMembersByNameThreeMembers test">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="javadoc commenting - DataTest function set 7">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,30 +74,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00009" summary="added functions relating to the Member Data menu">
-      <option name="closed" value="true" />
-      <created>1708751877652</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1708751877652</updated>
-    </task>
-    <task id="LOCAL-00010" summary="merged with emily">
-      <option name="closed" value="true" />
-      <created>1708804280080</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1708804280080</updated>
-    </task>
-    <task id="LOCAL-00011" summary="added code for Member Data Menu">
-      <option name="closed" value="true" />
-      <created>1708804474526</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1708804474526</updated>
     </task>
     <task id="LOCAL-00012" summary="renamed searchBooks and viewAllBooks for clarity">
       <option name="closed" value="true" />
@@ -466,7 +443,31 @@
       <option name="project" value="LOCAL" />
       <updated>1709016401841</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="javadoc commenting - DataTest function set 5">
+      <option name="closed" value="true" />
+      <created>1709061652473</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1709061652473</updated>
+    </task>
+    <task id="LOCAL-00059" summary="javadoc commenting - DataTest function set 6">
+      <option name="closed" value="true" />
+      <created>1709061759804</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1709061759804</updated>
+    </task>
+    <task id="LOCAL-00060" summary="javadoc commenting - DataTest function set 7">
+      <option name="closed" value="true" />
+      <created>1709061945895</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1709061945895</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -493,9 +494,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added checkExistBookTitleWithNullAuthor test" />
-    <MESSAGE value="added testGetAllBooks test" />
-    <MESSAGE value="added testGetAllBooksAndReturnBookInfo test" />
     <MESSAGE value="added testGetAllBooksEmptyLibrary test" />
     <MESSAGE value="reformatted DataTest and added setUpLibrary" />
     <MESSAGE value="added contributors at the top (comment)" />
@@ -518,6 +516,9 @@
     <MESSAGE value="debugged borrowed book display" />
     <MESSAGE value="added testGetMembersByNameReturnMemberInfo test" />
     <MESSAGE value="added testGetMembersByNameThreeMembers test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added testGetMembersByNameThreeMembers test" />
+    <MESSAGE value="javadoc commenting - DataTest function set 5" />
+    <MESSAGE value="javadoc commenting - DataTest function set 6" />
+    <MESSAGE value="javadoc commenting - DataTest function set 7" />
+    <option name="LAST_COMMIT_MESSAGE" value="javadoc commenting - DataTest function set 7" />
   </component>
 </project>
