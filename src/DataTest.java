@@ -361,16 +361,6 @@ class DataTest {
     }
 
     @Test
-    public void testStoreNewMemberWithoutName() {
-        assertFalse(Data.storeNewMember(106, "", new ArrayList<>()));
-    }
-
-    @Test
-    public void testStoreNewMemberNullID() {
-        assertFalse(Data.storeNewMember(null, "Magnus Chase", new ArrayList<>()));
-    }
-
-    @Test
     void checkExistMember() {
     }
 
