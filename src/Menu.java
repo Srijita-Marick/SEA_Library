@@ -579,6 +579,7 @@ public class Menu {
     }
 
     /** called by menuAddMember, menuRemoveMember, searchByName
+     * Used to get the member name
      * @return member name obtained from user input
      */
     private static String getMember() {
@@ -591,6 +592,7 @@ public class Menu {
     }
 
     /** called by menuCheckoutBooks, menuReturnBooks, menuAddMember, menuRemoveMember, searchById
+     * Used to get the member Id
      * @return return Integer value of member Id obtained from user input
      */
     private static int getId() {
