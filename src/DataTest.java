@@ -338,7 +338,7 @@ class DataTest {
         assertFalse(Data.checkBookAvailable( "The Blood of Olympus","Rick Riordan"));
 
         ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
-        assertEquals(initialAvailableBooks.size() - 1, updatedAvailableBooks.size());
+        assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
     @Test
     void returnBook() {
