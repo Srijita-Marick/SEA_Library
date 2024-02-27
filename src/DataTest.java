@@ -357,6 +357,17 @@ class DataTest {
     }
 
     @Test
+    void removeTwoBooks() {
+        assertTrue(Data.removeBook("Arsenic and Adobo","Mia P. Manansala"));
+        assertTrue(Data.removeBook("Happy Place","Emily Henry"));
+    }
+
+    @Test
+    void removeNonExistingBook() {
+        assertFalse(Data.removeBook("No Man is an Island","John Donne"));
+    }
+
+    @Test
     public void testStoreNewMember() {
         assertTrue(Data.storeNewMember(104, "Michael Brown"));
     }
@@ -424,7 +435,11 @@ class DataTest {
     }
 
     @Test
-    void testGetMembersById(){
+    void testGetMembersByIdOneMember(){
+        Data.reset(); // Clear existing data
+        Data.storeNewMember(101, "John Doe");
+        ArrayList<Object[]> membersById = Data.getMembersById(101);
+        assertEquals(1, membersById.size());
     }
 
     @Test
