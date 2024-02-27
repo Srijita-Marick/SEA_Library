@@ -34,6 +34,10 @@ public class Menu {
         optMessage = sb.toString();
     }
 
+    /**
+     * Used to prompt the user to input a non-empty String and trim any leading or trailing whitespace
+     * @return non-empty String obtained from user input
+     */
     private static String getOption(){
         String option;
         do {
@@ -47,19 +51,19 @@ public class Menu {
      */
     public static void menuLoop() {
         int option = 0;
-        boolean run = true;
+        boolean run = true; // Flag to control the loop
         while (run) {
             System.out.println(optMessage);
             String choice = getOption();
             if (!choice.isEmpty() && !choice.equals("0")) {
-                option = Integer.parseInt(choice);
+                option = Integer.parseInt(choice); // Convert user's choice to an integer
             }
             if (option > 0 && option < options.size()) {
                 System.out.printf("Selected option %d.%s%n", option, options.get(option));
                 switch (option) {
                     case 1 -> menuLibraryData();
                     case 2 -> menuMemberData();
-                    case 3 -> run = false;
+                    case 3 -> run = false; // Exit the loop if user chooses to quit
                     default -> System.out.printf("Option %d not recognized!%n", option);
                 }
             } else {
@@ -129,7 +133,9 @@ public class Menu {
             System.out.println("Exiting Library Data...");
         }
     }
-
+    /**
+     * sends user to their desired type of search
+     */
     private static void menuSearchBooks() {
         ArrayList<String> searchOptions = new ArrayList<>(); //each search option is a string in this list
         searchOptions.add("Blank"); //this is a placeholder that is never displayed to user
@@ -159,6 +165,9 @@ public class Menu {
             }
         }
     }
+    /**
+     * Prints all books with selected title using menuViewAnyBookList
+     */
     private static void searchByTitle(){
         String title = getTitle();
         String viewBooksMessage = """
@@ -166,6 +175,9 @@ public class Menu {
         ArrayList<Object[]> bookList = Data.getBooksByTitle(title);
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
+    /**
+     * Prints all books by selected author using menuViewAnyBookList
+     */
     private static void searchByAuthor(){
         String author = getAuthor();
         String viewBooksMessage = """
@@ -173,6 +185,10 @@ public class Menu {
         ArrayList<Object[]> bookList = Data.getBooksByAuthor(author);
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
+
+    /**
+     * Prints all books in selected genre using menuViewAnyBookList
+     */
     private static void searchByGenre(){
         String genre = getGenre();
         String viewBooksMessage = """
@@ -181,7 +197,9 @@ public class Menu {
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
-
+    /**
+     * Prints all unavailable books in library using menuViewAnyBookList
+     */
     private static void menuViewUnavailable() {
         String viewBooksMessage = """
             Unavailable Books:""";
@@ -189,6 +207,9 @@ public class Menu {
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
+    /**
+     * Prints all available books in library using menuViewAnyBookList
+     */
     private static void menuViewAvailable() {
         String viewBooksMessage = """
             Available Books:""";
@@ -196,6 +217,9 @@ public class Menu {
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
+    /**
+     * Prints all book in library using menuViewAnyBookList
+     */
     private static void menuViewAllBooks() {
         String viewBooksMessage= """
             ALl library Books:""";
@@ -554,6 +578,10 @@ public class Menu {
         return (membersString.toString());
     }
 
+    /** called by menuAddMember, menuRemoveMember, searchByName
+     * Used to get the member name
+     * @return member name obtained from user input
+     */
     private static String getMember() {
         System.out.println("Enter Member Name: ");
         String member;
@@ -562,6 +590,11 @@ public class Menu {
         } while (member.isEmpty());
         return member;
     }
+
+    /** called by menuCheckoutBooks, menuReturnBooks, menuAddMember, menuRemoveMember, searchById
+     * Used to get the member Id
+     * @return return Integer value of member Id obtained from user input
+     */
     private static int getId() {
         String memberId;
         do {
@@ -571,12 +604,21 @@ public class Menu {
         return Integer.parseInt(memberId);
     }
 
+    /**
+     * Used to store a list of books borrowed by member
+     * @return an ArrayList containing strings of books borrowed by member from library
+     */
     private static ArrayList<String> getBorrowed() {
         ArrayList<String> borrowedBooks = new ArrayList<>();
-        borrowedBooks.add("Random");
-        borrowedBooks.add("Filler");
+        borrowedBooks.add("Random"); // placeholder value
+        borrowedBooks.add("Filler"); // placeholder value
         return borrowedBooks;
     }
+
+    /**
+     * Used to get the fines owed by member
+     * @return double value of fines owed by member
+     */
     private static double getFines() {
         String memberFines;
         do {

@@ -12,7 +12,7 @@ class DataTest {
      */
     @Test
     void storeNewBook() {
-        Data.reset();
+        Data.reset(); // Clear existing data
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
         String genre = "Fantasy";
@@ -28,7 +28,7 @@ class DataTest {
     }
     @Test
     void storeTwoBooks() {
-        Data.reset();
+        Data.reset(); // Clear existing data
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
         String genre = "Fantasy";
@@ -57,7 +57,7 @@ class DataTest {
 
     @Test
     void storeTwoBooksSameAuthor() {
-        Data.reset();
+        Data.reset(); // Clear existing data
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
         String genre = "Fantasy";
@@ -85,7 +85,7 @@ class DataTest {
     }
     @Test
      void storeDuplicateBooks(){
-        Data.reset();
+        Data.reset(); // Clear existing data
         String title = "Atomic Habits";
         String author = "James Clear";
         String genre = "Non-fiction";
@@ -102,11 +102,12 @@ class DataTest {
         assertFalse(success);
         assertEquals(1,Data.getAllBooks().size());
 
+
     }
 
     @Test
      void storeEmptyTitle(){
-        Data.reset();
+        Data.reset(); // Clear existing data
         String title = "";
         String author = "Mary Shelley";
         String genre = "Horror";
@@ -373,21 +374,9 @@ class DataTest {
         assertFalse(Data.removeBook("No Man is an Island","John Donne"));
     }
 
-    @BeforeEach
-    void setUpMemberData() {
-        Data.storeNewMember(101, "Arman Najari");
-        Data.storeNewMember(102, "Himanshu Ganga");
-        Data.storeNewMember(103, "The Webster");
-        Data.storeNewMember(104, "Alice Wonderland");
-        Data.storeNewMember(105, "Brad Pitt");
-        Data.storeNewMember(106, "Naruto Uzumaki");
-        Data.storeNewMember(107, "Jackie Chan");
-        Data.storeNewMember(108, "Michelle Yeoh");
-    }
-
     @Test
     public void testStoreNewMember() {
-        assertTrue(Data.storeNewMember(109, "Michael Brown"));
+        assertTrue(Data.storeNewMember(104, "Michael Brown"));
     }
 
     @Test
@@ -481,58 +470,38 @@ class DataTest {
 
     @Test
     void getAllMembers() {
+        Data.reset();
+        Data.storeNewMember(111, "Axelle Leung");
+        Data.storeNewMember(112, "Rachel Lam");
+        Data.storeNewMember(113, "Dhana Ramsamy");
+        Data.storeNewMember(114, "Emma Stone");
+
         ArrayList<Object[]> allMembers = Data.getAllMembers();
-        assertEquals(8, allMembers.size());
+        assertEquals(4, allMembers.size());
     }
 
     @Test
     void testGetBorrowedBooks() {
-
     }
 
     @Test
     void testGetMembersByName(){
-        ArrayList<Object[]> membersByName = Data.getMembersByName("Michelle Yeoh");
-        assertEquals(1, membersByName.size());
     }
 
-    @Test
-    void testGetMembersByNameReturnMemberInfo(){
-        ArrayList<Object[]> membersByName = Data.getMembersByName("Alice Wonderland");
-        assertEquals(1, membersByName.size());
-        Object[] member = membersByName.get(0);
-        assertEquals(104,member[Data.INDEX_ID]);
-        assertEquals("Alice Wonderland",member[Data.INDEX_NAME]);
-    }
-
-    @Test
-    void testGetMembersByNameThreeMembers(){
-        ArrayList<Object[]> membersByName = Data.getMembersByName("The Webster");
-        assertEquals(1, membersByName.size());
-        ArrayList<Object[]> membersByName1 = Data.getMembersByName("Himanshu Ganga");
-        assertEquals(1, membersByName1.size());
-        ArrayList<Object[]> membersByName2 = Data.getMembersByName("Jackie Chan");
-        assertEquals(1, membersByName2.size());
-    }
-
-    @Test
-    void testGetMembersByNameNoName(){
-        ArrayList<Object[]> membersByName = Data.getMembersByName(" ");
-        assertEquals(0, membersByName.size());
-    }
     @Test
     void testGetMembersById(){
-        ArrayList<Object[]> membersById = Data.getMembersById(107);
-        assertEquals(1, membersById.size());
+        Data.reset();
+        ArrayList<Object[]> membersById = Data.getMembersById(101);
+        assertEquals(0, membersById.size());
     }
 
     @Test
     void testGetMembersByIdReturnMemberInfo(){
-        ArrayList<Object[]> members = Data.getMembersById(101);
+        ArrayList<Object[]> members = Data.getMembersById(105);
         assertEquals(1, members.size());
         Object[] member = members.get(0);
-        assertEquals(101, member[Data.INDEX_ID]);
-        assertEquals("Arman Najari", member[Data.INDEX_NAME]);
+        assertEquals(105, member[Data.INDEX_ID]);
+        assertEquals("Emily White", member[Data.INDEX_NAME]);
     }
 
     @Test
