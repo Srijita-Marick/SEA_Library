@@ -164,7 +164,7 @@ public class Data {
             member[INDEX_ID] = id;
             member[INDEX_NAME] = name;
             member[INDEX_BORROWED] = new ArrayList<String>();
-            member[INDEX_FINES] = 0.0; // when someone joins library for the first time they should have no fine
+            member[INDEX_FINES] = 0.00; // when someone joins library for the first time they should have no fine
             memberIDs.add(id);
             members.add(member); //adding to list of all members
             return true;
