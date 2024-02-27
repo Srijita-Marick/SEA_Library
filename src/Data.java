@@ -225,7 +225,7 @@ public class Data {
      * @param daysOverDue is the number of days the user had the book past the due date
      * @return the fines accrued from being overdue
      */
-    private static double calculateFines(int daysOverDue){
+    public static double calculateFines(int daysOverDue){
         return ((double)daysOverDue)*0.05; //five cents are added to fines per day overdue
     }
 
