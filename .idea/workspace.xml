@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="javadoc commenting - DataTest function set 7">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="javadoc commenting - DataTest function set 8">
       <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,30 +73,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00012" summary="renamed searchBooks and viewAllBooks for clarity">
-      <option name="closed" value="true" />
-      <created>1708817706709</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1708817706709</updated>
-    </task>
-    <task id="LOCAL-00013" summary="added code to menuViewAllBooks">
-      <option name="closed" value="true" />
-      <created>1708821237160</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1708821237161</updated>
-    </task>
-    <task id="LOCAL-00014" summary="fixed bug in Library Data Menu">
-      <option name="closed" value="true" />
-      <created>1708897931194</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1708897931194</updated>
     </task>
     <task id="LOCAL-00015" summary="fixed bug in Main Menu">
       <option name="closed" value="true" />
@@ -467,7 +442,31 @@
       <option name="project" value="LOCAL" />
       <updated>1709061945895</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="brought back code lost in the merge">
+      <option name="closed" value="true" />
+      <created>1709062469173</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1709062469173</updated>
+    </task>
+    <task id="LOCAL-00062" summary="javadoc commenting - DataTest function set 8">
+      <option name="closed" value="true" />
+      <created>1709062732794</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1709062732794</updated>
+    </task>
+    <task id="LOCAL-00063" summary="javadoc commenting - DataTest function set 8">
+      <option name="closed" value="true" />
+      <created>1709062815679</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1709062815679</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -494,8 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added testGetAllBooksEmptyLibrary test" />
-    <MESSAGE value="reformatted DataTest and added setUpLibrary" />
     <MESSAGE value="added contributors at the top (comment)" />
     <MESSAGE value="added javadoc comments to Menu.java" />
     <MESSAGE value="got rid of unnecessary import statements" />
@@ -519,6 +516,8 @@
     <MESSAGE value="javadoc commenting - DataTest function set 5" />
     <MESSAGE value="javadoc commenting - DataTest function set 6" />
     <MESSAGE value="javadoc commenting - DataTest function set 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="javadoc commenting - DataTest function set 7" />
+    <MESSAGE value="brought back code lost in the merge" />
+    <MESSAGE value="javadoc commenting - DataTest function set 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="javadoc commenting - DataTest function set 8" />
   </component>
 </project>

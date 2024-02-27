@@ -382,7 +382,7 @@ class DataTest {
     }
 
     /**
-     * The following function is to test Data.checkoutBook
+     * The following functions is to test Data.checkoutBook
      */
     @Test
     void checkoutBook() {
@@ -390,6 +390,16 @@ class DataTest {
 
         Data.checkoutBook(123, "The Blood of Olympus","Rick Riordan");
         assertFalse(Data.checkBookAvailable( "The Blood of Olympus","Rick Riordan"));
+
+        ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
+        assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
+    }
+
+    @Test
+    void checkoutBookWhenBookDoesNotExist(){
+        ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
+        Data.checkoutBook(103, "The Sea of Monsters","Rick Riordan");
+        assertFalse(Data.checkBookAvailable( "The Sea of Monsters","Rick Riordan"));
 
         ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
