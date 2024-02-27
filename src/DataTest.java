@@ -424,6 +424,8 @@ class DataTest {
 
     @Test
     void getAllMembers() {
+        ArrayList<Object[]> allMembers = Data.getAllMembers();
+        assertEquals(0, allMembers.size());
     }
 
     @Test
