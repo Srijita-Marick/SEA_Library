@@ -35,8 +35,8 @@ public class Menu {
     }
 
     /**
-     * Used to prompt the user to input a non-empty string and trim any leading or trailing whitespace
-     * @return non-empty string obtained from user input
+     * Used to prompt the user to input a non-empty String and trim any leading or trailing whitespace
+     * @return non-empty String obtained from user input
      */
     private static String getOption(){
         String option;
@@ -51,19 +51,19 @@ public class Menu {
      */
     public static void menuLoop() {
         int option = 0;
-        boolean run = true;
+        boolean run = true; // Flag to control the loop
         while (run) {
             System.out.println(optMessage);
             String choice = getOption();
             if (!choice.isEmpty() && !choice.equals("0")) {
-                option = Integer.parseInt(choice);
+                option = Integer.parseInt(choice); // Convert user's choice to an integer
             }
             if (option > 0 && option < options.size()) {
                 System.out.printf("Selected option %d.%s%n", option, options.get(option));
                 switch (option) {
                     case 1 -> menuLibraryData();
                     case 2 -> menuMemberData();
-                    case 3 -> run = false;
+                    case 3 -> run = false; // Exit the loop if user chooses to quit
                     default -> System.out.printf("Option %d not recognized!%n", option);
                 }
             } else {
