@@ -1,7 +1,7 @@
 /**
  * CPSC 233 W24 Group Project
  * Library Management System
- * @author Anna Littkemann, Emily Ngkwongsang, Srijita Marick
+ * @author Anna Littkemann, Emily Ng Kwong Sang, Srijita Marick
  * @email anna.littkemann@ucalgary.ca, emily.ngkwongsang@ucalgary.ca,
  * srijita.marick@ucalgary.ca
  * @UCID 30212220, 30230290, 30230880
