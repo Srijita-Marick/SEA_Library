@@ -225,8 +225,9 @@ class DataTest {
     }
     @Test
     void testGetUnavailableBooks() {
-        ArrayList<Object[]> allAvailableBooks = Data.getAvailableBooks();
-        assertEquals(0,allAvailableBooks.size());
+        Data.reset();
+        ArrayList<Object[]> allUnavailableBooks = Data.getUnavailableBooks();
+        assertEquals(0,allUnavailableBooks.size());
     }
 
     @Test
@@ -331,25 +332,25 @@ class DataTest {
     }
     @Test
     void checkoutBook() {
-//        ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
-//
-//        Data.checkoutBook(123, "The Blood of Olympus","Rick Riordan");
-//        assertFalse(Data.checkBookAvailable( "The Blood of Olympus","Rick Riordan"));
-//
-//        ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
-//        assertEquals(initialAvailableBooks.size() - 1, updatedAvailableBooks.size());
-//
-//        String[] borrowedBooks = Data.getBorrowedBooks(123);
-//        assertTrue(borrowedBooks.length > 0);
+        ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
 
+        Data.checkoutBook(123, "The Blood of Olympus","Rick Riordan");
+        assertFalse(Data.checkBookAvailable( "The Blood of Olympus","Rick Riordan"));
+
+        ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
+        assertEquals(initialAvailableBooks.size() - 1, updatedAvailableBooks.size());
     }
-
     @Test
     void returnBook() {
+
+
+
     }
 
     @Test
     void removeBook() {
+        boolean success = Data.removeBook("The Blood of Olympus","Rick Riordan");
+        assertFalse(Data.checkBookAvailable( "The Blood of Olympus","Rick Riordan"));
     }
 
     @Test
