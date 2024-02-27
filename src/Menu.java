@@ -34,6 +34,10 @@ public class Menu {
         optMessage = sb.toString();
     }
 
+    /**
+     * Used to prompt the user to input a non-empty string and trim any leading or trailing whitespace
+     * @return non-empty string obtained from user input
+     */
     private static String getOption(){
         String option;
         do {

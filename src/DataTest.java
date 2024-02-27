@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class DataTest {
     @Test
     void storeNewBook() {
-        Data.reset();
+        Data.reset(); // Clear existing data
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
         String genre = "Fantasy";
@@ -22,7 +22,7 @@ class DataTest {
     }
     @Test
     void storeTwoBooks() {
-        Data.reset();
+        Data.reset(); // Clear existing data
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
         String genre = "Fantasy";
@@ -51,7 +51,7 @@ class DataTest {
 
     @Test
     void storeTwoBooksSameAuthor() {
-        Data.reset();
+        Data.reset(); // Clear existing data
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
         String genre = "Fantasy";
@@ -79,7 +79,7 @@ class DataTest {
     }
     @Test
      void storeDuplicateBooks(){
-        Data.reset();
+        Data.reset(); // Clear existing data
         String title = "Atomic Habits";
         String author = "James Clear";
         String genre = "Non-fiction";
@@ -96,11 +96,12 @@ class DataTest {
         assertFalse(success);
         assertEquals(1,Data.getAllBooks().size());
 
+
     }
 
     @Test
      void storeEmptyTitle(){
-        Data.reset();
+        Data.reset(); // Clear existing data
         String title = "";
         String author = "Mary Shelley";
         String genre = "Horror";
