@@ -542,6 +542,9 @@ class DataTest {
         assertFalse(Data.removeMember(100,"Himanshu Ganga"));
     }
 
+    /**
+     * The following function is used to test Data.getAllMembers
+     */
     @Test
     void getAllMembers() {
         Data.reset();
@@ -558,6 +561,10 @@ class DataTest {
     void testGetBorrowedBooks() {
     }
 
+    /**
+     * The following four functions are to test Data.getMembersByName
+     * Each checks a different way in which we can get members by Name only
+     */
     @Test
     void testGetMembersByName(){
         ArrayList<Object[]> membersByName = Data.getMembersByName("Michelle Yeoh");
