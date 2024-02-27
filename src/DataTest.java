@@ -303,6 +303,11 @@ class DataTest {
         assertTrue(booksWithTitle.isEmpty());
     }
 
+    /**
+     * The following five functions are to test Data.getBooksByAuthor
+     * Each checks a variation of author name entries and whether they are
+     * equivalent to the details of the actual book that is present in the library
+     */
     @Test
     void getBooksByAuthorReturnsCorrectNumberOfBooks() {
         ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor("Stephen King");
@@ -336,6 +341,12 @@ class DataTest {
         ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor(" ");
         assertTrue(booksByAuthor.isEmpty());
     }
+
+    /**
+     * The following five functions are to test Data.getBooksByGenre
+     * Each checks a variation of genre types and whether they are
+     * equivalent to the details of the actual book that is present in the library
+     */
     @Test
     public void getBooksByGenreReturnsCorrectNumberOfBooks() {
         ArrayList<Object[]> booksByGenre = Data.getBooksByGenre("Fantasy");
