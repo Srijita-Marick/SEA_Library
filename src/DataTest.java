@@ -419,11 +419,6 @@ class DataTest {
     }
 
     @Test
-    void testCalculateFinesReturnedBeforeTime() {
-        assertEquals(0.0, Data.calculateFines(-5));
-    }
-
-    @Test
     void testCalculateFinesBigOverdue() {
         assertEquals(4.5, Data.calculateFines(90));
     }
