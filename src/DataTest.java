@@ -353,6 +353,7 @@ class DataTest {
 
     @Test
     void removeBook() {
+        assertTrue(Data.removeBook("Moby Dick","Herman Melville"));
     }
 
     @Test
