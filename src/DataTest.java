@@ -244,12 +244,19 @@ class DataTest {
         assertEquals("Available", eighthBook[Data.INDEX_STATUS]);
     }
 
+    /**
+     * The following function is to test Data.getAvailableBooks
+     */
     @Test
     void testGetAllAvailableBooks() {
         ArrayList<Object[]> allAvailableBooks = Data.getAvailableBooks();
         assertEquals(14, allAvailableBooks.size());
 
     }
+
+    /**
+     * The following function is to test Data.getUnavailableBooks
+     */
     @Test
     void testGetUnavailableBooks() {
         Data.reset();
@@ -257,6 +264,11 @@ class DataTest {
         assertEquals(0,allUnavailableBooks.size());
     }
 
+    /**
+     * The following five functions are to test Data.getBooksByTitle
+     * Each checks a variation of title entries and whether they are
+     * equivalent to the actual title that is present in the library
+     */
     @Test
     public void getBooksByTitleReturnsCorrectNumberOfBooks() {
         ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("Joyland");
