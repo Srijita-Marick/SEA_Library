@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataTest {
+
+    /**
+     * The following five functions are to test Data.storeNewBook
+     * Each checks a different way in which we can save books to the Library
+     * and checking to see if the book has been saved with the correct details
+     */
     @Test
     void storeNewBook() {
         Data.reset();
