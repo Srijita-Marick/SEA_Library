@@ -331,4 +331,16 @@ public class Data {
         return ((double)daysOverDue)*0.05; //five cents are added to fines per day overdue
     }
 
+    public static boolean payFines(Integer ID, Double payment){
+        for (Object[] member:members){
+            if ((member[INDEX_ID])==ID){
+                if ((Double)member[INDEX_FINES]>=payment){
+                    member[INDEX_FINES]=(Double)member[INDEX_FINES]-payment;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 }
