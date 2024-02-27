@@ -429,7 +429,11 @@ class DataTest {
         assertFalse(Data.removeBook("No Man is an Island","John Donne"));
     }
 
-
+    /**
+     * The following three functions are to test Data.storeNewMember
+     * Each checks a variation of member entries and whether it has been stored
+     * properly in the Library's main member list
+     */
     @Test
     public void testStoreNewMember() {
         assertTrue(Data.storeNewMember(109, "Michael Brown"));
@@ -454,6 +458,9 @@ class DataTest {
         assertTrue(Data.storeNewMember(105, "Emily White"));
     }
 
+    /**
+     * Creating a temporary member list to be used for testing
+     */
     @BeforeEach
     void setUpMemberData() {
         Data.storeNewMember(101, "Arman Najari");
