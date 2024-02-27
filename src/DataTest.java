@@ -119,6 +119,9 @@ class DataTest {
 
     }
 
+    /**
+     * Creating a temporary library to be used for testing
+     */
     @BeforeEach
     void setUpLibrary() {
         Data.reset(); // Clear existing data
@@ -137,6 +140,12 @@ class DataTest {
         Data.storeNewBook("Arsenic and Adobo","Mia P. Manansala","Mystery","Available");
         Data.storeNewBook("Joyland","Emily Schultz","Literary","Available");
     }
+
+    /**
+     * The following five functions are to test Data.checkExistBook
+     * Each checks a variation of books, and whether the function returns t
+     * rue or false according to the existence of the book in the setup Library
+     */
     @Test
     void checkExistBook() {
         assertTrue(Data.checkExistBook("The Great Gatsby", "F. Scott Fitzgerald"));
