@@ -437,7 +437,7 @@ class DataTest {
     @Test
     void testGetMembersById(){
         ArrayList<Object[]> membersById = Data.getMembersById(101);
-        assertEquals(1, membersById.size());
+        assertEquals(0, membersById.size());
     }
 
     @Test
@@ -449,6 +449,13 @@ class DataTest {
         assertEquals("Emily White", member[Data.INDEX_NAME]);
     }
 
+    @Test
+    void testGetMembersByIdTwoMembers(){
+        ArrayList<Object[]> membersById = Data.getMembersById(101);
+        assertEquals(1, membersById.size());
+        ArrayList<Object[]> membersById1 = Data.getMembersById(103);
+        assertEquals(1, membersById1.size());
+    }
     @Test
     void testCalculateFines(){
         assertEquals(0.0, Data.calculateFines(0));

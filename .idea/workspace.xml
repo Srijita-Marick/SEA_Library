@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added testCalculateFinesBigOverdue test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added testGetMembersByIdReturnMemberInfo test">
       <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,14 +73,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00012" summary="renamed searchBooks and viewAllBooks for clarity">
-      <option name="closed" value="true" />
-      <created>1708817706709</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1708817706709</updated>
     </task>
     <task id="LOCAL-00013" summary="added code to menuViewAllBooks">
       <option name="closed" value="true" />
@@ -467,7 +458,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709007970565</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="added testGetMembersByIdReturnMemberInfo test">
+      <option name="closed" value="true" />
+      <created>1709012271558</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1709012271558</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -494,7 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added testGetAllBooksAndReturnBookInfo test" />
     <MESSAGE value="added testGetAllBooksEmptyLibrary test" />
     <MESSAGE value="reformatted DataTest and added setUpLibrary" />
     <MESSAGE value="added contributors at the top (comment)" />
@@ -519,6 +517,7 @@
     <MESSAGE value="added testCalculateFinesMultipleDaysOverdue test" />
     <MESSAGE value="added testCalculateFinesReturnedBeforeTime test" />
     <MESSAGE value="added testCalculateFinesBigOverdue test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added testCalculateFinesBigOverdue test" />
+    <MESSAGE value="added testGetMembersByIdReturnMemberInfo test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added testGetMembersByIdReturnMemberInfo test" />
   </component>
 </project>
