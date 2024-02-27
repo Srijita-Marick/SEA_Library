@@ -406,6 +406,7 @@ public class Menu {
         options2.add("Remove Member");
         options2.add("View All Members");
         options2.add("Search Members");
+        options2.add("Pay fines");
         options2.add("Exit to Main Menu");
     }
     private static String optMessage2 = """
@@ -437,7 +438,8 @@ public class Menu {
                     case 2 -> menuRemoveMember();
                     case 3 -> menuViewAllMembers();
                     case 4 -> menuSearchMembers();
-                    case 5 -> run = false;
+                    case 5 -> menuPayFines();
+                    case 6 -> run = false;
                     default -> System.out.printf("Option %d not recognized!%n", option2);
                 }
             } else {
@@ -575,6 +577,31 @@ public class Menu {
         }
         return (membersString.toString());
     }
+
+    private static void menuPayFines(){
+        int ID = getId();
+        String viewMembersMessage = """
+             Member's Information:""";
+        System.out.println(viewAnyMemberList(viewMembersMessage,Data.getMembersById(ID)));
+
+        String input;
+        do {
+            System.out.println("\nEnter amount to be paid: ");
+            input = scanner.nextLine().trim();
+        }while (input.isEmpty()||!input.contains(".")||input.contains("-")||input.contains("$"));
+        input = String.format("%.2f",Double.parseDouble(input));
+        Double payment = Double.parseDouble(input);
+        if(Data.payFines(ID,payment)){
+            System.out.println("Payment successful!");
+            viewMembersMessage = """
+             Member's Updated Information:""";
+            System.out.println(viewAnyMemberList(viewMembersMessage,Data.getMembersById(ID)));
+        }
+        else{
+            System.out.println("Invalid payment. You cannot pay more than the amount owed.");
+        }
+    }
+
 
     /** called by menuAddMember, menuRemoveMember, searchByName
      * Used to get the member name
