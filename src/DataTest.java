@@ -101,8 +101,6 @@ class DataTest {
         success = Data.storeNewBook(title, author, genre, availabilityStatus);
         assertFalse(success);
         assertEquals(1,Data.getAllBooks().size());
-
-
     }
 
     @Test
@@ -382,7 +380,7 @@ class DataTest {
     }
 
     /**
-     * The following functions is to test Data.checkoutBook
+     * The following two functions are to test Data.checkoutBook
      */
     @Test
     void checkoutBook() {
@@ -507,6 +505,7 @@ class DataTest {
         Data.storeNewMember(103, "The Webster");
         assertTrue(Data.checkExistMember(101));
     }
+
     @Test
     public void testCheckExistMemberWhenMemberDoesNotExist() {
         Data.reset(); // Clear existing data
@@ -541,11 +540,13 @@ class DataTest {
         assertTrue(Data.removeMember(101,"John Doe")&&!Data.memberIDs.contains(101));
         //removeMember should return false, and 101 should no longer be part of memberIDS
     }
+
     @Test
     void testRemoveMemberWhenThereAreNoMembers() {
         Data.reset(); // Clear existing data
         assertFalse(Data.removeMember(100,"Anna"));
     }
+
     @Test
     void testRemoveMemberWhenIdExistsButNameDoesNot() {
         Data.reset(); // Clear existing data
