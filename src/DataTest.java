@@ -170,10 +170,13 @@ class DataTest {
 
     @Test
     void checkBookAvailableEmptyTitle(){
-        assertFalse(Data.checkBookAvailable(" ", "Rick Riordan"));
+        assertFalse(Data.checkBookAvailable(" ", "Emilia Hart"));
     }
 
-
+    @Test
+    void checkBookAvailableCaseSensitivity(){
+        assertFalse(Data.checkBookAvailable("TO KILL A MOCKINGBIRD", "HARPER LEE"));
+    }
 
     @Test
     void testGetAllBooks() {
