@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added testCalculateFinesBigOverdue test" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="debugged borrowed book display">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +73,46 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
+    </task>
+    <task id="LOCAL-00007" summary="removed all mentions of &quot;date due&quot;">
+      <option name="closed" value="true" />
+      <created>1708716006071</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708716006071</updated>
+    </task>
+    <task id="LOCAL-00008" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1708726539345</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708726539345</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added functions relating to the Member Data menu">
+      <option name="closed" value="true" />
+      <created>1708751877652</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708751877652</updated>
+    </task>
+    <task id="LOCAL-00010" summary="merged with emily">
+      <option name="closed" value="true" />
+      <created>1708804280080</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708804280080</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added code for Member Data Menu">
+      <option name="closed" value="true" />
+      <created>1708804474526</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708804474526</updated>
     </task>
     <task id="LOCAL-00012" summary="renamed searchBooks and viewAllBooks for clarity">
       <option name="closed" value="true" />
@@ -416,55 +458,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708993984986</updated>
     </task>
-    <task id="LOCAL-00055" summary="added testCalculateFinesZeroFine test&#10;changed private method to public (in Data)">
+    <task id="LOCAL-00055" summary="debugged borrowed book display">
       <option name="closed" value="true" />
-      <created>1709007344078</created>
+      <created>1708998147873</created>
       <option name="number" value="00055" />
       <option name="presentableId" value="LOCAL-00055" />
       <option name="project" value="LOCAL" />
-      <updated>1709007344078</updated>
+      <updated>1708998147875</updated>
     </task>
-    <task id="LOCAL-00056" summary="added testCalculateFinesZeroFine test&#10;changed private method to public (in Data)">
-      <option name="closed" value="true" />
-      <created>1709007405685</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1709007405685</updated>
-    </task>
-    <task id="LOCAL-00057" summary="added testCalculateFinesOneDayOverdue test">
-      <option name="closed" value="true" />
-      <created>1709007754725</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1709007754725</updated>
-    </task>
-    <task id="LOCAL-00058" summary="added testCalculateFinesMultipleDaysOverdue test">
-      <option name="closed" value="true" />
-      <created>1709007823631</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1709007823631</updated>
-    </task>
-    <task id="LOCAL-00059" summary="added testCalculateFinesReturnedBeforeTime test">
-      <option name="closed" value="true" />
-      <created>1709007875279</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1709007875279</updated>
-    </task>
-    <task id="LOCAL-00060" summary="added testCalculateFinesBigOverdue test">
-      <option name="closed" value="true" />
-      <created>1709007970565</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1709007970565</updated>
-    </task>
-    <option name="localTasksCounter" value="61" />
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -491,6 +493,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="added checkExistBookAuthorMismatch test" />
+    <MESSAGE value="added checkExistBookEmptyTitleAndAuthor test" />
+    <MESSAGE value="added checkExistBookTitleWithNullAuthor test" />
+    <MESSAGE value="added testGetAllBooks test" />
     <MESSAGE value="added testGetAllBooksAndReturnBookInfo test" />
     <MESSAGE value="added testGetAllBooksEmptyLibrary test" />
     <MESSAGE value="reformatted DataTest and added setUpLibrary" />
@@ -511,11 +517,7 @@
     <MESSAGE value="added getBooksByGenreReturnsCorrectNumberOfBooks1 test" />
     <MESSAGE value="added getBooksByGenreWhenGenreNotValid test" />
     <MESSAGE value="added 3 tests for StoreNewMember test" />
-    <MESSAGE value="added testCalculateFinesZeroFine test&#10;changed private method to public (in Data)" />
-    <MESSAGE value="added testCalculateFinesOneDayOverdue test" />
-    <MESSAGE value="added testCalculateFinesMultipleDaysOverdue test" />
-    <MESSAGE value="added testCalculateFinesReturnedBeforeTime test" />
-    <MESSAGE value="added testCalculateFinesBigOverdue test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added testCalculateFinesBigOverdue test" />
+    <MESSAGE value="debugged borrowed book display" />
+    <option name="LAST_COMMIT_MESSAGE" value="debugged borrowed book display" />
   </component>
 </project>
