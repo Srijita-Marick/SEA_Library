@@ -315,6 +315,12 @@ class DataTest {
         ArrayList<Object[]> booksByGenre = Data.getBooksByGenre("Literary");
         assertEquals(3, booksByGenre.size());
     }
+
+    @Test
+    public void getBooksByGenreWhenGenreNotValid() {
+        ArrayList<Object[]> booksByInvalidGenre = Data.getBooksByGenre("Adventure");
+        assertTrue(booksByInvalidGenre.isEmpty());
+    }
     @Test
     void checkoutBook() {
     }
