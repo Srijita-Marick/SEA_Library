@@ -7,6 +7,7 @@
  * @UCID 30212220, 30230290, 30230880
  * @date Feb 21-27 2024 (DEMO 1)
  * @tutorial T03 Tue  3:00PM -  4:50PM
+ * Used "Group Project Part 1 Long Example" by Jonathan Hudson as code source
  */
 
 import java.util.ArrayList;
@@ -302,7 +303,7 @@ public class Menu {
                 System.out.printf("%s by %s does not exist in library. Please try again.",title,author);
             }
             else {
-                System.out.printf("\"%s by %s was deleted from the library!",title,author);
+                System.out.printf("\n%s by %s was deleted from the library!",title,author);
             }
         } while (!success);
     }
@@ -317,7 +318,6 @@ public class Menu {
             String author = getAuthor();
             String genre = getGenre();
             String availabilityStatus = getAvailabilityStatus();
-            //String dateDue = getDateDue();
             success = Data.storeNewBook(title, author, genre, availabilityStatus);
             if (!success){
                 System.out.println("Book already exists in library. Try again.");
@@ -331,11 +331,11 @@ public class Menu {
     }
 
     public static int getDaysOverdue(){
-        System.out.println("How many days overdue is the book?");
+        System.out.println("How many days overdue is the book? ");
         String days;
         do {
             days = scanner.nextLine().trim();
-        } while (days.isEmpty()||days.contains("-")||days.contains("."));
+        } while (days.isEmpty()||days.contains("-")||days.contains(".")); //continues while selections are invalid
         return Integer.parseInt(days);
     }
     private static String getGenre() {
@@ -443,7 +443,6 @@ public class Menu {
             } else {
                 System.out.printf("Option %d not recognized!%n", option2);
             }
-            System.out.println("Exiting Member Data...");
         }
     }
 
@@ -454,7 +453,6 @@ public class Menu {
         boolean success;
         Integer ID = getId();
         String name = getMember();
-        //ArrayList<String> borrowed = getBorrowed();
         success = Data.storeNewMember(ID, name);
         if (!success){
             System.out.println("You cannot have two members with the same information.");
@@ -509,7 +507,7 @@ public class Menu {
         ArrayList<String> searchOptions = new ArrayList<>(); //each search option is a string in this list
         searchOptions.add("Blank"); //this is a placeholder that is never displayed to user
         searchOptions.add("Member Name");
-        searchOptions.add("Member Id");
+        searchOptions.add("Member ID");
         StringBuilder searchString = new StringBuilder(); // formatted list of the search options with instruction
         searchString.append("How would you like to search for members?\n");
         for (int i = 1; i < searchOptions.size(); i++) {
@@ -545,7 +543,7 @@ public class Menu {
     }
 
     /**
-     * Used in menuSearchMembers to look for a member by Id only
+     * Used in menuSearchMembers to look for a member by ID only
      */
     private static void searchById(){
         int id = getId();
@@ -593,7 +591,7 @@ public class Menu {
 
     /** called by menuCheckoutBooks, menuReturnBooks, menuAddMember, menuRemoveMember, searchById
      * Used to get the member Id
-     * @return return Integer value of member Id obtained from user input
+     * @return return Integer value of member ID obtained from user input
      */
     private static int getId() {
         String memberId;
@@ -602,30 +600,6 @@ public class Menu {
             memberId = scanner.nextLine().trim();
         }while (memberId.isEmpty());
         return Integer.parseInt(memberId);
-    }
-
-    /**
-     * Used to store a list of books borrowed by member
-     * @return an ArrayList containing strings of books borrowed by member from library
-     */
-    private static ArrayList<String> getBorrowed() {
-        ArrayList<String> borrowedBooks = new ArrayList<>();
-        borrowedBooks.add("Random"); // placeholder value
-        borrowedBooks.add("Filler"); // placeholder value
-        return borrowedBooks;
-    }
-
-    /**
-     * Used to get the fines owed by member
-     * @return double value of fines owed by member
-     */
-    private static double getFines() {
-        String memberFines;
-        do {
-            System.out.println("Enter Member Fines: ");
-            memberFines = scanner.nextLine().trim();
-        }while (memberFines.isEmpty());
-        return Double.parseDouble(memberFines);
     }
 
 }
