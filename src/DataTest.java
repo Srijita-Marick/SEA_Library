@@ -403,5 +403,6 @@ class DataTest {
 
     @Test
     void testCalculateFines(){
+        assertEquals(0.0, Data.calculateFines(0));
     }
 }
