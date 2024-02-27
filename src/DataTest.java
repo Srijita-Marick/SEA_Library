@@ -543,6 +543,11 @@ class DataTest {
         ArrayList<Object[]> membersById1 = Data.getMembersById(103);
         assertEquals(1, membersById1.size());
     }
+
+    /**
+     * The following four functions are to test Data.calculateFines
+     * Each checks a different way in which we can correctly calculate fines for a given overdue period
+     */
     @Test
     void testCalculateFines(){
         assertEquals(0.0, Data.calculateFines(0));
