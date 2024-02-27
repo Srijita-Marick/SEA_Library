@@ -357,6 +357,12 @@ class DataTest {
     }
 
     @Test
+    void removeTwoBooks() {
+        assertTrue(Data.removeBook("Arsenic and Adobo","Mia P. Manansala"));
+        assertTrue(Data.removeBook("Happy Place","Emily Henry"));
+    }
+
+    @Test
     public void testStoreNewMember() {
         assertTrue(Data.storeNewMember(104, "Michael Brown"));
     }
