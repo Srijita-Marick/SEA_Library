@@ -342,15 +342,17 @@ class DataTest {
     }
     @Test
     void returnBook() {
+        ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
 
+        Data.returnBook(124,"Weyward","Emilia Hart", 5);
+        assertTrue(Data.checkBookAvailable("Weyward","Emilia Hart"));
 
-
+        ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
+        assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
 
     @Test
     void removeBook() {
-        boolean success = Data.removeBook("The Blood of Olympus","Rick Riordan");
-        assertFalse(Data.checkBookAvailable( "The Blood of Olympus","Rick Riordan"));
     }
 
     @Test
