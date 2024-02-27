@@ -430,7 +430,7 @@ class DataTest {
         Data.reset(); // Clear existing data
         Data.storeNewMember(101, "John Doe");
         Data.storeNewMember(102, "Himanshu Ganga");
-        Data.storeNewMember(103, "Parker");
+        Data.storeNewMember(103, "Parker Gueth");
 
         assertFalse(Data.removeMember(102,"Anna"));
     }
@@ -440,15 +440,21 @@ class DataTest {
         Data.reset(); // Clear existing data
         Data.storeNewMember(101, "John Doe");
         Data.storeNewMember(102, "Himanshu Ganga");
-        Data.storeNewMember(103, "Parker");
+        Data.storeNewMember(103, "Parker Gueth");
 
         assertFalse(Data.removeMember(100,"Himanshu Ganga"));
     }
 
     @Test
     void getAllMembers() {
+        Data.reset();
+        Data.storeNewMember(111, "Axelle Leung");
+        Data.storeNewMember(112, "Rachel Lam");
+        Data.storeNewMember(113, "Dhana Ramsamy");
+        Data.storeNewMember(114, "Emma Stone");
+
         ArrayList<Object[]> allMembers = Data.getAllMembers();
-        assertEquals(5, allMembers.size());
+        assertEquals(4, allMembers.size());
     }
 
     @Test
