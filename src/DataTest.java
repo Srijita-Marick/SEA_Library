@@ -380,6 +380,10 @@ class DataTest {
         ArrayList<Object[]> booksByInvalidGenre = Data.getBooksByGenre("Adventure");
         assertTrue(booksByInvalidGenre.isEmpty());
     }
+
+    /**
+     * The following function is to test Data.checkoutBook
+     */
     @Test
     void checkoutBook() {
         ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
@@ -390,6 +394,10 @@ class DataTest {
         ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
+
+    /**
+     * The following function is to test Data.returnBook
+     */
     @Test
     void returnBook() {
         ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
@@ -401,6 +409,10 @@ class DataTest {
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
 
+    /**
+     * The following three functions are to test Data.removeBook
+     * Each checks a variation of books that can be removed from the Library
+     */
     @Test
     void removeBook() {
         assertTrue(Data.removeBook("Moby Dick","Herman Melville"));
