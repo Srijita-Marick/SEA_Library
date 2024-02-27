@@ -254,13 +254,13 @@ public class Menu {
     private static void menuCheckoutBooks() {
         int id = getId();
         while (!Data.checkExistMember(id)){
-            System.out.println("Member does not exist. Please try again.");
+            System.out.println("Member does not exist. Please try again.\n");
             id = getId();
         }
         String title = getTitle();
         String author = getAuthor();
         while (!Data.checkExistBook(title,author)){
-            System.out.printf("The library does not own %s by %s. Please try again.",title,author);
+            System.out.printf("The library does not own %s by %s. Please try again.\n",title,author);
             title = getTitle();
             author = getAuthor();
         }
@@ -268,7 +268,7 @@ public class Menu {
             Data.checkoutBook(id, title, author);
         }
         else {
-            System.out.printf("%s by %s is currently checked out by another user." ,title,author);
+            System.out.printf("%s by %s is currently checked out by another user.\n" ,title,author);
         }
 
     }
@@ -279,20 +279,20 @@ public class Menu {
     private static void menuReturnBooks(){
         int id = getId();
         while (!Data.checkExistMember(id)){  //makes sure that this id corresponds to an existing member
-            System.out.println("Member does not exist. Please try again.");
+            System.out.println("Member does not exist. Please try again.\n");
             id = getId();
         }
         String title = getTitle();
         String author = getAuthor();
         if (!Data.checkExistBook(title,author)){ //if the books isn't in the system, no action is taken
-            System.out.printf("The library does not own %s by %s. Please try again.",title,author);
+            System.out.printf("The library does not own %s by %s. Please try again.\n",title,author);
         }
         else if (Data.checkBookAvailable(title,author)){ //if the book has already been returned, no action is taken
-            System.out.printf("%s by %s is not currently checked out by anyone. That is not our book.",title,author);
+            System.out.printf("%s by %s is not currently checked out by anyone. That is not our book.\n",title,author);
         }
         else { //if the book both exists and is not checked out, then it is returned to the library
             int daysOverdue = getDaysOverdue();
-            System.out.printf("%s by %s has been returned to the library.",title,author);
+            System.out.printf("%s by %s has been returned to the library.\n",title,author);
             Data.returnBook(id,title,author,daysOverdue);
         }
     }
@@ -307,10 +307,10 @@ public class Menu {
             String author = getAuthor();
             success = Data.removeBook(title, author);
             if (!success){
-                System.out.printf("%s by %s does not exist in library. Please try again.",title,author);
+                System.out.printf("%s by %s does not exist in library. Please try again.\n",title,author);
             }
             else {
-                System.out.printf("\n%s by %s was deleted from the library!",title,author);
+                System.out.printf("\n%s by %s was deleted from the library!\n",title,author);
             }
         } while (!success);
     }
@@ -451,10 +451,10 @@ public class Menu {
                     case 4 -> menuSearchMembers();
                     case 5 -> menuPayFines();
                     case 6 -> run = false;
-                    default -> System.out.printf("Option %d not recognized!%n", option2);
+                    default -> System.out.printf("Option %d not recognized!%n\n", option2);
                 }
             } else {
-                System.out.printf("Option %d not recognized!%n", option2);
+                System.out.printf("Option %d not recognized!%n\n", option2);
             }
         }
     }
@@ -468,10 +468,10 @@ public class Menu {
         String name = getMember();
         success = Data.storeNewMember(ID, name);
         if (!success){
-            System.out.println("You cannot have two members with the same information.");
+            System.out.println("You cannot have two members with the same information.\n");
         }
         else{
-            System.out.println("Stored a new member!");
+            System.out.println("Stored a new member!\n");
         }
     }
 
@@ -485,10 +485,10 @@ public class Menu {
             String name = getMember();
             success = Data.removeMember(ID, name);
             if (!success){
-                System.out.println("Member does not exist in Membership List. Please try again.");
+                System.out.println("Member does not exist in Membership List. Please try again.\n");
             }
         } while (!success);
-        System.out.println("Deleted a new member!");
+        System.out.println("Deleted a new member!\n");
     }
     /**
      * Used in menuMemberData to print the entire list of library members
@@ -607,13 +607,13 @@ public class Menu {
         input = String.format("%.2f",Double.parseDouble(input));
         Double payment = Double.parseDouble(input);
         if(Data.payFines(ID,payment)){ //calls of Data.payFines, which updates the fine info as long as it's valid
-            System.out.println("Payment successful!");
+            System.out.println("Payment successful!\n");
             viewMembersMessage = """
              Member's Updated Information:""";
             System.out.println(viewAnyMemberList(viewMembersMessage,Data.getMembersById(ID)));
         }
         else{
-            System.out.println("Invalid payment. You cannot pay more than the amount owed.");
+            System.out.println("Invalid payment. You cannot pay more than the amount owed.\n");
         }
     }
 
