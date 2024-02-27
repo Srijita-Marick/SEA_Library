@@ -430,8 +430,8 @@ public class Menu {
         boolean success;
         Integer ID = getId();
         String name = getMember();
-        ArrayList<String> borrowed = getBorrowed();
-        success = Data.storeNewMember(ID, name, borrowed);
+        //ArrayList<String> borrowed = getBorrowed();
+        success = Data.storeNewMember(ID, name);
         if (!success){
             System.out.println("You cannot have two members with the same information.");
         }
@@ -468,7 +468,10 @@ public class Menu {
             memString.append("\n "); // for formatting purposes
             memString.append("\nID: ").append(member[Data.INDEX_ID]);
             memString.append("\nName: ").append(member[Data.INDEX_NAME]);
-            memString.append("\nBooks Borrowed:\n").append(member[Data.INDEX_BORROWED]);
+            memString.append("\nBooks Borrowed:");
+            for (String book: Data.getBorrowedBooks((Integer) member[Data.INDEX_ID])){
+                memString.append("\n     ").append(book);
+            }
             memString.append("\nFines: ").append(member[Data.INDEX_FINES]);
         }
         System.out.println(memString);
@@ -512,8 +515,8 @@ public class Menu {
         String name = getMember();
         String viewMembersMessage = """
                 All members with that name:""";
-        ArrayList<Object[]> bookList = Data.getBooksByTitle(name);
-        System.out.println(viewAnyMemberList(viewMembersMessage, bookList));
+        ArrayList<Object[]> memberList = Data.getMembersByName(name);
+        System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
     }
 
     /**
@@ -521,11 +524,10 @@ public class Menu {
      */
     private static void searchById(){
         int id = getId();
-        String ID = Integer.toString(id);
         String viewMembersMessage = """
              Member with given ID:""";
-        ArrayList<Object[]> bookList = Data.getBooksByAuthor(ID);
-        System.out.println(viewAnyMemberList(viewMembersMessage, bookList));
+        ArrayList<Object[]> memberList = Data.getMembersById(id);
+        System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
     }
 
     /**
@@ -541,7 +543,10 @@ public class Menu {
             membersString.append("\n "); // for formatting purposes
             membersString.append("\nID: ").append(member[Data.INDEX_ID]);
             membersString.append("\nName: ").append(member[Data.INDEX_NAME]);
-            membersString.append("\nBorrowed: ").append(member[Data.INDEX_BORROWED]);
+            membersString.append("\nBooks Borrowed:");
+            for (String book: Data.getBorrowedBooks((Integer) member[Data.INDEX_ID])){
+                membersString.append("\n     ").append(book);
+            }
             membersString.append("\nFines: ").append(member[Data.INDEX_FINES]);
         }
         return (membersString.toString());

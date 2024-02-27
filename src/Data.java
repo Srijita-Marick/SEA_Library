@@ -133,6 +133,8 @@ public class Data {
             for (Object[] book: books){
                 if (book[INDEX_TITLE].equals(title)&&book[INDEX_AUTHOR].equals(author)){
                     books.remove(book);
+                    titles.remove((String)book[INDEX_TITLE]);
+                    authors.remove((String)book[INDEX_AUTHOR]);
                     if (checkBookAvailable(title,author)){
                         availableBooks.remove(book);
                     }
@@ -156,12 +158,12 @@ public class Data {
     public static final int INDEX_FINES = 3;
 
 
-    public static boolean storeNewMember(Integer id, String name, ArrayList<String> borrowed) {
+    public static boolean storeNewMember(Integer id, String name) {
         if (!checkExistMember(id)) {
             Object[] member = new Object[4];
             member[INDEX_ID] = id;
             member[INDEX_NAME] = name;
-            member[INDEX_BORROWED] = borrowed;
+            member[INDEX_BORROWED] = new ArrayList<String>();
             member[INDEX_FINES] = 0.0; // when someone joins library for the first time they should have no fine
             memberIDs.add(id);
             members.add(member); //adding to list of all members
@@ -192,13 +194,31 @@ public class Data {
         return members;
     }
 
-    public static String[] getBorrowedBooks(Integer id){
+    public static ArrayList<Object[]> getMembersByName(String name) {
+        ArrayList<Object[]> membersWithName = new ArrayList<>();
         for (Object[] member: members){
-            if (member[INDEX_ID]==id){
-                return (String[]) member[INDEX_BORROWED];
+            if (member[INDEX_NAME].equals(name)) {
+                membersWithName.add(member);
             }
         }
-        return new String[]{null};
+        return membersWithName;
+    }
+    public static ArrayList<Object[]> getMembersById(int id) {
+        ArrayList<Object[]> membersWithId = new ArrayList<>();
+        for (Object[] member: members){
+            if (member[INDEX_ID].equals(id)) {
+                membersWithId.add(member);
+            }
+        }
+        return membersWithId;
+    }
+    public static ArrayList<String> getBorrowedBooks(Integer id){
+        for (Object[] member: members){
+            if (member[INDEX_ID]==id){
+                return (ArrayList<String>) member[INDEX_BORROWED];
+            }
+        }
+        return new ArrayList<String>();
     }
 
     /**
