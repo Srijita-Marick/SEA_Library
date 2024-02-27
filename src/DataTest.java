@@ -170,6 +170,12 @@ class DataTest {
     void checkExistBookTitleWithNullAuthor(){
         assertFalse(Data.checkExistBook("The Blood of Olympus", null));
     }
+
+    /**
+     * The following five functions are to test Data.checkBookAvailable
+     * Each checks a variation of availability statuses for a book in the setup
+     * Library and checks whether the function returns true or false accordingly
+     */
     @Test
     void checkBookAvailable() {
         assertTrue(Data.checkBookAvailable("Hell Bent","Leigh Bardugo"));
