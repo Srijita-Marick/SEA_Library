@@ -133,6 +133,8 @@ public class Data {
             for (Object[] book: books){
                 if (book[INDEX_TITLE].equals(title)&&book[INDEX_AUTHOR].equals(author)){
                     books.remove(book);
+                    titles.remove((String)book[INDEX_TITLE]);
+                    authors.remove((String)book[INDEX_AUTHOR]);
                     if (checkBookAvailable(title,author)){
                         availableBooks.remove(book);
                     }
