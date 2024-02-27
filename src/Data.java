@@ -331,6 +331,12 @@ public class Data {
         return ((double)daysOverDue)*0.05; //five cents are added to fines per day overdue
     }
 
+    /**
+     * Updates a members fines when they pay them
+     * @param ID of member paying fines
+     * @param payment is the amount the member is paying
+     * @return whether it is a valid payment or not
+     */
     public static boolean payFines(Integer ID, Double payment){
         for (Object[] member:members){
             if ((member[INDEX_ID])==ID){

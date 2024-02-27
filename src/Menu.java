@@ -131,7 +131,6 @@ public class Menu {
             } else{
                 System.out.printf("Option %d not recognized!%n", option1);
             }
-            System.out.println("Exiting Library Data...");
         }
     }
     /**
@@ -578,20 +577,24 @@ public class Menu {
         return (membersString.toString());
     }
 
+    /**
+     * Passes information to Data.payFines so that a member's fines can be updated when they pay it
+     * Prints member's information before and after they pay the fine
+     */
     private static void menuPayFines(){
         int ID = getId();
         String viewMembersMessage = """
              Member's Information:""";
         System.out.println(viewAnyMemberList(viewMembersMessage,Data.getMembersById(ID)));
 
-        String input;
+        String input; //temporarily saving payment amount as a string for looping purposes
         do {
             System.out.println("\nEnter amount to be paid: ");
             input = scanner.nextLine().trim();
         }while (input.isEmpty()||!input.contains(".")||input.contains("-")||input.contains("$"));
         input = String.format("%.2f",Double.parseDouble(input));
         Double payment = Double.parseDouble(input);
-        if(Data.payFines(ID,payment)){
+        if(Data.payFines(ID,payment)){ //calls of Data.payFines, which updates the fine info as long as it's valid
             System.out.println("Payment successful!");
             viewMembersMessage = """
              Member's Updated Information:""";
