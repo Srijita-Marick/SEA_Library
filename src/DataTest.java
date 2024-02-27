@@ -201,6 +201,11 @@ class DataTest {
         assertFalse(Data.checkBookAvailable("TO KILL A MOCKINGBIRD", "HARPER LEE"));
     }
 
+    /**
+     * The following four functions are to test Data.getAllBooks
+     * Each checks a variation of books that have been stored in the main Library
+     * and whether the values are equivalent to the expected ones
+     */
     @Test
     void testGetAllBooks() {
         ArrayList<Object[]> allBooks = Data.getAllBooks();
@@ -239,12 +244,19 @@ class DataTest {
         assertEquals("Available", eighthBook[Data.INDEX_STATUS]);
     }
 
+    /**
+     * The following function is to test Data.getAvailableBooks
+     */
     @Test
     void testGetAllAvailableBooks() {
         ArrayList<Object[]> allAvailableBooks = Data.getAvailableBooks();
         assertEquals(14, allAvailableBooks.size());
 
     }
+
+    /**
+     * The following function is to test Data.getUnavailableBooks
+     */
     @Test
     void testGetUnavailableBooks() {
         Data.reset();
@@ -252,6 +264,11 @@ class DataTest {
         assertEquals(0,allUnavailableBooks.size());
     }
 
+    /**
+     * The following five functions are to test Data.getBooksByTitle
+     * Each checks a variation of title entries and whether they are
+     * equivalent to the actual title that is present in the library
+     */
     @Test
     public void getBooksByTitleReturnsCorrectNumberOfBooks() {
         ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("Joyland");
@@ -286,6 +303,11 @@ class DataTest {
         assertTrue(booksWithTitle.isEmpty());
     }
 
+    /**
+     * The following five functions are to test Data.getBooksByAuthor
+     * Each checks a variation of author name entries and whether they are
+     * equivalent to the details of the actual book that is present in the library
+     */
     @Test
     void getBooksByAuthorReturnsCorrectNumberOfBooks() {
         ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor("Stephen King");
@@ -319,6 +341,12 @@ class DataTest {
         ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor(" ");
         assertTrue(booksByAuthor.isEmpty());
     }
+
+    /**
+     * The following five functions are to test Data.getBooksByGenre
+     * Each checks a variation of genre types and whether they are
+     * equivalent to the details of the actual book that is present in the library
+     */
     @Test
     public void getBooksByGenreReturnsCorrectNumberOfBooks() {
         ArrayList<Object[]> booksByGenre = Data.getBooksByGenre("Fantasy");
@@ -352,6 +380,10 @@ class DataTest {
         ArrayList<Object[]> booksByInvalidGenre = Data.getBooksByGenre("Adventure");
         assertTrue(booksByInvalidGenre.isEmpty());
     }
+
+    /**
+     * The following functions is to test Data.checkoutBook
+     */
     @Test
     void checkoutBook() {
         ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
@@ -362,6 +394,20 @@ class DataTest {
         ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
+
+    @Test
+    void checkoutBookWhenBookDoesNotExist(){
+        ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
+        Data.checkoutBook(103, "The Sea of Monsters","Rick Riordan");
+        assertFalse(Data.checkBookAvailable( "The Sea of Monsters","Rick Riordan"));
+
+        ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
+        assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
+    }
+
+    /**
+     * The following function is to test Data.returnBook
+     */
     @Test
     void returnBook() {
         ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
@@ -373,6 +419,10 @@ class DataTest {
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
 
+    /**
+     * The following three functions are to test Data.removeBook
+     * Each checks a variation of books that can be removed from the Library
+     */
     @Test
     void removeBook() {
         assertTrue(Data.removeBook("Moby Dick","Herman Melville"));
@@ -389,9 +439,14 @@ class DataTest {
         assertFalse(Data.removeBook("No Man is an Island","John Donne"));
     }
 
+    /**
+     * The following three functions are to test Data.storeNewMember
+     * Each checks a variation of member entries and whether it has been stored
+     * properly in the Library's main member list
+     */
     @Test
     public void testStoreNewMember() {
-        assertTrue(Data.storeNewMember(104, "Michael Brown"));
+        assertTrue(Data.storeNewMember(109, "Michael Brown"));
     }
 
     @Test
@@ -413,6 +468,20 @@ class DataTest {
         assertTrue(Data.storeNewMember(105, "Emily White"));
     }
 
+    /**
+     * Creating a temporary member list to be used for testing
+     */
+    @BeforeEach
+    void setUpMemberData() {
+        Data.storeNewMember(101, "Arman Najari");
+        Data.storeNewMember(102, "Himanshu Ganga");
+        Data.storeNewMember(103, "The Webster");
+        Data.storeNewMember(104, "Alice Wonderland");
+        Data.storeNewMember(105, "Brad Pitt");
+        Data.storeNewMember(106, "Naruto Uzumaki");
+        Data.storeNewMember(107, "Jackie Chan");
+        Data.storeNewMember(108, "Michelle Yeoh");
+    }
     /**
      * The following functions are to test checkExistMember
      */
@@ -483,6 +552,9 @@ class DataTest {
         assertFalse(Data.removeMember(100,"Himanshu Ganga"));
     }
 
+    /**
+     * The following function is used to test Data.getAllMembers
+     */
     @Test
     void getAllMembers() {
         Data.reset();
@@ -499,10 +571,45 @@ class DataTest {
     void testGetBorrowedBooks() {
     }
 
+    /**
+     * The following four functions are to test Data.getMembersByName
+     * Each checks a different way in which we can get members by Name only
+     */
     @Test
     void testGetMembersByName(){
+        ArrayList<Object[]> membersByName = Data.getMembersByName("Michelle Yeoh");
+        assertEquals(1, membersByName.size());
     }
 
+    @Test
+    void testGetMembersByNameReturnMemberInfo(){
+        ArrayList<Object[]> membersByName = Data.getMembersByName("Alice Wonderland");
+        assertEquals(1, membersByName.size());
+        Object[] member = membersByName.get(0);
+        assertEquals(104,member[Data.INDEX_ID]);
+        assertEquals("Alice Wonderland",member[Data.INDEX_NAME]);
+    }
+
+    @Test
+    void testGetMembersByNameThreeMembers(){
+        ArrayList<Object[]> membersByName = Data.getMembersByName("The Webster");
+        assertEquals(1, membersByName.size());
+        ArrayList<Object[]> membersByName1 = Data.getMembersByName("Himanshu Ganga");
+        assertEquals(1, membersByName1.size());
+        ArrayList<Object[]> membersByName2 = Data.getMembersByName("Jackie Chan");
+        assertEquals(1, membersByName2.size());
+    }
+
+    @Test
+    void testGetMembersByNameNoName(){
+        ArrayList<Object[]> membersByName = Data.getMembersByName(" ");
+        assertEquals(0, membersByName.size());
+    }
+
+    /**
+     * The following three functions are to test Data.getMembersById
+     * Each checks a different way in which we can get members by Id only
+     */
     @Test
     void testGetMembersById(){
         Data.reset();
@@ -516,7 +623,7 @@ class DataTest {
         assertEquals(1, members.size());
         Object[] member = members.get(0);
         assertEquals(105, member[Data.INDEX_ID]);
-        assertEquals("Emily White", member[Data.INDEX_NAME]);
+        assertEquals("Brad Pitt", member[Data.INDEX_NAME]);
     }
 
     @Test
@@ -526,6 +633,11 @@ class DataTest {
         ArrayList<Object[]> membersById1 = Data.getMembersById(103);
         assertEquals(1, membersById1.size());
     }
+
+    /**
+     * The following four functions are to test Data.calculateFines
+     * Each checks a different way in which we can correctly calculate fines for a given overdue period
+     */
     @Test
     void testCalculateFines(){
         assertEquals(0.0, Data.calculateFines(0));
