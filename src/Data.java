@@ -156,12 +156,12 @@ public class Data {
     public static final int INDEX_FINES = 3;
 
 
-    public static boolean storeNewMember(Integer id, String name, ArrayList<String> borrowed) {
+    public static boolean storeNewMember(Integer id, String name) {
         if (!checkExistMember(id)) {
             Object[] member = new Object[4];
             member[INDEX_ID] = id;
             member[INDEX_NAME] = name;
-            member[INDEX_BORROWED] = borrowed;
+            member[INDEX_BORROWED] = new ArrayList<String>();
             member[INDEX_FINES] = 0.0; // when someone joins library for the first time they should have no fine
             memberIDs.add(id);
             members.add(member); //adding to list of all members
@@ -192,13 +192,13 @@ public class Data {
         return members;
     }
 
-    public static String[] getBorrowedBooks(Integer id){
+    public static ArrayList<String> getBorrowedBooks(Integer id){
         for (Object[] member: members){
             if (member[INDEX_ID]==id){
-                return (String[]) member[INDEX_BORROWED];
+                return (ArrayList<String>) member[INDEX_BORROWED];
             }
         }
-        return new String[]{null};
+        return new ArrayList<String>();
     }
 
     /**

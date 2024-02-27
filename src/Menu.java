@@ -430,8 +430,8 @@ public class Menu {
         boolean success;
         Integer ID = getId();
         String name = getMember();
-        ArrayList<String> borrowed = getBorrowed();
-        success = Data.storeNewMember(ID, name, borrowed);
+        //ArrayList<String> borrowed = getBorrowed();
+        success = Data.storeNewMember(ID, name);
         if (!success){
             System.out.println("You cannot have two members with the same information.");
         }
@@ -468,7 +468,10 @@ public class Menu {
             memString.append("\n "); // for formatting purposes
             memString.append("\nID: ").append(member[Data.INDEX_ID]);
             memString.append("\nName: ").append(member[Data.INDEX_NAME]);
-            memString.append("\nBooks Borrowed:\n").append(member[Data.INDEX_BORROWED]);
+            memString.append("\nBooks Borrowed:");
+            for (String book: Data.getBorrowedBooks((Integer) member[Data.INDEX_ID])){
+                memString.append("\n     ").append(member[Data.INDEX_BORROWED]);
+            }
             memString.append("\nFines: ").append(member[Data.INDEX_FINES]);
         }
         System.out.println(memString);
