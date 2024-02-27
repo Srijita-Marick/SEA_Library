@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="debugged borrowed book display">
-      <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +73,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
+    </task>
+    <task id="LOCAL-00007" summary="removed all mentions of &quot;date due&quot;">
+      <option name="closed" value="true" />
+      <created>1708716006071</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708716006071</updated>
     </task>
     <task id="LOCAL-00008" summary="test commit">
       <option name="closed" value="true" />
@@ -458,15 +466,7 @@
       <option name="project" value="LOCAL" />
       <updated>1708998147875</updated>
     </task>
-    <task id="LOCAL-00056" summary="did two tests for removeMember">
-      <option name="closed" value="true" />
-      <created>1709011682773</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1709011682773</updated>
-    </task>
-    <option name="localTasksCounter" value="57" />
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -493,6 +493,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="added checkExistBookAuthorMismatch test" />
     <MESSAGE value="added checkExistBookEmptyTitleAndAuthor test" />
     <MESSAGE value="added checkExistBookTitleWithNullAuthor test" />
     <MESSAGE value="added testGetAllBooks test" />
@@ -517,7 +518,6 @@
     <MESSAGE value="added getBooksByGenreWhenGenreNotValid test" />
     <MESSAGE value="added 3 tests for StoreNewMember test" />
     <MESSAGE value="debugged borrowed book display" />
-    <MESSAGE value="did two tests for removeMember" />
-    <option name="LAST_COMMIT_MESSAGE" value="did two tests for removeMember" />
+    <option name="LAST_COMMIT_MESSAGE" value="debugged borrowed book display" />
   </component>
 </project>

@@ -447,6 +447,8 @@ class DataTest {
 
     @Test
     void getAllMembers() {
+        ArrayList<Object[]> allMembers = Data.getAllMembers();
+        assertEquals(5, allMembers.size());
     }
 
     @Test
@@ -458,13 +460,27 @@ class DataTest {
     }
 
     @Test
-    void testGetMembersByIdOneMember(){
-        Data.reset(); // Clear existing data
-        Data.storeNewMember(101, "John Doe");
+    void testGetMembersById(){
         ArrayList<Object[]> membersById = Data.getMembersById(101);
-        assertEquals(1, membersById.size());
+        assertEquals(0, membersById.size());
     }
 
+    @Test
+    void testGetMembersByIdReturnMemberInfo(){
+        ArrayList<Object[]> members = Data.getMembersById(105);
+        assertEquals(1, members.size());
+        Object[] member = members.get(0);
+        assertEquals(105, member[Data.INDEX_ID]);
+        assertEquals("Emily White", member[Data.INDEX_NAME]);
+    }
+
+    @Test
+    void testGetMembersByIdTwoMembers(){
+        ArrayList<Object[]> membersById = Data.getMembersById(101);
+        assertEquals(1, membersById.size());
+        ArrayList<Object[]> membersById1 = Data.getMembersById(103);
+        assertEquals(1, membersById1.size());
+    }
     @Test
     void testCalculateFines(){
         assertEquals(0.0, Data.calculateFines(0));
