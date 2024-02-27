@@ -115,18 +115,18 @@ class DataTest {
     @BeforeEach
     void setUpLibrary() {
         Data.reset(); // Clear existing data
-        Data.storeNewBook("The Blood of Olympus","Rick Riordan","Fantasy","Unavailable");
-        Data.storeNewBook("Moby Dick","Herman Melville","Literary","Unavailable");
+        Data.storeNewBook("The Blood of Olympus","Rick Riordan","Fantasy","Available");
+        Data.storeNewBook("Moby Dick","Herman Melville","Literary","Available");
         Data.storeNewBook("The Great Gatsby","F. Scott Fitzgerald","Literary","Available");
         Data.storeNewBook("Weyward", "Emilia Hart", "Historical Fiction", "Available");
-        Data.storeNewBook("The Housemaid's Secret", "Freida McFadden", "Thriller", "Unavailable");
+        Data.storeNewBook("The Housemaid's Secret", "Freida McFadden", "Thriller", "Available");
         Data.storeNewBook("To Kill a Mockingbird", "Harper Lee", "General Fiction", "Available");
-        Data.storeNewBook("Happy Place","Emily Henry","Romance","Unavailable");
+        Data.storeNewBook("Happy Place","Emily Henry","Romance","Available");
         Data.storeNewBook("Hell Bent","Leigh Bardugo","Fantasy","Available");
-        Data.storeNewBook("In the Lives of Puppets","T.J. Klune","Science Fiction","Unavailable");
+        Data.storeNewBook("In the Lives of Puppets","T.J. Klune","Science Fiction","Available");
         Data.storeNewBook("Holly","Stephen King","Horror","Available");
-        Data.storeNewBook("Joyland","Stephen King","Thriller","Unavailable");
-        Data.storeNewBook("Poverty, by America","Matthew Desmond","Non-fiction","Unavailable");
+        Data.storeNewBook("Joyland","Stephen King","Thriller","Available");
+        Data.storeNewBook("Poverty, by America","Matthew Desmond","Non-fiction","Available");
         Data.storeNewBook("Arsenic and Adobo","Mia P. Manansala","Mystery","Available");
         Data.storeNewBook("Joyland","Emily Schultz","Literary","Available");
     }
@@ -218,9 +218,9 @@ class DataTest {
     }
 
     @Test
-    void testGetAvailableBooks() {
-    }
+    void testGetAllAvailableBooks() {
 
+    }
     @Test
     void testGetUnavailableBooks() {
     }
@@ -238,7 +238,7 @@ class DataTest {
         assertEquals("The Blood of Olympus", firstBook[Data.INDEX_TITLE]);
         assertEquals("Rick Riordan", firstBook[Data.INDEX_AUTHOR]);
         assertEquals("Fantasy", firstBook[Data.INDEX_GENRE]);
-        assertEquals("Unavailable", firstBook[Data.INDEX_STATUS]);
+        assertEquals("Available", firstBook[Data.INDEX_STATUS]);
     }
 
     @Test
@@ -272,7 +272,7 @@ class DataTest {
         assertEquals("Happy Place", book[Data.INDEX_TITLE]);
         assertEquals("Emily Henry", book[Data.INDEX_AUTHOR]);
         assertEquals("Romance", book[Data.INDEX_GENRE]);
-        assertEquals("Unavailable", book[Data.INDEX_STATUS]);
+        assertEquals("Available", book[Data.INDEX_STATUS]);
     }
 
     @Test
@@ -327,6 +327,17 @@ class DataTest {
     }
     @Test
     void checkoutBook() {
+//        ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
+//
+//        Data.checkoutBook(123, "The Blood of Olympus","Rick Riordan");
+//        assertFalse(Data.checkBookAvailable( "The Blood of Olympus","Rick Riordan"));
+//
+//        ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
+//        assertEquals(initialAvailableBooks.size() - 1, updatedAvailableBooks.size());
+//
+//        String[] borrowedBooks = Data.getBorrowedBooks(123);
+//        assertTrue(borrowedBooks.length > 0);
+
     }
 
     @Test
