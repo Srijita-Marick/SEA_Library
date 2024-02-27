@@ -486,6 +486,8 @@ class DataTest {
 
     @Test
     void testGetMembersByName(){
+        ArrayList<Object[]> membersByName = Data.getMembersByName("Michelle Yeoh");
+        assertEquals(1, membersByName.size());
     }
 
     @Test
