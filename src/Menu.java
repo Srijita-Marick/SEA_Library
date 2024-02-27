@@ -638,7 +638,7 @@ public class Menu {
     private static int getId() {
         String memberId;
         do {
-            System.out.println("Enter Member Id: ");
+            System.out.println("Enter Member ID (integer value): ");
             memberId = scanner.nextLine().trim();
         }while (memberId.isEmpty());
         return Integer.parseInt(memberId);
