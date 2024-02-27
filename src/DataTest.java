@@ -490,9 +490,8 @@ class DataTest {
 
     @Test
     void testGetMembersById(){
-        Data.reset();
-        ArrayList<Object[]> membersById = Data.getMembersById(101);
-        assertEquals(0, membersById.size());
+        ArrayList<Object[]> membersById = Data.getMembersById(107);
+        assertEquals(1, membersById.size());
     }
 
     @Test
