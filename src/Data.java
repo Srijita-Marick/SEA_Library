@@ -10,7 +10,8 @@ public class Data {
         unAvailableBooks.clear();
         titles.clear();
         authors.clear();
-
+        memberIDs.clear();
+        members.clear();
     }
     private static final ArrayList<Object[]> books = new ArrayList<>();
     private static final ArrayList<Object[]> availableBooks = new ArrayList<>();
