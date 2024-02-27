@@ -219,6 +219,8 @@ class DataTest {
 
     @Test
     void testGetAllAvailableBooks() {
+        ArrayList<Object[]> allAvailableBooks = Data.getAvailableBooks();
+        assertEquals(14, allAvailableBooks.size());
 
     }
     @Test
