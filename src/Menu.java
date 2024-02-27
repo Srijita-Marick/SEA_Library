@@ -578,6 +578,9 @@ public class Menu {
         return (membersString.toString());
     }
 
+    /** called by menuAddMember , menuRemoveMember , searchByName
+     * @return member name obtained from user input
+     */
     private static String getMember() {
         System.out.println("Enter Member Name: ");
         String member;
@@ -586,6 +589,7 @@ public class Menu {
         } while (member.isEmpty());
         return member;
     }
+
     private static int getId() {
         String memberId;
         do {
