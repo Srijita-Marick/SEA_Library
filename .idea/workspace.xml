@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added getBooksByGenreWhenNoBooksOfGenre test">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added getBooksByGenreWhenGenreNotValid test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,22 +74,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00003" summary="small debug in menuLoop">
-      <option name="closed" value="true" />
-      <created>1708657586890</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1708657586890</updated>
-    </task>
-    <task id="LOCAL-00004" summary="added code to getAuthor">
-      <option name="closed" value="true" />
-      <created>1708658395715</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1708658395715</updated>
     </task>
     <task id="LOCAL-00005" summary="added code to getAvailabilityStatus">
       <option name="closed" value="true" />
@@ -466,7 +451,23 @@
       <option name="project" value="LOCAL" />
       <updated>1708991871805</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="added getBooksByGenreReturnsCorrectNumberOfBooks1 test">
+      <option name="closed" value="true" />
+      <created>1708991992788</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1708991992788</updated>
+    </task>
+    <task id="LOCAL-00053" summary="added getBooksByGenreWhenGenreNotValid test">
+      <option name="closed" value="true" />
+      <created>1708992073316</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1708992073316</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -493,8 +494,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created ViewAnyMemberList to be used in search" />
-    <MESSAGE value="edited javadoc comments" />
     <MESSAGE value="added checkExistBook test" />
     <MESSAGE value="added checkBookDoesNotExist test" />
     <MESSAGE value="added checkExistBookAuthorMismatch test" />
@@ -518,6 +517,8 @@
     <MESSAGE value="added getBooksByGenreReturnsCorrectNumberOfBooks test" />
     <MESSAGE value="added getBooksByGenreReturnsCorrectBookInfo test" />
     <MESSAGE value="added getBooksByGenreWhenNoBooksOfGenre test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added getBooksByGenreWhenNoBooksOfGenre test" />
+    <MESSAGE value="added getBooksByGenreReturnsCorrectNumberOfBooks1 test" />
+    <MESSAGE value="added getBooksByGenreWhenGenreNotValid test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getBooksByGenreWhenGenreNotValid test" />
   </component>
 </project>

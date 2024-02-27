@@ -112,7 +112,7 @@ class DataTest {
     }
 
     @BeforeEach
-    public void setUpLibrary() {
+    void setUpLibrary() {
         Data.reset(); // Clear existing data
         Data.storeNewBook("The Blood of Olympus","Rick Riordan","Fantasy","Unavailable");
         Data.storeNewBook("Moby Dick","Herman Melville","Literary","Unavailable");
@@ -337,7 +337,37 @@ class DataTest {
     }
 
     @Test
-    void testStoreNewMember() {
+    public void testStoreNewMember() {
+        assertTrue(Data.storeNewMember(104, "Michael Brown", new ArrayList<>()));
+    }
+
+    @Test
+    public void testStoreNewMemberAlreadyExists() {
+        Data.reset(); // Clear existing data
+        Data.storeNewMember(101, "John Doe", new ArrayList<>());
+        Data.storeNewMember(102, "Jane Smith", new ArrayList<>());
+        Data.storeNewMember(103, "Alice Johnson", new ArrayList<>());
+        assertFalse(Data.storeNewMember(101, "John Doe", new ArrayList<>()));
+    }
+
+    @Test
+    public void testStoreNewMemberAndCheckExistence() {
+        Data.reset(); // Clear existing data
+        Data.storeNewMember(101, "John Doe", new ArrayList<>());
+        Data.storeNewMember(102, "Jane Smith", new ArrayList<>());
+        Data.storeNewMember(103, "Alice Johnson", new ArrayList<>());
+        Data.storeNewMember(104, "Michael Brown", new ArrayList<>());
+        assertTrue(Data.storeNewMember(105, "Emily White", new ArrayList<>()));
+    }
+
+    @Test
+    public void testStoreNewMemberWithoutName() {
+        assertFalse(Data.storeNewMember(106, "", new ArrayList<>()));
+    }
+
+    @Test
+    public void testStoreNewMemberNullID() {
+        assertFalse(Data.storeNewMember(null, "Magnus Chase", new ArrayList<>()));
     }
 
     @Test
