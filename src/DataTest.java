@@ -396,10 +396,12 @@ class DataTest {
     }
 
     /**
-     * Tests what happens when user tries to remove a member that doesn't exist
+     * The following five functions are to test Data.removeMember
+     * Each checks a different variation of true returns, false returns,
+     * and checking to see if the member has actually been removed
      */
     @Test
-    void testRemoveMember1() {
+    void testRemoveMemberThatDoesntExist() {
         Data.reset(); // Clear existing data
         Data.storeNewMember(101, "John Doe");
         Data.storeNewMember(102, "Jane Smith");
@@ -408,11 +410,8 @@ class DataTest {
         assertFalse(Data.removeMember(100,"Anna"));
     }
 
-    /**
-     * Tests what happens when user successfully removes a member
-     */
     @Test
-    void testRemoveMember2() {
+    void testRemoveMemberThatDoesExist() {
         Data.reset(); // Clear existing data
         Data.storeNewMember(101, "John Doe");
         Data.storeNewMember(102, "Jane Smith");
@@ -420,6 +419,30 @@ class DataTest {
 
         assertTrue(Data.removeMember(101,"John Doe")&&!Data.memberIDs.contains(101));
         //removeMember should return false, and 101 should no longer be part of memberIDS
+    }
+    @Test
+    void testRemoveMemberWhenThereAreNoMembers() {
+        Data.reset(); // Clear existing data
+        assertFalse(Data.removeMember(100,"Anna"));
+    }
+    @Test
+    void testRemoveMemberWhenIdExistsButNameDoesNot() {
+        Data.reset(); // Clear existing data
+        Data.storeNewMember(101, "John Doe");
+        Data.storeNewMember(102, "Himanshu Ganga");
+        Data.storeNewMember(103, "Parker");
+
+        assertFalse(Data.removeMember(102,"Anna"));
+    }
+
+    @Test
+    void testRemoveMemberWhenNameExistsButIdDoesNot() {
+        Data.reset(); // Clear existing data
+        Data.storeNewMember(101, "John Doe");
+        Data.storeNewMember(102, "Himanshu Ganga");
+        Data.storeNewMember(103, "Parker");
+
+        assertFalse(Data.removeMember(100,"Himanshu Ganga"));
     }
 
     @Test
