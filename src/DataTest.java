@@ -384,9 +384,31 @@ class DataTest {
     void checkExistMember() {
     }
 
+    /**
+     * Tests what happens when user tries to remove a member that doesn't exist
+     */
     @Test
-    void testRemoveMember() {
+    void testRemoveMember1() {
+        Data.reset(); // Clear existing data
+        Data.storeNewMember(101, "John Doe");
+        Data.storeNewMember(102, "Jane Smith");
+        Data.storeNewMember(103, "Alice Johnson");
 
+        assertFalse(Data.removeMember(100,"Anna"));
+    }
+
+    /**
+     * Tests what happens when user successfully removes a member
+     */
+    @Test
+    void testRemoveMember2() {
+        Data.reset(); // Clear existing data
+        Data.storeNewMember(101, "John Doe");
+        Data.storeNewMember(102, "Jane Smith");
+        Data.storeNewMember(103, "Alice Johnson");
+
+        assertTrue(Data.removeMember(101,"John Doe")&&!Data.memberIDs.contains(101));
+        //removeMember should return false, and 101 should no longer be part of memberIDS
     }
 
     @Test
