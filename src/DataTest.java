@@ -582,6 +582,10 @@ class DataTest {
         assertEquals(0, membersByName.size());
     }
 
+    /**
+     * The following three functions are to test Data.getMembersById
+     * Each checks a different way in which we can get members by Id only
+     */
     @Test
     void testGetMembersById(){
         Data.reset();
