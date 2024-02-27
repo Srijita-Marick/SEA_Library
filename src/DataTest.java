@@ -696,4 +696,29 @@ class DataTest {
     void testCalculateFinesBigOverdue() {
         assertEquals(4.5, Data.calculateFines(90));
     }
+
+    /**
+     * The following tests are for Data.payFines
+     * Each looks at a different ratio of payment to fines owed (>,=,<)
+     */
+    @Test
+    void testPayFinesWhenPaymentGreaterThanFinesOwed() {
+        Data.checkoutBook(101,"Moby Dick","Herman Melville");
+        Data.returnBook(101,"Moby Dick","Herman Melville",90);
+        assertFalse(Data.payFines(101,4.6));
+    }
+    @Test
+    void testPayFinesWhenPaymentIsLessThanFinesOwed() {
+        Data.members.get(0)[Data.INDEX_FINES] = 10.00;
+        assertTrue(Data.payFines(101,5.00));
+        assertEquals(5.00,Data.members.get(0)[Data.INDEX_FINES]);
+        Data.reset();
+    }
+    @Test
+    void testPayFinesWhenPaymentIsEqualToFinesOwed() {
+        Data.members.get(0)[Data.INDEX_FINES] = 5.00;
+        assertTrue(Data.payFines(101,5.00));
+        assertEquals(0.00,Data.members.get(0)[Data.INDEX_FINES]);
+        Data.reset();
+    }
 }
