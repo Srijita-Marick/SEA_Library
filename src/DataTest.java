@@ -101,8 +101,6 @@ class DataTest {
         success = Data.storeNewBook(title, author, genre, availabilityStatus);
         assertFalse(success);
         assertEquals(1,Data.getAllBooks().size());
-
-
     }
 
     @Test
@@ -382,7 +380,7 @@ class DataTest {
     }
 
     /**
-     * The following functions is to test Data.checkoutBook
+     * The following two functions are to test Data.checkoutBook
      */
     @Test
     void checkoutBook() {
@@ -432,8 +430,6 @@ class DataTest {
         ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
-
-
 
     /**
      * The following three functions are to test Data.removeBook
@@ -509,6 +505,7 @@ class DataTest {
         Data.storeNewMember(103, "The Webster");
         assertTrue(Data.checkExistMember(101));
     }
+
     @Test
     public void testCheckExistMemberWhenMemberDoesNotExist() {
         Data.reset(); // Clear existing data
@@ -543,11 +540,13 @@ class DataTest {
         assertTrue(Data.removeMember(101,"John Doe")&&!Data.memberIDs.contains(101));
         //removeMember should return false, and 101 should no longer be part of memberIDS
     }
+
     @Test
     void testRemoveMemberWhenThereAreNoMembers() {
         Data.reset(); // Clear existing data
         assertFalse(Data.removeMember(100,"Anna"));
     }
+
     @Test
     void testRemoveMemberWhenIdExistsButNameDoesNot() {
         Data.reset(); // Clear existing data
@@ -583,8 +582,32 @@ class DataTest {
         assertEquals(4, allMembers.size());
     }
 
+    /**
+     * The following three functions are used to test Data.getBorrowedBooks
+     * Each checks a variation of books to be borrowed and whether the book
+     * status has been updated accordingly
+     */
     @Test
     void testGetBorrowedBooks() {
+        Data.storeNewBook("Nightcrawling", "Leila Mottley", "Literary", "Unavailable");
+        ArrayList<String> borrowedBooks = Data.getBorrowedBooks(1);
+        assertTrue(borrowedBooks.isEmpty());
+        Data.reset();
+    }
+
+    @Test
+    public void testGetBorrowedBooksOneBook() {
+        Data.checkoutBook(103, "Holly", "Stephen King");
+        ArrayList<String> borrowedBooks = Data.getBorrowedBooks(103);
+        assertEquals(1, borrowedBooks.size());
+        assertTrue(borrowedBooks.contains("Holly by Stephen King"));
+        Data.reset(); //make sure nothing changes
+    }
+
+    @Test
+    public void testGetBorrowedBooksNoBooksBorrowed() {
+        ArrayList<String> borrowedBooks = Data.getBorrowedBooks(101);
+        assertTrue(borrowedBooks.isEmpty());
     }
 
     /**
