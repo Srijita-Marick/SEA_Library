@@ -391,8 +391,24 @@ class DataTest {
         assertTrue(Data.storeNewMember(105, "Emily White"));
     }
 
+    /**
+     * The following functions are to test checkExistMember
+     */
     @Test
-    void checkExistMember() {
+    public void testCheckExistMemberWhenMemberExists() {
+        Data.reset(); // Clear existing data
+        Data.storeNewMember(101, "Arman Najari");
+        Data.storeNewMember(102, "Himanshu Ganga");
+        Data.storeNewMember(103, "The Webster");
+        assertTrue(Data.checkExistMember(101));
+    }
+    @Test
+    public void testCheckExistMemberWhenMemberDoesNotExist() {
+        Data.reset(); // Clear existing data
+        Data.storeNewMember(101, "Arman Najari");
+        Data.storeNewMember(102, "Himanshu Ganga");
+        Data.storeNewMember(103, "The Webster");
+        assertFalse(Data.checkExistMember(100));
     }
 
     /**
@@ -461,6 +477,7 @@ class DataTest {
 
     @Test
     void testGetMembersById(){
+        Data.reset();
         ArrayList<Object[]> membersById = Data.getMembersById(101);
         assertEquals(0, membersById.size());
     }
