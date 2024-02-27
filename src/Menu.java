@@ -472,7 +472,8 @@ public class Menu {
             for (String book: Data.getBorrowedBooks((Integer) member[Data.INDEX_ID])){
                 memString.append("\n     ").append(book);
             }
-            memString.append("\nFines: ").append(member[Data.INDEX_FINES]);
+            String roundedFine = String.format("%.2f",(double)(member[Data.INDEX_FINES]));
+            memString.append("\nFines: ").append(roundedFine);
         }
         System.out.println(memString);
     }
@@ -547,7 +548,8 @@ public class Menu {
             for (String book: Data.getBorrowedBooks((Integer) member[Data.INDEX_ID])){
                 membersString.append("\n     ").append(book);
             }
-            membersString.append("\nFines: ").append(member[Data.INDEX_FINES]);
+            String roundedFine = String.format("%.2f",(double)(member[Data.INDEX_FINES]));
+            membersString.append("\nFines: ").append(roundedFine);
         }
         return (membersString.toString());
     }
