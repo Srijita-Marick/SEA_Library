@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added getBooksByAuthorReturnsCorrectNumberOfBooks1 test">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added getBooksByGenreWhenNoBooksOfGenre test">
       <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,22 +73,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00001" summary="anna commint">
-      <option name="closed" value="true" />
-      <created>1708560106034</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1708560106034</updated>
-    </task>
-    <task id="LOCAL-00002" summary="anna commint 2">
-      <option name="closed" value="true" />
-      <created>1708560441282</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1708560441282</updated>
     </task>
     <task id="LOCAL-00003" summary="small debug in menuLoop">
       <option name="closed" value="true" />
@@ -450,7 +434,39 @@
       <option name="project" value="LOCAL" />
       <updated>1708990838312</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="added getBooksByAuthorEmptyAuthor test">
+      <option name="closed" value="true" />
+      <created>1708990966014</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1708990966014</updated>
+    </task>
+    <task id="LOCAL-00049" summary="added getBooksByGenreReturnsCorrectNumberOfBooks test">
+      <option name="closed" value="true" />
+      <created>1708991217507</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1708991217507</updated>
+    </task>
+    <task id="LOCAL-00050" summary="added getBooksByGenreReturnsCorrectBookInfo test">
+      <option name="closed" value="true" />
+      <created>1708991607866</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1708991607867</updated>
+    </task>
+    <task id="LOCAL-00051" summary="added getBooksByGenreWhenNoBooksOfGenre test">
+      <option name="closed" value="true" />
+      <created>1708991871805</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1708991871805</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -477,10 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reformatting optMessages" />
-    <MESSAGE value="created menuSearchMembers" />
-    <MESSAGE value="created searchByName for Search" />
-    <MESSAGE value="created searchByID for Search" />
     <MESSAGE value="created ViewAnyMemberList to be used in search" />
     <MESSAGE value="edited javadoc comments" />
     <MESSAGE value="added checkExistBook test" />
@@ -502,6 +514,10 @@
     <MESSAGE value="added getBooksByTitleEmptyTitle test" />
     <MESSAGE value="added getBooksByAuthorWhenAuthorNotFound test" />
     <MESSAGE value="added getBooksByAuthorReturnsCorrectNumberOfBooks1 test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added getBooksByAuthorReturnsCorrectNumberOfBooks1 test" />
+    <MESSAGE value="added getBooksByAuthorEmptyAuthor test" />
+    <MESSAGE value="added getBooksByGenreReturnsCorrectNumberOfBooks test" />
+    <MESSAGE value="added getBooksByGenreReturnsCorrectBookInfo test" />
+    <MESSAGE value="added getBooksByGenreWhenNoBooksOfGenre test" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getBooksByGenreWhenNoBooksOfGenre test" />
   </component>
 </project>
