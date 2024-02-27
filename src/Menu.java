@@ -578,7 +578,7 @@ public class Menu {
         return (membersString.toString());
     }
 
-    /** called by menuAddMember , menuRemoveMember , searchByName
+    /** called by menuAddMember, menuRemoveMember, searchByName
      * @return member name obtained from user input
      */
     private static String getMember() {
@@ -590,6 +590,9 @@ public class Menu {
         return member;
     }
 
+    /** called by menuCheckoutBooks, menuReturnBooks, menuAddMember, menuRemoveMember, searchById
+     * @return return Integer value of member Id obtained from user input
+     */
     private static int getId() {
         String memberId;
         do {
