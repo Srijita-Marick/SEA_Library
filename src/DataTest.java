@@ -363,6 +363,11 @@ class DataTest {
     }
 
     @Test
+    void removeNonExistingBook() {
+        assertFalse(Data.removeBook("No Man is an Island","John Donne"));
+    }
+
+    @Test
     public void testStoreNewMember() {
         assertTrue(Data.storeNewMember(104, "Michael Brown"));
     }
