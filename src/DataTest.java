@@ -225,8 +225,9 @@ class DataTest {
     }
     @Test
     void testGetUnavailableBooks() {
-        ArrayList<Object[]> allAvailableBooks = Data.getAvailableBooks();
-        assertEquals(0,allAvailableBooks.size());
+        Data.reset();
+        ArrayList<Object[]> allUnavailableBooks = Data.getUnavailableBooks();
+        assertEquals(0,allUnavailableBooks.size());
     }
 
     @Test
@@ -331,25 +332,28 @@ class DataTest {
     }
     @Test
     void checkoutBook() {
-//        ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
-//
-//        Data.checkoutBook(123, "The Blood of Olympus","Rick Riordan");
-//        assertFalse(Data.checkBookAvailable( "The Blood of Olympus","Rick Riordan"));
-//
-//        ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
-//        assertEquals(initialAvailableBooks.size() - 1, updatedAvailableBooks.size());
-//
-//        String[] borrowedBooks = Data.getBorrowedBooks(123);
-//        assertTrue(borrowedBooks.length > 0);
+        ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
 
+        Data.checkoutBook(123, "The Blood of Olympus","Rick Riordan");
+        assertFalse(Data.checkBookAvailable( "The Blood of Olympus","Rick Riordan"));
+
+        ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
+        assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
-
     @Test
     void returnBook() {
+        ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
+
+        Data.returnBook(124,"Weyward","Emilia Hart", 5);
+        assertTrue(Data.checkBookAvailable("Weyward","Emilia Hart"));
+
+        ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
+        assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
 
     @Test
     void removeBook() {
+        assertTrue(Data.removeBook("Moby Dick","Herman Melville"));
     }
 
     @Test
@@ -403,5 +407,21 @@ class DataTest {
 
     @Test
     void testCalculateFines(){
+        assertEquals(0.0, Data.calculateFines(0));
+    }
+
+    @Test
+    void testCalculateFinesOneDayOverdue() {
+        assertEquals(0.05, Data.calculateFines(1));
+    }
+
+    @Test
+    void testCalculateFinesMultipleDaysOverdue() {
+        assertEquals(1.0, Data.calculateFines(20));
+    }
+
+    @Test
+    void testCalculateFinesBigOverdue() {
+        assertEquals(4.5, Data.calculateFines(90));
     }
 }
