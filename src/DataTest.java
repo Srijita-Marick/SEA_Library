@@ -475,6 +475,13 @@ class DataTest {
 
     @Test
     void testGetBorrowedBooks() {
+        Data.storeNewMember(20222,"Kumar");
+        Data.storeNewBook("The Picture of Dorian Gray","Oscar Wilde","Horror","Available");
+        Data.storeNewBook("Foo","BobBobby","Romance","Available");
+        Data.checkoutBook(20222,"The Picture of Dorian Gray","Oscar Wilde");
+        Data.checkoutBook(20222,"Foo","BobBobby");
+        System.out.println(Data.getBorrowedBooks(20222));
+        assertEquals("The Picture of Dorian Gray by Oscar Wilde",Data.getBorrowedBooks(20222).get(0));
     }
 
     @Test
@@ -490,6 +497,7 @@ class DataTest {
 
     @Test
     void testGetMembersByIdReturnMemberInfo(){
+        Data.reset();
         ArrayList<Object[]> members = Data.getMembersById(105);
         assertEquals(1, members.size());
         Object[] member = members.get(0);
@@ -499,6 +507,7 @@ class DataTest {
 
     @Test
     void testGetMembersByIdTwoMembers(){
+        Data.reset();
         ArrayList<Object[]> membersById = Data.getMembersById(101);
         assertEquals(1, membersById.size());
         ArrayList<Object[]> membersById1 = Data.getMembersById(103);

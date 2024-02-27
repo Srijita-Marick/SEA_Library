@@ -129,7 +129,9 @@ public class Menu {
             System.out.println("Exiting Library Data...");
         }
     }
-
+    /**
+     * sends user to their desired type of search
+     */
     private static void menuSearchBooks() {
         ArrayList<String> searchOptions = new ArrayList<>(); //each search option is a string in this list
         searchOptions.add("Blank"); //this is a placeholder that is never displayed to user
@@ -159,6 +161,9 @@ public class Menu {
             }
         }
     }
+    /**
+     * Prints all books with selected title using menuViewAnyBookList
+     */
     private static void searchByTitle(){
         String title = getTitle();
         String viewBooksMessage = """
@@ -166,6 +171,9 @@ public class Menu {
         ArrayList<Object[]> bookList = Data.getBooksByTitle(title);
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
+    /**
+     * Prints all books by selected author using menuViewAnyBookList
+     */
     private static void searchByAuthor(){
         String author = getAuthor();
         String viewBooksMessage = """
@@ -173,6 +181,10 @@ public class Menu {
         ArrayList<Object[]> bookList = Data.getBooksByAuthor(author);
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
+
+    /**
+     * Prints all books in selected genre using menuViewAnyBookList
+     */
     private static void searchByGenre(){
         String genre = getGenre();
         String viewBooksMessage = """
@@ -181,7 +193,9 @@ public class Menu {
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
-
+    /**
+     * Prints all unavailable books in library using menuViewAnyBookList
+     */
     private static void menuViewUnavailable() {
         String viewBooksMessage = """
             Unavailable Books:""";
@@ -189,6 +203,9 @@ public class Menu {
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
+    /**
+     * Prints all available books in library using menuViewAnyBookList
+     */
     private static void menuViewAvailable() {
         String viewBooksMessage = """
             Available Books:""";
@@ -196,6 +213,9 @@ public class Menu {
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
+    /**
+     * Prints all book in library using menuViewAnyBookList
+     */
     private static void menuViewAllBooks() {
         String viewBooksMessage= """
             ALl library Books:""";
