@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataTest {
+
+    /**
+     * The following five functions are to test Data.storeNewBook
+     * Each checks a different way in which we can save books to the Library
+     * and checking to see if the book has been saved with the correct details
+     */
     @Test
     void storeNewBook() {
         Data.reset(); // Clear existing data
@@ -113,6 +119,9 @@ class DataTest {
 
     }
 
+    /**
+     * Creating a temporary library to be used for testing
+     */
     @BeforeEach
     void setUpLibrary() {
         Data.reset(); // Clear existing data
@@ -131,6 +140,12 @@ class DataTest {
         Data.storeNewBook("Arsenic and Adobo","Mia P. Manansala","Mystery","Available");
         Data.storeNewBook("Joyland","Emily Schultz","Literary","Available");
     }
+
+    /**
+     * The following five functions are to test Data.checkExistBook
+     * Each checks a variation of books, and whether the function returns t
+     * rue or false according to the existence of the book in the setup Library
+     */
     @Test
     void checkExistBook() {
         assertTrue(Data.checkExistBook("The Great Gatsby", "F. Scott Fitzgerald"));
@@ -155,6 +170,12 @@ class DataTest {
     void checkExistBookTitleWithNullAuthor(){
         assertFalse(Data.checkExistBook("The Blood of Olympus", null));
     }
+
+    /**
+     * The following five functions are to test Data.checkBookAvailable
+     * Each checks a variation of availability statuses for a book in the setup
+     * Library and checks whether the function returns true or false accordingly
+     */
     @Test
     void checkBookAvailable() {
         assertTrue(Data.checkBookAvailable("Hell Bent","Leigh Bardugo"));
