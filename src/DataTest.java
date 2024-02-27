@@ -201,6 +201,11 @@ class DataTest {
         assertFalse(Data.checkBookAvailable("TO KILL A MOCKINGBIRD", "HARPER LEE"));
     }
 
+    /**
+     * The following four functions are to test Data.getAllBooks
+     * Each checks a variation of books that have been stored in the main Library
+     * and whether the values are equivalent to the expected ones
+     */
     @Test
     void testGetAllBooks() {
         ArrayList<Object[]> allBooks = Data.getAllBooks();
