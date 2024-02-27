@@ -501,7 +501,7 @@ class DataTest {
         assertEquals(1, members.size());
         Object[] member = members.get(0);
         assertEquals(101, member[Data.INDEX_ID]);
-        assertEquals("Emily White", member[Data.INDEX_NAME]);
+        assertEquals("Arman Najari", member[Data.INDEX_NAME]);
     }
 
     @Test
