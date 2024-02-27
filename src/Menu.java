@@ -602,10 +602,14 @@ public class Menu {
         return Integer.parseInt(memberId);
     }
 
+    /**
+     * Used to store a list of books borrowed by member
+     * @return an ArrayList containing strings of books borrowed by member from library
+     */
     private static ArrayList<String> getBorrowed() {
         ArrayList<String> borrowedBooks = new ArrayList<>();
-        borrowedBooks.add("Random");
-        borrowedBooks.add("Filler");
+        borrowedBooks.add("Random"); // placeholder value
+        borrowedBooks.add("Filler"); // placeholder value
         return borrowedBooks;
     }
     private static double getFines() {
