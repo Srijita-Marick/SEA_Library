@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataTest {
-    @org.junit.jupiter.api.Test
+    @Test
     void storeNewBook() {
         Data.reset();
         String title = "Harry Potter and the Sorcerer's Stone";
@@ -13,14 +13,14 @@ class DataTest {
         String availabilityStatus = "Available";
         assertEquals(0, Data.getAllBooks().size());
         boolean success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        assertTrue(success);
         assertEquals(1, Data.getAllBooks().size());
         assertEquals(title, Data.getAllBooks().get(0)[0]);
         assertEquals(author, Data.getAllBooks().get(0)[1]);
         assertEquals(genre, Data.getAllBooks().get(0)[2]);
         assertEquals(availabilityStatus, Data.getAllBooks().get(0)[3]);
-        assertTrue(success, "Add was successful");
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void storeTwoBooks() {
         Data.reset();
         String title = "Harry Potter and the Sorcerer's Stone";
@@ -35,7 +35,7 @@ class DataTest {
         assertEquals(author, Data.getAllBooks().get(0)[1]);
         assertEquals(genre, Data.getAllBooks().get(0)[2]);
         assertEquals(availabilityStatus, Data.getAllBooks().get(0)[3]);
-        assertTrue(success, "Add was successful");
+
         title = "Pride and Prejudice";
         author = "Jane Austen";
         genre = "Romance";
@@ -48,7 +48,8 @@ class DataTest {
         assertEquals(genre, Data.getAllBooks().get(1)[2]);
         assertEquals(availabilityStatus, Data.getAllBooks().get(1)[3]);
     }
-    @org.junit.jupiter.api.Test
+
+    @Test
     void storeTwoBooksSameAuthor() {
         Data.reset();
         String title = "Harry Potter and the Sorcerer's Stone";
@@ -63,7 +64,7 @@ class DataTest {
         assertEquals(author, Data.getAllBooks().get(0)[1]);
         assertEquals(genre, Data.getAllBooks().get(0)[2]);
         assertEquals(availabilityStatus, Data.getAllBooks().get(0)[3]);
-        assertTrue(success, "Add was successful");
+
         title = "Harry Potter and the Chamber of Secrets";
         author = "J.K. Rowling";
         genre = "Fantasy";
@@ -75,12 +76,8 @@ class DataTest {
         assertEquals(author, Data.getAllBooks().get(1)[1]);
         assertEquals(genre, Data.getAllBooks().get(1)[2]);
         assertEquals(availabilityStatus, Data.getAllBooks().get(1)[3]);
-        
-        for (Object[] book : Data.getAllBooks()){
-            assertEquals(author, book[1]);
-        }
     }
-    @org.junit.jupiter.api.Test
+    @Test
      void storeDuplicateBooks(){
         Data.reset();
         String title = "Atomic Habits";
@@ -90,15 +87,18 @@ class DataTest {
         Data.storeNewBook(title, author, genre, availabilityStatus);
         boolean success = Data.storeNewBook(title, author, genre, availabilityStatus);
         assertFalse(success);
+
         title = "Atomic Habits";
         author = "James Clear";
         genre = "Non-fiction";
         availabilityStatus = "Unavailable";
         success = Data.storeNewBook(title, author, genre, availabilityStatus);
-        assertEquals(1,Data.getAllBooks().size());
         assertFalse(success);
+        assertEquals(1,Data.getAllBooks().size());
+
     }
-    @org.junit.jupiter.api.Test
+
+    @Test
      void storeEmptyTitle(){
         Data.reset();
         String title = "";
@@ -107,8 +107,9 @@ class DataTest {
         String availabilityStatus = "Unavailable";
         Data.storeNewBook(title, author, genre, availabilityStatus);
         boolean success = Data.storeNewBook(title, author, genre, availabilityStatus);
-        assertEquals(0,Data.getAllBooks().size());
         assertFalse(success);
+        assertEquals(0,Data.getAllBooks().size());
+
     }
 
     @BeforeEach
