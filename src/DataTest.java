@@ -339,26 +339,26 @@ class DataTest {
 
     @Test
     public void testStoreNewMember() {
-        assertTrue(Data.storeNewMember(104, "Michael Brown", new ArrayList<>()));
+        assertTrue(Data.storeNewMember(104, "Michael Brown"));
     }
 
     @Test
     public void testStoreNewMemberAlreadyExists() {
         Data.reset(); // Clear existing data
-        Data.storeNewMember(101, "John Doe", new ArrayList<>());
-        Data.storeNewMember(102, "Jane Smith", new ArrayList<>());
-        Data.storeNewMember(103, "Alice Johnson", new ArrayList<>());
-        assertFalse(Data.storeNewMember(101, "John Doe", new ArrayList<>()));
+        Data.storeNewMember(101, "John Doe");
+        Data.storeNewMember(102, "Jane Smith");
+        Data.storeNewMember(103, "Alice Johnson");
+        assertFalse(Data.storeNewMember(101, "John Doe"));
     }
 
     @Test
     public void testStoreNewMemberAndCheckExistence() {
         Data.reset(); // Clear existing data
-        Data.storeNewMember(101, "John Doe", new ArrayList<>());
-        Data.storeNewMember(102, "Jane Smith", new ArrayList<>());
-        Data.storeNewMember(103, "Alice Johnson", new ArrayList<>());
-        Data.storeNewMember(104, "Michael Brown", new ArrayList<>());
-        assertTrue(Data.storeNewMember(105, "Emily White", new ArrayList<>()));
+        Data.storeNewMember(101, "John Doe");
+        Data.storeNewMember(102, "Jane Smith");
+        Data.storeNewMember(103, "Alice Johnson");
+        Data.storeNewMember(104, "Michael Brown");
+        assertTrue(Data.storeNewMember(105, "Emily White"));
     }
 
     @Test
