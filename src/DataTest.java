@@ -391,4 +391,16 @@ class DataTest {
     @Test
     void testGetBorrowedBooks() {
     }
+
+    @Test
+    void testGetMembersByName(){
+    }
+
+    @Test
+    void testGetMembersById(){
+    }
+
+    @Test
+    void testCalculateFines(){
+    }
 }
