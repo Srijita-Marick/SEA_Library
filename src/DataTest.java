@@ -408,7 +408,11 @@ class DataTest {
     }
 
     @Test
-    void testGetMembersById(){
+    void testGetMembersByIdOneMember(){
+        Data.reset(); // Clear existing data
+        Data.storeNewMember(101, "John Doe");
+        ArrayList<Object[]> membersById = Data.getMembersById(101);
+        assertEquals(1, membersById.size());
     }
 
     @Test
