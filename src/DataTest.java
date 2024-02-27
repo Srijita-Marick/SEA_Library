@@ -367,9 +367,21 @@ class DataTest {
         assertFalse(Data.removeBook("No Man is an Island","John Donne"));
     }
 
+    @BeforeEach
+    void setUpMemberData() {
+        Data.storeNewMember(101, "Arman Najari");
+        Data.storeNewMember(102, "Himanshu Ganga");
+        Data.storeNewMember(103, "The Webster");
+        Data.storeNewMember(104, "Alice Wonderland");
+        Data.storeNewMember(105, "Brad Pitt");
+        Data.storeNewMember(106, "Naruto Uzumaki");
+        Data.storeNewMember(107, "Jackie Chan");
+        Data.storeNewMember(108, "Michelle Yeoh");
+    }
+
     @Test
     public void testStoreNewMember() {
-        assertTrue(Data.storeNewMember(104, "Michael Brown"));
+        assertTrue(Data.storeNewMember(109, "Michael Brown"));
     }
 
     @Test
@@ -463,18 +475,13 @@ class DataTest {
 
     @Test
     void getAllMembers() {
-        Data.reset();
-        Data.storeNewMember(111, "Axelle Leung");
-        Data.storeNewMember(112, "Rachel Lam");
-        Data.storeNewMember(113, "Dhana Ramsamy");
-        Data.storeNewMember(114, "Emma Stone");
-
         ArrayList<Object[]> allMembers = Data.getAllMembers();
-        assertEquals(4, allMembers.size());
+        assertEquals(8, allMembers.size());
     }
 
     @Test
     void testGetBorrowedBooks() {
+
     }
 
     @Test
@@ -490,10 +497,10 @@ class DataTest {
 
     @Test
     void testGetMembersByIdReturnMemberInfo(){
-        ArrayList<Object[]> members = Data.getMembersById(105);
+        ArrayList<Object[]> members = Data.getMembersById(101);
         assertEquals(1, members.size());
         Object[] member = members.get(0);
-        assertEquals(105, member[Data.INDEX_ID]);
+        assertEquals(101, member[Data.INDEX_ID]);
         assertEquals("Emily White", member[Data.INDEX_NAME]);
     }
 
