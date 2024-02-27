@@ -470,7 +470,7 @@ public class Menu {
             memString.append("\nName: ").append(member[Data.INDEX_NAME]);
             memString.append("\nBooks Borrowed:");
             for (String book: Data.getBorrowedBooks((Integer) member[Data.INDEX_ID])){
-                memString.append("\n     ").append(member[Data.INDEX_BORROWED]);
+                memString.append("\n     ").append(book);
             }
             memString.append("\nFines: ").append(member[Data.INDEX_FINES]);
         }
@@ -543,7 +543,10 @@ public class Menu {
             membersString.append("\n "); // for formatting purposes
             membersString.append("\nID: ").append(member[Data.INDEX_ID]);
             membersString.append("\nName: ").append(member[Data.INDEX_NAME]);
-            membersString.append("\nBorrowed: ").append(member[Data.INDEX_BORROWED]);
+            membersString.append("\nBooks Borrowed:");
+            for (String book: Data.getBorrowedBooks((Integer) member[Data.INDEX_ID])){
+                membersString.append("\n     ").append(book);
+            }
             membersString.append("\nFines: ").append(member[Data.INDEX_FINES]);
         }
         return (membersString.toString());
