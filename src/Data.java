@@ -152,8 +152,8 @@ public class Data {
                 availableBooks.remove(book);
                 book[INDEX_STATUS]= "Unavailable";
                 unAvailableBooks.add(book);
-                for (Object[] member: members){ //goes through members until it finds one with ID
-                    if (member[INDEX_ID]==id){
+                for (Member member: members){ //goes through members until it finds one with ID
+                    if (member.getID()==id){
                         //saves to member's borrowed books list as a String
                         ((ArrayList<String>)member[INDEX_BORROWED]).add(title+" by "+author);
                     }
@@ -178,10 +178,10 @@ public class Data {
                 unAvailableBooks.remove(book);
                 book[INDEX_STATUS]= "Available";
                 availableBooks.add(book);
-                for (Object[] member: members){ //goes through members until it finds the one with ID
-                    if (member[INDEX_ID]==id){
+                for (Member member: members){ //goes through members until it finds the one with ID
+                    if (member.getID()==id){
                         ((ArrayList<String>)member[INDEX_BORROWED]).remove(title+" by "+author); //member no longer has book borrowed
-                        member[INDEX_FINES] = (double)member[INDEX_FINES] + calculateFines(daysOverdue); //adds fines
+                        member.setFines(member.getFines() + calculateFines(daysOverdue)); ; //adds fines
                     }
                 }
             }
@@ -204,8 +204,8 @@ public class Data {
                     }
                     else {
                         unAvailableBooks.remove(book);
-                        for (Object[] member:members){ //should be removed from borrowed list of any member who has it
-                            returnBook((Integer)member[INDEX_ID],title,author,0);
+                        for (Member member:members){ //should be removed from borrowed list of any member who has it
+                            returnBook(member.getID(),title,author,0);
                         }
                     }
                     books.remove(book);
