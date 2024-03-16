@@ -56,7 +56,7 @@ public class Data {
     public static boolean checkBookAvailable(String title, String author){
         if (checkExistBook(title,author)) {
             for (Books book : availableBooks) {
-                if (book[INDEX_TITLE].equals(title) && book[INDEX_AUTHOR].equals(author)) {
+                if (book.getTitle().equals(title) && book.getAuthor().equals(author)) {
                     return true;
                 }
             }
@@ -92,7 +92,7 @@ public class Data {
     public static ArrayList<Books> getBooksByTitle(String title) {
         ArrayList<Books> booksWithTitle = new ArrayList<>();
         for (Books book: books){
-            if (book[INDEX_TITLE].equals(title)) {
+            if (book.getTitle().equals(title)) {
                 booksWithTitle.add(book);
             }
         }
@@ -106,7 +106,7 @@ public class Data {
     public static ArrayList<Books> getBooksByAuthor(String author) {
         ArrayList<Books> booksByAuthor = new ArrayList<>();
         for (Books book: books){
-            if (book[INDEX_AUTHOR].equals(author)) {
+            if (book.getAuthor().equals(author)) {
                 booksByAuthor.add(book);
             }
         }
@@ -120,7 +120,7 @@ public class Data {
     public static ArrayList<Books> getBooksByGenre(String genre) {
         ArrayList<Books> booksInGenre = new ArrayList<>();
         for (Books book: books){
-            if (book[INDEX_GENRE].equals(genre)) {
+            if (book.getGenre().equals(genre)) {
                 booksInGenre.add(book);
             }
         }
@@ -137,9 +137,9 @@ public class Data {
      */
     public static void checkoutBook(Integer id, String title, String author){
         for (Books book: books){ //goes through every book until it finds one matching title and author
-            if (book[INDEX_TITLE].equals(title) && book[INDEX_AUTHOR].equals(author)){
+            if (book.getTitle().equals(title) && book.getAuthor().equals(author)){
                 availableBooks.remove(book);
-                book[INDEX_STATUS]= "Unavailable";
+                book[INDEX_STATUS] = "Unavailable";
                 unAvailableBooks.add(book);
                 for (Object[] member: members){ //goes through members until it finds one with ID
                     if (member[INDEX_ID]==id){
@@ -163,7 +163,7 @@ public class Data {
      */
     public static void returnBook(Integer id, String title, String author, int daysOverdue) {
         for (Books book: books){ //goes through every book until it finds one with title and author
-            if (book[INDEX_TITLE].equals(title) && book[INDEX_AUTHOR].equals(author)){
+            if (book.getTitle().equals(title) && book.getAuthor().equals(author)){
                 unAvailableBooks.remove(book);
                 book[INDEX_STATUS]= "Available";
                 availableBooks.add(book);
@@ -187,7 +187,7 @@ public class Data {
     public static boolean removeBook(String title, String author) {
         if (checkExistBook(title,author)){ //can only remove a book that exists
             for (Books book: books){
-                if (book[INDEX_TITLE].equals(title)&&book[INDEX_AUTHOR].equals(author)){
+                if (book.getTitle().equals(title)&&book.getAuthor().equals(author)){
                     if (checkBookAvailable(title,author)){
                         availableBooks.remove(book);
                     }
@@ -198,8 +198,8 @@ public class Data {
                         }
                     }
                     books.remove(book);
-                    titles.remove((String)book[INDEX_TITLE]);
-                    authors.remove((String)book[INDEX_AUTHOR]);
+                    titles.remove(book.getTitle());
+                    authors.remove(book.getAuthor());
                     return true; // book has successfully been removed
                 }
             }
