@@ -45,7 +45,12 @@ public class Data {
      * @return whether the library has a book with that title and author
      */
     public static boolean checkExistBook(String title , String author){
-        return titles.contains(title) && authors.contains(author);
+        for(Books book : books){
+            if (book.getTitle().equals(title) && book.getAuthor().equals(author)){
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
