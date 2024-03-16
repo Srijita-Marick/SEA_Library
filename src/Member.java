@@ -8,8 +8,21 @@ public class Member {
     public Member(String id,String name, String agegroup){
         this.id = id;
         this.name = name;
-        this.borrowed = new ArrayList<String>();
+        this.borrowed = new ArrayList<String>(); //when someone joins library for first time they don't have books yet
         this.fines = 0.00; // when someone joins library for the first time they should have no fine
         this.agegroup = agegroup;
     }
+
+    public void setName(String name){
+        this.name=name;
+    }
+    public void setFines(double fines) {
+        this.fines = fines;
+    }
+
+
+
+
+
+
 }
