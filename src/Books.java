@@ -27,4 +27,15 @@ public class Books {
     public String getType() {
         return type;
     }
+
+    @Override
+    public String toString() {
+        return "Books{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", genre='" + genre + '\'' +
+                ", availabilityStatus='" + availabilityStatus + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }
