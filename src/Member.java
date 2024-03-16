@@ -39,4 +39,15 @@ public class Member {
     public ArrayList<String> getBorrowed() {
         return borrowed;
     }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", agegroup='" + agegroup + '\'' +
+                ", fines=" + fines +
+                ", borrowed=" + borrowed +
+                '}';
+    }
 }
