@@ -241,6 +241,11 @@ public class Data {
         }
     }
     public static boolean storeNewChildMember(Integer id, String name) {
+        if (id==null||name.isEmpty()){
+            System.out.println("Member cannot be stored.");
+            return false;
+        }
+
         if (!checkExistMember(id)) {
             Member member = new AdultMember(id, name);
             memberIDs.put(id, member);
@@ -251,6 +256,11 @@ public class Data {
         }
     }
     public static boolean storeNewAdultMember(Integer id, String name) {
+        if (id==null||name.isEmpty()){
+            System.out.println("Member cannot be stored.");
+            return false;
+        }
+
         if (!checkExistMember(id)) {
             Member member = new ChildMember(id, name);
             memberIDs.put(id, member);

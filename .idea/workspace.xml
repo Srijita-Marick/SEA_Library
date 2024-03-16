@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="made fines exclusively an AdultMember attribute">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added storeNewAdultMember and storeNewChildMember in Data.java">
       <change beforePath="$PROJECT_DIR$/src/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,14 +73,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00019" summary="edited menuLoop to make exit work">
-      <option name="closed" value="true" />
-      <created>1708926099927</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1708926099927</updated>
     </task>
     <task id="LOCAL-00020" summary="edited menuLibraryData to make exit work">
       <option name="closed" value="true" />
@@ -466,7 +458,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710622909190</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="added storeNewAdultMember and storeNewChildMember in Data.java">
+      <option name="closed" value="true" />
+      <created>1710624031798</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1710624031798</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -493,7 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added getBooksByTitleReturnsCorrectBookInfo test" />
     <MESSAGE value="added getBooksByTitleWhenTitleNotFound test" />
     <MESSAGE value="added getBooksByTitleReturnsCorrectNumberOfBooks1 test" />
     <MESSAGE value="added getBooksByTitleEmptyTitle test" />
@@ -518,6 +517,7 @@
     <MESSAGE value="minor \n additions" />
     <MESSAGE value="added MemberType.java (enum)" />
     <MESSAGE value="made fines exclusively an AdultMember attribute" />
-    <option name="LAST_COMMIT_MESSAGE" value="made fines exclusively an AdultMember attribute" />
+    <MESSAGE value="added storeNewAdultMember and storeNewChildMember in Data.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added storeNewAdultMember and storeNewChildMember in Data.java" />
   </component>
 </project>
