@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Created Book Object classes">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="minor \n additions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Books.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +73,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Created file DataTest.java">
+      <option name="closed" value="true" />
+      <created>1708925214627</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1708925214627</updated>
     </task>
     <task id="LOCAL-00018" summary="created menuExit">
       <option name="closed" value="true" />
@@ -459,15 +466,7 @@
       <option name="project" value="LOCAL" />
       <updated>1709069991524</updated>
     </task>
-    <task id="LOCAL-00066" summary="Created Book Object classes">
-      <option name="closed" value="true" />
-      <created>1710615839836</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1710615839836</updated>
-    </task>
-    <option name="localTasksCounter" value="67" />
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -494,6 +493,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="got rid of unnecessary import statements" />
     <MESSAGE value="added getBooksByTitleReturnsCorrectNumberOfBooks test" />
     <MESSAGE value="added getBooksByTitleReturnsCorrectBookInfo test" />
     <MESSAGE value="added getBooksByTitleWhenTitleNotFound test" />
@@ -518,7 +518,6 @@
     <MESSAGE value="javadoc commenting - DataTest function set 8" />
     <MESSAGE value="added checkoutBookWhenBookDoesNotExist test" />
     <MESSAGE value="minor \n additions" />
-    <MESSAGE value="Created Book Object classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Book Object classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor \n additions" />
   </component>
 </project>
