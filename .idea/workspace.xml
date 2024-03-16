@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Created setters in Books" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Updated Data.java and replaced Object[] with class &quot;Books&quot;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +71,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
+    </task>
+    <task id="LOCAL-00021" summary="edited menuMemberData to make exit work">
+      <option name="closed" value="true" />
+      <created>1708926926356</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1708926926356</updated>
+    </task>
+    <task id="LOCAL-00022" summary="edited DataTest.java according to updated methods in Data.java">
+      <option name="closed" value="true" />
+      <created>1708927118961</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1708927118961</updated>
     </task>
     <task id="LOCAL-00023" summary="reformatting optMessages">
       <option name="closed" value="true" />
@@ -448,23 +464,7 @@
       <option name="project" value="LOCAL" />
       <updated>1710618634041</updated>
     </task>
-    <task id="LOCAL-00070" summary="Updated Data.java and used getters from Books">
-      <option name="closed" value="true" />
-      <created>1710618939412</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1710618939412</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Created setters in Books">
-      <option name="closed" value="true" />
-      <created>1710619068904</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1710619068904</updated>
-    </task>
-    <option name="localTasksCounter" value="72" />
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -491,6 +491,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="added getBooksByTitleReturnsCorrectNumberOfBooks1 test" />
+    <MESSAGE value="added getBooksByTitleEmptyTitle test" />
     <MESSAGE value="added getBooksByAuthorWhenAuthorNotFound test" />
     <MESSAGE value="added getBooksByAuthorReturnsCorrectNumberOfBooks1 test" />
     <MESSAGE value="added getBooksByAuthorEmptyAuthor test" />
@@ -514,8 +516,6 @@
     <MESSAGE value="Initial Setup for OOP structure in Books" />
     <MESSAGE value="Created getters for Books" />
     <MESSAGE value="Updated Data.java and replaced Object[] with class &quot;Books&quot;" />
-    <MESSAGE value="Updated Data.java and used getters from Books" />
-    <MESSAGE value="Created setters in Books" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created setters in Books" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Data.java and replaced Object[] with class &quot;Books&quot;" />
   </component>
 </project>

@@ -50,5 +50,15 @@ public class Member {
                 ", fines=" + fines +
                 ", borrowed=" + borrowed +
                 '}';
+        /*
+        memString.append("\nID: ").append(member.getID());
+            memString.append("\nName: ").append(member.getName());
+            memString.append("\nBooks Borrowed:");
+            for (String book: Data.getBorrowedBooks(member.getID())){
+                memString.append("\n     ").append(book);
+            }
+            String roundedFine = String.format("%.2f",(member.getFines()));
+            memString.append("\nFines: ").append(roundedFine);
+         */
     }
 }
