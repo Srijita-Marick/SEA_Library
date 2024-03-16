@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="minor \n additions">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Updated Data.java and replaced Object[] with class &quot;Books&quot;" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,38 +71,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Created file DataTest.java">
-      <option name="closed" value="true" />
-      <created>1708925214627</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1708925214627</updated>
-    </task>
-    <task id="LOCAL-00018" summary="created menuExit">
-      <option name="closed" value="true" />
-      <created>1708925253700</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1708925253700</updated>
-    </task>
-    <task id="LOCAL-00019" summary="edited menuLoop to make exit work">
-      <option name="closed" value="true" />
-      <created>1708926099927</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1708926099927</updated>
-    </task>
-    <task id="LOCAL-00020" summary="edited menuLibraryData to make exit work">
-      <option name="closed" value="true" />
-      <created>1708926614685</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1708926614685</updated>
     </task>
     <task id="LOCAL-00021" summary="edited menuMemberData to make exit work">
       <option name="closed" value="true" />
@@ -466,7 +432,39 @@
       <option name="project" value="LOCAL" />
       <updated>1709069991524</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Created Book Object classes">
+      <option name="closed" value="true" />
+      <created>1710615839836</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1710615839836</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Initial Setup for OOP structure in Books">
+      <option name="closed" value="true" />
+      <created>1710617336399</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1710617336399</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Created getters for Books">
+      <option name="closed" value="true" />
+      <created>1710617516350</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1710617516350</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Updated Data.java and replaced Object[] with class &quot;Books&quot;">
+      <option name="closed" value="true" />
+      <created>1710618634041</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1710618634041</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -493,10 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="got rid of unnecessary import statements" />
-    <MESSAGE value="added getBooksByTitleReturnsCorrectNumberOfBooks test" />
-    <MESSAGE value="added getBooksByTitleReturnsCorrectBookInfo test" />
-    <MESSAGE value="added getBooksByTitleWhenTitleNotFound test" />
     <MESSAGE value="added getBooksByTitleReturnsCorrectNumberOfBooks1 test" />
     <MESSAGE value="added getBooksByTitleEmptyTitle test" />
     <MESSAGE value="added getBooksByAuthorWhenAuthorNotFound test" />
@@ -518,6 +512,10 @@
     <MESSAGE value="javadoc commenting - DataTest function set 8" />
     <MESSAGE value="added checkoutBookWhenBookDoesNotExist test" />
     <MESSAGE value="minor \n additions" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor \n additions" />
+    <MESSAGE value="Created Book Object classes" />
+    <MESSAGE value="Initial Setup for OOP structure in Books" />
+    <MESSAGE value="Created getters for Books" />
+    <MESSAGE value="Updated Data.java and replaced Object[] with class &quot;Books&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Data.java and replaced Object[] with class &quot;Books&quot;" />
   </component>
 </project>

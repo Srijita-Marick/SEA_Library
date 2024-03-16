@@ -1,18 +1,61 @@
 public class Books {
-    public static final int INDEX_TITLE = 0;
-    public static final int INDEX_AUTHOR = 1;
-    public static final int INDEX_GENRE = 2;
-    public static final int INDEX_STATUS = 3;
-    public static final int INDEX_TYPE = 4;
-    public static final int INDEX_REMOVED = 5;
-    private Object[] book;
+    private String title, author, genre, availabilityStatus, type;
     public Books(String title, String author, String genre, String availabilityStatus, String type){
-        book = new Object[5];
-        book[INDEX_TITLE] = title;
-        book[INDEX_AUTHOR] = author;
-        book[INDEX_GENRE] = genre;
-        book[INDEX_STATUS] = availabilityStatus;
-        book[INDEX_TYPE] = type;
-        book[INDEX_REMOVED] = false;
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.availabilityStatus = availabilityStatus;
+        this.type = type;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public String getAvailabilityStatus() {
+        return availabilityStatus;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public void setAvailabilityStatus(String availabilityStatus) {
+        this.availabilityStatus = availabilityStatus;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "Books{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", genre='" + genre + '\'' +
+                ", availabilityStatus='" + availabilityStatus + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }
