@@ -4,11 +4,9 @@ public class AdultMember extends Member{
         super(id, name,MemberType.ADULT);
         this.fines=0.00;
     }
-    @Override
     public double getFines() {
         return fines;
     }
-    @Override
     public void setFines(double fines) {
         this.fines = fines;
     }

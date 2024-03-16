@@ -565,15 +565,7 @@ public class Menu {
         StringBuilder membersString = new StringBuilder();
         membersString.append(viewMembersMessage);
         for (Member member :listOfMembers){
-            membersString.append("\n "); // for formatting purposes
-            membersString.append("\nID: ").append(member.getID());
-            membersString.append("\nName: ").append(member.getName());
-            membersString.append("\nBooks Borrowed:");
-            for (String book: Data.getBorrowedBooks(member.getID())){
-                membersString.append("\n     ").append(book);
-            }
-            String roundedFine = String.format("%.2f",member.getFines());
-            membersString.append("\nFines: ").append(roundedFine);
+            membersString.append(member.toString());
         }
         return (membersString.toString());
     }

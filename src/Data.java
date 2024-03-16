@@ -377,11 +377,9 @@ public class Data {
      */
     public static boolean payFines(Integer ID, Double payment){
         for (Member member:members){
-            if (member.getID()==ID){
-                if (member.getFines()>=payment){
-                    member.setFines(member.getFines()-payment);
-                    return true;
-                }
+            if (member instanceof AdultMember adultMember && adultMember.getID()==ID &&adultMember.getFines()>=payment){
+                adultMember.setFines(adultMember.getFines()-payment);
+                return true;
             }
         }
         return false;
