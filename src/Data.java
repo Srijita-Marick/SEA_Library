@@ -238,26 +238,12 @@ public class Data {
 
 
     /**
-     * Adds new member to list of members and adds their ID to memberIDs
+     * Adds new ChildMember to list of members and adds their ID to memberIDs
      * @param id of member to be added
      * @param name of member to be added
      * @return whether addition of member was successful (only unsuccessful when member with same ID already exists)
      */
-    public static boolean storeNewMember(Integer id, String name,String agegroup) {
-        if (!checkExistMember(id)){
-            if (agegroup.equals("ADULT")) {
-                AdultMember member = new AdultMember(id, name);
-            }
-            else if (agegroup.equals("CHILD")){
-                ChildMember member = new ChildMember(id,name);
-            }
-            memberIDs.put(id,member);
-            members.add(member); //adding to list of all members
-            return true;
-        } else {
-            return false;
-        }
-    }
+
     public static boolean storeNewChildMember(Integer id, String name) {
         if (id==null||name.isEmpty()){
             System.out.println("Member cannot be stored.");
@@ -273,6 +259,12 @@ public class Data {
             return false;
         }
     }
+    /**
+     * Adds new AdultMember to list of members and adds their ID to memberIDs
+     * @param id of member to be added
+     * @param name of member to be added
+     * @return whether addition of member was successful (only unsuccessful when member with same ID already exists)
+     */
     public static boolean storeNewAdultMember(Integer id, String name) {
         if (id==null||name.isEmpty()){
             System.out.println("Member cannot be stored.");

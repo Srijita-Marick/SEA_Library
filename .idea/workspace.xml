@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Created setters in Books">
-      <change beforePath="$PROJECT_DIR$/src/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data.java" afterDir="false" />
-    </list>
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="slight update to make Menu and Data match new fines restrictions" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,14 +71,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00023" summary="reformatting optMessages">
-      <option name="closed" value="true" />
-      <created>1708927583191</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1708927583191</updated>
     </task>
     <task id="LOCAL-00024" summary="created menuSearchMembers">
       <option name="closed" value="true" />
@@ -466,7 +456,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710619068904</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="slight update to make Menu and Data match new fines restrictions">
+      <option name="closed" value="true" />
+      <created>1710625084603</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1710625084603</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -493,7 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added getBooksByAuthorWhenAuthorNotFound test" />
     <MESSAGE value="added getBooksByAuthorReturnsCorrectNumberOfBooks1 test" />
     <MESSAGE value="added getBooksByAuthorEmptyAuthor test" />
     <MESSAGE value="added getBooksByGenreReturnsCorrectNumberOfBooks test" />
@@ -518,6 +515,7 @@
     <MESSAGE value="Updated Data.java and replaced Object[] with class &quot;Books&quot;" />
     <MESSAGE value="Updated Data.java and used getters from Books" />
     <MESSAGE value="Created setters in Books" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created setters in Books" />
+    <MESSAGE value="slight update to make Menu and Data match new fines restrictions" />
+    <option name="LAST_COMMIT_MESSAGE" value="slight update to make Menu and Data match new fines restrictions" />
   </component>
 </project>
