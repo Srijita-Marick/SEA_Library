@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public abstract class Member {
     private String name;
     private int id;
-    private double fines;
     private ArrayList<String> borrowed;
     private MemberType memberType;
 
@@ -11,15 +10,11 @@ public abstract class Member {
         this.id = id;
         this.name = name;
         this.borrowed = new ArrayList<String>(); //when someone joins library for first time they don't have books yet
-        this.fines = 0.00; // when someone joins library for the first time they should have no fine
         this.memberType=memberType;
     }
 
     public void setName(String name){
         this.name=name;
-    }
-    public void setFines(double fines) {
-        this.fines = fines;
     }
 
     public int getID() {
@@ -34,22 +29,13 @@ public abstract class Member {
         return memberType;
     }
 
-    public double getFines() {
-        return fines;
-    }
 
     public ArrayList<String> getBorrowed() {
         return borrowed;
     }
 
     @Override
-    public String toString() {
-        return "Member{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", fines=" + fines +
-                ", borrowed=" + borrowed +
-                '}';
+    public abstract String toString() ;
         /*
         memString.append("\nID: ").append(member.getID());
             memString.append("\nName: ").append(member.getName());
@@ -60,5 +46,4 @@ public abstract class Member {
             String roundedFine = String.format("%.2f",(member.getFines()));
             memString.append("\nFines: ").append(roundedFine);
          */
-    }
 }
