@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added checkoutBookWhenBookDoesNotExist test">
-      <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="final instruction update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,12 +32,12 @@
     }
   }
 }</component>
-  <component name="GitLabMergeRequestsSettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;first&quot;: &quot;https://csgit.ucalgary.ca/srijita.marick/cpsc233w24project.git&quot;,
-    &quot;second&quot;: &quot;041e7353-3d67-4ffa-92c3-df62097d54ad&quot;
+  <component name="GitLabMergeRequestsSettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "first": "https://csgit.ucalgary.ca/srijita.marick/cpsc233w24project.git",
+    "second": "efc9b400-2723-4d09-a1d4-c4145a041139"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -52,6 +52,7 @@
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.DataTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.DataTest.testGetAllBooksMatchAllDetails.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.DataTest.testGetBorrowedBooks.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -61,7 +62,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
       </set>
     </attachedChunks>
   </component>
@@ -73,6 +74,54 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
+    </task>
+    <task id="LOCAL-00010" summary="merged with emily">
+      <option name="closed" value="true" />
+      <created>1708804280080</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708804280080</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added code for Member Data Menu">
+      <option name="closed" value="true" />
+      <created>1708804474526</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708804474526</updated>
+    </task>
+    <task id="LOCAL-00012" summary="renamed searchBooks and viewAllBooks for clarity">
+      <option name="closed" value="true" />
+      <created>1708817706709</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708817706709</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added code to menuViewAllBooks">
+      <option name="closed" value="true" />
+      <created>1708821237160</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708821237161</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixed bug in Library Data Menu">
+      <option name="closed" value="true" />
+      <created>1708897931194</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708897931194</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fixed bug in Main Menu">
+      <option name="closed" value="true" />
+      <created>1708898098769</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1708898098769</updated>
     </task>
     <task id="LOCAL-00016" summary="Created file DataTest.java">
       <option name="closed" value="true" />
@@ -394,79 +443,31 @@
       <option name="project" value="LOCAL" />
       <updated>1708998147875</updated>
     </task>
-    <task id="LOCAL-00056" summary="added testGetMembersByNameReturnMemberInfo test">
+    <task id="LOCAL-00056" summary="did two tests for removeMember">
       <option name="closed" value="true" />
-      <created>1709016211089</created>
+      <created>1709011682773</created>
       <option name="number" value="00056" />
       <option name="presentableId" value="LOCAL-00056" />
       <option name="project" value="LOCAL" />
-      <updated>1709016211089</updated>
+      <updated>1709011682773</updated>
     </task>
-    <task id="LOCAL-00057" summary="added testGetMembersByNameThreeMembers test">
+    <task id="LOCAL-00057" summary="completed tests for checkExistMember">
       <option name="closed" value="true" />
-      <created>1709016401841</created>
+      <created>1709013676218</created>
       <option name="number" value="00057" />
       <option name="presentableId" value="LOCAL-00057" />
       <option name="project" value="LOCAL" />
-      <updated>1709016401841</updated>
+      <updated>1709013676218</updated>
     </task>
-    <task id="LOCAL-00058" summary="javadoc commenting - DataTest function set 5">
+    <task id="LOCAL-00058" summary="debugging reset function">
       <option name="closed" value="true" />
-      <created>1709061652473</created>
+      <created>1709013780315</created>
       <option name="number" value="00058" />
       <option name="presentableId" value="LOCAL-00058" />
       <option name="project" value="LOCAL" />
-      <updated>1709061652473</updated>
+      <updated>1709013780316</updated>
     </task>
-    <task id="LOCAL-00059" summary="javadoc commenting - DataTest function set 6">
-      <option name="closed" value="true" />
-      <created>1709061759804</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1709061759804</updated>
-    </task>
-    <task id="LOCAL-00060" summary="javadoc commenting - DataTest function set 7">
-      <option name="closed" value="true" />
-      <created>1709061945895</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1709061945895</updated>
-    </task>
-    <task id="LOCAL-00061" summary="brought back code lost in the merge">
-      <option name="closed" value="true" />
-      <created>1709062469173</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1709062469173</updated>
-    </task>
-    <task id="LOCAL-00062" summary="javadoc commenting - DataTest function set 8">
-      <option name="closed" value="true" />
-      <created>1709062732794</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1709062732794</updated>
-    </task>
-    <task id="LOCAL-00063" summary="javadoc commenting - DataTest function set 8">
-      <option name="closed" value="true" />
-      <created>1709062815679</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1709062815679</updated>
-    </task>
-    <task id="LOCAL-00064" summary="added checkoutBookWhenBookDoesNotExist test">
-      <option name="closed" value="true" />
-      <created>1709063105341</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1709063105341</updated>
-    </task>
-    <option name="localTasksCounter" value="65" />
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -493,6 +494,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="added testGetAllBooks test" />
+    <MESSAGE value="added testGetAllBooksAndReturnBookInfo test" />
+    <MESSAGE value="added testGetAllBooksEmptyLibrary test" />
+    <MESSAGE value="reformatted DataTest and added setUpLibrary" />
+    <MESSAGE value="added contributors at the top (comment)" />
     <MESSAGE value="added javadoc comments to Menu.java" />
     <MESSAGE value="got rid of unnecessary import statements" />
     <MESSAGE value="added getBooksByTitleReturnsCorrectNumberOfBooks test" />
@@ -510,14 +516,24 @@
     <MESSAGE value="added getBooksByGenreWhenGenreNotValid test" />
     <MESSAGE value="added 3 tests for StoreNewMember test" />
     <MESSAGE value="debugged borrowed book display" />
-    <MESSAGE value="added testGetMembersByNameReturnMemberInfo test" />
-    <MESSAGE value="added testGetMembersByNameThreeMembers test" />
-    <MESSAGE value="javadoc commenting - DataTest function set 5" />
-    <MESSAGE value="javadoc commenting - DataTest function set 6" />
-    <MESSAGE value="javadoc commenting - DataTest function set 7" />
-    <MESSAGE value="brought back code lost in the merge" />
-    <MESSAGE value="javadoc commenting - DataTest function set 8" />
-    <MESSAGE value="added checkoutBookWhenBookDoesNotExist test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added checkoutBookWhenBookDoesNotExist test" />
+    <MESSAGE value="did two tests for removeMember" />
+    <MESSAGE value="completed tests for checkExistMember" />
+    <MESSAGE value="debugging reset function" />
+    <option name="LAST_COMMIT_MESSAGE" value="debugging reset function" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/DataTest.java</url>
+          <line>476</line>
+          <properties class="DataTest">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
