@@ -38,6 +38,24 @@ public class Data {
         }
     }
 
+    public static boolean storeNewPhysicalBook(String title, String author, String genre, String availabilityStatus) {
+        if (title.isEmpty() || author.isEmpty()){
+            System.out.println("Book cannot be stored.");
+            return false;
+        }
+
+        if (!checkExistBook(title, author)) {
+            Books book = new PhysicalBooks(title, author, genre, availabilityStatus);
+            books.add(book); //adding to list of all books
+            availableBooks.add(book); //since all books are by default available when created
+            titles.add(title);
+            authors.add(author);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * Checks if a book exists or not
      * @param title of the book to be checked
