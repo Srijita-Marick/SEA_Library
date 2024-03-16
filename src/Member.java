@@ -20,9 +20,23 @@ public class Member {
         this.fines = fines;
     }
 
+    public String getId() {
+        return id;
+    }
 
+    public String getName() {
+        return name;
+    }
 
+    public String getAgegroup() {
+        return agegroup;
+    }
 
+    public double getFines() {
+        return fines;
+    }
 
-
+    public ArrayList<String> getBorrowed() {
+        return borrowed;
+    }
 }
