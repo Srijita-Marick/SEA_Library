@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added MemberType.java (enum)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="made fines exclusively an AdultMember attribute">
       <change beforePath="$PROJECT_DIR$/src/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,14 +73,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00018" summary="created menuExit">
-      <option name="closed" value="true" />
-      <created>1708925253700</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1708925253700</updated>
     </task>
     <task id="LOCAL-00019" summary="edited menuLoop to make exit work">
       <option name="closed" value="true" />
@@ -467,7 +458,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710621823057</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="made fines exclusively an AdultMember attribute">
+      <option name="closed" value="true" />
+      <created>1710622909190</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1710622909190</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -494,7 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added getBooksByTitleReturnsCorrectNumberOfBooks test" />
     <MESSAGE value="added getBooksByTitleReturnsCorrectBookInfo test" />
     <MESSAGE value="added getBooksByTitleWhenTitleNotFound test" />
     <MESSAGE value="added getBooksByTitleReturnsCorrectNumberOfBooks1 test" />
@@ -519,6 +517,7 @@
     <MESSAGE value="added checkoutBookWhenBookDoesNotExist test" />
     <MESSAGE value="minor \n additions" />
     <MESSAGE value="added MemberType.java (enum)" />
-    <option name="LAST_COMMIT_MESSAGE" value="added MemberType.java (enum)" />
+    <MESSAGE value="made fines exclusively an AdultMember attribute" />
+    <option name="LAST_COMMIT_MESSAGE" value="made fines exclusively an AdultMember attribute" />
   </component>
 </project>
