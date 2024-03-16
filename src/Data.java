@@ -1,6 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Data {
 
@@ -219,12 +220,8 @@ public class Data {
 
     //  EVERYTHING BELOW HERE IS TO STORE MEMBER DATA
 
-    static final ArrayList<Object[]> members = new ArrayList<>();
-    static final ArrayList<Integer> memberIDs = new ArrayList<Integer>(); // all the ids currently in use
-    public static final int INDEX_ID = 0; // index for an integer ID
-    public static final int INDEX_NAME = 1; // index for a name as a String
-    public static final int INDEX_BORROWED = 2; // index for a list of a member's borrowed books
-    public static final int INDEX_FINES = 3; // index for a double to track fines
+    static final ArrayList<Member> members = new ArrayList<>();
+    static final HashMap<Integer,Member> memberIDs = new HashMap<>();
 
 
     /**
@@ -234,13 +231,10 @@ public class Data {
      * @return whether addition of member was successful (only unsuccessful when member with same ID already exists)
      */
     public static boolean storeNewMember(Integer id, String name) {
+        String agegroup = "ADULT";
         if (!checkExistMember(id)) {
-            Object[] member = new Object[4];
-            member[INDEX_ID] = id;
-            member[INDEX_NAME] = name;
-            member[INDEX_BORROWED] = new ArrayList<String>();
-            member[INDEX_FINES] = 0.00; // when someone joins library for the first time they should have no fine
-            memberIDs.add(id);
+            Member member = new Member(id,name,agegroup);
+            memberIDs.put(id,member);
             members.add(member); //adding to list of all members
             return true;
         } else {
@@ -253,7 +247,7 @@ public class Data {
      * @return if ID already exists in list of memberIDs
      */
     public static boolean checkExistMember(Integer id) {
-        return memberIDs.contains(id);
+        return memberIDs.containsKey(id);
     }
 
     /**
@@ -262,12 +256,13 @@ public class Data {
      * @param name of member to be removed
      * @return whether member was successfully removed
      */
-    public static boolean removeMember(Integer id, String name) {
+    public static boolean removeMember(int id, String name) {
         if (checkExistMember(id)){
-            for (Object[] member: members){
-                if (member[INDEX_ID]==(id)&&member[INDEX_NAME].equals(name)){
+            for (Member member: members){
+
+                if ((member.getID() == (id)) && member.getName().equals(name)){
                     members.remove(member);
-                    memberIDs.remove(member[INDEX_ID]);
+                    memberIDs.remove(member.getID(),member);
                     return true;
                 }
             }
@@ -278,7 +273,7 @@ public class Data {
     /**
      * @return list of all members in library
      */
-    public static ArrayList<Object[]> getAllMembers(){
+    public static ArrayList<Member> getAllMembers(){
         return members;
     }
 
@@ -286,10 +281,10 @@ public class Data {
      * @param name to search for
      * @return a list of members with that name
      */
-    public static ArrayList<Object[]> getMembersByName(String name) {
-        ArrayList<Object[]> membersWithName = new ArrayList<>();
-        for (Object[] member: members){
-            if (member[INDEX_NAME].equals(name)) {
+    public static ArrayList<Member> getMembersByName(String name) {
+        ArrayList<Member> membersWithName = new ArrayList<>();
+        for (Member member: members){
+            if (member.getName().equals(name)) {
                 membersWithName.add(member);
             }
         }
@@ -300,10 +295,10 @@ public class Data {
      * @param id to find the corresponding member for
      * @return the member with that ID as a single element list (to make printing easy in Menu.java)
      */
-    public static ArrayList<Object[]> getMembersById(int id) {
-        ArrayList<Object[]> membersWithId = new ArrayList<>();
-        for (Object[] member: members){
-            if (member[INDEX_ID].equals(id)) {
+    public static ArrayList<Member> getMembersById(int id) {
+        ArrayList<Member> membersWithId = new ArrayList<>();
+        for (Member member: members){
+            if (member.getID()==id) {
                 membersWithId.add(member);
             }
         }
@@ -315,12 +310,7 @@ public class Data {
      * @return list of Strings representing books the member has checked out
      */
     public static ArrayList<String> getBorrowedBooks(Integer id){
-        for (Object[] member: members){
-            if (member[INDEX_ID]==id){
-                return (ArrayList<String>) member[INDEX_BORROWED];
-            }
-        }
-        return new ArrayList<String>();
+        return memberIDs.get(id).getBorrowed();
     }
 
     /**
@@ -338,10 +328,10 @@ public class Data {
      * @return whether it is a valid payment or not
      */
     public static boolean payFines(Integer ID, Double payment){
-        for (Object[] member:members){
-            if ((member[INDEX_ID])==ID){
-                if ((Double)member[INDEX_FINES]>=payment){
-                    member[INDEX_FINES]=(Double)member[INDEX_FINES]-payment;
+        for (Member member:members){
+            if (member.getID()==ID){
+                if (member.getFines()>=payment){
+                    member.setFines(member.getFines()-payment);
                     return true;
                 }
             }

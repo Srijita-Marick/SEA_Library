@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 
 public class Member {
-    private String id,name,agegroup;
+    private String name,agegroup;
+    private int id;
     private double fines;
     private ArrayList<String> borrowed;
 
-    public Member(String id,String name, String agegroup){
+    public Member(int id,String name, String agegroup){
         this.id = id;
         this.name = name;
         this.borrowed = new ArrayList<String>(); //when someone joins library for first time they don't have books yet
@@ -20,7 +21,7 @@ public class Member {
         this.fines = fines;
     }
 
-    public String getId() {
+    public int getID() {
         return id;
     }
 
