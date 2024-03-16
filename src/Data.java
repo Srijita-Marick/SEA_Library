@@ -20,6 +20,16 @@ public class Data {
     private static final ArrayList<String> titles = new ArrayList<>();
     private static final ArrayList<String> authors = new ArrayList<>();
 
+    /**
+     * Adds new AudioBook to list of books and adds their title to titles and author to authors
+     *
+     * @param title of the book to be stored
+     * @param author of the book to be stored
+     * @param narrator of the audiobook to be stored
+     * @param genre of the book to be stored
+     * @param availabilityStatus of the book to be stored (default = available)
+     * @return True if book stored successfully, otherwise False.
+     */
     public static boolean storeNewAudioBook(String title, String author, String narrator, String genre, String availabilityStatus) {
         if (title.isEmpty() || author.isEmpty()){
             System.out.println("Book cannot be stored.");
@@ -38,6 +48,15 @@ public class Data {
         }
     }
 
+    /**
+     * Adds new PhysicalBook to list of books and adds their title to titles and author to authors
+     *
+     * @param title of the book to be stored
+     * @param author of the book to be stored
+     * @param genre of the book to be stored
+     * @param availabilityStatus of the book to be stored (default = available)
+     * @return True if book stored successfully, otherwise False.
+     */
     public static boolean storeNewPhysicalBook(String title, String author, String genre, String availabilityStatus) {
         if (title.isEmpty() || author.isEmpty()){
             System.out.println("Book cannot be stored.");
