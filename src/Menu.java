@@ -172,7 +172,7 @@ public class Menu {
         String title = getTitle();
         String viewBooksMessage = """
              All books with that title:""";
-        ArrayList<Object[]> bookList = Data.getBooksByTitle(title);
+        ArrayList<Books> bookList = Data.getBooksByTitle(title);
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
     /**
@@ -182,7 +182,7 @@ public class Menu {
         String author = getAuthor();
         String viewBooksMessage = """
              All books by that author:""";
-        ArrayList<Object[]> bookList = Data.getBooksByAuthor(author);
+        ArrayList<Books> bookList = Data.getBooksByAuthor(author);
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
@@ -193,7 +193,7 @@ public class Menu {
         String genre = getGenre();
         String viewBooksMessage = """
              All books in that genre:""";
-        ArrayList<Object[]> bookList = Data.getBooksByGenre(genre);
+        ArrayList<Books> bookList = Data.getBooksByGenre(genre);
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
@@ -203,7 +203,7 @@ public class Menu {
     private static void menuViewUnavailable() {
         String viewBooksMessage = """
             Unavailable Books:""";
-        ArrayList<Object[]> bookList = Data.getUnavailableBooks();
+        ArrayList<Books> bookList = Data.getUnavailableBooks();
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
@@ -213,7 +213,7 @@ public class Menu {
     private static void menuViewAvailable() {
         String viewBooksMessage = """
             Available Books:""";
-        ArrayList<Object[]> bookList = Data.getAvailableBooks();
+        ArrayList<Books> bookList = Data.getAvailableBooks();
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
@@ -223,7 +223,7 @@ public class Menu {
     private static void menuViewAllBooks() {
         String viewBooksMessage= """
             ALl library Books:""";
-        ArrayList<Object[]> bookList = Data.getAllBooks();
+        ArrayList<Books> bookList = Data.getAllBooks();
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
@@ -235,15 +235,11 @@ public class Menu {
      * @param listOfBooks is the list of books being displayed
      * @return String containing all the required books
      */
-    private static String viewAnyBookList(String viewBooksMessage, ArrayList<Object[]> listOfBooks){
+    private static String viewAnyBookList(String viewBooksMessage, ArrayList<Books> listOfBooks){
         StringBuilder booksString = new StringBuilder();
         booksString.append(viewBooksMessage);
-        for (Object[] book :listOfBooks){
-            booksString.append("\n "); // for formatting purposes
-            booksString.append("\nTitle: ").append(book[Data.INDEX_TITLE]);
-            booksString.append("\nAuthor: ").append(book[Data.INDEX_AUTHOR]);
-            booksString.append("\nGenre: ").append(book[Data.INDEX_GENRE]);
-            booksString.append("\nStatus: ").append(book[Data.INDEX_STATUS]);
+        for (Books book :listOfBooks){
+            booksString.append(book.toString());
         }
         return (booksString.toString());
     }
@@ -325,7 +321,8 @@ public class Menu {
             String author = getAuthor();
             String genre = getGenre();
             String availabilityStatus = getAvailabilityStatus();
-            success = Data.storeNewBook(title, author, genre, availabilityStatus);
+            String type = "PHYSICAL";
+            success = Data.storeNewBook(title, author, genre, availabilityStatus, type);
             if (!success){
                 System.out.println("Book already exists in library. Try again.");
             }
