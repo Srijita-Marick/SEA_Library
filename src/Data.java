@@ -139,7 +139,7 @@ public class Data {
         for (Books book: books){ //goes through every book until it finds one matching title and author
             if (book.getTitle().equals(title) && book.getAuthor().equals(author)){
                 availableBooks.remove(book);
-                book[INDEX_STATUS] = "Unavailable";
+                book.setAvailabilityStatus("Unavailable");
                 unAvailableBooks.add(book);
                 for (Object[] member: members){ //goes through members until it finds one with ID
                     if (member[INDEX_ID]==id){
@@ -165,7 +165,7 @@ public class Data {
         for (Books book: books){ //goes through every book until it finds one with title and author
             if (book.getTitle().equals(title) && book.getAuthor().equals(author)){
                 unAvailableBooks.remove(book);
-                book[INDEX_STATUS]= "Available";
+                book.setAvailabilityStatus("Available");
                 availableBooks.add(book);
                 for (Object[] member: members){ //goes through members until it finds the one with ID
                     if (member[INDEX_ID]==id){
