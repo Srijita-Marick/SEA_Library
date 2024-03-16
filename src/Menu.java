@@ -494,21 +494,13 @@ public class Menu {
      * Used in menuMemberData to print the entire list of library members
      */
     private static void menuViewAllMembers(){
-        ArrayList<Object[]> members = Data.getAllMembers();
+        ArrayList<Member> members = Data.getAllMembers();
         StringBuilder memString = new StringBuilder();
         String memMessage = """
             All Library Members:""";
         memString.append(memMessage);
-        for (Object[] member: members){
-            memString.append("\n "); // for formatting purposes
-            memString.append("\nID: ").append(member[Data.INDEX_ID]);
-            memString.append("\nName: ").append(member[Data.INDEX_NAME]);
-            memString.append("\nBooks Borrowed:");
-            for (String book: Data.getBorrowedBooks((Integer) member[Data.INDEX_ID])){
-                memString.append("\n     ").append(book);
-            }
-            String roundedFine = String.format("%.2f",(double)(member[Data.INDEX_FINES]));
-            memString.append("\nFines: ").append(roundedFine);
+        for (Member member: members){
+            memString.append(member.toString());
         }
         System.out.println(memString);
     }
@@ -551,7 +543,7 @@ public class Menu {
         String name = getMember();
         String viewMembersMessage = """
                 All members with that name:""";
-        ArrayList<Object[]> memberList = Data.getMembersByName(name);
+        ArrayList<Member> memberList = Data.getMembersByName(name);
         System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
     }
 
@@ -562,7 +554,7 @@ public class Menu {
         int id = getId();
         String viewMembersMessage = """
              Member with given ID:""";
-        ArrayList<Object[]> memberList = Data.getMembersById(id);
+        ArrayList<Member> memberList = Data.getMembersById(id);
         System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
     }
 
@@ -572,18 +564,18 @@ public class Menu {
      * @param listOfMembers is the list of members being displayed
      * @return String containing all the required members
      */
-    private static String viewAnyMemberList(String viewMembersMessage, ArrayList<Object[]> listOfMembers) {
+    private static String viewAnyMemberList(String viewMembersMessage, ArrayList<Member> listOfMembers) {
         StringBuilder membersString = new StringBuilder();
         membersString.append(viewMembersMessage);
-        for (Object[] member :listOfMembers){
+        for (Member member :listOfMembers){
             membersString.append("\n "); // for formatting purposes
-            membersString.append("\nID: ").append(member[Data.INDEX_ID]);
-            membersString.append("\nName: ").append(member[Data.INDEX_NAME]);
+            membersString.append("\nID: ").append(member.getID());
+            membersString.append("\nName: ").append(member.getName());
             membersString.append("\nBooks Borrowed:");
-            for (String book: Data.getBorrowedBooks((Integer) member[Data.INDEX_ID])){
+            for (String book: Data.getBorrowedBooks(member.getID())){
                 membersString.append("\n     ").append(book);
             }
-            String roundedFine = String.format("%.2f",(double)(member[Data.INDEX_FINES]));
+            String roundedFine = String.format("%.2f",member.getFines());
             membersString.append("\nFines: ").append(roundedFine);
         }
         return (membersString.toString());
