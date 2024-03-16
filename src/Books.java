@@ -34,12 +34,5 @@ public abstract class Books {
     }
 
     @Override
-    public String toString() {
-        return "Books{" +
-                "title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", genre='" + genre + '\'' +
-                ", availabilityStatus='" + availabilityStatus + '\'' +
-                '}';
-    }
+    public abstract String toString();
 }

@@ -20,16 +20,14 @@ public class Data {
     private static final ArrayList<String> titles = new ArrayList<>();
     private static final ArrayList<String> authors = new ArrayList<>();
 
-    public static boolean storeNewBook(String title, String author, String genre, String availabilityStatus, BookType type) {
+    public static boolean storeNewAudioBook(String title, String author, String narrator, String genre, String availabilityStatus) {
         if (title.isEmpty() || author.isEmpty()){
             System.out.println("Book cannot be stored.");
             return false;
         }
 
         if (!checkExistBook(title, author)) {
-            if(type instanceof AudioBooks audioBook) {
-                Books book = new Books(title, author, genre, availabilityStatus);
-            }
+            Books book = new AudioBooks(title, author, narrator, genre, availabilityStatus);
             books.add(book); //adding to list of all books
             availableBooks.add(book); //since all books are by default available when created
             titles.add(title);
