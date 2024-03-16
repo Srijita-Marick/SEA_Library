@@ -1,6 +1,6 @@
 public class AdultMember extends Member{
 
-    public AdultMember(String id, String name) {
-        super(id, name,"ADULT");
+    public AdultMember(int id, String name) {
+        super(id, name,MemberType.ADULT);
     }
 }
