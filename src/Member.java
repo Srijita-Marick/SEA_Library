@@ -1,18 +1,54 @@
 import java.util.ArrayList;
 
 public class Member {
-    public static final int INDEX_ID = 0; // index for an integer ID
-    public static final int INDEX_NAME = 1; // index for a name as a String
-    public static final int INDEX_BORROWED = 2; // index for a list of a member's borrowed books
-    public static final int INDEX_FINES = 3; // index for a double to track fines
-    public static final int INDEX_AGEGROUP = 4; // index for a double to track fines
-    private Object[] member = new Object[5];
+    private String name,agegroup;
+    private int id;
+    private double fines;
+    private ArrayList<String> borrowed;
 
-    public Member(String id,String name, String agegroup){
-        member[INDEX_ID] = id;
-        member[INDEX_NAME] = name;
-        member[INDEX_BORROWED] = new ArrayList<String>();
-        member[INDEX_FINES] = 0.00; // when someone joins library for the first time they should have no fine
-        member[INDEX_AGEGROUP] = agegroup;
+    public Member(int id,String name, String agegroup){
+        this.id = id;
+        this.name = name;
+        this.borrowed = new ArrayList<String>(); //when someone joins library for first time they don't have books yet
+        this.fines = 0.00; // when someone joins library for the first time they should have no fine
+        this.agegroup = agegroup;
+    }
+
+    public void setName(String name){
+        this.name=name;
+    }
+    public void setFines(double fines) {
+        this.fines = fines;
+    }
+
+    public int getID() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAgegroup() {
+        return agegroup;
+    }
+
+    public double getFines() {
+        return fines;
+    }
+
+    public ArrayList<String> getBorrowed() {
+        return borrowed;
+    }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", agegroup='" + agegroup + '\'' +
+                ", fines=" + fines +
+                ", borrowed=" + borrowed +
+                '}';
     }
 }

@@ -537,7 +537,7 @@ class DataTest {
         Data.storeNewMember(102, "Jane Smith");
         Data.storeNewMember(103, "Alice Johnson");
 
-        assertTrue(Data.removeMember(101,"John Doe")&&!Data.memberIDs.contains(101));
+        assertTrue(Data.removeMember(101,"John Doe")&&!Data.memberIDs.containsKey(101));
         //removeMember should return false, and 101 should no longer be part of memberIDS
     }
 
