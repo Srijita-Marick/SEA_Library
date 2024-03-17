@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Made DataTest go back to initial form">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Edited AudioBooks and PhysicalBooks to work with Menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudioBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AudioBooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PhysicalBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhysicalBooks.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +59,34 @@
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager" selected="JUnit.DataTest.testGetMembersById">
+    <configuration name="DataTest.testGetBorrowedBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CPSC233PROJECT" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DataTest" />
+      <option name="METHOD_NAME" value="testGetBorrowedBooks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataTest.testGetMembersById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CPSC233PROJECT" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DataTest" />
+      <option name="METHOD_NAME" value="testGetMembersById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DataTest.testGetMembersById" />
+        <item itemvalue="JUnit.DataTest.testGetBorrowedBooks" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -77,14 +102,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00026" summary="created searchByID for Search">
-      <option name="closed" value="true" />
-      <created>1708966801286</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1708966801286</updated>
     </task>
     <task id="LOCAL-00027" summary="created ViewAnyMemberList to be used in search">
       <option name="closed" value="true" />
@@ -470,7 +487,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710700004876</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Edited AudioBooks and PhysicalBooks to work with Menu">
+      <option name="closed" value="true" />
+      <created>1710700654209</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1710700654209</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -497,7 +522,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added getBooksByGenreReturnsCorrectNumberOfBooks test" />
     <MESSAGE value="added getBooksByGenreReturnsCorrectBookInfo test" />
     <MESSAGE value="added getBooksByGenreWhenNoBooksOfGenre test" />
     <MESSAGE value="added getBooksByGenreReturnsCorrectNumberOfBooks1 test" />
@@ -522,6 +546,7 @@
     <MESSAGE value="slight update to make Menu and Data match new fines restrictions" />
     <MESSAGE value="Stylization fix and used instanceof in ViewAnyBookList" />
     <MESSAGE value="Made DataTest go back to initial form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made DataTest go back to initial form" />
+    <MESSAGE value="Edited AudioBooks and PhysicalBooks to work with Menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited AudioBooks and PhysicalBooks to work with Menu" />
   </component>
 </project>

@@ -723,16 +723,18 @@ class DataTest {
     }
     @Test
     void testPayFinesWhenPaymentIsLessThanFinesOwed() {
-        Data.members.get(0)[Data.INDEX_FINES] = 10.00;
+        AdultMember member = (AdultMember) Data.members.get(0);
+        member.setFines(10.00);
         assertTrue(Data.payFines(101,5.00));
-        assertEquals(5.00,Data.members.get(0)[Data.INDEX_FINES]);
+        assertEquals(5.00,member.getFines());
         Data.reset();
     }
     @Test
     void testPayFinesWhenPaymentIsEqualToFinesOwed() {
-        Data.members.get(0)[Data.INDEX_FINES] = 5.00;
+        AdultMember member2 = (AdultMember) Data.members.get(0);
+        member2.setFines(5.00);
         assertTrue(Data.payFines(101,5.00));
-        assertEquals(0.00,Data.members.get(0)[Data.INDEX_FINES]);
+        assertEquals(0.00,member2.getFines());
         Data.reset();
     }
 }
