@@ -598,7 +598,13 @@ public class Menu {
         StringBuilder membersString = new StringBuilder();
         membersString.append(viewMembersMessage);
         for (Member member :listOfMembers){
-            membersString.append(member.toString());
+            if(member instanceof AdultMember adultMember){
+                membersString.append(adultMember.toString());
+                membersString.append("\n");
+            } else if(member instanceof ChildMember childMember){
+                membersString.append(childMember.toString());
+                membersString.append("\n");
+            }
         }
         return (membersString.toString());
     }

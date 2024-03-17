@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Fixed two test cases to work with Adult Member">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Fixed two tests - getBorrowedBooks and getMembersById">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,14 +103,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00028" summary="edited javadoc comments">
-      <option name="closed" value="true" />
-      <created>1708967434180</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1708967434180</updated>
     </task>
     <task id="LOCAL-00029" summary="added checkExistBook test">
       <option name="closed" value="true" />
@@ -497,7 +488,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710710396577</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Fixed two tests - getBorrowedBooks and getMembersById">
+      <option name="closed" value="true" />
+      <created>1710711104355</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1710711104357</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -524,7 +523,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added getBooksByGenreWhenNoBooksOfGenre test" />
     <MESSAGE value="added getBooksByGenreReturnsCorrectNumberOfBooks1 test" />
     <MESSAGE value="added getBooksByGenreWhenGenreNotValid test" />
     <MESSAGE value="added 3 tests for StoreNewMember test" />
@@ -549,6 +547,7 @@
     <MESSAGE value="Made DataTest go back to initial form" />
     <MESSAGE value="Edited AudioBooks and PhysicalBooks to work with Menu" />
     <MESSAGE value="Fixed two test cases to work with Adult Member" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed two test cases to work with Adult Member" />
+    <MESSAGE value="Fixed two tests - getBorrowedBooks and getMembersById" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed two tests - getBorrowedBooks and getMembersById" />
   </component>
 </project>
