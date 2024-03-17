@@ -13,6 +13,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Menu {
+    private static Data data = new Data();
     private static final Scanner scanner = new Scanner(System.in);
     private static final ArrayList<String> options = new ArrayList<>();
 
@@ -172,7 +173,7 @@ public class Menu {
         String title = getTitle();
         String viewBooksMessage = """
              All books with that title:""";
-        ArrayList<Books> bookList = Data.getBooksByTitle(title);
+        ArrayList<Books> bookList = data.getBooksByTitle(title);
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
     /**
@@ -182,7 +183,7 @@ public class Menu {
         String author = getAuthor();
         String viewBooksMessage = """
              All books by that author:""";
-        ArrayList<Books> bookList = Data.getBooksByAuthor(author);
+        ArrayList<Books> bookList = data.getBooksByAuthor(author);
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
@@ -193,7 +194,7 @@ public class Menu {
         String genre = getGenre();
         String viewBooksMessage = """
              All books in that genre:""";
-        ArrayList<Books> bookList = Data.getBooksByGenre(genre);
+        ArrayList<Books> bookList = data.getBooksByGenre(genre);
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
@@ -203,7 +204,7 @@ public class Menu {
     private static void menuViewUnavailable() {
         String viewBooksMessage = """
             Unavailable Books:""";
-        ArrayList<Books> bookList = Data.getUnavailableBooks();
+        ArrayList<Books> bookList = data.getUnavailableBooks();
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
@@ -213,7 +214,7 @@ public class Menu {
     private static void menuViewAvailable() {
         String viewBooksMessage = """
             Available Books:""";
-        ArrayList<Books> bookList = Data.getAvailableBooks();
+        ArrayList<Books> bookList = data.getAvailableBooks();
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
@@ -223,7 +224,7 @@ public class Menu {
     private static void menuViewAllBooks() {
         String viewBooksMessage= """
             ALl library Books:\n""";
-        ArrayList<Books> bookList = Data.getAllBooks();
+        ArrayList<Books> bookList = data.getAllBooks();
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
@@ -255,19 +256,19 @@ public class Menu {
      */
     private static void menuCheckoutBooks() {
         int id = getId();
-        while (!Data.checkExistMember(id)){
+        while (!data.checkExistMember(id)){
             System.out.println("Member does not exist. Please try again.\n");
             id = getId();
         }
         String title = getTitle();
         String author = getAuthor();
-        while (!Data.checkExistBook(title,author)){
+        while (!data.checkExistBook(title,author)){
             System.out.printf("The library does not own %s by %s. Please try again.\n",title,author);
             title = getTitle();
             author = getAuthor();
         }
-        if (Data.checkBookAvailable(title,author)){
-            Data.checkoutBook(id, title, author);
+        if (data.checkBookAvailable(title,author)){
+            data.checkoutBook(id, title, author);
         }
         else {
             System.out.printf("%s by %s is currently checked out by another user.\n" ,title,author);
@@ -280,22 +281,22 @@ public class Menu {
      */
     private static void menuReturnBooks(){
         int id = getId();
-        while (!Data.checkExistMember(id)){  //makes sure that this id corresponds to an existing member
+        while (!data.checkExistMember(id)){  //makes sure that this id corresponds to an existing member
             System.out.println("Member does not exist. Please try again.\n");
             id = getId();
         }
         String title = getTitle();
         String author = getAuthor();
-        if (!Data.checkExistBook(title,author)){ //if the books isn't in the system, no action is taken
+        if (!data.checkExistBook(title,author)){ //if the books isn't in the system, no action is taken
             System.out.printf("The library does not own %s by %s. Please try again.\n",title,author);
         }
-        else if (Data.checkBookAvailable(title,author)){ //if the book has already been returned, no action is taken
+        else if (data.checkBookAvailable(title,author)){ //if the book has already been returned, no action is taken
             System.out.printf("%s by %s is not currently checked out by anyone. That is not our book.\n",title,author);
         }
         else { //if the book both exists and is not checked out, then it is returned to the library
             int daysOverdue = getDaysOverdue();
             System.out.printf("%s by %s has been returned to the library.\n",title,author);
-            Data.returnBook(id,title,author,daysOverdue);
+            data.returnBook(id,title,author,daysOverdue);
         }
     }
 
@@ -307,7 +308,7 @@ public class Menu {
         do {
             String title = getTitle();
             String author = getAuthor();
-            success = Data.removeBook(title, author);
+            success = data.removeBook(title, author);
             if (!success){
                 System.out.printf("%s by %s does not exist in library. Please try again.\n",title,author);
             }
@@ -330,9 +331,9 @@ public class Menu {
             String type = getBookType();
             if(type.equals("AUDIO")){
                 String narrator = getNarrator();
-                success = Data.storeNewAudioBook(title, author, narrator, genre, availabilityStatus);
+                success = data.storeNewAudioBook(title, author, narrator, genre, availabilityStatus);
             } else if(type.equals("PHYSICAL")){
-                success = Data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
+                success = data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
             }
             if (!success){
                 System.out.println("Book already exists in library. Try again.");
@@ -494,9 +495,9 @@ public class Menu {
             String name = getMember();
             String type = getMemberType();
             if (type.equals("ADULT")) {
-                success = Data.storeNewAdultMember(ID, name);
+                success = data.storeNewAdultMember(ID, name);
             } else if (type.equals("CHILD")) {
-                success = Data.storeNewChildMember(ID, name);
+                success = data.storeNewChildMember(ID, name);
             }
             if (!success) {
                 System.out.println("You cannot have two members with the same information.\n");
@@ -513,7 +514,7 @@ public class Menu {
         do {
             Integer ID = getId();
             String name = getMember();
-            success = Data.removeMember(ID, name);
+            success = data.removeMember(ID, name);
             if (!success){
                 System.out.println("Member does not exist in Membership List. Please try again.\n");
             }
@@ -526,7 +527,7 @@ public class Menu {
     private static void menuViewAllMembers(){
         String memMessage = """
             All Library Members:\n""";
-        ArrayList<Member> members = Data.getAllMembers();
+        ArrayList<Member> members = data.getAllMembers();
         System.out.println(viewAnyMemberList(memMessage, members));
     }
 
@@ -568,7 +569,7 @@ public class Menu {
         String name = getMember();
         String viewMembersMessage = """
                 All members with that name:""";
-        ArrayList<Member> memberList = Data.getMembersByName(name);
+        ArrayList<Member> memberList = data.getMembersByName(name);
         System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
     }
 
@@ -579,7 +580,7 @@ public class Menu {
         int id = getId();
         String viewMembersMessage = """
              Member with given ID:""";
-        ArrayList<Member> memberList = Data.getMembersById(id);
+        ArrayList<Member> memberList = data.getMembersById(id);
         System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
     }
 
@@ -605,14 +606,14 @@ public class Menu {
     }
 
     /**
-     * Passes information to Data.payFines so that a member's fines can be updated when they pay it
+     * Passes information to data.payFines so that a member's fines can be updated when they pay it
      * Prints member's information before and after they pay the fine
      */
     private static void menuPayFines(){
         int ID = getId();
         String viewMembersMessage = """
              Member's Information:""";
-        System.out.println(viewAnyMemberList(viewMembersMessage,Data.getMembersById(ID)));
+        System.out.println(viewAnyMemberList(viewMembersMessage,data.getMembersById(ID)));
 
         String input; //temporarily saving payment amount as a string for looping purposes
         do {
@@ -621,11 +622,11 @@ public class Menu {
         }while (input.isEmpty()||!input.contains(".")||input.contains("-")||input.contains("$"));
         input = String.format("%.2f",Double.parseDouble(input));
         Double payment = Double.parseDouble(input);
-        if(Data.payFines(ID,payment)){ //calls of Data.payFines, which updates the fine info as long as it's valid
+        if(data.payFines(ID,payment)){ //calls of data.payFines, which updates the fine info as long as it's valid
             System.out.println("Payment successful!\n");
             viewMembersMessage = """
              Member's Updated Information:""";
-            System.out.println(viewAnyMemberList(viewMembersMessage,Data.getMembersById(ID)));
+            System.out.println(viewAnyMemberList(viewMembersMessage,data.getMembersById(ID)));
         }
         else{
             System.out.println("Invalid payment. You cannot pay more than the amount owed.\n");
