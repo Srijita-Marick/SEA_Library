@@ -596,8 +596,7 @@ public class Menu {
             if(member instanceof AdultMember adultMember){
                 membersString.append(adultMember.toString());
                 membersString.append("\n");
-            }
-            if(member instanceof ChildMember childMember){
+            }else if(member instanceof ChildMember childMember){
                 membersString.append(childMember.toString());
                 membersString.append("\n");
             }
