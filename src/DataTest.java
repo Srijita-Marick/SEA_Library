@@ -224,10 +224,10 @@ class DataTest {
     void testGetAllBooksAndReturnBookInfo(){
         ArrayList<Books> allBooks = Data.getAllBooks();
         Books fourthBook = allBooks.get(3);
-        assertEquals("Weyward", fourthBook[Data.INDEX_TITLE]);
-        assertEquals("Emilia Hart", fourthBook[Data.INDEX_AUTHOR]);
-        assertEquals("Historical Fiction", fourthBook[Data.INDEX_GENRE]);
-        assertEquals("Available", fourthBook[Data.INDEX_STATUS]);
+        assertEquals("Weyward", fourthBook.getTitle());
+        assertEquals("Emilia Hart", fourthBook.getAuthor());
+        assertEquals("Historical Fiction", fourthBook.getGenre());
+        assertEquals("Available", fourthBook.getAvailabilityStatus());
     }
 
     @Test
@@ -241,15 +241,15 @@ class DataTest {
     void testGetAllBooksMatchDetails(){
         ArrayList<Books> allBooks = Data.getAllBooks();
         Books sixthBook = allBooks.get(5);
-        assertEquals("To Kill a Mockingbird", sixthBook[Data.INDEX_TITLE]);
-        assertEquals("Harper Lee", sixthBook[Data.INDEX_AUTHOR]);
-        assertEquals("General Fiction", sixthBook[Data.INDEX_GENRE]);
-        assertEquals("Available", sixthBook[Data.INDEX_STATUS]);
+        assertEquals("To Kill a Mockingbird", sixthBook.getTitle());
+        assertEquals("Harper Lee", sixthBook.getAuthor());
+        assertEquals("General Fiction", sixthBook.getGenre());
+        assertEquals("Available", sixthBook.getAvailabilityStatus());
         Books eighthBook = allBooks.get(7);
-        assertEquals("Hell Bent", eighthBook[Data.INDEX_TITLE]);
-        assertEquals("Leigh Bardugo", eighthBook[Data.INDEX_AUTHOR]);
-        assertEquals("Fantasy", eighthBook[Data.INDEX_GENRE]);
-        assertEquals("Available", eighthBook[Data.INDEX_STATUS]);
+        assertEquals("Hell Bent", eighthBook.getTitle());
+        assertEquals("Leigh Bardugo", eighthBook.getAuthor());
+        assertEquals("Fantasy", eighthBook.getGenre());
+        assertEquals("Available", eighthBook.getAvailabilityStatus());
     }
 
     /**
@@ -287,10 +287,10 @@ class DataTest {
     public void getBooksByTitleReturnsCorrectBookInfo() {
         ArrayList<Books> booksWithTitle = Data.getBooksByTitle("The Blood of Olympus");
        Books firstBook = booksWithTitle.get(0);
-        assertEquals("The Blood of Olympus", firstBook[Data.INDEX_TITLE]);
-        assertEquals("Rick Riordan", firstBook[Data.INDEX_AUTHOR]);
-        assertEquals("Fantasy", firstBook[Data.INDEX_GENRE]);
-        assertEquals("Available", firstBook[Data.INDEX_STATUS]);
+        assertEquals("The Blood of Olympus", firstBook.getTitle());
+        assertEquals("Rick Riordan", firstBook.getAuthor());
+        assertEquals("Fantasy", firstBook.getGenre());
+        assertEquals("Available", firstBook.getAvailabilityStatus());
     }
 
     @Test
