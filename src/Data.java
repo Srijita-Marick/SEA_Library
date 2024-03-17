@@ -5,15 +5,6 @@ import java.util.HashMap;
 
 public class Data {
 
-    public void reset(){   // Reset any existing data to ensure a clean state before test runs
-        books.clear();
-        availableBooks.clear();
-        unAvailableBooks.clear();
-        titles.clear();
-        authors.clear();
-        memberIDs.clear();
-        members.clear();
-    }
     private ArrayList<Books> books;
     private ArrayList<Books> availableBooks;
     private ArrayList<Books> unAvailableBooks;

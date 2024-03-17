@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Created classes to read and write in files for books and members">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Got rid of static and created Data object according to Setup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +63,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
@@ -108,14 +110,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00034" summary="added testGetAllBooks test">
-      <option name="closed" value="true" />
-      <created>1708976472458</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1708976472458</updated>
     </task>
     <task id="LOCAL-00035" summary="added testGetAllBooksAndReturnBookInfo test">
       <option name="closed" value="true" />
@@ -501,7 +495,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710716145672</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Got rid of static and created Data object according to Setup">
+      <option name="closed" value="true" />
+      <created>1710717103173</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1710717103173</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -528,7 +530,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added testGetMembersByNameThreeMembers test" />
     <MESSAGE value="javadoc commenting - DataTest function set 5" />
     <MESSAGE value="javadoc commenting - DataTest function set 6" />
     <MESSAGE value="javadoc commenting - DataTest function set 7" />
@@ -553,6 +554,7 @@
     <MESSAGE value="minor change" />
     <MESSAGE value="menuAddMember debug" />
     <MESSAGE value="Created classes to read and write in files for books and members" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created classes to read and write in files for books and members" />
+    <MESSAGE value="Got rid of static and created Data object according to Setup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got rid of static and created Data object according to Setup" />
   </component>
 </project>
