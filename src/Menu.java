@@ -335,6 +335,15 @@ public class Menu {
         System.out.println("Stored a new book!");
     }
 
+    private static String getNarrator() {
+        System.out.println("Enter Narrator Name: ");
+        String narrator;
+        do {
+            narrator = scanner.nextLine().trim();
+        } while (narrator.isEmpty());
+        return narrator;
+    }
+
     private static String getAvailabilityStatus() {
         return "Available";  // by default, new books should be available
     }
