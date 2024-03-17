@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="slight update to make Menu and Data match new fines restrictions">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-    </list>
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added getMemberType in Menu" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,22 +71,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00024" summary="created menuSearchMembers">
-      <option name="closed" value="true" />
-      <created>1708965895759</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1708965895759</updated>
-    </task>
-    <task id="LOCAL-00025" summary="created searchByName for Search">
-      <option name="closed" value="true" />
-      <created>1708966636669</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1708966636669</updated>
     </task>
     <task id="LOCAL-00026" summary="created searchByID for Search">
       <option name="closed" value="true" />
@@ -467,7 +448,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710625084603</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="deleted storeNewMember">
+      <option name="closed" value="true" />
+      <created>1710639832067</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1710639832068</updated>
+    </task>
+    <task id="LOCAL-00074" summary="added getMemberType in Menu">
+      <option name="closed" value="true" />
+      <created>1710639885207</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1710639885207</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -494,8 +491,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added getBooksByAuthorReturnsCorrectNumberOfBooks1 test" />
-    <MESSAGE value="added getBooksByAuthorEmptyAuthor test" />
     <MESSAGE value="added getBooksByGenreReturnsCorrectNumberOfBooks test" />
     <MESSAGE value="added getBooksByGenreReturnsCorrectBookInfo test" />
     <MESSAGE value="added getBooksByGenreWhenNoBooksOfGenre test" />
@@ -519,6 +514,8 @@
     <MESSAGE value="Updated Data.java and used getters from Books" />
     <MESSAGE value="Created setters in Books" />
     <MESSAGE value="slight update to make Menu and Data match new fines restrictions" />
-    <option name="LAST_COMMIT_MESSAGE" value="slight update to make Menu and Data match new fines restrictions" />
+    <MESSAGE value="deleted storeNewMember" />
+    <MESSAGE value="added getMemberType in Menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getMemberType in Menu" />
   </component>
 </project>

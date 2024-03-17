@@ -482,10 +482,15 @@ public class Menu {
      * Used in menuMemberData to add a new member to the Library's member list
      */
     private static void menuAddMember(){
-        boolean success;
+        boolean success=false;
         Integer ID = getId();
         String name = getMember();
-        success = Data.storeNewMember(ID, name);
+        String type = getMemberType();
+        if (type.equals("ADULT")){
+            success = Data.storeNewAdultMember(ID, name);
+        } else if (type.equals("PHYSICAL")){
+            success = Data.storeNewChildMember(ID,name);
+        }
         if (!success){
             System.out.println("You cannot have two members with the same information.\n");
         }
