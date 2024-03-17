@@ -46,4 +46,10 @@ public abstract class Member {
             String roundedFine = String.format("%.2f",(member.getFines()));
             memString.append("\nFines: ").append(roundedFine);
          */
+    public void addBookToMember(String book){
+        borrowed.add(book);
+    }
+    public void removeBookFromMember(String book){
+        borrowed.remove(book);
+    }
 }
