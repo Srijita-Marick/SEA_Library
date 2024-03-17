@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class Data {
 
-    public static void reset(){   // Reset any existing data to ensure a clean state before test runs
+    public void reset(){   // Reset any existing data to ensure a clean state before test runs
         books.clear();
         availableBooks.clear();
         unAvailableBooks.clear();
@@ -14,11 +14,19 @@ public class Data {
         memberIDs.clear();
         members.clear();
     }
-    private static final ArrayList<Books> books = new ArrayList<>();
-    private static final ArrayList<Books> availableBooks = new ArrayList<>();
-    private static final ArrayList<Books> unAvailableBooks = new ArrayList<>();
-    private static final ArrayList<String> titles = new ArrayList<>();
-    private static final ArrayList<String> authors = new ArrayList<>();
+    private ArrayList<Books> books;
+    private ArrayList<Books> availableBooks;
+    private ArrayList<Books> unAvailableBooks;
+    private ArrayList<String> titles;
+    private ArrayList<String> authors;
+
+    public Data(){
+        books = new ArrayList<>();
+        availableBooks = new ArrayList<>();
+        unAvailableBooks = new ArrayList<>();
+        titles = new ArrayList<>();
+        authors = new ArrayList<>();
+    }
 
     /**
      * Adds new AudioBook to list of books and adds their title to titles and author to authors
@@ -30,7 +38,7 @@ public class Data {
      * @param availabilityStatus of the book to be stored (default = available)
      * @return True if book stored successfully, otherwise False.
      */
-    public static boolean storeNewAudioBook(String title, String author, String narrator, String genre, String availabilityStatus) {
+    public boolean storeNewAudioBook(String title, String author, String narrator, String genre, String availabilityStatus) {
         if (title.isEmpty() || author.isEmpty()){
             System.out.println("Book cannot be stored.");
             return false;
@@ -57,7 +65,7 @@ public class Data {
      * @param availabilityStatus of the book to be stored (default = available)
      * @return True if book stored successfully, otherwise False.
      */
-    public static boolean storeNewPhysicalBook(String title, String author, String genre, String availabilityStatus) {
+    public boolean storeNewPhysicalBook(String title, String author, String genre, String availabilityStatus) {
         if (title.isEmpty() || author.isEmpty()){
             System.out.println("Book cannot be stored.");
             return false;
@@ -81,7 +89,7 @@ public class Data {
      * @param author of the book to be checked
      * @return whether the library has a book with that title and author
      */
-    public static boolean checkExistBook(String title , String author){
+    public boolean checkExistBook(String title , String author){
         for(Books book : books){
             if (book.getTitle().equals(title) && book.getAuthor().equals(author)){
                 return true;
@@ -96,7 +104,7 @@ public class Data {
      * @return whether the book is in the available books list
      */
 
-    public static boolean checkBookAvailable(String title, String author){
+    public boolean checkBookAvailable(String title, String author){
         if (checkExistBook(title,author)) {
             for (Books book : availableBooks) {
                 if (book.getTitle().equals(title) && book.getAuthor().equals(author)) {
@@ -110,21 +118,21 @@ public class Data {
     /**
      * @return list of all books in library
      */
-    public static ArrayList <Books> getAllBooks(){
+    public ArrayList <Books> getAllBooks(){
         return books;
     }
 
     /**
      * @return list of only the available books in library
      */
-    public static ArrayList <Books> getAvailableBooks(){
+    public ArrayList <Books> getAvailableBooks(){
         return availableBooks;
     }
 
     /**
      * @return list of only the unavailable books in library
      */
-    public static ArrayList<Books> getUnavailableBooks() {
+    public ArrayList<Books> getUnavailableBooks() {
         return unAvailableBooks;
     }
 
@@ -132,7 +140,7 @@ public class Data {
      * @param title to search for
      * @return list of all books with that title
      */
-    public static ArrayList<Books> getBooksByTitle(String title) {
+    public ArrayList<Books> getBooksByTitle(String title) {
         ArrayList<Books> booksWithTitle = new ArrayList<>();
         for (Books book: books){
             if (book.getTitle().equals(title)) {
@@ -146,7 +154,7 @@ public class Data {
      * @param author to search for
      * @return list of all books by that author
      */
-    public static ArrayList<Books> getBooksByAuthor(String author) {
+    public ArrayList<Books> getBooksByAuthor(String author) {
         ArrayList<Books> booksByAuthor = new ArrayList<>();
         for (Books book: books){
             if (book.getAuthor().equals(author)) {
@@ -160,7 +168,7 @@ public class Data {
      * @param genre to search for
      * @return list of all books in that genre
      */
-    public static ArrayList<Books> getBooksByGenre(String genre) {
+    public ArrayList<Books> getBooksByGenre(String genre) {
         ArrayList<Books> booksInGenre = new ArrayList<>();
         for (Books book: books){
             if (book.getGenre().equals(genre)) {
@@ -178,7 +186,7 @@ public class Data {
      * @param title of the book they are checking out
      * @param author of the book they are checking out
      */
-    public static void checkoutBook(Integer id, String title, String author){
+    public void checkoutBook(Integer id, String title, String author){
         for (Books book: books){ //goes through every book until it finds one matching title and author
             if (book.getTitle().equals(title) && book.getAuthor().equals(author)){
                 availableBooks.remove(book);
@@ -204,7 +212,7 @@ public class Data {
      * @param author of book being returned
      * @param daysOverdue is the days that the member kept the book past its due date
      */
-    public static void returnBook(Integer id, String title, String author, int daysOverdue) {
+    public void returnBook(Integer id, String title, String author, int daysOverdue) {
         for (Books book: books){ //goes through every book until it finds one with title and author
             if (book.getTitle().equals(title) && book.getAuthor().equals(author)){
                 unAvailableBooks.remove(book);
@@ -227,7 +235,7 @@ public class Data {
      * @param author of book to be removed from library
      * @return whether deletion was successful
      */
-    public static boolean removeBook(String title, String author) {
+    public boolean removeBook(String title, String author) {
         if (checkExistBook(title,author)){ //can only remove a book that exists
             for (Books book: books){
                 if (book.getTitle().equals(title)&&book.getAuthor().equals(author)){
@@ -252,8 +260,8 @@ public class Data {
 
     //  EVERYTHING BELOW HERE IS TO STORE MEMBER DATA
 
-    static final ArrayList<Member> members = new ArrayList<>();
-    static final HashMap<Integer,Member> memberIDs = new HashMap<>();
+    final ArrayList<Member> members = new ArrayList<>();
+    final HashMap<Integer,Member> memberIDs = new HashMap<>();
 
 
     /**
@@ -263,7 +271,7 @@ public class Data {
      * @return whether addition of member was successful (only unsuccessful when member with same ID already exists)
      */
 
-    public static boolean storeNewChildMember(Integer id, String name) {
+    public boolean storeNewChildMember(Integer id, String name) {
         if (id==null||name.isEmpty()){
             System.out.println("Member cannot be stored.");
             return false;
@@ -284,7 +292,7 @@ public class Data {
      * @param name of member to be added
      * @return whether addition of member was successful (only unsuccessful when member with same ID already exists)
      */
-    public static boolean storeNewAdultMember(Integer id, String name) {
+    public boolean storeNewAdultMember(Integer id, String name) {
         if (id==null||name.isEmpty()){
             System.out.println("Member cannot be stored.");
             return false;
@@ -305,7 +313,7 @@ public class Data {
      * @param id of member to check
      * @return if ID already exists in list of memberIDs
      */
-    public static boolean checkExistMember(Integer id) {
+    public boolean checkExistMember(Integer id) {
         return memberIDs.containsKey(id);
     }
 
@@ -315,7 +323,7 @@ public class Data {
      * @param name of member to be removed
      * @return whether member was successfully removed
      */
-    public static boolean removeMember(int id, String name) {
+    public boolean removeMember(int id, String name) {
         if (checkExistMember(id)){
             Member member = memberIDs.get(id);
             if (member.getName().equals(name)){
@@ -331,7 +339,7 @@ public class Data {
     /**
      * @return list of all members in library
      */
-    public static ArrayList<Member> getAllMembers(){
+    public ArrayList<Member> getAllMembers(){
         return members;
     }
 
@@ -339,7 +347,7 @@ public class Data {
      * @param name to search for
      * @return a list of members with that name
      */
-    public static ArrayList<Member> getMembersByName(String name) {
+    public ArrayList<Member> getMembersByName(String name) {
         ArrayList<Member> membersWithName = new ArrayList<>();
         for (Member member: members){
             if (member.getName().equals(name)) {
@@ -353,7 +361,7 @@ public class Data {
      * @param id to find the corresponding member for
      * @return the member with that ID as a single element list (to make printing easy in Menu.java)
      */
-    public static ArrayList<Member> getMembersById(int id) {
+    public ArrayList<Member> getMembersById(int id) {
         ArrayList<Member> membersWithId = new ArrayList<>();
         membersWithId.add(memberIDs.get(id));
         return membersWithId;
@@ -363,7 +371,7 @@ public class Data {
      * @param id of member to get books for
      * @return list of Strings representing books the member has checked out
      */
-    public static ArrayList<String> getBorrowedBooks(Integer id){
+    public ArrayList<String> getBorrowedBooks(Integer id){
         return memberIDs.get(id).getBorrowed();
     }
 
@@ -371,7 +379,7 @@ public class Data {
      * @param daysOverDue is the number of days the user had the book past the due date
      * @return the fines accrued from being overdue
      */
-    public static double calculateFines(int daysOverDue){
+    public double calculateFines(int daysOverDue){
         return ((double)daysOverDue)*0.05; //five cents are added to fines per day overdue
     }
 
@@ -381,7 +389,7 @@ public class Data {
      * @param payment is the amount the member is paying
      * @return whether it is a valid payment or not
      */
-    public static boolean payFines(Integer ID, Double payment){
+    public boolean payFines(Integer ID, Double payment){
         Member member = memberIDs.get(ID);
         if (member instanceof AdultMember adultMember && adultMember.getFines() >= payment){
             adultMember.setFines(adultMember.getFines()-payment);

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="menuAddMember debug" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Created classes to read and write in files for books and members">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +58,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RunManager">
@@ -101,14 +108,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00033" summary="added checkExistBookTitleWithNullAuthor test">
-      <option name="closed" value="true" />
-      <created>1708970067342</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1708970067342</updated>
     </task>
     <task id="LOCAL-00034" summary="added testGetAllBooks test">
       <option name="closed" value="true" />
@@ -494,7 +493,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710715939361</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Created classes to read and write in files for books and members">
+      <option name="closed" value="true" />
+      <created>1710716145672</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1710716145672</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -521,7 +528,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added testGetMembersByNameReturnMemberInfo test" />
     <MESSAGE value="added testGetMembersByNameThreeMembers test" />
     <MESSAGE value="javadoc commenting - DataTest function set 5" />
     <MESSAGE value="javadoc commenting - DataTest function set 6" />
@@ -546,6 +552,7 @@
     <MESSAGE value="Edited AdultMember and ChildMember toString" />
     <MESSAGE value="minor change" />
     <MESSAGE value="menuAddMember debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="menuAddMember debug" />
+    <MESSAGE value="Created classes to read and write in files for books and members" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created classes to read and write in files for books and members" />
   </component>
 </project>
