@@ -648,7 +648,7 @@ public class Menu {
     }
 
     /**
-     * Used to get the member age category
+     * Used to get the member age category (child or adult)
      * @return String value of member type obtained from user input
      */
     private static String getMemberType() {
