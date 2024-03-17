@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="slight debug of how fines work in Data.java">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="implemented addBookToMember and removeBookFromMember in Data.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
@@ -74,22 +74,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00028" summary="edited javadoc comments">
-      <option name="closed" value="true" />
-      <created>1708967434180</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1708967434180</updated>
-    </task>
-    <task id="LOCAL-00029" summary="added checkExistBook test">
-      <option name="closed" value="true" />
-      <created>1708968899793</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1708968899793</updated>
     </task>
     <task id="LOCAL-00030" summary="added checkBookDoesNotExist test">
       <option name="closed" value="true" />
@@ -467,7 +451,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710640467177</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="added addBookToMember and removeBookFromMember">
+      <option name="closed" value="true" />
+      <created>1710647107521</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1710647107521</updated>
+    </task>
+    <task id="LOCAL-00078" summary="implemented addBookToMember and removeBookFromMember in Data.java">
+      <option name="closed" value="true" />
+      <created>1710647246837</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1710647246837</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -494,8 +494,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added getBooksByGenreWhenNoBooksOfGenre test" />
-    <MESSAGE value="added getBooksByGenreReturnsCorrectNumberOfBooks1 test" />
     <MESSAGE value="added getBooksByGenreWhenGenreNotValid test" />
     <MESSAGE value="added 3 tests for StoreNewMember test" />
     <MESSAGE value="debugged borrowed book display" />
@@ -519,7 +517,9 @@
     <MESSAGE value="added getMemberType in Menu" />
     <MESSAGE value="edited menuAddMember to work with getMemberType" />
     <MESSAGE value="slight debug of how fines work in Data.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="slight debug of how fines work in Data.java" />
+    <MESSAGE value="added addBookToMember and removeBookFromMember" />
+    <MESSAGE value="implemented addBookToMember and removeBookFromMember in Data.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented addBookToMember and removeBookFromMember in Data.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

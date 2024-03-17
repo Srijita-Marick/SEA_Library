@@ -270,7 +270,7 @@ public class Data {
         }
 
         if (!checkExistMember(id)) {
-            Member member = new AdultMember(id, name);
+            Member member = new ChildMember(id, name);
             memberIDs.put(id, member);
             members.add(member); //adding to list of all members
             return true;
@@ -291,7 +291,7 @@ public class Data {
         }
 
         if (!checkExistMember(id)) {
-            Member member = new ChildMember(id, name);
+            Member member = new AdultMember(id, name);
             memberIDs.put(id, member);
             members.add(member); //adding to list of all members
             return true;
@@ -317,13 +317,12 @@ public class Data {
      */
     public static boolean removeMember(int id, String name) {
         if (checkExistMember(id)){
-            for (Member member: members){
-
-                if ((member.getID() == (id)) && member.getName().equals(name)){
-                    members.remove(member);
-                    memberIDs.remove(member.getID(),member);
-                    return true;
-                }
+            Member member = memberIDs.get(id);
+            if (member.getName().equals(name)){
+                //technically an unnecessary check, but exists for security reasons since a member is being deleted
+                members.remove(member);
+                memberIDs.remove(member.getID(),member);
+                return true;
             }
         }
         return false;
@@ -356,11 +355,7 @@ public class Data {
      */
     public static ArrayList<Member> getMembersById(int id) {
         ArrayList<Member> membersWithId = new ArrayList<>();
-        for (Member member: members){
-            if (member.getID()==id) {
-                membersWithId.add(member);
-            }
-        }
+        membersWithId.add(memberIDs.get(id));
         return membersWithId;
     }
 
@@ -387,11 +382,10 @@ public class Data {
      * @return whether it is a valid payment or not
      */
     public static boolean payFines(Integer ID, Double payment){
-        for (Member member:members){
-            if (member instanceof AdultMember adultMember && adultMember.getID()==ID &&adultMember.getFines()>=payment){
-                adultMember.setFines(adultMember.getFines()-payment);
-                return true;
-            }
+        Member member = memberIDs.get(ID);
+        if (member instanceof AdultMember adultMember && adultMember.getFines() >= payment){
+            adultMember.setFines(adultMember.getFines()-payment);
+            return true;
         }
         return false;
     }
