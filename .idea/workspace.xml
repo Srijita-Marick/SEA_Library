@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Fixed two tests - getBorrowedBooks and getMembersById">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Updated viewAnyMemberList to work with child classes of Member">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AdultMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AdultMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChildMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChildMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,14 +106,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00029" summary="added checkExistBook test">
-      <option name="closed" value="true" />
-      <created>1708968899793</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1708968899793</updated>
     </task>
     <task id="LOCAL-00030" summary="added checkBookDoesNotExist test">
       <option name="closed" value="true" />
@@ -496,7 +491,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710711104357</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Updated viewAnyMemberList to work with child classes of Member">
+      <option name="closed" value="true" />
+      <created>1710712034137</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1710712034137</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -523,7 +526,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added getBooksByGenreReturnsCorrectNumberOfBooks1 test" />
     <MESSAGE value="added getBooksByGenreWhenGenreNotValid test" />
     <MESSAGE value="added 3 tests for StoreNewMember test" />
     <MESSAGE value="debugged borrowed book display" />
@@ -548,6 +550,7 @@
     <MESSAGE value="Edited AudioBooks and PhysicalBooks to work with Menu" />
     <MESSAGE value="Fixed two test cases to work with Adult Member" />
     <MESSAGE value="Fixed two tests - getBorrowedBooks and getMembersById" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed two tests - getBorrowedBooks and getMembersById" />
+    <MESSAGE value="Updated viewAnyMemberList to work with child classes of Member" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated viewAnyMemberList to work with child classes of Member" />
   </component>
 </project>

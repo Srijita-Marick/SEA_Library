@@ -5,11 +5,9 @@ public class ChildMember extends Member{
     }
     @Override
     public String toString() {
-        return "Child Member{" +
-                "id='" + this.getID() + '\'' +
-                ", name='" + this.getName() + '\'' +
-                ", borrowed=" + this.getBorrowed() +
-                '}';
+        return (this.getID() + '\t' +
+                this.getName() + '\n' +
+                "Books borrowed: \n" + this.getBorrowed() + "\n");
     }
 
 }

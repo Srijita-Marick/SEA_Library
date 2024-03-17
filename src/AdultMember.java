@@ -12,11 +12,9 @@ public class AdultMember extends Member{
     }
 
     public String toString() {
-        return "Adult Member{" +
-                "id='" + this.getID() + '\'' +
-                ", name='" + this.getName() + '\'' +
-                ", fines=" + this.getFines() +
-                ", borrowed=" + this.getBorrowed() +
-                '}';
+        return (this.getID() + "\t" +
+                this.getName() + '\t' +
+                "Fines: " + this.getFines() + "\n" +
+                "Books borrowed: \n" + this.getBorrowed() + "\n");
     }
 }

@@ -524,15 +524,10 @@ public class Menu {
      * Used in menuMemberData to print the entire list of library members
      */
     private static void menuViewAllMembers(){
-        ArrayList<Member> members = Data.getAllMembers();
-        StringBuilder memString = new StringBuilder();
         String memMessage = """
-            All Library Members:""";
-        memString.append(memMessage);
-        for (Member member: members){
-            memString.append(member.toString());
-        }
-        System.out.println(memString);
+            All Library Members:\n""";
+        ArrayList<Member> members = Data.getAllMembers();
+        System.out.println(viewAnyMemberList(memMessage, members));
     }
 
     /**
@@ -601,7 +596,8 @@ public class Menu {
             if(member instanceof AdultMember adultMember){
                 membersString.append(adultMember.toString());
                 membersString.append("\n");
-            } else if(member instanceof ChildMember childMember){
+            }
+            if(member instanceof ChildMember childMember){
                 membersString.append(childMember.toString());
                 membersString.append("\n");
             }
