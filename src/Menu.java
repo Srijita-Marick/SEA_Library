@@ -241,8 +241,10 @@ public class Menu {
         for (Books book :listOfBooks){
             if(book instanceof PhysicalBooks physicalBook){
                 booksString.append(physicalBook.toString());
+                booksString.append("\n");
             } else if(book instanceof AudioBooks audioBook){
                 booksString.append(audioBook.toString());
+                booksString.append("\n");
             }
         }
         return (booksString.toString());

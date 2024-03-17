@@ -7,7 +7,7 @@ public class PhysicalBooks extends Books{
     public String toString() {
         return (this.getTitle() + " by " + this.getAuthor() + "\t" +
                 "(" + this.getGenre() + ")\t" +
-                "Type: PHYSICAL\n" +
+                "Type: PHYSICAL\t" +
                 "Status: " + this.getAvailabilityStatus() + "\n");
     }
 }

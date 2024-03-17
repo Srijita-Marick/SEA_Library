@@ -10,12 +10,10 @@ public class AudioBooks extends Books{
     }
     @Override
     public String toString() {
-        return "Audio Books{" +
-                "title='" + this.getTitle() + '\'' +
-                ", author='" + this.getAuthor() + '\'' +
-                ", narrator='" + this.getNarrator() + '\'' +
-                ", genre='" + this.getGenre() + '\'' +
-                ", availabilityStatus='" + this.getAvailabilityStatus() + '\'' +
-                '}';
+        return (this.getTitle() + " by " + this.getAuthor() + '\t' +
+                " narrated by " + this.getNarrator() + '\t' +
+                "(" + this.getGenre() + ")\t" +
+                "Type: AUDIO\t" +
+                "Status: " + this.getAvailabilityStatus() + '\n');
     }
 }
