@@ -321,7 +321,7 @@ public class Menu {
             String author = getAuthor();
             String genre = getGenre();
             String availabilityStatus = getAvailabilityStatus();
-            String type = getType();
+            String type = getBookType();
             if(type.equals("AUDIO")){
                 String narrator = getNarrator();
                 success = Data.storeNewAudioBook(title, author, narrator, genre, availabilityStatus);
@@ -344,7 +344,7 @@ public class Menu {
         return narrator;
     }
 
-    private static String getType(){
+    private static String getBookType(){
         System.out.println("Enter Book Type (PHYSICAL/AUDIO): ");
         String bookType;
         do {
