@@ -216,14 +216,14 @@ class DataTest {
      */
     @Test
     void testGetAllBooks() {
-        ArrayList<Object[]> allBooks = Data.getAllBooks();
+        ArrayList<Books> allBooks = Data.getAllBooks();
         assertEquals(14, allBooks.size());
     }
 
     @Test
     void testGetAllBooksAndReturnBookInfo(){
-        ArrayList<Object[]> allBooks = Data.getAllBooks();
-        Object[] fourthBook = allBooks.get(3);
+        ArrayList<Books> allBooks = Data.getAllBooks();
+        Books fourthBook = allBooks.get(3);
         assertEquals("Weyward", fourthBook[Data.INDEX_TITLE]);
         assertEquals("Emilia Hart", fourthBook[Data.INDEX_AUTHOR]);
         assertEquals("Historical Fiction", fourthBook[Data.INDEX_GENRE]);
@@ -233,19 +233,19 @@ class DataTest {
     @Test
     void testGetAllBooksEmptyLibrary(){
         Data.reset(); // Clear existing data to simulate no books
-        ArrayList<Object[]> allBooks = Data.getAllBooks();
+        ArrayList<Books> allBooks = Data.getAllBooks();
         assertTrue(allBooks.isEmpty());
     }
 
     @Test
     void testGetAllBooksMatchDetails(){
-        ArrayList<Object[]> allBooks = Data.getAllBooks();
-        Object[] sixthBook = allBooks.get(5);
+        ArrayList<Books> allBooks = Data.getAllBooks();
+        Books sixthBook = allBooks.get(5);
         assertEquals("To Kill a Mockingbird", sixthBook[Data.INDEX_TITLE]);
         assertEquals("Harper Lee", sixthBook[Data.INDEX_AUTHOR]);
         assertEquals("General Fiction", sixthBook[Data.INDEX_GENRE]);
         assertEquals("Available", sixthBook[Data.INDEX_STATUS]);
-        Object[] eighthBook = allBooks.get(7);
+        Books eighthBook = allBooks.get(7);
         assertEquals("Hell Bent", eighthBook[Data.INDEX_TITLE]);
         assertEquals("Leigh Bardugo", eighthBook[Data.INDEX_AUTHOR]);
         assertEquals("Fantasy", eighthBook[Data.INDEX_GENRE]);
@@ -257,7 +257,7 @@ class DataTest {
      */
     @Test
     void testGetAllAvailableBooks() {
-        ArrayList<Object[]> allAvailableBooks = Data.getAvailableBooks();
+        ArrayList<Books> allAvailableBooks = Data.getAvailableBooks();
         assertEquals(14, allAvailableBooks.size());
 
     }
@@ -268,7 +268,7 @@ class DataTest {
     @Test
     void testGetUnavailableBooks() {
         Data.reset();
-        ArrayList<Object[]> allUnavailableBooks = Data.getUnavailableBooks();
+        ArrayList<Books> allUnavailableBooks = Data.getUnavailableBooks();
         assertEquals(0,allUnavailableBooks.size());
     }
 
@@ -279,14 +279,14 @@ class DataTest {
      */
     @Test
     public void getBooksByTitleReturnsCorrectNumberOfBooks() {
-        ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("Joyland");
+        ArrayList<Books> booksWithTitle = Data.getBooksByTitle("Joyland");
         assertEquals(2, booksWithTitle.size());
     }
 
     @Test
     public void getBooksByTitleReturnsCorrectBookInfo() {
-        ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("The Blood of Olympus");
-        Object[] firstBook = booksWithTitle.get(0);
+        ArrayList<Books> booksWithTitle = Data.getBooksByTitle("The Blood of Olympus");
+       Books firstBook = booksWithTitle.get(0);
         assertEquals("The Blood of Olympus", firstBook[Data.INDEX_TITLE]);
         assertEquals("Rick Riordan", firstBook[Data.INDEX_AUTHOR]);
         assertEquals("Fantasy", firstBook[Data.INDEX_GENRE]);
@@ -295,19 +295,19 @@ class DataTest {
 
     @Test
     public void getBooksByTitleWhenTitleNotFound() {
-        ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("American Gods");
+        ArrayList<Books> booksWithTitle = Data.getBooksByTitle("American Gods");
         assertTrue(booksWithTitle.isEmpty());
     }
 
     @Test
     public void getBooksByTitleReturnsCorrectNumberOfBooks1(){
-        ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle("Poverty, by America");
+        ArrayList<Books> booksWithTitle = Data.getBooksByTitle("Poverty, by America");
         assertEquals(1, booksWithTitle.size());
     }
 
     @Test
     public void getBooksByTitleEmptyTitle(){
-        ArrayList<Object[]> booksWithTitle = Data.getBooksByTitle(" ");
+        ArrayList<Books> booksWithTitle = Data.getBooksByTitle(" ");
         assertTrue(booksWithTitle.isEmpty());
     }
 
@@ -318,14 +318,14 @@ class DataTest {
      */
     @Test
     void getBooksByAuthorReturnsCorrectNumberOfBooks() {
-        ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor("Stephen King");
+        ArrayList<Books> booksByAuthor = Data.getBooksByAuthor("Stephen King");
         assertEquals(2, booksByAuthor.size());
     }
 
     @Test
     public void getBooksByAuthorReturnsCorrectBookInfo() {
-        ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor("Emily Henry");
-        Object[] book = booksByAuthor.get(0);
+        ArrayList<Books> booksByAuthor = Data.getBooksByAuthor("Emily Henry");
+        <Books> book = booksByAuthor.get(0);
         assertEquals("Happy Place", book[Data.INDEX_TITLE]);
         assertEquals("Emily Henry", book[Data.INDEX_AUTHOR]);
         assertEquals("Romance", book[Data.INDEX_GENRE]);
@@ -334,19 +334,19 @@ class DataTest {
 
     @Test
     public void getBooksByAuthorWhenAuthorNotFound() {
-        ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor("John Milton");
+        ArrayList<Books> booksByAuthor = Data.getBooksByAuthor("John Milton");
         assertTrue(booksByAuthor.isEmpty());
     }
 
     @Test
     public void getBooksByAuthorReturnsCorrectNumberOfBooks1(){
-        ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor("Freida McFadden");
+        ArrayList<Books> booksByAuthor = Data.getBooksByAuthor("Freida McFadden");
         assertEquals(1, booksByAuthor.size());
     }
 
     @Test
     public void getBooksByAuthorEmptyAuthor(){
-        ArrayList<Object[]> booksByAuthor = Data.getBooksByAuthor(" ");
+        ArrayList<Books> booksByAuthor = Data.getBooksByAuthor(" ");
         assertTrue(booksByAuthor.isEmpty());
     }
 
@@ -357,14 +357,14 @@ class DataTest {
      */
     @Test
     public void getBooksByGenreReturnsCorrectNumberOfBooks() {
-        ArrayList<Object[]> booksByGenre = Data.getBooksByGenre("Fantasy");
+        ArrayList<Books> booksByGenre = Data.getBooksByGenre("Fantasy");
         assertEquals(2, booksByGenre.size());
     }
 
     @Test
     public void getBooksByGenreReturnsCorrectBookInfo() {
-        ArrayList<Object[]> booksByGenre = Data.getBooksByGenre("Literary");
-        Object[] book = booksByGenre.get(1);
+        ArrayList<Books> booksByGenre = Data.getBooksByGenre("Literary");
+        <Books> book = booksByGenre.get(1);
         assertEquals("The Great Gatsby", book[Data.INDEX_TITLE]);
         assertEquals("F. Scott Fitzgerald", book[Data.INDEX_AUTHOR]);
         assertEquals("Literary", book[Data.INDEX_GENRE]);
@@ -373,19 +373,19 @@ class DataTest {
 
     @Test
     public void getBooksByGenreWhenNoBooksOfGenre() {
-        ArrayList<Object[]> booksByGenre = Data.getBooksByGenre("Poetry");
+        ArrayList<Books> booksByGenre = Data.getBooksByGenre("Poetry");
         assertTrue(booksByGenre.isEmpty());
     }
 
     @Test
     public void getBooksByGenreReturnsCorrectNumberOfBooks1(){
-        ArrayList<Object[]> booksByGenre = Data.getBooksByGenre("Literary");
+        ArrayList<Books> booksByGenre = Data.getBooksByGenre("Literary");
         assertEquals(3, booksByGenre.size());
     }
 
     @Test
     public void getBooksByGenreWhenGenreNotValid() {
-        ArrayList<Object[]> booksByInvalidGenre = Data.getBooksByGenre("Adventure");
+        ArrayList<Books> booksByInvalidGenre = Data.getBooksByGenre("Adventure");
         assertTrue(booksByInvalidGenre.isEmpty());
     }
 
@@ -394,22 +394,22 @@ class DataTest {
      */
     @Test
     void checkoutBook() {
-        ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
+        ArrayList<Books> initialAvailableBooks = Data.getAvailableBooks();
 
         Data.checkoutBook(123, "The Blood of Olympus","Rick Riordan");
         assertFalse(Data.checkBookAvailable( "The Blood of Olympus","Rick Riordan"));
 
-        ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
+        ArrayList<Books> updatedAvailableBooks = Data.getAvailableBooks();
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
 
     @Test
     void checkoutBookWhenBookDoesNotExist(){
-        ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
+        ArrayList<Books> initialAvailableBooks = Data.getAvailableBooks();
         Data.checkoutBook(103, "The Sea of Monsters","Rick Riordan");
         assertFalse(Data.checkBookAvailable( "The Sea of Monsters","Rick Riordan"));
 
-        ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
+        ArrayList<Books> updatedAvailableBooks = Data.getAvailableBooks();
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
 
@@ -418,18 +418,18 @@ class DataTest {
      */
     @Test
     void returnBook() {
-        ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
+        ArrayList<Books> initialAvailableBooks = Data.getAvailableBooks();
 
         Data.returnBook(124,"Weyward","Emilia Hart", 5);
         assertTrue(Data.checkBookAvailable("Weyward","Emilia Hart"));
 
-        ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
+        ArrayList<Books> updatedAvailableBooks = Data.getAvailableBooks();
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
 
     @Test
     void returnTwoBooks() {
-        ArrayList<Object[]> initialAvailableBooks = Data.getAvailableBooks();
+        ArrayList<Books> initialAvailableBooks = Data.getAvailableBooks();
 
         Data.returnBook(125 ,"To Kill a Mockingbird", "Harper Lee", 7);
         assertTrue(Data.checkBookAvailable("To Kill a Mockingbird", "Harper Lee"));
@@ -437,7 +437,7 @@ class DataTest {
         Data.returnBook(123,"Joyland","Stephen King",16);
         assertTrue(Data.checkBookAvailable("Joyland","Stephen King"));
 
-        ArrayList<Object[]> updatedAvailableBooks = Data.getAvailableBooks();
+        ArrayList<Books> updatedAvailableBooks = Data.getAvailableBooks();
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
 
@@ -641,7 +641,7 @@ class DataTest {
 
     @Test
     void testGetMembersByNameThreeMembers(){
-        ArrayList<Object[]> membersByName = Data.getMembersByName("The Webster");
+        ArrayList<Member> membersByName = Data.getMembersByName("The Webster");
         assertEquals(1, membersByName.size());
         ArrayList<Object[]> membersByName1 = Data.getMembersByName("Himanshu Ganga");
         assertEquals(1, membersByName1.size());
