@@ -62,32 +62,36 @@ class DataTest {
     }
 
     @Test
-    void storeTwoBooksSameAuthor() {
+    void storeTwoPhysicalBooksSameAuthor() {
         Data.reset(); // Clear existing data
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
         String genre = "Fantasy";
         String availabilityStatus = "Available";
         assertEquals(0, Data.getAllBooks().size());
-        boolean success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        boolean success = Data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
         assertTrue(success);
+
+        Books book1  = Data.getAllBooks().get(0);
         assertEquals(1, Data.getAllBooks().size());
-        assertEquals(title, Data.getAllBooks().get(0)[0]);
-        assertEquals(author, Data.getAllBooks().get(0)[1]);
-        assertEquals(genre, Data.getAllBooks().get(0)[2]);
-        assertEquals(availabilityStatus, Data.getAllBooks().get(0)[3]);
+        assertEquals(title, book1.getTitle());
+        assertEquals(author, book1.getAuthor());
+        assertEquals(genre, book1.getGenre());
+        assertEquals(availabilityStatus,book1.getAvailabilityStatus());
 
         title = "Harry Potter and the Chamber of Secrets";
         author = "J.K. Rowling";
         genre = "Fantasy";
         availabilityStatus = "Available";
-        success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        success = Data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
         assertTrue(success);
+
+        Books book2 = Data.getAllBooks().get(1);
         assertEquals(2, Data.getAllBooks().size());
-        assertEquals(title, Data.getAllBooks().get(1)[0]);
-        assertEquals(author, Data.getAllBooks().get(1)[1]);
-        assertEquals(genre, Data.getAllBooks().get(1)[2]);
-        assertEquals(availabilityStatus, Data.getAllBooks().get(1)[3]);
+        assertEquals(title, book2.getTitle());
+        assertEquals(author, book2.getAuthor());
+        assertEquals(genre, book2.getGenre());
+        assertEquals(availabilityStatus,book2.getAvailabilityStatus());
     }
     @Test
      void storeDuplicateBooks(){
