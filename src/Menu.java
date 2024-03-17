@@ -489,20 +489,20 @@ public class Menu {
      */
     private static void menuAddMember(){
         boolean success=false;
-        Integer ID = getId();
-        String name = getMember();
-        String type = getMemberType();
-        if (type.equals("ADULT")){
-            success = Data.storeNewAdultMember(ID, name);
-        } else if (type.equals("PHYSICAL")){
-            success = Data.storeNewChildMember(ID,name);
-        }
-        if (!success){
-            System.out.println("You cannot have two members with the same information.\n");
-        }
-        else{
-            System.out.println("Stored a new member!\n");
-        }
+        do {
+            Integer ID = getId();
+            String name = getMember();
+            String type = getMemberType();
+            if (type.equals("ADULT")) {
+                success = Data.storeNewAdultMember(ID, name);
+            } else if (type.equals("CHILD")) {
+                success = Data.storeNewChildMember(ID, name);
+            }
+            if (!success) {
+                System.out.println("You cannot have two members with the same information.\n");
+            }
+        } while(!success);
+        System.out.println("Stored a new member!\n");
     }
 
     /**

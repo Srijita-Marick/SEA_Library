@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Edited AdultMember and ChildMember toString" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="minor change">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,14 +104,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00031" summary="added checkExistBookAuthorMismatch test">
-      <option name="closed" value="true" />
-      <created>1708969531881</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1708969531881</updated>
     </task>
     <task id="LOCAL-00032" summary="added checkExistBookEmptyTitleAndAuthor test">
       <option name="closed" value="true" />
@@ -494,7 +489,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710713833235</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="minor change">
+      <option name="closed" value="true" />
+      <created>1710714071586</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1710714071586</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -521,7 +524,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added 3 tests for StoreNewMember test" />
     <MESSAGE value="debugged borrowed book display" />
     <MESSAGE value="added testGetMembersByNameReturnMemberInfo test" />
     <MESSAGE value="added testGetMembersByNameThreeMembers test" />
@@ -546,6 +548,7 @@
     <MESSAGE value="Fixed two tests - getBorrowedBooks and getMembersById" />
     <MESSAGE value="Updated viewAnyMemberList to work with child classes of Member" />
     <MESSAGE value="Edited AdultMember and ChildMember toString" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited AdultMember and ChildMember toString" />
+    <MESSAGE value="minor change" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor change" />
   </component>
 </project>

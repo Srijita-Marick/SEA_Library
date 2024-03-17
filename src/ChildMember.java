@@ -5,8 +5,9 @@ public class ChildMember extends Member{
     }
     @Override
     public String toString() {
-        return (this.getID() + '\t' +
+        return (this.getID() + "\t" +
                 this.getName() + '\n' +
+                "---------------" +
                 "Books borrowed: \n" + this.getBorrowed() + "\n");
     }
 

@@ -15,6 +15,7 @@ public class AdultMember extends Member{
         return (this.getID() + "\t" +
                 this.getName() + '\t' +
                 "Fines: " + this.getFines() + "\n" +
+                "---------------" +
                 "Books borrowed: \n" + this.getBorrowed() + "\n");
     }
 }
