@@ -11,20 +11,22 @@ class DataTest {
      * and checking to see if the book has been saved with the correct details
      */
     @Test
-    void storeNewBook() {
+    void storeNewPhysicalBook() {
         Data.reset(); // Clear existing data
         String title = "Harry Potter and the Sorcerer's Stone";
         String author = "J.K. Rowling";
         String genre = "Fantasy";
         String availabilityStatus = "Available";
         assertEquals(0, Data.getAllBooks().size());
-        boolean success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        boolean success = Data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
         assertTrue(success);
+
+        Books newBook = Data.getAllBooks().get(0);
         assertEquals(1, Data.getAllBooks().size());
-        assertEquals(title, Data.getAllBooks().get(0)[0]);
-        assertEquals(author, Data.getAllBooks().get(0)[1]);
-        assertEquals(genre, Data.getAllBooks().get(0)[2]);
-        assertEquals(availabilityStatus, Data.getAllBooks().get(0)[3]);
+        assertEquals(title, newBook.getTitle());
+        assertEquals(author, newBook.getAuthor());
+        assertEquals(genre, newBook.getGenre());
+        assertEquals(availabilityStatus,newBook.getAvailabilityStatus());
     }
     @Test
     void storeTwoBooks() {
