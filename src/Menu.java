@@ -315,14 +315,19 @@ public class Menu {
      * Used in menuLibraryData to add books to the Library's main dataset
      */
     private static void menuEnterNewBook() {
-        boolean success;
+        boolean success = false;
         do {
             String title = getTitle();
             String author = getAuthor();
             String genre = getGenre();
             String availabilityStatus = getAvailabilityStatus();
-            String type = "PHYSICAL";
-            success = Data.storeNewBook(title, author, genre, availabilityStatus, type);
+            String type = getType();
+            if(type.equals("AUDIO")){
+                String narrator = getNarrator();
+                success = Data.storeNewAudioBook(title, author, narrator, genre, availabilityStatus);
+            } else if(type.equals("PHYSICAL")){
+                success = Data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
+            }
             if (!success){
                 System.out.println("Book already exists in library. Try again.");
             }
