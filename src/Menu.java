@@ -222,7 +222,7 @@ public class Menu {
      */
     private static void menuViewAllBooks() {
         String viewBooksMessage= """
-            ALl library Books:""";
+            ALl library Books:\n""";
         ArrayList<Books> bookList = Data.getAllBooks();
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
@@ -239,7 +239,11 @@ public class Menu {
         StringBuilder booksString = new StringBuilder();
         booksString.append(viewBooksMessage);
         for (Books book :listOfBooks){
-            booksString.append(book.toString());
+            if(book instanceof PhysicalBooks physicalBook){
+                booksString.append(physicalBook.toString());
+            } else if(book instanceof AudioBooks audioBook){
+                booksString.append(audioBook.toString());
+            }
         }
         return (booksString.toString());
     }

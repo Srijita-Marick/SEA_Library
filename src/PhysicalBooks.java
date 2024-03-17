@@ -5,11 +5,9 @@ public class PhysicalBooks extends Books{
 
     @Override
     public String toString() {
-        return "Physical Books{" +
-                "title='" + this.getTitle() + '\'' +
-                ", author='" + this.getAuthor() + '\'' +
-                ", genre='" + this.getGenre() + '\'' +
-                ", availabilityStatus='" + this.getAvailabilityStatus() + '\'' +
-                '}';
+        return (this.getTitle() + " by " + this.getAuthor() + "\t" +
+                "(" + this.getGenre() + ")\t" +
+                "Type: PHYSICAL\n" +
+                "Status: " + this.getAvailabilityStatus() + "\n");
     }
 }
