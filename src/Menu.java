@@ -344,6 +344,14 @@ public class Menu {
         return narrator;
     }
 
+    private static String getType(){
+        System.out.println("Enter Book Type (PHYSICAL/AUDIO): ");
+        String bookType;
+        do {
+            bookType = scanner.nextLine().trim();
+        } while (bookType.isEmpty()|| (!bookType.equals("PHYSICAL") && !bookType.equals("AUDIO")));
+        return bookType;
+    }
     private static String getAvailabilityStatus() {
         return "Available";  // by default, new books should be available
     }
