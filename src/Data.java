@@ -187,7 +187,7 @@ public class Data {
                 for (Member member: members){ //goes through members until it finds one with ID
                     if (member.getID()==id){
                         //saves to member's borrowed books list as a String
-                        ((ArrayList<String>)member[INDEX_BORROWED]).add(title+" by "+author);
+                        member.addBookToMember(title+" by "+author);
                     }
                 }
             }
@@ -211,8 +211,8 @@ public class Data {
                 book.setAvailabilityStatus("Available");
                 availableBooks.add(book);
                 for (Member member: members){ //goes through members until it finds the one with ID
-                    if (member.getID()==id && member instanceof AdultMember adultMember){
-                        ((ArrayList<String>)member[INDEX_BORROWED]).remove(title+" by "+author); //member no longer has book borrowed
+                    member.removeBookFromMember(title+" by "+author); //member no longer has book borrowed
+                     if (member.getID()==id && member instanceof AdultMember adultMember){
                         adultMember.setFines(adultMember.getFines() + calculateFines(daysOverdue)); ; //adds fines
                     }
                 }
