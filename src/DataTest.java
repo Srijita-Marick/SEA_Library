@@ -636,7 +636,7 @@ class DataTest {
 
     @Test
     void testGetMembersByNameReturnMemberInfo(){
-        ArrayList<Object[]> membersByName = Data.getMembersByName("Alice Wonderland");
+        ArrayList<Member> membersByName = Data.getMembersByName("Alice Wonderland");
         assertEquals(1, membersByName.size());
         Object[] member = membersByName.get(0);
         assertEquals(104,member[Data.INDEX_ID]);
@@ -647,15 +647,15 @@ class DataTest {
     void testGetMembersByNameThreeMembers(){
         ArrayList<Member> membersByName = Data.getMembersByName("The Webster");
         assertEquals(1, membersByName.size());
-        ArrayList<Object[]> membersByName1 = Data.getMembersByName("Himanshu Ganga");
+        ArrayList<Member> membersByName1 = Data.getMembersByName("Himanshu Ganga");
         assertEquals(1, membersByName1.size());
-        ArrayList<Object[]> membersByName2 = Data.getMembersByName("Jackie Chan");
+        ArrayList<Member> membersByName2 = Data.getMembersByName("Jackie Chan");
         assertEquals(1, membersByName2.size());
     }
 
     @Test
     void testGetMembersByNameNoName(){
-        ArrayList<Object[]> membersByName = Data.getMembersByName(" ");
+        ArrayList<Member> membersByName = Data.getMembersByName(" ");
         assertEquals(0, membersByName.size());
     }
 
@@ -666,24 +666,24 @@ class DataTest {
     @Test
     void testGetMembersById(){
         Data.reset();
-        ArrayList<Object[]> membersById = Data.getMembersById(101);
+        ArrayList<Member> membersById = Data.getMembersById(101);
         assertEquals(0, membersById.size());
     }
 
     @Test
     void testGetMembersByIdReturnMemberInfo(){
-        ArrayList<Object[]> members = Data.getMembersById(105);
+        ArrayList<Member> members = Data.getMembersById(105);
         assertEquals(1, members.size());
-        Object[] member = members.get(0);
+        Member member = members.get(0);
         assertEquals(105, member[Data.INDEX_ID]);
         assertEquals("Brad Pitt", member[Data.INDEX_NAME]);
     }
 
     @Test
     void testGetMembersByIdTwoMembers(){
-        ArrayList<Object[]> membersById = Data.getMembersById(101);
+        ArrayList<Member> membersById = Data.getMembersById(101);
         assertEquals(1, membersById.size());
-        ArrayList<Object[]> membersById1 = Data.getMembersById(103);
+        ArrayList<Member> membersById1 = Data.getMembersById(103);
         assertEquals(1, membersById1.size());
     }
 
