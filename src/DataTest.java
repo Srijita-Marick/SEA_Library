@@ -467,27 +467,27 @@ class DataTest {
      * properly in the Library's main member list
      */
     @Test
-    public void testStoreNewMember() {
-        assertTrue(Data.storeNewMember(109, "Michael Brown"));
+    public void testStoreNewAdultMember() {
+        assertTrue(Data.storeNewAdultMember(109, "Michael Brown"));
     }
 
     @Test
-    public void testStoreNewMemberAlreadyExists() {
+    public void testStoreNewAdultMemberAlreadyExists() {
         Data.reset(); // Clear existing data
-        Data.storeNewMember(101, "John Doe");
-        Data.storeNewMember(102, "Jane Smith");
-        Data.storeNewMember(103, "Alice Johnson");
-        assertFalse(Data.storeNewMember(101, "John Doe"));
+        Data.storeNewAdultMember(101, "John Doe");
+        Data.storeNewAdultMember(102, "Jane Smith");
+        Data.storeNewAdultMember(103, "Alice Johnson");
+        assertFalse(Data.storeNewAdultMember(101, "John Doe"));
     }
 
     @Test
-    public void testStoreNewMemberAndCheckExistence() {
+    public void testStoreNewAdultMemberAndCheckExistence() {
         Data.reset(); // Clear existing data
-        Data.storeNewMember(101, "John Doe");
-        Data.storeNewMember(102, "Jane Smith");
-        Data.storeNewMember(103, "Alice Johnson");
-        Data.storeNewMember(104, "Michael Brown");
-        assertTrue(Data.storeNewMember(105, "Emily White"));
+        Data.storeNewAdultMember(101, "John Doe");
+        Data.storeNewAdultMember(102, "Jane Smith");
+        Data.storeNewAdultMember(103, "Alice Johnson");
+        Data.storeNewAdultMember(104, "Michael Brown");
+        assertTrue(Data.storeNewAdultMember(105, "Emily White"));
     }
 
     /**
@@ -495,33 +495,33 @@ class DataTest {
      */
     @BeforeEach
     void setUpMemberData() {
-        Data.storeNewMember(101, "Arman Najari");
-        Data.storeNewMember(102, "Himanshu Ganga");
-        Data.storeNewMember(103, "The Webster");
-        Data.storeNewMember(104, "Alice Wonderland");
-        Data.storeNewMember(105, "Brad Pitt");
-        Data.storeNewMember(106, "Naruto Uzumaki");
-        Data.storeNewMember(107, "Jackie Chan");
-        Data.storeNewMember(108, "Michelle Yeoh");
+        Data.storeNewAdultMember(101, "Arman Najari");
+        Data.storeNewAdultMember(102, "Himanshu Ganga");
+        Data.storeNewAdultMember(103, "The Webster");
+        Data.storeNewAdultMember(104, "Alice Wonderland");
+        Data.storeNewAdultMember(105, "Brad Pitt");
+        Data.storeNewAdultMember(106, "Naruto Uzumaki");
+        Data.storeNewAdultMember(107, "Jackie Chan");
+        Data.storeNewAdultMember(108, "Michelle Yeoh");
     }
     /**
      * The following functions are to test checkExistMember
      */
     @Test
-    public void testCheckExistMemberWhenMemberExists() {
+    public void testCheckExistAdultMemberWhenAdultMemberExists() {
         Data.reset(); // Clear existing data
-        Data.storeNewMember(101, "Arman Najari");
-        Data.storeNewMember(102, "Himanshu Ganga");
-        Data.storeNewMember(103, "The Webster");
+        Data.storeNewAdultMember(101, "Arman Najari");
+        Data.storeNewAdultMember(102, "Himanshu Ganga");
+        Data.storeNewAdultMember(103, "The Webster");
         assertTrue(Data.checkExistMember(101));
     }
 
     @Test
-    public void testCheckExistMemberWhenMemberDoesNotExist() {
+    public void testCheckExistAdultMemberWhenAdultMemberDoesNotExist() {
         Data.reset(); // Clear existing data
-        Data.storeNewMember(101, "Arman Najari");
-        Data.storeNewMember(102, "Himanshu Ganga");
-        Data.storeNewMember(103, "The Webster");
+        Data.storeNewAdultMember(101, "Arman Najari");
+        Data.storeNewAdultMember(102, "Himanshu Ganga");
+        Data.storeNewAdultMember(103, "The Webster");
         assertFalse(Data.checkExistMember(100));
     }
 
@@ -531,21 +531,21 @@ class DataTest {
      * and checking to see if the member has actually been removed
      */
     @Test
-    void testRemoveMemberThatDoesntExist() {
+    void testRemoveAdultMemberThatDoesntExist() {
         Data.reset(); // Clear existing data
-        Data.storeNewMember(101, "John Doe");
-        Data.storeNewMember(102, "Jane Smith");
-        Data.storeNewMember(103, "Alice Johnson");
+        Data.storeNewAdultMember(101, "John Doe");
+        Data.storeNewAdultMember(102, "Jane Smith");
+        Data.storeNewAdultMember(103, "Alice Johnson");
 
         assertFalse(Data.removeMember(100,"Anna"));
     }
 
     @Test
-    void testRemoveMemberThatDoesExist() {
+    void testRemoveAdultMemberThatDoesExist() {
         Data.reset(); // Clear existing data
-        Data.storeNewMember(101, "John Doe");
-        Data.storeNewMember(102, "Jane Smith");
-        Data.storeNewMember(103, "Alice Johnson");
+        Data.storeNewAdultMember(101, "John Doe");
+        Data.storeNewAdultMember(102, "Jane Smith");
+        Data.storeNewAdultMember(103, "Alice Johnson");
 
         assertTrue(Data.removeMember(101,"John Doe")&&!Data.memberIDs.containsKey(101));
         //removeMember should return false, and 101 should no longer be part of memberIDS
@@ -560,19 +560,19 @@ class DataTest {
     @Test
     void testRemoveMemberWhenIdExistsButNameDoesNot() {
         Data.reset(); // Clear existing data
-        Data.storeNewMember(101, "John Doe");
-        Data.storeNewMember(102, "Himanshu Ganga");
-        Data.storeNewMember(103, "Parker Gueth");
+        Data.storeNewAdultMember(101, "John Doe");
+        Data.storeNewAdultMember(102, "Himanshu Ganga");
+        Data.storeNewAdultMember(103, "Parker Gueth");
 
         assertFalse(Data.removeMember(102,"Anna"));
     }
 
     @Test
-    void testRemoveMemberWhenNameExistsButIdDoesNot() {
+    void testRemoveAdultMemberWhenNameExistsButIdDoesNot() {
         Data.reset(); // Clear existing data
-        Data.storeNewMember(101, "John Doe");
-        Data.storeNewMember(102, "Himanshu Ganga");
-        Data.storeNewMember(103, "Parker Gueth");
+        Data.storeNewAdultMember(101, "John Doe");
+        Data.storeNewAdultMember(102, "Himanshu Ganga");
+        Data.storeNewAdultMember(103, "Parker Gueth");
 
         assertFalse(Data.removeMember(100,"Himanshu Ganga"));
     }
