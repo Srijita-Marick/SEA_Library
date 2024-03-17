@@ -211,9 +211,9 @@ public class Data {
                 book.setAvailabilityStatus("Available");
                 availableBooks.add(book);
                 for (Member member: members){ //goes through members until it finds the one with ID
-                    if (member.getID()==id){
+                    if (member.getID()==id && member instanceof AdultMember adultMember){
                         ((ArrayList<String>)member[INDEX_BORROWED]).remove(title+" by "+author); //member no longer has book borrowed
-                        member.setFines(member.getFines() + calculateFines(daysOverdue)); ; //adds fines
+                        adultMember.setFines(adultMember.getFines() + calculateFines(daysOverdue)); ; //adds fines
                     }
                 }
             }
