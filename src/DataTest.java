@@ -583,13 +583,17 @@ class DataTest {
     @Test
     void getAllMembers() {
         Data.reset();
-        Data.storeNewMember(111, "Axelle Leung");
-        Data.storeNewMember(112, "Rachel Lam");
-        Data.storeNewMember(113, "Dhana Ramsamy");
-        Data.storeNewMember(114, "Emma Stone");
+        Data.storeNewAdultMember(111, "Axelle Leung");
+        Data.storeNewAdultMember(112, "Rachel Lam");
+        Data.storeNewAdultMember(113, "Dhana Ramsamy");
+        Data.storeNewAdultMember(114, "Emma Stone");
+        Data.storeNewChildMember(115, "Elizabeth Roberts");
+        Data.storeNewChildMember(116, "Rose Evans");
+        Data.storeNewChildMember(117, "Jack Smith");
+        Data.storeNewChildMember(118, "James Johnson");
 
-        ArrayList<Object[]> allMembers = Data.getAllMembers();
-        assertEquals(4, allMembers.size());
+        ArrayList<Member> allMembers = Data.getAllMembers();
+        assertEquals(8, allMembers.size());
     }
 
     /**
@@ -599,7 +603,7 @@ class DataTest {
      */
     @Test
     void testGetBorrowedBooks() {
-        Data.storeNewBook("Nightcrawling", "Leila Mottley", "Literary", "Unavailable");
+        Data.storeNewPhysicalBook("Nightcrawling", "Leila Mottley", "Literary", "Unavailable");
         ArrayList<String> borrowedBooks = Data.getBorrowedBooks(1);
         assertTrue(borrowedBooks.isEmpty());
         Data.reset();
@@ -626,7 +630,7 @@ class DataTest {
      */
     @Test
     void testGetMembersByName(){
-        ArrayList<Object[]> membersByName = Data.getMembersByName("Michelle Yeoh");
+        ArrayList<Member> membersByName = Data.getMembersByName("Michelle Yeoh");
         assertEquals(1, membersByName.size());
     }
 
