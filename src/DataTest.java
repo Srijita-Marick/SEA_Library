@@ -94,21 +94,21 @@ class DataTest {
         assertEquals(availabilityStatus,book2.getAvailabilityStatus());
     }
     @Test
-     void storeDuplicateBooks(){
+     void storeDuplicatePhysicalBooks(){
         Data.reset(); // Clear existing data
         String title = "Atomic Habits";
         String author = "James Clear";
         String genre = "Non-fiction";
         String availabilityStatus = "Unavailable";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        boolean success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        Data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
+        boolean success = Data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
         assertFalse(success);
 
         title = "Atomic Habits";
         author = "James Clear";
         genre = "Non-fiction";
         availabilityStatus = "Unavailable";
-        success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        success = Data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
         assertFalse(success);
         assertEquals(1,Data.getAllBooks().size());
     }
@@ -120,8 +120,8 @@ class DataTest {
         String author = "Mary Shelley";
         String genre = "Horror";
         String availabilityStatus = "Unavailable";
-        Data.storeNewBook(title, author, genre, availabilityStatus);
-        boolean success = Data.storeNewBook(title, author, genre, availabilityStatus);
+        Data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
+        boolean success = Data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
         assertFalse(success);
         assertEquals(0,Data.getAllBooks().size());
 
@@ -133,20 +133,20 @@ class DataTest {
     @BeforeEach
     void setUpLibrary() {
         Data.reset(); // Clear existing data
-        Data.storeNewBook("The Blood of Olympus","Rick Riordan","Fantasy","Available");
-        Data.storeNewBook("Moby Dick","Herman Melville","Literary","Available");
-        Data.storeNewBook("The Great Gatsby","F. Scott Fitzgerald","Literary","Available");
-        Data.storeNewBook("Weyward", "Emilia Hart", "Historical Fiction", "Available");
-        Data.storeNewBook("The Housemaid's Secret", "Freida McFadden", "Thriller", "Available");
-        Data.storeNewBook("To Kill a Mockingbird", "Harper Lee", "General Fiction", "Available");
-        Data.storeNewBook("Happy Place","Emily Henry","Romance","Available");
-        Data.storeNewBook("Hell Bent","Leigh Bardugo","Fantasy","Available");
-        Data.storeNewBook("In the Lives of Puppets","T.J. Klune","Science Fiction","Available");
-        Data.storeNewBook("Holly","Stephen King","Horror","Available");
-        Data.storeNewBook("Joyland","Stephen King","Thriller","Available");
-        Data.storeNewBook("Poverty, by America","Matthew Desmond","Non-fiction","Available");
-        Data.storeNewBook("Arsenic and Adobo","Mia P. Manansala","Mystery","Available");
-        Data.storeNewBook("Joyland","Emily Schultz","Literary","Available");
+        Data.storeNewPhysicalBook("The Blood of Olympus","Rick Riordan","Fantasy","Available");
+        Data.storeNewPhysicalBook("Moby Dick","Herman Melville","Literary","Available");
+        Data.storeNewPhysicalBook("The Great Gatsby","F. Scott Fitzgerald","Literary","Available");
+        Data.storeNewPhysicalBook("Weyward", "Emilia Hart", "Historical Fiction", "Available");
+        Data.storeNewPhysicalBook("The Housemaid's Secret", "Freida McFadden", "Thriller", "Available");
+        Data.storeNewPhysicalBook("To Kill a Mockingbird", "Harper Lee", "General Fiction", "Available");
+        Data.storeNewPhysicalBook("Happy Place","Emily Henry","Romance","Available");
+        Data.storeNewPhysicalBook("Hell Bent","Leigh Bardugo","Fantasy","Available");
+        Data.storeNewPhysicalBook("In the Lives of Puppets","T.J. Klune","Science Fiction","Available");
+        Data.storeNewPhysicalBook("Holly","Stephen King","Horror","Available");
+        Data.storeNewPhysicalBook("Joyland","Stephen King","Thriller","Available");
+        Data.storeNewPhysicalBook("Poverty, by America","Matthew Desmond","Non-fiction","Available");
+        Data.storeNewPhysicalBook("Arsenic and Adobo","Mia P. Manansala","Mystery","Available");
+        Data.storeNewPhysicalBook("Joyland","Emily Schultz","Literary","Available");
     }
 
     /**
