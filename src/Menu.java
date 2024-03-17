@@ -348,7 +348,7 @@ public class Menu {
         System.out.println("Enter Book Type (PHYSICAL/AUDIO): ");
         String bookType;
         do {
-            bookType = scanner.nextLine().trim();
+            bookType = scanner.nextLine().trim().toUpperCase();
         } while (bookType.isEmpty()|| (!bookType.equals("PHYSICAL") && !bookType.equals("AUDIO")));
         return bookType;
     }
@@ -626,9 +626,9 @@ public class Menu {
      * @return member name obtained from user input
      */
     private static String getMember() {
-        System.out.println("Enter Member Name: ");
         String member;
         do {
+            System.out.println("Enter Member Name: ");
             member = scanner.nextLine().trim();
         } while (member.isEmpty());
         return member;
@@ -646,5 +646,19 @@ public class Menu {
         }while (memberId.isEmpty());
         return Integer.parseInt(memberId);
     }
+
+    /**
+     * Used to get the member age category
+     * @return String value of member type obtained from user input
+     */
+    private static String getMemberType() {
+        String memberType;
+        do {
+            System.out.println("Is this member a child or adult? ");
+            memberType = scanner.nextLine().trim().toUpperCase();
+        }while (memberType.isEmpty()||(!memberType.equals("CHILD")&&!memberType.equals("ADULT")));
+        return memberType;
+    }
+
 
 }
