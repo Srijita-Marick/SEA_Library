@@ -325,11 +325,11 @@ class DataTest {
     @Test
     public void getBooksByAuthorReturnsCorrectBookInfo() {
         ArrayList<Books> booksByAuthor = Data.getBooksByAuthor("Emily Henry");
-        <Books> book = booksByAuthor.get(0);
-        assertEquals("Happy Place", book[Data.INDEX_TITLE]);
-        assertEquals("Emily Henry", book[Data.INDEX_AUTHOR]);
-        assertEquals("Romance", book[Data.INDEX_GENRE]);
-        assertEquals("Available", book[Data.INDEX_STATUS]);
+        Books book = booksByAuthor.get(0);
+        assertEquals("Happy Place", book.getTitle());
+        assertEquals("Emily Henry", book.getAuthor());
+        assertEquals("Romance", book.getGenre());
+        assertEquals("Available", book.getAvailabilityStatus());
     }
 
     @Test
@@ -364,11 +364,11 @@ class DataTest {
     @Test
     public void getBooksByGenreReturnsCorrectBookInfo() {
         ArrayList<Books> booksByGenre = Data.getBooksByGenre("Literary");
-        <Books> book = booksByGenre.get(1);
-        assertEquals("The Great Gatsby", book[Data.INDEX_TITLE]);
-        assertEquals("F. Scott Fitzgerald", book[Data.INDEX_AUTHOR]);
-        assertEquals("Literary", book[Data.INDEX_GENRE]);
-        assertEquals("Available", book[Data.INDEX_STATUS]);
+        Books book = booksByGenre.get(1);
+        assertEquals("The Great Gatsby", book.getTitle());
+        assertEquals("F. Scott Fitzgerald", book.getAuthor());
+        assertEquals("Literary", book.getGenre());
+        assertEquals("Available", book.getAvailabilityStatus());
     }
 
     @Test
