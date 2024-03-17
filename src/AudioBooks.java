@@ -1,5 +1,5 @@
 public class AudioBooks extends Books{
-    private String narrator;
+    private final String narrator;
     public AudioBooks(String title, String author, String narrator, String genre, String availabilityStatus) {
         super(title, author, genre, availabilityStatus, BookType.AUDIO);
         this.narrator = narrator;

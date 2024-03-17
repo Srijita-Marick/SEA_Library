@@ -5,11 +5,11 @@ import java.util.HashMap;
 
 public class Data {
 
-    private ArrayList<Books> books;
-    private ArrayList<Books> availableBooks;
-    private ArrayList<Books> unAvailableBooks;
-    private ArrayList<String> titles;
-    private ArrayList<String> authors;
+    private final ArrayList<Books> books;
+    private final ArrayList<Books> availableBooks;
+    private final ArrayList<Books> unAvailableBooks;
+    private final ArrayList<String> titles;
+    private final ArrayList<String> authors;
 
     public Data(){
         books = new ArrayList<>();
