@@ -604,7 +604,7 @@ class DataTest {
     @Test
     void testGetBorrowedBooks() {
         Data.storeNewPhysicalBook("Nightcrawling", "Leila Mottley", "Literary", "Unavailable");
-        ArrayList<String> borrowedBooks = Data.getBorrowedBooks(1);
+        ArrayList<String> borrowedBooks = Data.getBorrowedBooks(101);
         assertTrue(borrowedBooks.isEmpty());
         Data.reset();
     }
@@ -667,7 +667,7 @@ class DataTest {
     void testGetMembersById(){
         Data.reset();
         ArrayList<Member> membersById = Data.getMembersById(101);
-        assertEquals(0, membersById.size());
+        assertNull(membersById.get(0));
     }
 
     @Test

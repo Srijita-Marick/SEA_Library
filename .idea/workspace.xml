@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Edited AudioBooks and PhysicalBooks to work with Menu">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Fixed two test cases to work with Adult Member">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
     </list>
@@ -48,18 +48,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetAllBooksMatchAllDetails.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.DataTest.executor": "Run",
+    "JUnit.DataTest.testGetAllBooksMatchAllDetails.executor": "Debug",
+    "JUnit.DataTest.testGetBorrowedBooks.executor": "Run",
+    "JUnit.DataTest.testGetMembersById.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.DataTest.testGetMembersById">
+}]]></component>
+  <component name="RunManager">
     <configuration name="DataTest.testGetBorrowedBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CPSC233PROJECT" />
       <option name="PACKAGE_NAME" value="" />
@@ -102,14 +104,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00027" summary="created ViewAnyMemberList to be used in search">
-      <option name="closed" value="true" />
-      <created>1708966998098</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1708966998098</updated>
     </task>
     <task id="LOCAL-00028" summary="edited javadoc comments">
       <option name="closed" value="true" />
@@ -495,7 +489,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710700654209</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Fixed two test cases to work with Adult Member">
+      <option name="closed" value="true" />
+      <created>1710710396576</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1710710396577</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -522,7 +524,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added getBooksByGenreReturnsCorrectBookInfo test" />
     <MESSAGE value="added getBooksByGenreWhenNoBooksOfGenre test" />
     <MESSAGE value="added getBooksByGenreReturnsCorrectNumberOfBooks1 test" />
     <MESSAGE value="added getBooksByGenreWhenGenreNotValid test" />
@@ -547,6 +548,7 @@
     <MESSAGE value="Stylization fix and used instanceof in ViewAnyBookList" />
     <MESSAGE value="Made DataTest go back to initial form" />
     <MESSAGE value="Edited AudioBooks and PhysicalBooks to work with Menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited AudioBooks and PhysicalBooks to work with Menu" />
+    <MESSAGE value="Fixed two test cases to work with Adult Member" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed two test cases to work with Adult Member" />
   </component>
 </project>
