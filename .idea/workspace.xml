@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Replaced Data. with data. in Menu">
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Got rid of unnecessary classes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,22 +108,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00037" summary="reformatted DataTest and added setUpLibrary">
-      <option name="closed" value="true" />
-      <created>1708980651145</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1708980651145</updated>
-    </task>
-    <task id="LOCAL-00038" summary="added contributors at the top (comment)">
-      <option name="closed" value="true" />
-      <created>1708981698728</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1708981698728</updated>
     </task>
     <task id="LOCAL-00039" summary="added javadoc comments to Menu.java">
       <option name="closed" value="true" />
@@ -502,7 +485,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710718553703</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Added final back to constructors">
+      <option name="closed" value="true" />
+      <created>1710719059888</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1710719059888</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Got rid of unnecessary classes">
+      <option name="closed" value="true" />
+      <created>1710719250748</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1710719250748</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -529,8 +528,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="javadoc commenting - DataTest function set 7" />
-    <MESSAGE value="brought back code lost in the merge" />
     <MESSAGE value="javadoc commenting - DataTest function set 8" />
     <MESSAGE value="added checkoutBookWhenBookDoesNotExist test" />
     <MESSAGE value="minor \n additions" />
@@ -554,6 +551,8 @@
     <MESSAGE value="Got rid of static and created Data object according to Setup" />
     <MESSAGE value="Replaced Data. with data. in DataTest" />
     <MESSAGE value="Replaced Data. with data. in Menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Replaced Data. with data. in Menu" />
+    <MESSAGE value="Added final back to constructors" />
+    <MESSAGE value="Got rid of unnecessary classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got rid of unnecessary classes" />
   </component>
 </project>
