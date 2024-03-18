@@ -266,7 +266,7 @@ public class Data {
 
     public boolean storeNewChildMember(Integer id, String name) {
         if (id==null||name.isEmpty()){
-            System.out.println("LibraryProjectPackage.objects.Member cannot be stored.");
+            System.out.println("Member cannot be stored.");
             return false;
         }
 
@@ -287,7 +287,7 @@ public class Data {
      */
     public boolean storeNewAdultMember(Integer id, String name) {
         if (id==null||name.isEmpty()){
-            System.out.println("LibraryProjectPackage.objects.Member cannot be stored.");
+            System.out.println("Member cannot be stored.");
             return false;
         }
 
