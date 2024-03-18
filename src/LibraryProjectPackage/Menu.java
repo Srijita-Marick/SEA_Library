@@ -693,7 +693,12 @@ public class Menu {
             } while (filename.isEmpty());
             file = new File(filename);
         } while (!file.exists()||!file.canWrite());
-        MemberRecords.save(file,data);
+        if (MemberRecords.save(file,data)){
+            System.out.printf("Saved Member Data to file %s%n",filename);
+        }
+        else {
+            System.err.printf("Failed to save file %s%n",filename);
+        }
     }
 
 
