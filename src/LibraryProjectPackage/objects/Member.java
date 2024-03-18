@@ -1,3 +1,7 @@
+package LibraryProjectPackage.objects;
+
+import LibraryProjectPackage.MemberType;
+
 import java.util.ArrayList;
 
 public abstract class Member {
@@ -40,7 +44,7 @@ public abstract class Member {
         memString.append("\nID: ").append(member.getID());
             memString.append("\nName: ").append(member.getName());
             memString.append("\nBooks Borrowed:");
-            for (String book: Data.getBorrowedBooks(member.getID())){
+            for (String book: LibraryProjectPackage.Data.getBorrowedBooks(member.getID())){
                 memString.append("\n     ").append(book);
             }
             String roundedFine = String.format("%.2f",(member.getFines()));

@@ -1,3 +1,7 @@
+package LibraryProjectPackage.objects;
+
+import LibraryProjectPackage.BookType;
+
 public abstract class Books {
     private String title, author, genre, availabilityStatus;
     private BookType type;

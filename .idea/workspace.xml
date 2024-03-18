@@ -4,8 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added code to menuSaveMember and menuLoadMember">
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added code to menuSaveBooks and menuLoadBooks">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AdultMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/AdultMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AudioBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/AudioBooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/BookRecords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BookType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/BookType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Books.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChildMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/ChildMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MemberRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/MemberRecords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MemberType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/MemberType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhysicalBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/PhysicalBooks.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,19 +62,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetAllBooksMatchAllDetails.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.DataTest.testGetBorrowedBooks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetMembersById.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.DataTest.executor": "Run",
+    "JUnit.DataTest.testGetAllBooksMatchAllDetails.executor": "Debug",
+    "JUnit.DataTest.testGetBorrowedBooks.executor": "Run",
+    "JUnit.DataTest.testGetMembersById.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="DataTest.testGetBorrowedBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CPSC233PROJECT" />
@@ -103,14 +119,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00032" summary="added checkExistBookEmptyTitleAndAuthor test">
-      <option name="closed" value="true" />
-      <created>1708969786615</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1708969786615</updated>
     </task>
     <task id="LOCAL-00033" summary="added checkExistBookTitleWithNullAuthor test">
       <option name="closed" value="true" />
@@ -496,7 +504,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710751986523</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="added code to menuSaveBooks and menuLoadBooks">
+      <option name="closed" value="true" />
+      <created>1710752371342</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1710752371342</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -523,7 +539,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="debugged borrowed book display" />
     <MESSAGE value="added testGetMembersByNameReturnMemberInfo test" />
     <MESSAGE value="added testGetMembersByNameThreeMembers test" />
     <MESSAGE value="javadoc commenting - DataTest function set 5" />
@@ -548,14 +563,15 @@
     <MESSAGE value="Updated viewAnyMemberList to work with child classes of Member" />
     <MESSAGE value="added new load/save options to sub-menus and created associated dummy-functions" />
     <MESSAGE value="added code to menuSaveMember and menuLoadMember" />
-    <option name="LAST_COMMIT_MESSAGE" value="added code to menuSaveMember and menuLoadMember" />
+    <MESSAGE value="added code to menuSaveBooks and menuLoadBooks" />
+    <option name="LAST_COMMIT_MESSAGE" value="added code to menuSaveBooks and menuLoadBooks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Menu.java</url>
-          <line>325</line>
+          <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
+          <line>327</line>
           <properties class="Menu" method="menuLoadBooks">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -563,13 +579,31 @@
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Menu.java</url>
-          <line>337</line>
+          <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
+          <line>339</line>
           <properties class="Menu" method="menuSaveBooks">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
+          <line>671</line>
+          <properties class="Menu" method="menuLoadMember">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
+          <line>683</line>
+          <properties class="Menu" method="menuSaveMember">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

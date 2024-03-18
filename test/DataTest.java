@@ -8,10 +8,10 @@ class DataTest {
     void madAnnaDeleteLater() {
     }
 }/*
-    private Data data;
+    private LibraryProjectPackage.Data data;
     @BeforeEach
     void Refresh(){
-        data = new Data();
+        data = new LibraryProjectPackage.Data();
     }
 
     /**
@@ -30,7 +30,7 @@ class DataTest {
         boolean success = data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
         assertTrue(success);
 
-        Books newBook = data.getAllBooks().get(0);
+        LibraryProjectPackage.objects.Books newBook = data.getAllBooks().get(0);
         assertEquals(1, data.getAllBooks().size());
         assertEquals(title, newBook.getTitle());
         assertEquals(author, newBook.getAuthor());
@@ -47,7 +47,7 @@ class DataTest {
         boolean success = data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
         assertTrue(success);
 
-        Books newBook1 = data.getAllBooks().get(0);
+        LibraryProjectPackage.objects.Books newBook1 = data.getAllBooks().get(0);
         assertEquals(1, data.getAllBooks().size());
         assertEquals(title, newBook1.getTitle());
         assertEquals(author, newBook1.getAuthor());
@@ -61,7 +61,7 @@ class DataTest {
         success = data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
         assertTrue(success);
 
-        Books newBook2 = data.getAllBooks().get(1);
+        LibraryProjectPackage.objects.Books newBook2 = data.getAllBooks().get(1);
         assertEquals(2, data.getAllBooks().size());
         assertEquals(title, newBook2.getTitle());
         assertEquals(author, newBook2.getAuthor());
@@ -79,7 +79,7 @@ class DataTest {
         boolean success = data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
         assertTrue(success);
 
-        Books book1  = data.getAllBooks().get(0);
+        LibraryProjectPackage.objects.Books book1  = data.getAllBooks().get(0);
         assertEquals(1, data.getAllBooks().size());
         assertEquals(title, book1.getTitle());
         assertEquals(author, book1.getAuthor());
@@ -93,7 +93,7 @@ class DataTest {
         success = data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
         assertTrue(success);
 
-        Books book2 = data.getAllBooks().get(1);
+        LibraryProjectPackage.objects.Books book2 = data.getAllBooks().get(1);
         assertEquals(2, data.getAllBooks().size());
         assertEquals(title, book2.getTitle());
         assertEquals(author, book2.getAuthor());
@@ -225,14 +225,14 @@ class DataTest {
     /*
     @Test
     void testGetAllBooks() {
-        ArrayList<Books> allBooks = data.getAllBooks();
+        ArrayList<LibraryProjectPackage.objects.Books> allBooks = data.getAllBooks();
         assertEquals(14, allBooks.size());
     }
 
     @Test
     void testGetAllBooksAndReturnBookInfo(){
-        ArrayList<Books> allBooks = data.getAllBooks();
-        Books fourthBook = allBooks.get(3);
+        ArrayList<LibraryProjectPackage.objects.Books> allBooks = data.getAllBooks();
+        LibraryProjectPackage.objects.Books fourthBook = allBooks.get(3);
         assertEquals("Weyward", fourthBook.getTitle());
         assertEquals("Emilia Hart", fourthBook.getAuthor());
         assertEquals("Historical Fiction", fourthBook.getGenre());
@@ -242,19 +242,19 @@ class DataTest {
     @Test
     void testGetAllBooksEmptyLibrary(){
         data.reset(); // Clear existing data to simulate no books
-        ArrayList<Books> allBooks = data.getAllBooks();
+        ArrayList<LibraryProjectPackage.objects.Books> allBooks = data.getAllBooks();
         assertTrue(allBooks.isEmpty());
     }
 
     @Test
     void testGetAllBooksMatchDetails(){
-        ArrayList<Books> allBooks = data.getAllBooks();
-        Books sixthBook = allBooks.get(5);
+        ArrayList<LibraryProjectPackage.objects.Books> allBooks = data.getAllBooks();
+        LibraryProjectPackage.objects.Books sixthBook = allBooks.get(5);
         assertEquals("To Kill a Mockingbird", sixthBook.getTitle());
         assertEquals("Harper Lee", sixthBook.getAuthor());
         assertEquals("General Fiction", sixthBook.getGenre());
         assertEquals("Available", sixthBook.getAvailabilityStatus());
-        Books eighthBook = allBooks.get(7);
+        LibraryProjectPackage.objects.Books eighthBook = allBooks.get(7);
         assertEquals("Hell Bent", eighthBook.getTitle());
         assertEquals("Leigh Bardugo", eighthBook.getAuthor());
         assertEquals("Fantasy", eighthBook.getGenre());
@@ -267,7 +267,7 @@ class DataTest {
     /*
     @Test
     void testGetAllAvailableBooks() {
-        ArrayList<Books> allAvailableBooks = data.getAvailableBooks();
+        ArrayList<LibraryProjectPackage.objects.Books> allAvailableBooks = data.getAvailableBooks();
         assertEquals(14, allAvailableBooks.size());
 
     }
@@ -279,7 +279,7 @@ class DataTest {
     @Test
     void testGetUnavailableBooks() {
         data.reset();
-        ArrayList<Books> allUnavailableBooks = data.getUnavailableBooks();
+        ArrayList<LibraryProjectPackage.objects.Books> allUnavailableBooks = data.getUnavailableBooks();
         assertEquals(0,allUnavailableBooks.size());
     }
 
@@ -291,14 +291,14 @@ class DataTest {
     /*
     @Test
     public void getBooksByTitleReturnsCorrectNumberOfBooks() {
-        ArrayList<Books> booksWithTitle = data.getBooksByTitle("Joyland");
+        ArrayList<LibraryProjectPackage.objects.Books> booksWithTitle = data.getBooksByTitle("Joyland");
         assertEquals(2, booksWithTitle.size());
     }
 
     @Test
     public void getBooksByTitleReturnsCorrectBookInfo() {
-        ArrayList<Books> booksWithTitle = data.getBooksByTitle("The Blood of Olympus");
-       Books firstBook = booksWithTitle.get(0);
+        ArrayList<LibraryProjectPackage.objects.Books> booksWithTitle = data.getBooksByTitle("The Blood of Olympus");
+       LibraryProjectPackage.objects.Books firstBook = booksWithTitle.get(0);
         assertEquals("The Blood of Olympus", firstBook.getTitle());
         assertEquals("Rick Riordan", firstBook.getAuthor());
         assertEquals("Fantasy", firstBook.getGenre());
@@ -307,19 +307,19 @@ class DataTest {
 
     @Test
     public void getBooksByTitleWhenTitleNotFound() {
-        ArrayList<Books> booksWithTitle = data.getBooksByTitle("American Gods");
+        ArrayList<LibraryProjectPackage.objects.Books> booksWithTitle = data.getBooksByTitle("American Gods");
         assertTrue(booksWithTitle.isEmpty());
     }
 
     @Test
     public void getBooksByTitleReturnsCorrectNumberOfBooks1(){
-        ArrayList<Books> booksWithTitle = data.getBooksByTitle("Poverty, by America");
+        ArrayList<LibraryProjectPackage.objects.Books> booksWithTitle = data.getBooksByTitle("Poverty, by America");
         assertEquals(1, booksWithTitle.size());
     }
 
     @Test
     public void getBooksByTitleEmptyTitle(){
-        ArrayList<Books> booksWithTitle = data.getBooksByTitle(" ");
+        ArrayList<LibraryProjectPackage.objects.Books> booksWithTitle = data.getBooksByTitle(" ");
         assertTrue(booksWithTitle.isEmpty());
     }
 
@@ -331,14 +331,14 @@ class DataTest {
     /*
     @Test
     void getBooksByAuthorReturnsCorrectNumberOfBooks() {
-        ArrayList<Books> booksByAuthor = data.getBooksByAuthor("Stephen King");
+        ArrayList<LibraryProjectPackage.objects.Books> booksByAuthor = data.getBooksByAuthor("Stephen King");
         assertEquals(2, booksByAuthor.size());
     }
 
     @Test
     public void getBooksByAuthorReturnsCorrectBookInfo() {
-        ArrayList<Books> booksByAuthor = data.getBooksByAuthor("Emily Henry");
-        Books book = booksByAuthor.get(0);
+        ArrayList<LibraryProjectPackage.objects.Books> booksByAuthor = data.getBooksByAuthor("Emily Henry");
+        LibraryProjectPackage.objects.Books book = booksByAuthor.get(0);
         assertEquals("Happy Place", book.getTitle());
         assertEquals("Emily Henry", book.getAuthor());
         assertEquals("Romance", book.getGenre());
@@ -347,19 +347,19 @@ class DataTest {
 
     @Test
     public void getBooksByAuthorWhenAuthorNotFound() {
-        ArrayList<Books> booksByAuthor = data.getBooksByAuthor("John Milton");
+        ArrayList<LibraryProjectPackage.objects.Books> booksByAuthor = data.getBooksByAuthor("John Milton");
         assertTrue(booksByAuthor.isEmpty());
     }
 
     @Test
     public void getBooksByAuthorReturnsCorrectNumberOfBooks1(){
-        ArrayList<Books> booksByAuthor = data.getBooksByAuthor("Freida McFadden");
+        ArrayList<LibraryProjectPackage.objects.Books> booksByAuthor = data.getBooksByAuthor("Freida McFadden");
         assertEquals(1, booksByAuthor.size());
     }
 
     @Test
     public void getBooksByAuthorEmptyAuthor(){
-        ArrayList<Books> booksByAuthor = data.getBooksByAuthor(" ");
+        ArrayList<LibraryProjectPackage.objects.Books> booksByAuthor = data.getBooksByAuthor(" ");
         assertTrue(booksByAuthor.isEmpty());
     }
 
@@ -371,14 +371,14 @@ class DataTest {
     /*
     @Test
     public void getBooksByGenreReturnsCorrectNumberOfBooks() {
-        ArrayList<Books> booksByGenre = data.getBooksByGenre("Fantasy");
+        ArrayList<LibraryProjectPackage.objects.Books> booksByGenre = data.getBooksByGenre("Fantasy");
         assertEquals(2, booksByGenre.size());
     }
 
     @Test
     public void getBooksByGenreReturnsCorrectBookInfo() {
-        ArrayList<Books> booksByGenre = data.getBooksByGenre("Literary");
-        Books book = booksByGenre.get(1);
+        ArrayList<LibraryProjectPackage.objects.Books> booksByGenre = data.getBooksByGenre("Literary");
+        LibraryProjectPackage.objects.Books book = booksByGenre.get(1);
         assertEquals("The Great Gatsby", book.getTitle());
         assertEquals("F. Scott Fitzgerald", book.getAuthor());
         assertEquals("Literary", book.getGenre());
@@ -387,19 +387,19 @@ class DataTest {
 
     @Test
     public void getBooksByGenreWhenNoBooksOfGenre() {
-        ArrayList<Books> booksByGenre = data.getBooksByGenre("Poetry");
+        ArrayList<LibraryProjectPackage.objects.Books> booksByGenre = data.getBooksByGenre("Poetry");
         assertTrue(booksByGenre.isEmpty());
     }
 
     @Test
     public void getBooksByGenreReturnsCorrectNumberOfBooks1(){
-        ArrayList<Books> booksByGenre = data.getBooksByGenre("Literary");
+        ArrayList<LibraryProjectPackage.objects.Books> booksByGenre = data.getBooksByGenre("Literary");
         assertEquals(3, booksByGenre.size());
     }
 
     @Test
     public void getBooksByGenreWhenGenreNotValid() {
-        ArrayList<Books> booksByInvalidGenre = data.getBooksByGenre("Adventure");
+        ArrayList<LibraryProjectPackage.objects.Books> booksByInvalidGenre = data.getBooksByGenre("Adventure");
         assertTrue(booksByInvalidGenre.isEmpty());
     }
 
@@ -410,22 +410,22 @@ class DataTest {
     /*
     @Test
     void checkoutBook() {
-        ArrayList<Books> initialAvailableBooks = data.getAvailableBooks();
+        ArrayList<LibraryProjectPackage.objects.Books> initialAvailableBooks = data.getAvailableBooks();
 
         data.checkoutBook(123, "The Blood of Olympus","Rick Riordan");
         assertFalse(data.checkBookAvailable( "The Blood of Olympus","Rick Riordan"));
 
-        ArrayList<Books> updatedAvailableBooks = data.getAvailableBooks();
+        ArrayList<LibraryProjectPackage.objects.Books> updatedAvailableBooks = data.getAvailableBooks();
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
 
     @Test
     void checkoutBookWhenBookDoesNotExist(){
-        ArrayList<Books> initialAvailableBooks = data.getAvailableBooks();
+        ArrayList<LibraryProjectPackage.objects.Books> initialAvailableBooks = data.getAvailableBooks();
         data.checkoutBook(103, "The Sea of Monsters","Rick Riordan");
         assertFalse(data.checkBookAvailable( "The Sea of Monsters","Rick Riordan"));
 
-        ArrayList<Books> updatedAvailableBooks = data.getAvailableBooks();
+        ArrayList<LibraryProjectPackage.objects.Books> updatedAvailableBooks = data.getAvailableBooks();
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
 
@@ -436,18 +436,18 @@ class DataTest {
     /*
     @Test
     void returnBook() {
-        ArrayList<Books> initialAvailableBooks = data.getAvailableBooks();
+        ArrayList<LibraryProjectPackage.objects.Books> initialAvailableBooks = data.getAvailableBooks();
 
         data.returnBook(124,"Weyward","Emilia Hart", 5);
         assertTrue(data.checkBookAvailable("Weyward","Emilia Hart"));
 
-        ArrayList<Books> updatedAvailableBooks = data.getAvailableBooks();
+        ArrayList<LibraryProjectPackage.objects.Books> updatedAvailableBooks = data.getAvailableBooks();
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
 
     @Test
     void returnTwoBooks() {
-        ArrayList<Books> initialAvailableBooks = data.getAvailableBooks();
+        ArrayList<LibraryProjectPackage.objects.Books> initialAvailableBooks = data.getAvailableBooks();
 
         data.returnBook(125 ,"To Kill a Mockingbird", "Harper Lee", 7);
         assertTrue(data.checkBookAvailable("To Kill a Mockingbird", "Harper Lee"));
@@ -455,7 +455,7 @@ class DataTest {
         data.returnBook(123,"Joyland","Stephen King",16);
         assertTrue(data.checkBookAvailable("Joyland","Stephen King"));
 
-        ArrayList<Books> updatedAvailableBooks = data.getAvailableBooks();
+        ArrayList<LibraryProjectPackage.objects.Books> updatedAvailableBooks = data.getAvailableBooks();
         assertEquals(initialAvailableBooks.size() , updatedAvailableBooks.size());
     }
 
@@ -619,7 +619,7 @@ class DataTest {
         data.storeNewChildMember(117, "Jack Smith");
         data.storeNewChildMember(118, "James Johnson");
 
-        ArrayList<Member> allMembers = data.getAllMembers();
+        ArrayList<LibraryProjectPackage.objects.Member> allMembers = data.getAllMembers();
         assertEquals(8, allMembers.size());
     }
 
@@ -659,32 +659,32 @@ class DataTest {
     /*
     @Test
     void testGetMembersByName(){
-        ArrayList<Member> membersByName = data.getMembersByName("Michelle Yeoh");
+        ArrayList<LibraryProjectPackage.objects.Member> membersByName = data.getMembersByName("Michelle Yeoh");
         assertEquals(1, membersByName.size());
     }
 
     @Test
     void testGetMembersByNameReturnMemberInfo(){
-        ArrayList<Member> membersByName = data.getMembersByName("Alice Wonderland");
+        ArrayList<LibraryProjectPackage.objects.Member> membersByName = data.getMembersByName("Alice Wonderland");
         assertEquals(1, membersByName.size());
-        Member member = membersByName.get(0);
+        LibraryProjectPackage.objects.Member member = membersByName.get(0);
         assertEquals(104,member.getID());
         assertEquals("Alice Wonderland",member.getName());
     }
 
     @Test
     void testGetMembersByNameThreeMembers(){
-        ArrayList<Member> membersByName = data.getMembersByName("The Webster");
+        ArrayList<LibraryProjectPackage.objects.Member> membersByName = data.getMembersByName("The Webster");
         assertEquals(1, membersByName.size());
-        ArrayList<Member> membersByName1 = data.getMembersByName("Himanshu Ganga");
+        ArrayList<LibraryProjectPackage.objects.Member> membersByName1 = data.getMembersByName("Himanshu Ganga");
         assertEquals(1, membersByName1.size());
-        ArrayList<Member> membersByName2 = data.getMembersByName("Jackie Chan");
+        ArrayList<LibraryProjectPackage.objects.Member> membersByName2 = data.getMembersByName("Jackie Chan");
         assertEquals(1, membersByName2.size());
     }
 
     @Test
     void testGetMembersByNameNoName(){
-        ArrayList<Member> membersByName = data.getMembersByName(" ");
+        ArrayList<LibraryProjectPackage.objects.Member> membersByName = data.getMembersByName(" ");
         assertEquals(0, membersByName.size());
     }
 
@@ -696,24 +696,24 @@ class DataTest {
     @Test
     void testGetMembersById(){
         data.reset();
-        ArrayList<Member> membersById = data.getMembersById(101);
+        ArrayList<LibraryProjectPackage.objects.Member> membersById = data.getMembersById(101);
         assertNull(membersById.get(0));
     }
 
     @Test
     void testGetMembersByIdReturnMemberInfo(){
-        ArrayList<Member> members = data.getMembersById(105);
+        ArrayList<LibraryProjectPackage.objects.Member> members = data.getMembersById(105);
         assertEquals(1, members.size());
-        Member member = members.get(0);
+        LibraryProjectPackage.objects.Member member = members.get(0);
         assertEquals(105, member.getID());
         assertEquals("Brad Pitt", member.getName());
     }
 
     @Test
     void testGetMembersByIdTwoMembers(){
-        ArrayList<Member> membersById = data.getMembersById(101);
+        ArrayList<LibraryProjectPackage.objects.Member> membersById = data.getMembersById(101);
         assertEquals(1, membersById.size());
-        ArrayList<Member> membersById1 = data.getMembersById(103);
+        ArrayList<LibraryProjectPackage.objects.Member> membersById1 = data.getMembersById(103);
         assertEquals(1, membersById1.size());
     }
 
@@ -755,7 +755,7 @@ class DataTest {
     }
     @Test
     void testPayFinesWhenPaymentIsLessThanFinesOwed() {
-        AdultMember member = (AdultMember) data.members.get(0);
+        LibraryProjectPackage.objects.AdultMember member = (LibraryProjectPackage.objects.AdultMember) data.members.get(0);
         member.setFines(10.00);
         assertTrue(data.payFines(101,5.00));
         assertEquals(5.00,member.getFines());
@@ -763,7 +763,7 @@ class DataTest {
     }
     @Test
     void testPayFinesWhenPaymentIsEqualToFinesOwed() {
-        AdultMember member2 = (AdultMember) data.members.get(0);
+        LibraryProjectPackage.objects.AdultMember member2 = (LibraryProjectPackage.objects.AdultMember) data.members.get(0);
         member2.setFines(5.00);
         assertTrue(data.payFines(101,5.00));
         assertEquals(0.00,member2.getFines());

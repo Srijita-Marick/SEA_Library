@@ -1,4 +1,8 @@
-public class AudioBooks extends Books{
+package LibraryProjectPackage.objects;
+
+import LibraryProjectPackage.BookType;
+
+public class AudioBooks extends Books {
     private final String narrator;
     public AudioBooks(String title, String author, String narrator, String genre, String availabilityStatus) {
         super(title, author, genre, availabilityStatus, BookType.AUDIO);

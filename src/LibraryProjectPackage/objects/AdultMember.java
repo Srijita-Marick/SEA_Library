@@ -1,7 +1,11 @@
-public class AdultMember extends Member{
+package LibraryProjectPackage.objects;
+
+import LibraryProjectPackage.MemberType;
+
+public class AdultMember extends Member {
     private double fines;
     public AdultMember(int id, String name) {
-        super(id, name,MemberType.ADULT);
+        super(id, name, MemberType.ADULT);
         this.fines=0.00;
     }
     public double getFines() {
@@ -16,6 +20,6 @@ public class AdultMember extends Member{
                 this.getName() + '\t' +
                 "Fines: " + this.getFines() + "\n" +
                 "---------------" +
-                "Books borrowed: \n" + this.getBorrowed() + "\n");
+                "LibraryProjectPackage.objects.Books borrowed: \n" + this.getBorrowed() + "\n");
     }
 }
