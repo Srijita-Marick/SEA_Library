@@ -324,10 +324,28 @@ public class Menu {
     }
 
     private static void menuLoadBooks(){
-
+        String filename;
+        File file;
+        do {
+            do {
+                System.out.println("Enter a filename: ");
+                filename = scanner.nextLine().trim();
+            } while (filename.isEmpty());
+            file = new File(filename);
+        } while (!file.exists()||!file.canRead());
+        BookRecords.load(file);
     }
     private static void menuSaveBooks(){
-
+        String filename;
+        File file;
+        do {
+            do {
+                System.out.println("Enter a filename: ");
+                filename = scanner.nextLine().trim();
+            } while (filename.isEmpty());
+            file = new File(filename);
+        } while (!file.exists()||!file.canWrite());
+        BookRecords.save(file,data);
     }
 
     /**
