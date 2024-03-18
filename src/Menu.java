@@ -88,6 +88,8 @@ public class Menu {
         options1.add("View Available Books");
         options1.add("View Unavailable Books");
         options1.add("Search");
+        options1.add("Load Book Data");
+        options1.add("Save Book Data");
         options1.add("Exit to Main Menu");
     }
     private static String optMessage1 = """
@@ -126,7 +128,9 @@ public class Menu {
                     case 6 -> menuViewAvailable();
                     case 7 -> menuViewUnavailable();
                     case 8 -> menuSearchBooks();
-                    case 9 -> run = false;
+                    case 9 -> menuLoadBooks();
+                    case 10 -> menuSaveBooks();
+                    case 11 -> run = false;
                     default -> System.out.printf("Option %d not recognized!%n", option1);
                 }
             } else{
@@ -318,6 +322,13 @@ public class Menu {
         } while (!success);
     }
 
+    private static void menuLoadBooks(){
+
+    }
+    private static void menuSaveBooks(){
+
+    }
+
     /**
      * Used in menuLibraryData to add books to the Library's main dataset
      */
@@ -444,6 +455,8 @@ public class Menu {
         options2.add("View All Members");
         options2.add("Search Members");
         options2.add("Pay fines");
+        options2.add("Load Member Data");
+        options2.add("Save Member Data");
         options2.add("Exit to Main Menu");
     }
     private static String optMessage2 = """
@@ -476,7 +489,9 @@ public class Menu {
                     case 3 -> menuViewAllMembers();
                     case 4 -> menuSearchMembers();
                     case 5 -> menuPayFines();
-                    case 6 -> run = false;
+                    case 6 -> menuLoadMember();
+                    case 7 -> menuSaveMember();
+                    case 8 -> run = false;
                     default -> System.out.printf("Option %d not recognized!%n\n", option2);
                 }
             } else {
@@ -631,6 +646,13 @@ public class Menu {
         else{
             System.out.println("Invalid payment. You cannot pay more than the amount owed.\n");
         }
+    }
+
+    private static void menuLoadMember(){
+
+    }
+    private static void menuSaveMember(){
+
     }
 
 
