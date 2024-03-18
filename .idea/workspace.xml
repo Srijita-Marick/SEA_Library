@@ -4,23 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added code to menuSaveBooks and menuLoadBooks">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="added a utility package">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AdultMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/AdultMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AudioBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/AudioBooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BookRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/BookRecords.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BookType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/BookType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Books.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ChildMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/ChildMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Member.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MemberRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/MemberRecords.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MemberType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/MemberType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PhysicalBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/PhysicalBooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/util/BookRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/util/BookRecords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/util/MemberRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/util/MemberRecords.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +63,11 @@
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="DataTest.testGetBorrowedBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CPSC233PROJECT" />
@@ -119,22 +111,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00033" summary="added checkExistBookTitleWithNullAuthor test">
-      <option name="closed" value="true" />
-      <created>1708970067342</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1708970067342</updated>
-    </task>
-    <task id="LOCAL-00034" summary="added testGetAllBooks test">
-      <option name="closed" value="true" />
-      <created>1708976472458</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1708976472458</updated>
     </task>
     <task id="LOCAL-00035" summary="added testGetAllBooksAndReturnBookInfo test">
       <option name="closed" value="true" />
@@ -512,7 +488,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710752371342</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="made packages and a testing directory">
+      <option name="closed" value="true" />
+      <created>1710752978619</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1710752978619</updated>
+    </task>
+    <task id="LOCAL-00083" summary="added a utility package">
+      <option name="closed" value="true" />
+      <created>1710753077824</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1710753077824</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -539,8 +531,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added testGetMembersByNameReturnMemberInfo test" />
-    <MESSAGE value="added testGetMembersByNameThreeMembers test" />
     <MESSAGE value="javadoc commenting - DataTest function set 5" />
     <MESSAGE value="javadoc commenting - DataTest function set 6" />
     <MESSAGE value="javadoc commenting - DataTest function set 7" />
@@ -564,7 +554,9 @@
     <MESSAGE value="added new load/save options to sub-menus and created associated dummy-functions" />
     <MESSAGE value="added code to menuSaveMember and menuLoadMember" />
     <MESSAGE value="added code to menuSaveBooks and menuLoadBooks" />
-    <option name="LAST_COMMIT_MESSAGE" value="added code to menuSaveBooks and menuLoadBooks" />
+    <MESSAGE value="made packages and a testing directory" />
+    <MESSAGE value="added a utility package" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a utility package" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
