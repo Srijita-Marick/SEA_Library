@@ -254,7 +254,7 @@ public class Data {
     //  EVERYTHING BELOW HERE IS TO STORE MEMBER DATA
 
     final ArrayList<Member> members = new ArrayList<>();
-    final HashMap<Integer, Member> memberIDs = new HashMap<>();
+    static final HashMap<Integer, Member> memberIDs = new HashMap<>();
 
 
     /**
@@ -364,7 +364,7 @@ public class Data {
      * @param id of member to get books for
      * @return list of Strings representing books the member has checked out
      */
-    public ArrayList<String> getBorrowedBooks(Integer id){
+    public static ArrayList<String> getBorrowedBooks(Integer id){
         return memberIDs.get(id).getBorrowed();
     }
 

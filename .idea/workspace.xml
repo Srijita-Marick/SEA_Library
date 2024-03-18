@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="completed MemberRecords.java so it is now fully functional">
-      <change afterPath="$PROJECT_DIR$/saved" afterDir="false" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="removed printed mentions of LibraryProjectPackage in menu displays">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/objects/AdultMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/objects/AdultMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/objects/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/objects/Member.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,14 +112,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00038" summary="added contributors at the top (comment)">
-      <option name="closed" value="true" />
-      <created>1708981698728</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1708981698728</updated>
     </task>
     <task id="LOCAL-00039" summary="added javadoc comments to Menu.java">
       <option name="closed" value="true" />
@@ -503,7 +497,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710801272649</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="removed printed mentions of LibraryProjectPackage in menu displays">
+      <option name="closed" value="true" />
+      <created>1710802050680</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1710802050680</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -530,7 +532,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="brought back code lost in the merge" />
     <MESSAGE value="javadoc commenting - DataTest function set 8" />
     <MESSAGE value="added checkoutBookWhenBookDoesNotExist test" />
     <MESSAGE value="minor \n additions" />
@@ -555,7 +556,8 @@
     <MESSAGE value="coded the save in MemberRecords.java" />
     <MESSAGE value="coded the load method in MemberRecords.java" />
     <MESSAGE value="completed MemberRecords.java so it is now fully functional" />
-    <option name="LAST_COMMIT_MESSAGE" value="completed MemberRecords.java so it is now fully functional" />
+    <MESSAGE value="removed printed mentions of LibraryProjectPackage in menu displays" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed printed mentions of LibraryProjectPackage in menu displays" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
