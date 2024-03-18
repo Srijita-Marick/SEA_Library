@@ -337,7 +337,7 @@ public class Menu {
             } while (filename.isEmpty());
             file = new File(filename);
         } while (!file.exists()||!file.canRead());
-        BookRecords.load(file);
+        BookRecords.load(file,data);
     }
     private static void menuSaveBooks(){
         String filename;
@@ -681,7 +681,10 @@ public class Menu {
             } while (filename.isEmpty());
             file = new File(filename);
         } while (!file.exists()||!file.canRead());
-        MemberRecords.load(file);
+        Data newData = MemberRecords.load(file, data);
+        if (newData != null){
+            data = newData;
+        }
     }
     private static void menuSaveMember(){
         String filename;
