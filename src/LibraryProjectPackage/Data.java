@@ -258,7 +258,7 @@ public class Data {
 
 
     /**
-     * Adds new LibraryProjectPackage.objects.ChildMember to list of members and adds their ID to memberIDs
+     * Adds new ChildMember to list of members and adds their ID to memberIDs
      * @param id of member to be added
      * @param name of member to be added
      * @return whether addition of member was successful (only unsuccessful when member with same ID already exists)
@@ -280,7 +280,7 @@ public class Data {
         }
     }
     /**
-     * Adds new LibraryProjectPackage.objects.AdultMember to list of members and adds their ID to memberIDs
+     * Adds new AdultMember to list of members and adds their ID to memberIDs
      * @param id of member to be added
      * @param name of member to be added
      * @return whether addition of member was successful (only unsuccessful when member with same ID already exists)
@@ -352,7 +352,7 @@ public class Data {
 
     /**
      * @param id to find the corresponding member for
-     * @return the member with that ID as a single element list (to make printing easy in LibraryProjectPackage.Menu.java)
+     * @return the member with that ID as a single element list (to make printing easy in Menu.java)
      */
     public ArrayList<Member> getMembersById(int id) {
         ArrayList<Member> membersWithId = new ArrayList<>();

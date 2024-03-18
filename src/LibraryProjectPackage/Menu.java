@@ -24,8 +24,8 @@ public class Menu {
 
     static {
         options.add("Blank"); //placeholder for indexing purposes that is never seen by user
-        options.add("Library LibraryProjectPackage.Data");
-        options.add("LibraryProjectPackage.objects.Member LibraryProjectPackage.Data");
+        options.add("Library Data");
+        options.add("Member Data");
         options.add("Exit");
     }
     private static String optMessage = """
@@ -54,7 +54,7 @@ public class Menu {
     }
 
     /**
-     * Used in LibraryProjectPackage.Main.java to run the main program
+     * Used in Main.java to run the main program
      */
     public static void menuLoop() {
         int option = 0;
@@ -87,15 +87,15 @@ public class Menu {
         options1.add("Blank"); //placeholder for indexing purposes that is never seen by user
         options1.add("Add Book");
         options1.add("Remove Book");
-        options1.add("Checkout LibraryProjectPackage.objects.Books");
-        options1.add("Return LibraryProjectPackage.objects.Books");
-        options1.add("View All LibraryProjectPackage.objects.Books");
-        options1.add("View Available LibraryProjectPackage.objects.Books");
-        options1.add("View Unavailable LibraryProjectPackage.objects.Books");
+        options1.add("Checkout Books");
+        options1.add("Return Books");
+        options1.add("View All Books");
+        options1.add("View Available Books");
+        options1.add("View Unavailable Books");
         options1.add("Search");
-        options1.add("Load Book LibraryProjectPackage.Data");
-        options1.add("Save Book LibraryProjectPackage.Data");
-        options1.add("Exit to LibraryProjectPackage.Main LibraryProjectPackage.Menu");
+        options1.add("Load Book Data");
+        options1.add("Save Book Data");
+        options1.add("Exit to Main Menu");
     }
     private static String optMessage1 = """
             -------------LIBRARY DATA-------------
@@ -212,7 +212,7 @@ public class Menu {
      */
     private static void menuViewUnavailable() {
         String viewBooksMessage = """
-            Unavailable LibraryProjectPackage.objects.Books:""";
+            Unavailable Books:""";
         ArrayList<Books> bookList = data.getUnavailableBooks();
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
@@ -222,7 +222,7 @@ public class Menu {
      */
     private static void menuViewAvailable() {
         String viewBooksMessage = """
-            Available LibraryProjectPackage.objects.Books:""";
+            Available Books:""";
         ArrayList<Books> bookList = data.getAvailableBooks();
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
@@ -232,7 +232,7 @@ public class Menu {
      */
     private static void menuViewAllBooks() {
         String viewBooksMessage= """
-            ALl library LibraryProjectPackage.objects.Books:\n""";
+            ALl library Books:\n""";
         ArrayList<Books> bookList = data.getAllBooks();
         System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
@@ -266,7 +266,7 @@ public class Menu {
     private static void menuCheckoutBooks() {
         int id = getId();
         while (!data.checkExistMember(id)){
-            System.out.println("LibraryProjectPackage.objects.Member does not exist. Please try again.\n");
+            System.out.println("Member does not exist. Please try again.\n");
             id = getId();
         }
         String title = getTitle();
@@ -291,7 +291,7 @@ public class Menu {
     private static void menuReturnBooks(){
         int id = getId();
         while (!data.checkExistMember(id)){  //makes sure that this id corresponds to an existing member
-            System.out.println("LibraryProjectPackage.objects.Member does not exist. Please try again.\n");
+            System.out.println("Member does not exist. Please try again.\n");
             id = getId();
         }
         String title = getTitle();
@@ -473,14 +473,14 @@ public class Menu {
 
     static {
         options2.add("Blank"); //placeholder for indexing purposes that is never seen by user
-        options2.add("Add LibraryProjectPackage.objects.Member");
-        options2.add("Remove LibraryProjectPackage.objects.Member");
+        options2.add("Add Member");
+        options2.add("Remove Member");
         options2.add("View All Members");
         options2.add("Search Members");
         options2.add("Pay fines");
-        options2.add("Load LibraryProjectPackage.objects.Member LibraryProjectPackage.Data");
-        options2.add("Save LibraryProjectPackage.objects.Member LibraryProjectPackage.Data");
-        options2.add("Exit to LibraryProjectPackage.Main LibraryProjectPackage.Menu");
+        options2.add("Load Member Data");
+        options2.add("Save Member Data");
+        options2.add("Exit to Main Menu");
     }
     private static String optMessage2 = """
     -------------MEMBER DATA-------------
@@ -554,7 +554,7 @@ public class Menu {
             String name = getMember();
             success = data.removeMember(ID, name);
             if (!success){
-                System.out.println("LibraryProjectPackage.objects.Member does not exist in Membership List. Please try again.\n");
+                System.out.println("Member does not exist in Membership List. Please try again.\n");
             }
         } while (!success);
         System.out.println("Deleted a new member!\n");
@@ -575,8 +575,8 @@ public class Menu {
     private static void menuSearchMembers() {
         ArrayList<String> searchOptions = new ArrayList<>(); //each search option is a string in this list
         searchOptions.add("Blank"); //this is a placeholder that is never displayed to user
-        searchOptions.add("LibraryProjectPackage.objects.Member Name");
-        searchOptions.add("LibraryProjectPackage.objects.Member ID");
+        searchOptions.add("Member Name");
+        searchOptions.add("Member ID");
         StringBuilder searchString = new StringBuilder(); // formatted list of the search options with instruction
         searchString.append("How would you like to search for members?\n");
         for (int i = 1; i < searchOptions.size(); i++) {
@@ -617,7 +617,7 @@ public class Menu {
     private static void searchById(){
         int id = getId();
         String viewMembersMessage = """
-             LibraryProjectPackage.objects.Member with given ID:""";
+             Member with given ID:""";
         ArrayList<Member> memberList = data.getMembersById(id);
         System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
     }
@@ -650,7 +650,7 @@ public class Menu {
     private static void menuPayFines(){
         int ID = getId();
         String viewMembersMessage = """
-             LibraryProjectPackage.objects.Member's Information:""";
+             Member's Information:""";
         System.out.println(viewAnyMemberList(viewMembersMessage,data.getMembersById(ID)));
 
         String input; //temporarily saving payment amount as a string for looping purposes
@@ -663,7 +663,7 @@ public class Menu {
         if(data.payFines(ID,payment)){ //calls of data.payFines, which updates the fine info as long as it's valid
             System.out.println("Payment successful!\n");
             viewMembersMessage = """
-             LibraryProjectPackage.objects.Member's Updated Information:""";
+             Member's Updated Information:""";
             System.out.println(viewAnyMemberList(viewMembersMessage,data.getMembersById(ID)));
         }
         else{
@@ -712,7 +712,7 @@ public class Menu {
     private static String getMember() {
         String member;
         do {
-            System.out.println("Enter LibraryProjectPackage.objects.Member Name: ");
+            System.out.println("Enter Member Name: ");
             member = scanner.nextLine().trim();
         } while (member.isEmpty());
         return member;
@@ -725,7 +725,7 @@ public class Menu {
     private static int getId() {
         String memberId;
         do {
-            System.out.println("Enter LibraryProjectPackage.objects.Member ID (integer value): ");
+            System.out.println("Enter Member ID (integer value): ");
             memberId = scanner.nextLine().trim();
         }while (memberId.isEmpty());
         return Integer.parseInt(memberId);
