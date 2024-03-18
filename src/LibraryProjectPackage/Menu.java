@@ -11,6 +11,8 @@ package LibraryProjectPackage; /**
  */
 
 import LibraryProjectPackage.objects.*;
+import LibraryProjectPackage.util.BookRecords;
+import LibraryProjectPackage.util.MemberRecords;
 
 import java.io.File;
 import java.util.ArrayList;

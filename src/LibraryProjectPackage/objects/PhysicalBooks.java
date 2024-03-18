@@ -1,7 +1,6 @@
 package LibraryProjectPackage.objects;
 
-import LibraryProjectPackage.BookType;
-import LibraryProjectPackage.objects.Books;
+import LibraryProjectPackage.util.BookType;
 
 public class PhysicalBooks extends Books {
     public PhysicalBooks(String title, String author, String genre, String availabilityStatus) {

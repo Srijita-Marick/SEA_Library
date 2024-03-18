@@ -1,6 +1,6 @@
 package LibraryProjectPackage.objects;
 
-import LibraryProjectPackage.BookType;
+import LibraryProjectPackage.util.BookType;
 
 public abstract class Books {
     private String title, author, genre, availabilityStatus;

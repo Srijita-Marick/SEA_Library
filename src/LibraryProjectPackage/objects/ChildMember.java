@@ -1,7 +1,6 @@
 package LibraryProjectPackage.objects;
 
-import LibraryProjectPackage.MemberType;
-import LibraryProjectPackage.objects.Member;
+import LibraryProjectPackage.util.MemberType;
 
 public class ChildMember extends Member {
 

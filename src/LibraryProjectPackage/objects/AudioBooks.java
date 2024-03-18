@@ -1,6 +1,6 @@
 package LibraryProjectPackage.objects;
 
-import LibraryProjectPackage.BookType;
+import LibraryProjectPackage.util.BookType;
 
 public class AudioBooks extends Books {
     private final String narrator;

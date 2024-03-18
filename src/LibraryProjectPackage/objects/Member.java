@@ -1,6 +1,6 @@
 package LibraryProjectPackage.objects;
 
-import LibraryProjectPackage.MemberType;
+import LibraryProjectPackage.util.MemberType;
 
 import java.util.ArrayList;
 
