@@ -10,6 +10,7 @@
  * Used "Group Project Part 1 Long Example" by Jonathan Hudson as code source
  */
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Menu {
@@ -649,10 +650,28 @@ public class Menu {
     }
 
     private static void menuLoadMember(){
-
+        String filename;
+        File file;
+        do {
+            do {
+                System.out.println("Enter a filename: ");
+                filename = scanner.nextLine().trim();
+            } while (filename.isEmpty());
+            file = new File(filename);
+        } while (!file.exists()||!file.canRead());
+        MemberRecords.load(file);
     }
     private static void menuSaveMember(){
-
+        String filename;
+        File file;
+        do {
+            do {
+                System.out.println("Enter a filename: ");
+                filename = scanner.nextLine().trim();
+            } while (filename.isEmpty());
+            file = new File(filename);
+        } while (!file.exists()||!file.canWrite());
+        MemberRecords.save(file,data);
     }
 
 
