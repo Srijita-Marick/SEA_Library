@@ -91,18 +91,34 @@ public class Menu {
     private static void menuSaveAllData() {
         System.out.println("Saving data to library...");
         System.out.println("Press B to save all BookRecords: ");
-        System.out.println("Press M to save all MemberRecords: ");
         String selected = scanner.nextLine().trim().toUpperCase();
-        if(selected.equals("B")){
+        System.out.println("Press M to save all MemberRecords: ");
+        String selected1 = scanner.nextLine().trim().toUpperCase();
+        if(selected.equals("B") && selected1.equals("M")){
             menuSaveBooks();
             System.out.println("Successfully Saved to BookRecords!");
-        } else if (selected.equals("M")) {
             menuSaveMember();
             System.out.println("Successfully Saved to MemberRecords!");
+        } else{
+            System.out.println("Please enter valid options");
         }
     }
 
-
+    private static void menuLoadAllData() {
+        System.out.println("Loading data from library...");
+        System.out.println("Press B to load all BookRecords: ");
+        String selected = scanner.nextLine().trim().toUpperCase();
+        System.out.println("Press M to load all MemberRecords: ");
+        String selected1 = scanner.nextLine().trim().toUpperCase();
+        if(selected.equals("B") && selected1.equals("M")){
+            menuLoadBooks();
+            System.out.println("Successfully Loaded from BookRecords!");
+            menuLoadMember();;
+            System.out.println("Successfully Loaded from MemberRecords!");
+        } else {
+            System.out.println("Please enter valid options");
+        }
+    }
     private static final ArrayList<String> options1 = new ArrayList<>();
 
     static {
