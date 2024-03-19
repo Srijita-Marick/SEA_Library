@@ -64,7 +64,7 @@ public class Menu {
      */
     protected static void menuLoop(File bookFile, File memberFile) {
         if(bookFile!=null && memberFile!=null){
-            menuLoadAllData(bookFile,memberFile);
+            menuLoadAllData();
         }
         else {
             File savedBooks = new File("savedBooks.csv");
@@ -96,6 +96,9 @@ public class Menu {
         System.out.println("Exiting program...");
     }
 
+    /**
+     * Used in menuLoop to save all books' information to a library and all members' information to a particular file
+     */
     private static void menuSaveAllData() {
         System.out.println("Saving data to library...");
         String bookFilename;
@@ -130,17 +133,20 @@ public class Menu {
         }
     }
 
+    /**
+     * Used in menuLoop to load all books' information from library and all members' information in a particular file
+     */
     private static void menuLoadAllData() {
         System.out.println("Loading data from library...");
         //book file
-        String bookilename;
+        String bookfilename;
         File bookfile;
         do {
             do {
                 System.out.println("Enter a filename: ");
-                bookilename = scanner.nextLine().trim();
-            } while (bookilename.isEmpty());
-            bookfile = new File(bookilename);
+                bookfilename = scanner.nextLine().trim();
+            } while (bookfilename.isEmpty());
+            bookfile = new File(bookfilename);
         } while (!bookfile.exists()||!bookfile.canRead());
         //member file now
         String memfilename;
@@ -156,6 +162,9 @@ public class Menu {
 
     }
 
+    /**
+     * Used in menuLoop to load book data and member data from a particular file
+     */
     private static void menuLoadAllData(File bookFile, File memberFile) {
         Data data = BookRecords.load(bookFile,new Data());
         data = MemberRecords.load(memberFile,data);
@@ -228,6 +237,7 @@ public class Menu {
             }
         }
     }
+
     /**
      * sends user to their desired type of search
      */
@@ -425,12 +435,18 @@ public class Menu {
         } while (!success);
     }
 
+    /**
+     * Used in menuLibraryData to display the most popular book by genre based on user input and library data
+     */
     private static void menuMostPopularBookByGenre(){
         String genre = getGenre();
         System.out.printf("The most popular %s book is....",genre);
         System.out.println(data.mostPopularBookByGenre(genre));
     }
 
+    /**
+     * Used in menuLibraryData to load books from a specified file.
+     */
     private static void menuLoadBooks(){
         String filename;
         File file;
@@ -446,6 +462,10 @@ public class Menu {
             data = newData;
         }
     }
+
+    /**
+     * Used in menuLibraryData to save books to a specified file.
+     */
     private static void menuSaveBooks(){
         String filename;
         File file;
@@ -463,6 +483,7 @@ public class Menu {
             System.err.printf("Failed to save file %s%n",filename);
         }
 }
+
     /**
      * Used in menuLibraryData to add books to the Library's main dataset
      */
@@ -487,6 +508,10 @@ public class Menu {
         System.out.println("Stored a new book!");
     }
 
+    /**
+     * Used in menuEnterNewBook
+     * @return the narrator of the book
+     */
     private static String getNarrator() {
         System.out.println("Enter Narrator Name: ");
         String narrator;
@@ -496,6 +521,10 @@ public class Menu {
         return narrator;
     }
 
+    /**
+     * Used in searchByBookType, menuEnterNewBook
+     * @return the type of the book (physical or audio)
+     */
     private static String getBookType(){
         System.out.println("Enter Book Type (PHYSICAL/AUDIO): ");
         String bookType;
@@ -504,6 +533,11 @@ public class Menu {
         } while (bookType.isEmpty()|| (!bookType.equals("PHYSICAL") && !bookType.equals("AUDIO")));
         return bookType;
     }
+
+    /**
+     * Used in menuEnterNewBook
+     * @return the availability status of the book
+     */
     private static String getAvailabilityStatus() {
         return "Available";  // by default, new books should be available
     }
@@ -520,6 +554,11 @@ public class Menu {
         } while (days.isEmpty()||days.contains("-")||days.contains(".")); //continues while selections are invalid
         return Integer.parseInt(days);
     }
+
+    /**
+     * Used in searchByGenre, menuMostPopularBookByGenre, menuEnterNewBook
+     * @return the genre of the book
+     */
     private static String getGenre() {
         ArrayList<String> genres = new ArrayList<>(); //each genre option is a string in this list
             genres.add("Blank"); //this is a placeholder that is never displayed to user
@@ -556,6 +595,10 @@ public class Menu {
         return genres.get(Integer.parseInt(choice)); // returns the selected genre
     }
 
+    /**
+     * Used in searchByAuthor, menuCheckoutBooks, menuReturnBooks, etc.
+     * @return the author of the book
+     */
     private static String getAuthor() {
         System.out.println("Enter Author Name: ");
         String author;
@@ -608,6 +651,9 @@ public class Menu {
         optMessage2 = sb2.toString();
     }
 
+    /**
+     * Used in menuLoop as a sub-menu to access Member Data
+     */
     private static void menuMemberData() {
         int option2 = 0;
         boolean run = true;
@@ -674,6 +720,7 @@ public class Menu {
         } while (!success);
         System.out.println("Deleted a new member!\n");
     }
+
     /**
      * Used in menuMemberData to print the entire list of library members
      */
@@ -803,6 +850,9 @@ public class Menu {
         }
     }
 
+    /**
+     * Used in menuLoadAllData , menuMemberData to load member information from a specified filename
+     */
     private static void menuLoadMember(){
         String filename;
         File file;
@@ -818,6 +868,10 @@ public class Menu {
             data = newData;
         }
     }
+
+    /**
+     * Used in menuSaveAllData , menuMemberData to save member information to a specified filename
+     */
     private static void menuSaveMember(){
         String filename;
         File file;
@@ -836,10 +890,17 @@ public class Menu {
         }
     }
 
+    /**
+     * Used in menuMemberData to calculate and display the average days overdue by the member
+     */
     private static void menuAverageDaysOverdue(){
         System.out.printf("On average, books are returned %d days late.%n",data.getAverageDaysOverdue());
     }
 
+
+    /**
+     * Used in menuMemberData to get the most active child reader in the library system
+     */
     private static void menuMostActiveChild(){
         String childString = data.getMostActiveChild();
         if (childString != null){
