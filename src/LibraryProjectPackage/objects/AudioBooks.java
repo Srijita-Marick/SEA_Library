@@ -14,10 +14,14 @@ public class AudioBooks extends Books {
     }
     @Override
     public String toString() {
-        return (this.getTitle() + " by " + this.getAuthor() + '\t' +
-                " narrated by " + this.getNarrator() + '\t' +
-                "(" + this.getGenre() + ")\t" +
-                "Type: AUDIO\t" +
-                "Status: " + this.getAvailabilityStatus() + '\n');
+        StringBuilder bookString = new StringBuilder();
+        bookString.append("\n--------------------");
+        bookString.append("\nTitle: ").append(this.getTitle());
+        bookString.append("\nAuthor: ").append(this.getAuthor());
+        bookString.append("\nNarrator: ").append(this.getNarrator());
+        bookString.append("\nGenre:").append(this.getGenre());
+        bookString.append("\nType: AUDIO");
+        bookString.append("\nStatus: ").append(this.getAvailabilityStatus());
+        return bookString.toString();
     }
 }
