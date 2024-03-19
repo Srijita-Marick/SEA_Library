@@ -62,7 +62,7 @@ public class Menu {
     /**
      * Used in Main.java to run the main program
      */
-    public static void menuLoop(File bookFile, File memberFile) {
+    protected static void menuLoop(File bookFile, File memberFile) {
         if(bookFile!=null && memberFile!=null){
             menuLoadAllData(bookFile,memberFile);
         }

@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="implemented menuLoadAllData">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -559,29 +558,5 @@
     <MESSAGE value="Debugged save and implemented menuLoadAllData" />
     <MESSAGE value="implemented menuLoadAllData" />
     <option name="LAST_COMMIT_MESSAGE" value="implemented menuLoadAllData" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>779</line>
-          <properties class="LibraryProjectPackage.Menu">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>796</line>
-          <properties class="LibraryProjectPackage.Menu">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

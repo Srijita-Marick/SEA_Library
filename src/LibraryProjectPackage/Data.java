@@ -8,11 +8,11 @@ import java.util.HashMap;
 
 public class Data {
 
-    private final ArrayList<Books> books;
-    private final ArrayList<Books> availableBooks;
-    private final ArrayList<Books> unAvailableBooks;
-    private final ArrayList<String> titles;
-    private final ArrayList<String> authors;
+    protected final ArrayList<Books> books;
+    protected final ArrayList<Books> availableBooks;
+    protected final ArrayList<Books> unAvailableBooks;
+    protected final ArrayList<String> titles;
+    protected final ArrayList<String> authors;
 
     public Data(){
         books = new ArrayList<>();
