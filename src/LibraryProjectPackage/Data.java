@@ -1,6 +1,7 @@
 package LibraryProjectPackage;
 
 import LibraryProjectPackage.objects.*;
+import LibraryProjectPackage.util.BookType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -169,6 +170,16 @@ public class Data {
             }
         }
         return booksInGenre;
+    }
+
+    public ArrayList<Books> getBooksByBookType(BookType type) {
+        ArrayList<Books> booksOfGivenType = new ArrayList<>();
+        for (Books book: books){
+            if (book.getType().equals(type)) {
+                booksOfGivenType.add(book);
+            }
+        }
+        return booksOfGivenType;
     }
 
     /**

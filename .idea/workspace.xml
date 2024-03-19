@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="removed printed mentions of LibraryProjectPackage in menu displays">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="completed MemberRecords.java so it is now fully functional">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/objects/AdultMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/objects/AdultMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/objects/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/objects/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,26 +48,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "JUnit.DataTest.executor": "Run",
-    "JUnit.DataTest.testGetAllBooksMatchAllDetails.executor": "Debug",
-    "JUnit.DataTest.testGetBorrowedBooks.executor": "Run",
-    "JUnit.DataTest.testGetMembersById.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataTest.testGetAllBooksMatchAllDetails.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.DataTest.testGetBorrowedBooks.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DataTest.testGetMembersById.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.DataTest.testGetBorrowedBooks">
     <configuration name="DataTest.testGetBorrowedBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CPSC233PROJECT" />
       <option name="PACKAGE_NAME" value="" />
@@ -112,6 +110,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
+    </task>
+    <task id="LOCAL-00038" summary="added contributors at the top (comment)">
+      <option name="closed" value="true" />
+      <created>1708981698728</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1708981698728</updated>
     </task>
     <task id="LOCAL-00039" summary="added javadoc comments to Menu.java">
       <option name="closed" value="true" />
@@ -497,15 +503,7 @@
       <option name="project" value="LOCAL" />
       <updated>1710801272649</updated>
     </task>
-    <task id="LOCAL-00087" summary="removed printed mentions of LibraryProjectPackage in menu displays">
-      <option name="closed" value="true" />
-      <created>1710802050680</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1710802050680</updated>
-    </task>
-    <option name="localTasksCounter" value="88" />
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -532,6 +530,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="brought back code lost in the merge" />
     <MESSAGE value="javadoc commenting - DataTest function set 8" />
     <MESSAGE value="added checkoutBookWhenBookDoesNotExist test" />
     <MESSAGE value="minor \n additions" />
@@ -556,34 +555,15 @@
     <MESSAGE value="coded the save in MemberRecords.java" />
     <MESSAGE value="coded the load method in MemberRecords.java" />
     <MESSAGE value="completed MemberRecords.java so it is now fully functional" />
-    <MESSAGE value="removed printed mentions of LibraryProjectPackage in menu displays" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed printed mentions of LibraryProjectPackage in menu displays" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed MemberRecords.java so it is now fully functional" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>327</line>
-          <properties class="Menu" method="menuLoadBooks">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>339</line>
-          <properties class="Menu" method="menuSaveBooks">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>671</line>
-          <properties class="Menu" method="menuLoadMember">
+          <line>687</line>
+          <properties class="LibraryProjectPackage.Menu">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -591,7 +571,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>688</line>
+          <line>704</line>
           <properties class="LibraryProjectPackage.Menu" method="menuSaveMember">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
