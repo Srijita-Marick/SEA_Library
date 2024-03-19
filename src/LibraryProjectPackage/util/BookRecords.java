@@ -20,12 +20,13 @@ public class BookRecords {
     public static boolean save(File file, Data data) {
         try (FileWriter fw = new FileWriter(file)) {
             fw.write("Books\n");
+
             for (Books book : data.getAllBooks()) {
                 if (book instanceof PhysicalBooks physicalBooks) {
                     fw.write(String.format("PHYSICAL,%s,%s,%s,%s", physicalBooks.getTitle(), physicalBooks.getAuthor(), physicalBooks.getGenre(), physicalBooks.getAvailabilityStatus()));
 
                     fw.write("\n"); //new line after each book
-               } else if (book instanceof AudioBooks audioBooks) {
+                } else if (book instanceof AudioBooks audioBooks) {
                     fw.write(String.format("AUDIO,%s,%s,%s,%s,%s", audioBooks.getTitle(), audioBooks.getAuthor(), audioBooks.getNarrator(), audioBooks.getGenre(), audioBooks.getAvailabilityStatus()));
                    fw.write("\n"); //new line after each book
                 }
@@ -37,6 +38,11 @@ public class BookRecords {
         }
     }
 
+    /**
+     * Updates Data object based on new Book information from a file
+     * @param file  the file being loaded from
+     * @return      the new Data object with information from the file (returns null if loading unsuccessful)
+     */
     public static Data load(File file, Data data) {
         try (Scanner scanner = new Scanner(file)) {
             String line = scanner.nextLine();
@@ -45,8 +51,8 @@ public class BookRecords {
                 return null;
             }
 
-            for (Books book:data.getAllBooks()){ //removes pre-existing book information
-                data.removeBook(book.getTitle(),book.getAuthor());
+            for (Books book : data.getAllBooks()) {
+                data.removeBook(book.getTitle(), book.getAuthor());
             }
 
             while (scanner.hasNextLine()) {
@@ -58,18 +64,16 @@ public class BookRecords {
                 String genre = parts[3];
                 String availabilityStatus = parts[4];
 
-                if (type.equals("Physical")){ // adds new PhysicalBook
+                if (type.equals("Physical")) { // adds new PhysicalBook
                     data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
 
                 } else if (type.equals("Audio")) { // adds new AudioBook
                     String narrator = parts[5];
                     data.storeNewAudioBook(title, author, narrator, genre, availabilityStatus);
-                    }
                 }
-
             }
-
-        catch (IOException e) {
+            scanner.close();
+        } catch (IOException e) {
             System.err.println("Incorrect file format. Loading failed.");
             return null;
         }
