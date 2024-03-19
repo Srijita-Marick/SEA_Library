@@ -27,6 +27,8 @@ public class Menu {
         options.add("Blank"); //placeholder for indexing purposes that is never seen by user
         options.add("Library Data");
         options.add("Member Data");
+        options.add("Load All Data");
+        options.add("Save All Data");
         options.add("Exit");
     }
     private static String optMessage = """
@@ -57,7 +59,10 @@ public class Menu {
     /**
      * Used in Main.java to run the main program
      */
-    public static void menuLoop() {
+    public static void menuLoop(File bookFile, File memberFile) {
+        if(bookFile!=null && memberFile!=null){
+            menuLoadAllData(bookFile,memberFile);
+        }
         int option = 0;
         boolean run = true; // Flag to control the loop
         while (run) {
@@ -71,7 +76,9 @@ public class Menu {
                 switch (option) {
                     case 1 -> menuLibraryData();
                     case 2 -> menuMemberData();
-                    case 3 -> run = false; // Exit the loop if user chooses to quit
+                    case 3 -> menuLoadAllData();
+                    case 4 -> menuSaveAllData();
+                    case 5 -> run = false; // Exit the loop if user chooses to quit
                     default -> System.out.printf("Option %d not recognized!%n", option);
                 }
             } else {
@@ -79,6 +86,20 @@ public class Menu {
             }
         }
         System.out.println("Exiting program...");
+    }
+
+    private static void menuSaveAllData() {
+        System.out.println("Saving data to library...");
+        System.out.println("Press B to save all BookRecords: ");
+        System.out.println("Press M to save all MemberRecords: ");
+        String selected = scanner.nextLine().trim().toUpperCase();
+        if(selected.equals("B")){
+            menuSaveBooks();
+            System.out.println("Successfully Saved to BookRecords!");
+        } else if (selected.equals("M")) {
+            menuSaveMember();
+            System.out.println("Successfully Saved to MemberRecords!");
+        }
     }
 
 

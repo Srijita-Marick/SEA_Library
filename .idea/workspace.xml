@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="implemented mostPopularBookByGenre">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Edited Main.java to take command arguments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/objects/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/objects/Books.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,40 +51,10 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkBookAvailable.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkBookAvailableCaseSensitivity.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkBookAvailableEmptyTitle.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkBookAvailableTitleWithNullAuthor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkBookDoesNotExist.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkBookUnavailable.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkExistBook.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkExistBookAuthorMismatch.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkExistBookEmptyTitleAndAuthor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkExistBookTitleWithNullAuthor.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.DataTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByAuthorEmptyAuthor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByAuthorReturnsCorrectBookInfo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByAuthorReturnsCorrectNumberOfBooks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByAuthorReturnsCorrectNumberOfBooks1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByTitleEmptyTitle.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByTitleReturnsCorrectBookInfo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByTitleReturnsCorrectNumberOfBooks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByTitleReturnsCorrectNumberOfBooks1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByTitleWhenTitleNotFound.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.storeDuplicatePhysicalBooks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.storeEmptyTitle.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.storeNewPhysicalBook.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.storeTwoPhysicalBooks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.storeTwoPhysicalBooksSameAuthor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetAllAvailableBooks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetAllBooks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetAllBooksAndReturnBookInfo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetAllBooksEmptyLibrary.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.DataTest.testGetAllBooksMatchAllDetails.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.DataTest.testGetAllBooksMatchDetails.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.DataTest.testGetBorrowedBooks.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.DataTest.testGetMembersById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetUnavailableBooks.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -99,51 +68,21 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="DataTest.getBooksByAuthorEmptyAuthor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataTest.testGetBorrowedBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CPSC233PROJECT" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="DataTest" />
-      <option name="METHOD_NAME" value="getBooksByAuthorEmptyAuthor" />
+      <option name="METHOD_NAME" value="testGetBorrowedBooks" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataTest.getBooksByAuthorReturnsCorrectBookInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataTest.testGetMembersById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CPSC233PROJECT" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="DataTest" />
-      <option name="METHOD_NAME" value="getBooksByAuthorReturnsCorrectBookInfo" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DataTest.getBooksByAuthorReturnsCorrectNumberOfBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CPSC233PROJECT" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DataTest" />
-      <option name="METHOD_NAME" value="getBooksByAuthorReturnsCorrectNumberOfBooks" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DataTest.getBooksByAuthorReturnsCorrectNumberOfBooks1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CPSC233PROJECT" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DataTest" />
-      <option name="METHOD_NAME" value="getBooksByAuthorReturnsCorrectNumberOfBooks1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DataTest.getBooksByAuthorWhenAuthorNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CPSC233PROJECT" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DataTest" />
-      <option name="METHOD_NAME" value="getBooksByAuthorWhenAuthorNotFound" />
+      <option name="METHOD_NAME" value="testGetMembersById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,11 +90,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DataTest.getBooksByAuthorWhenAuthorNotFound" />
-        <item itemvalue="JUnit.DataTest.getBooksByAuthorReturnsCorrectNumberOfBooks1" />
-        <item itemvalue="JUnit.DataTest.getBooksByAuthorEmptyAuthor" />
-        <item itemvalue="JUnit.DataTest.getBooksByAuthorReturnsCorrectBookInfo" />
-        <item itemvalue="JUnit.DataTest.getBooksByAuthorReturnsCorrectNumberOfBooks" />
+        <item itemvalue="JUnit.DataTest.testGetBorrowedBooks" />
+        <item itemvalue="JUnit.DataTest.testGetMembersById" />
       </list>
     </recent_temporary>
   </component>
@@ -174,30 +110,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00041" summary="added getBooksByTitleReturnsCorrectNumberOfBooks test">
-      <option name="closed" value="true" />
-      <created>1708988004548</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1708988004548</updated>
-    </task>
-    <task id="LOCAL-00042" summary="added getBooksByTitleReturnsCorrectBookInfo test">
-      <option name="closed" value="true" />
-      <created>1708988229014</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1708988229014</updated>
-    </task>
-    <task id="LOCAL-00043" summary="added getBooksByTitleWhenTitleNotFound test">
-      <option name="closed" value="true" />
-      <created>1708988462668</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1708988462668</updated>
     </task>
     <task id="LOCAL-00044" summary="added getBooksByTitleReturnsCorrectNumberOfBooks1 test">
       <option name="closed" value="true" />
@@ -543,31 +455,55 @@
       <option name="project" value="LOCAL" />
       <updated>1710801272649</updated>
     </task>
-    <task id="LOCAL-00087" summary="removed printed mentions of LibraryProjectPackage in menu displays">
+    <task id="LOCAL-00087" summary="Created getBooksByBookType in Data">
       <option name="closed" value="true" />
-      <created>1710802050680</created>
+      <created>1710807004016</created>
       <option name="number" value="00087" />
       <option name="presentableId" value="LOCAL-00087" />
       <option name="project" value="LOCAL" />
-      <updated>1710802050680</updated>
+      <updated>1710807004017</updated>
     </task>
-    <task id="LOCAL-00088" summary="debug of mostActiveChild">
+    <task id="LOCAL-00088" summary="Implemented searchByBookType in Menu">
       <option name="closed" value="true" />
-      <created>1710821244825</created>
+      <created>1710807442878</created>
       <option name="number" value="00088" />
       <option name="presentableId" value="LOCAL-00088" />
       <option name="project" value="LOCAL" />
-      <updated>1710821244825</updated>
+      <updated>1710807442878</updated>
     </task>
-    <task id="LOCAL-00089" summary="implemented mostPopularBookByGenre">
+    <task id="LOCAL-00089" summary="Fixed bug in search">
       <option name="closed" value="true" />
-      <created>1710826515062</created>
+      <created>1710808084091</created>
       <option name="number" value="00089" />
       <option name="presentableId" value="LOCAL-00089" />
       <option name="project" value="LOCAL" />
-      <updated>1710826515062</updated>
+      <updated>1710808084092</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Set up skeleton for searchByMemberType">
+      <option name="closed" value="true" />
+      <created>1710808601021</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1710808601022</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Fixed bug in loading and saving BookRecords">
+      <option name="closed" value="true" />
+      <created>1710819883867</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1710819883867</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Edited Main.java to take command arguments">
+      <option name="closed" value="true" />
+      <created>1710820450883</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1710820450883</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -594,9 +530,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="minor \n additions" />
-    <MESSAGE value="Created Book Object classes" />
-    <MESSAGE value="Initial Setup for OOP structure in Books" />
     <MESSAGE value="Created getters for Books" />
     <MESSAGE value="Updated Data.java and replaced Object[] with class &quot;Books&quot;" />
     <MESSAGE value="Updated Data.java and used getters from Books" />
@@ -616,22 +549,34 @@
     <MESSAGE value="coded the save in MemberRecords.java" />
     <MESSAGE value="coded the load method in MemberRecords.java" />
     <MESSAGE value="completed MemberRecords.java so it is now fully functional" />
-    <MESSAGE value="removed printed mentions of LibraryProjectPackage in menu displays" />
-    <MESSAGE value="debug of mostActiveChild" />
-    <MESSAGE value="implemented mostPopularBookByGenre" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented mostPopularBookByGenre" />
+    <MESSAGE value="Created getBooksByBookType in Data" />
+    <MESSAGE value="Implemented searchByBookType in Menu" />
+    <MESSAGE value="Fixed bug in search" />
+    <MESSAGE value="Set up skeleton for searchByMemberType" />
+    <MESSAGE value="Fixed bug in loading and saving BookRecords" />
+    <MESSAGE value="Edited Main.java to take command arguments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited Main.java to take command arguments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>680</line>
+          <line>755</line>
           <properties class="LibraryProjectPackage.Menu">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
+          <line>772</line>
+          <properties class="LibraryProjectPackage.Menu">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
