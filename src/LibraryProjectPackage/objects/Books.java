@@ -2,9 +2,10 @@ package LibraryProjectPackage.objects;
 
 import LibraryProjectPackage.util.BookType;
 
-public abstract class Books {
-    private String title, author, genre, availabilityStatus;
-    private BookType type;
+public abstract class Books implements Comparable<Books>{
+    private final String title, author, genre;
+    private String availabilityStatus;
+    private final BookType type;
     private int numOfCheckOuts;
     public Books(String title, String author, String genre, String availabilityStatus, BookType type){
         this.title = title;
@@ -43,6 +44,9 @@ public abstract class Books {
         return numOfCheckOuts;
     }
 
+    public int compareTo(Books book){
+        return title.compareTo(book.title);
+    }
     @Override
     public abstract String toString();
 }
