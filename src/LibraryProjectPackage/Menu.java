@@ -11,6 +11,7 @@ package LibraryProjectPackage;
  * Used "Group Project Part 1 Long Example" by Jonathan Hudson as code source
  */
 
+import LibraryProjectPackage.comparators.MemberNameComparator;
 import LibraryProjectPackage.objects.*;
 import LibraryProjectPackage.util.BookRecords;
 import LibraryProjectPackage.util.MemberRecords;
@@ -678,6 +679,7 @@ public class Menu {
         String memMessage = """
             All Library Members:\n""";
         ArrayList<Member> members = data.getAllMembers();
+        members.sort(new MemberNameComparator());
         System.out.println(viewAnyMemberList(memMessage, members));
     }
 
@@ -722,6 +724,7 @@ public class Menu {
         String viewMembersMessage = """
                 All members with that name:""";
         ArrayList<Member> memberList = data.getMembersByName(name);
+        memberList.sort(new MemberNameComparator());
         System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
     }
 
@@ -733,6 +736,7 @@ public class Menu {
         String viewMembersMessage = """
              Member with given ID:""";
         ArrayList<Member> memberList = data.getMembersById(id);
+        memberList.sort(new MemberNameComparator());
         System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
     }
 
@@ -744,6 +748,7 @@ public class Menu {
         String viewMembersMessage = """
              All members of that type:""";
         ArrayList<Member> memberList = data.getMembersByMemberType(type);
+        memberList.sort(new MemberNameComparator());
         System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
     }
 

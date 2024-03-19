@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public abstract class Member {
     private final String name;
     private final int id;
-    private ArrayList<String> borrowed;
+    private final ArrayList<String> borrowed;
     private final MemberType memberType;
 
     public Member(int id,String name,MemberType memberType){
