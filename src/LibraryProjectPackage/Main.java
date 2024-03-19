@@ -4,7 +4,7 @@ import java.io.File;
 
 public class Main {
     public static void main(String[] args) {
-        if(args.length > 3){
+        if(args.length >2){
             System.err.println("Expected two command line argument for filename to load from");
         }
         if(args.length == 2){

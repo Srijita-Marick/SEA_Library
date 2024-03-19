@@ -63,6 +63,11 @@ public class Menu {
         if(bookFile!=null && memberFile!=null){
             menuLoadAllData(bookFile,memberFile);
         }
+        else {
+            File savedBooks = new File("savedBooks.csv");
+            File savedMembers = new File("savedMembers.csv");
+            menuLoadAllData(savedBooks,savedMembers);
+        }
         int option = 0;
         boolean run = true; // Flag to control the loop
         while (run) {
@@ -134,10 +139,6 @@ public class Menu {
             } while (bookilename.isEmpty());
             bookfile = new File(bookilename);
         } while (!bookfile.exists()||!bookfile.canRead());
-        Data newData = BookRecords.load(bookfile, data);
-        if (newData != null) {
-            data = newData;
-        }
         //member file now
         String memfilename;
         File memfile;
@@ -148,17 +149,14 @@ public class Menu {
             } while (memfilename.isEmpty());
             memfile = new File(memfilename);
         } while (!memfile.exists()||!memfile.canRead());
-        newData = MemberRecords.load(memfile, data);
-        if (newData != null){
-            data = newData;
-        }
+        menuLoadAllData(bookfile, memfile);
     }
 
     private static void menuLoadAllData(File bookFile, File memberFile) {
-        Data data = BookRecords.load(bookFile,null);
+        Data data = BookRecords.load(bookFile,new Data());
         data = MemberRecords.load(memberFile,data);
-        System.out.printf("Loaded data from file %s%n",bookFile);
-        System.out.printf("Loaded data from file %s%n",memberFile);
+        System.out.printf("Loaded book data from file %s%n",bookFile);
+        System.out.printf("Loaded member data from file %s%n",memberFile);
         Menu.data = data;
     }
     private static final ArrayList<String> options1 = new ArrayList<>();
