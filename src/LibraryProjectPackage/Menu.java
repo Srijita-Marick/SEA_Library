@@ -1,4 +1,5 @@
-package LibraryProjectPackage; /**
+package LibraryProjectPackage;
+/**
  * CPSC 233 W24 Group Project
  * Library Management System
  * @author Anna Littkemann, Emily Ng Kwong Sang, Srijita Marick
@@ -746,8 +747,14 @@ public class Menu {
     }
 
     private static void menuMostActiveChild(){
-        System.out.print("Congratulations to our Most Active Child Reader!");
-        System.out.println(data.getMostActiveChild());
+        String childString = data.getMostActiveChild();
+        if (childString != null){
+            System.out.print("Congratulations to our Most Active Child Reader!");
+            System.out.println(data.getMostActiveChild());
+        } else {
+            System.out.println("There are currently no children at the library.");
+        }
+
     }
 
 
