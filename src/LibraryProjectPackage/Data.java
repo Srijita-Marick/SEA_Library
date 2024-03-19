@@ -397,6 +397,31 @@ public class Data {
     }
 
     /**
+     * Goes through all child members and finds the one with the highest read-count
+     * @return a String with that child's information
+     */
+    public String getMostActiveChild(){
+        int highestCount=0;
+        String mostActiveChildString="";
+        boolean existsChild=false; //in case there are no children at the library
+
+        for (Member member:members){
+            if (member instanceof ChildMember child){
+                existsChild=true;
+                if(child.getReadCount()>=highestCount){
+                    highestCount= child.getReadCount();
+                    mostActiveChildString=child.toString();
+                }
+            }
+        }
+
+        if (existsChild){
+            return  mostActiveChildString;
+        }
+        return null; //if there are no children in library
+    }
+
+    /**
      * @param id of member to get books for
      * @return list of Strings representing books the member has checked out
      */

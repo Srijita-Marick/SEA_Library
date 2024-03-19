@@ -4,9 +4,19 @@ import LibraryProjectPackage.util.MemberType;
 
 public class ChildMember extends Member {
 
+    private int booksRead;
     public ChildMember(int id, String name) {
         super(id, name, MemberType.CHILD);
+        booksRead=0;
     }
+
+    public void addToReadCount (){
+        booksRead++;
+    }
+    public int getReadCount(){
+        return booksRead;
+    }
+
     @Override
     public String toString() {
         StringBuilder memString = new StringBuilder();

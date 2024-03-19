@@ -499,6 +499,7 @@ public class Menu {
         options2.add("Search Members");
         options2.add("Pay fines");
         options2.add("Average Days Overdue");
+        options2.add("Most Active Child");
         options2.add("Load Member Data");
         options2.add("Save Member Data");
         options2.add("Exit to Main Menu");
@@ -534,9 +535,10 @@ public class Menu {
                     case 4 -> menuSearchMembers();
                     case 5 -> menuPayFines();
                     case 6 -> menuAverageDaysOverdue();
-                    case 7 -> menuLoadMember();
-                    case 8 -> menuSaveMember();
-                    case 9 -> run = false;
+                    case 7 -> menuMostActiveChild();
+                    case 8 -> menuLoadMember();
+                    case 9 -> menuSaveMember();
+                    case 10 -> run = false;
                     default -> System.out.printf("Option %d not recognized!%n\n", option2);
                 }
             } else {
@@ -743,6 +745,11 @@ public class Menu {
         System.out.printf("On average, books are returned %d days late.%n",data.getAverageDaysOverdue());
     }
 
+    private static void menuMostActiveChild(){
+        System.out.print("Congratulations to our Most Active Child Reader!");
+        System.out.println(data.getMostActiveChild());
+    }
+
 
     /** called by menuAddMember, menuRemoveMember, searchByName
      * Used to get the member name
@@ -779,7 +786,7 @@ public class Menu {
         do {
             System.out.println("Is this member a child or adult? ");
             memberType = scanner.nextLine().trim().toUpperCase();
-        }while (memberType.isEmpty()||(!memberType.equals("CHILD")&&!memberType.equals("ADULT")));
+        } while (memberType.isEmpty()||(!memberType.equals("CHILD")&&!memberType.equals("ADULT")));
         return memberType;
     }
 
