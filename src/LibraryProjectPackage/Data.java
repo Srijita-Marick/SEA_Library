@@ -263,6 +263,19 @@ public class Data {
         return false; //book did not exist, so it can't be removed
     }
 
+    public String mostPopularBookByGenre(String genre){
+        ArrayList<Books> books = getBooksByGenre(genre);
+        int checkOutTotal=0;
+        String bookString="";
+        for (Books book:books){
+            if (book.getNumOfCheckOuts()>=checkOutTotal){
+                checkOutTotal=book.getNumOfCheckOuts();
+                bookString=book.toString();
+            }
+        }
+        return bookString;
+    }
+
     // EVERYTHING BELOW HERE IS TO STORE MEMBER DATA
 
     final ArrayList<Member> members = new ArrayList<>();
