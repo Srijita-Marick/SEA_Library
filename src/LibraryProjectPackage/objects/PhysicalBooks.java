@@ -9,9 +9,13 @@ public class PhysicalBooks extends Books {
 
     @Override
     public String toString() {
-        return (this.getTitle() + " by " + this.getAuthor() + "\t" +
-                "(" + this.getGenre() + ")\t" +
-                "Type: PHYSICAL\t" +
-                "Status: " + this.getAvailabilityStatus() + "\n");
+        StringBuilder bookString = new StringBuilder();
+        bookString.append("\n--------------------");
+        bookString.append("\nTitle: ").append(this.getTitle());
+        bookString.append("\nAuthor: ").append(this.getAuthor());
+        bookString.append("\nGenre:").append(this.getGenre());
+        bookString.append("\nType: PHYSICAL");
+        bookString.append("\nStatus: ").append(this.getAvailabilityStatus());
+        return bookString.toString();
     }
 }
