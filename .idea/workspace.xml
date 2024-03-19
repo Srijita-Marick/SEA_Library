@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Implemented compareTo in Books" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="commenting">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/savedBooks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/savedBooks.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/savedMembers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/savedMembers.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +69,16 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.DataTest">
+    <configuration name="DataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CPSC233PROJECT" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DataTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DataTest.testGetBorrowedBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CPSC233PROJECT" />
       <option name="PACKAGE_NAME" value="" />
@@ -87,6 +101,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DataTest" />
         <item itemvalue="JUnit.DataTest.testGetBorrowedBooks" />
         <item itemvalue="JUnit.DataTest.testGetMembersById" />
       </list>
@@ -107,14 +122,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00048" summary="added getBooksByAuthorEmptyAuthor test">
-      <option name="closed" value="true" />
-      <created>1708990966014</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1708990966014</updated>
     </task>
     <task id="LOCAL-00049" summary="added getBooksByGenreReturnsCorrectNumberOfBooks test">
       <option name="closed" value="true" />
@@ -500,7 +507,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710871686815</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="commenting">
+      <option name="closed" value="true" />
+      <created>1710882586410</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1710882586410</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -527,7 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="slight update to make Menu and Data match new fines restrictions" />
     <MESSAGE value="Stylization fix and used instanceof in ViewAnyBookList" />
     <MESSAGE value="Made DataTest go back to initial form" />
     <MESSAGE value="Edited AudioBooks and PhysicalBooks to work with Menu" />
@@ -552,6 +566,7 @@
     <MESSAGE value="Debugged save and implemented menuLoadAllData" />
     <MESSAGE value="minor debug" />
     <MESSAGE value="Implemented compareTo in Books" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented compareTo in Books" />
+    <MESSAGE value="commenting" />
+    <option name="LAST_COMMIT_MESSAGE" value="commenting" />
   </component>
 </project>

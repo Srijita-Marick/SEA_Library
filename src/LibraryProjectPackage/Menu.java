@@ -143,7 +143,7 @@ public class Menu {
         File bookfile;
         do {
             do {
-                System.out.println("Enter a filename: ");
+                System.out.println("Enter a filename for books: ");
                 bookfilename = scanner.nextLine().trim();
             } while (bookfilename.isEmpty());
             bookfile = new File(bookfilename);
@@ -153,7 +153,7 @@ public class Menu {
         File memfile;
         do {
             do {
-                System.out.println("Enter a filename for member: ");
+                System.out.println("Enter a filename for members: ");
                 memfilename = scanner.nextLine().trim();
             } while (memfilename.isEmpty());
             memfile = new File(memfilename);
@@ -186,8 +186,6 @@ public class Menu {
         options1.add("View Unavailable Books");
         options1.add("Search");
         options1.add("Most Popular Book by Genre");
-        options1.add("Load Book Data");
-        options1.add("Save Book Data");
         options1.add("Exit to Main Menu");
     }
     private static String optMessage1 = """
@@ -227,9 +225,9 @@ public class Menu {
                     case 7 -> menuViewUnavailable();
                     case 8 -> menuSearchBooks();
                     case 9 -> menuMostPopularBookByGenre();
-                    case 10 -> menuLoadBooks();
-                    case 11 -> menuSaveBooks();
-                    case 12 -> run = false;
+                    //case 10 -> menuLoadBooks();
+                    //case 11 -> menuSaveBooks();
+                    case 10 -> run = false;
                     default -> System.out.printf("Option %d not recognized!%n", option1);
                 }
             } else{
@@ -634,8 +632,6 @@ public class Menu {
         options2.add("Pay fines");
         options2.add("Average Days Overdue");
         options2.add("Most Active Child");
-        options2.add("Load Member Data");
-        options2.add("Save Member Data");
         options2.add("Exit to Main Menu");
     }
     private static String optMessage2 = """
@@ -673,9 +669,9 @@ public class Menu {
                     case 5 -> menuPayFines();
                     case 6 -> menuAverageDaysOverdue();
                     case 7 -> menuMostActiveChild();
-                    case 8 -> menuLoadMember();
-                    case 9 -> menuSaveMember();
-                    case 10 -> run = false;
+                    //case 8 -> menuLoadMember();
+                    //case 9 -> menuSaveMember();
+                    case 8 -> run = false;
                     default -> System.out.printf("Option %d not recognized!%n\n", option2);
                 }
             } else {
