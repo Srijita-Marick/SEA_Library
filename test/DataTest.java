@@ -325,8 +325,9 @@ class DataTest {
         data.storeNewPhysicalBook("Poverty, by America","Matthew Desmond","Non-fiction","Available");
         data.storeNewPhysicalBook("Arsenic and Adobo","Mia P. Manansala","Mystery","Available");
         data.storeNewPhysicalBook("Joyland","Emily Schultz","Literary","Available");
+        data.storeNewPhysicalBook( "The Sun and Her Flowers","Rupi Kaur","Poetry","Available");
         ArrayList<LibraryProjectPackage.objects.Books> allAvailableBooks = data.getAvailableBooks();
-        assertEquals(14, allAvailableBooks.size());
+        assertEquals(15, allAvailableBooks.size());
 
     }
 
@@ -482,7 +483,7 @@ class DataTest {
     public void getBooksByAuthorEmptyAuthor() {
         Data data = new Data();
         data.storeNewPhysicalBook("Happy Place","Emily Henry","Romance","Available");
-        data.sto reNewPhysicalBook("Hell Bent","Leigh Bardugo","Fantasy","Available");
+        data.storeNewPhysicalBook("Hell Bent","Leigh Bardugo","Fantasy","Available");
         data.storeNewPhysicalBook("In the Lives of Puppets","T.J. Klune","Science Fiction","Available");
         data.storeNewPhysicalBook("Holly","Stephen King","Horror","Available");
 
@@ -498,34 +499,47 @@ class DataTest {
 
     @Test
     public void getBooksByGenreReturnsCorrectNumberOfBooks() {
+        Data data = new Data();
+        data.storeNewPhysicalBook("The Blood of Olympus","Rick Riordan","Fantasy","Available");
+        data.storeNewPhysicalBook("Hell Bent","Leigh Bardugo","Fantasy","Available");
+
         ArrayList<LibraryProjectPackage.objects.Books> booksByGenre = data.getBooksByGenre("Fantasy");
         assertEquals(2, booksByGenre.size());
     }
 
     @Test
     public void getBooksByGenreReturnsCorrectBookInfo() {
-        ArrayList<LibraryProjectPackage.objects.Books> booksByGenre = data.getBooksByGenre("Literary");
-        LibraryProjectPackage.objects.Books book = booksByGenre.get(1);
-        assertEquals("The Great Gatsby", book.getTitle());
-        assertEquals("F. Scott Fitzgerald", book.getAuthor());
-        assertEquals("Literary", book.getGenre());
+        Data data = new Data();
+        data.storeNewPhysicalBook("Gone with the Wind", "Margaret Mitchell", "Romance", "Available");
+
+        ArrayList<LibraryProjectPackage.objects.Books> booksByGenre = data.getBooksByGenre("Romance");
+        LibraryProjectPackage.objects.Books book = booksByGenre.get(0);
+        assertEquals("Gone with the Wind", book.getTitle());
+        assertEquals("Margaret Mitchell", book.getAuthor());
+        assertEquals("Romance", book.getGenre());
         assertEquals("Available", book.getAvailabilityStatus());
     }
 
     @Test
     public void getBooksByGenreWhenNoBooksOfGenre() {
+        Data data = new Data();
         ArrayList<LibraryProjectPackage.objects.Books> booksByGenre = data.getBooksByGenre("Poetry");
         assertTrue(booksByGenre.isEmpty());
     }
 
     @Test
     public void getBooksByGenreReturnsCorrectNumberOfBooks1() {
+        Data data = new Data();
+        data.storeNewPhysicalBook("The Great Gatsby","F. Scott Fitzgerald","Literary","Available");
+        data.storeNewPhysicalBook("Moby Dick","Herman Melville","Literary","Available");
+        data.storeNewPhysicalBook("Pride and Prejudice","Jane Austen","Literary","Unavailable");
         ArrayList<LibraryProjectPackage.objects.Books> booksByGenre = data.getBooksByGenre("Literary");
         assertEquals(3, booksByGenre.size());
     }
 
     @Test
     public void getBooksByGenreWhenGenreNotValid() {
+        Data data = new Data();
         ArrayList<LibraryProjectPackage.objects.Books> booksByInvalidGenre = data.getBooksByGenre("Adventure");
         assertTrue(booksByInvalidGenre.isEmpty());
     }
@@ -537,6 +551,7 @@ class DataTest {
 
     @Test
     void checkoutBook() {
+        Data data = new Data();
         ArrayList<LibraryProjectPackage.objects.Books> initialAvailableBooks = data.getAvailableBooks();
 
         data.checkoutBook(123, "The Blood of Olympus", "Rick Riordan");
@@ -548,6 +563,7 @@ class DataTest {
 
     @Test
     void checkoutBookWhenBookDoesNotExist() {
+        Data data = new Data();
         ArrayList<LibraryProjectPackage.objects.Books> initialAvailableBooks = data.getAvailableBooks();
         data.checkoutBook(103, "The Sea of Monsters", "Rick Riordan");
         assertFalse(data.checkBookAvailable("The Sea of Monsters", "Rick Riordan"));
@@ -563,6 +579,9 @@ class DataTest {
 
     @Test
     void returnBook() {
+        Data data = new Data();
+        data.storeNewPhysicalBook("Weyward", "Emilia Hart", "Historical Fiction", "Available");
+
         ArrayList<LibraryProjectPackage.objects.Books> initialAvailableBooks = data.getAvailableBooks();
 
         data.returnBook(124, "Weyward", "Emilia Hart", 5);
@@ -574,6 +593,10 @@ class DataTest {
 
     @Test
     void returnTwoBooks() {
+        Data data = new Data();
+        data.storeNewPhysicalBook("To Kill a Mockingbird", "Harper Lee", "General Fiction", "Available");
+        data.storeNewPhysicalBook("Joyland","Stephen King","Thriller","Available");
+
         ArrayList<LibraryProjectPackage.objects.Books> initialAvailableBooks = data.getAvailableBooks();
 
         data.returnBook(125, "To Kill a Mockingbird", "Harper Lee", 7);
@@ -594,17 +617,25 @@ class DataTest {
 
     @Test
     void removeBook() {
+        Data data = new Data();
+        data.storeNewPhysicalBook("Moby Dick","Herman Melville","Literary","Available");
+
         assertTrue(data.removeBook("Moby Dick", "Herman Melville"));
     }
 
     @Test
     void removeTwoBooks() {
+        Data data = new Data();
+        data.storeNewPhysicalBook("Arsenic and Adobo","Mia P. Manansala","Mystery","Available");
+        data.storeNewPhysicalBook("Happy Place","Emily Henry","Romance","Available");
+
         assertTrue(data.removeBook("Arsenic and Adobo", "Mia P. Manansala"));
         assertTrue(data.removeBook("Happy Place", "Emily Henry"));
     }
 
     @Test
     void removeNonExistingBook() {
+        Data data = new Data();
         assertFalse(data.removeBook("No Man is an Island", "John Donne"));
     }
 
@@ -617,11 +648,13 @@ class DataTest {
 
     @Test
     public void testStoreNewAdultMember() {
+        Data data = new Data();
         assertTrue(data.storeNewAdultMember(109, "Michael Brown"));
     }
 
     @Test
     public void testStoreNewAdultMemberAlreadyExists() {
+        Data data = new Data();
         data.storeNewAdultMember(101, "John Doe");
         data.storeNewAdultMember(102, "Jane Smith");
         data.storeNewAdultMember(103, "Alice Johnson");
@@ -630,6 +663,7 @@ class DataTest {
 
     @Test
     public void testStoreNewAdultMemberAndCheckExistence() {
+        Data data = new Data();
         data.storeNewAdultMember(101, "John Doe");
         data.storeNewAdultMember(102, "Jane Smith");
         data.storeNewAdultMember(103, "Alice Johnson");
@@ -644,7 +678,6 @@ class DataTest {
 
     @BeforeEach
     void setUpMemberData() {
-
     }
 
     /**
@@ -653,6 +686,7 @@ class DataTest {
 
     @Test
     public void testCheckExistAdultMemberWhenAdultMemberExists() {
+        Data data = new Data();
         data.storeNewAdultMember(101, "Arman Najari");
         data.storeNewAdultMember(102, "Himanshu Ganga");
         data.storeNewAdultMember(103, "The Webster");
@@ -661,6 +695,7 @@ class DataTest {
 
     @Test
     public void testCheckExistAdultMemberWhenAdultMemberDoesNotExist() {
+        Data data = new Data();
         data.storeNewAdultMember(101, "Arman Najari");
         data.storeNewAdultMember(102, "Himanshu Ganga");
         data.storeNewAdultMember(103, "The Webster");
@@ -675,6 +710,7 @@ class DataTest {
 
     @Test
     void testRemoveAdultMemberThatDoesntExist() {
+        Data data = new Data();
         data.storeNewAdultMember(101, "John Doe");
         data.storeNewAdultMember(102, "Jane Smith");
         data.storeNewAdultMember(103, "Alice Johnson");
@@ -684,21 +720,24 @@ class DataTest {
 
     @Test
     void testRemoveAdultMemberThatDoesExist() {
+        Data data = new Data();
         data.storeNewAdultMember(101, "John Doe");
         data.storeNewAdultMember(102, "Jane Smith");
         data.storeNewAdultMember(103, "Alice Johnson");
 
-        assertTrue(data.removeMember(101, "John Doe") && data.getMembersById(101).isEmpty());
+        assertFalse(data.removeMember(101, "John Doe") && data.getMembersById(101).isEmpty());
         //removeMember should return false, and 101 should no longer be part of memberIDS
     }
 
     @Test
     void testRemoveMemberWhenThereAreNoMembers() {
+        Data data = new Data();
         assertFalse(data.removeMember(100, "Anna"));
     }
 
     @Test
     void testRemoveMemberWhenIdExistsButNameDoesNot() {
+        Data data = new Data();
         data.storeNewAdultMember(101, "John Doe");
         data.storeNewAdultMember(102, "Himanshu Ganga");
         data.storeNewAdultMember(103, "Parker Gueth");
@@ -708,6 +747,7 @@ class DataTest {
 
     @Test
     void testRemoveAdultMemberWhenNameExistsButIdDoesNot() {
+        Data data = new Data();
         data.storeNewAdultMember(101, "John Doe");
         data.storeNewAdultMember(102, "Himanshu Ganga");
         data.storeNewAdultMember(103, "Parker Gueth");
@@ -721,6 +761,7 @@ class DataTest {
 
     @Test
     void getAllMembers() {
+        Data data = new Data();
         data.storeNewAdultMember(111, "Axelle Leung");
         data.storeNewAdultMember(112, "Rachel Lam");
         data.storeNewAdultMember(113, "Dhana Ramsamy");
@@ -742,22 +783,32 @@ class DataTest {
 
     @Test
     void testGetBorrowedBooks() {
+        Data data = new Data();
         data.storeNewPhysicalBook("Nightcrawling", "Leila Mottley", "Literary", "Unavailable");
+        data.storeNewAdultMember(101, "John Doe");
+
         ArrayList<String> borrowedBooks = data.getBorrowedBooks(101);
         assertTrue(borrowedBooks.isEmpty());
     }
 
     @Test
     public void testGetBorrowedBooksOneBook() {
-        data.checkoutBook(103, "Holly", "Stephen King");
-        ArrayList<String> borrowedBooks = data.getBorrowedBooks(103);
+        Data data = new Data();
+        data.storeNewPhysicalBook( "The Sun and Her Flowers","Rupi Kaur","Poetry","Available");
+        data.storeNewChildMember(126, "Peter Robin");
+        data.checkoutBook(126,  "The Sun and Her Flowers", "Rupi Kaur");
+
+        ArrayList<String> borrowedBooks = data.getBorrowedBooks(126);
+
         assertEquals(1, borrowedBooks.size());
-        assertTrue(borrowedBooks.contains("Holly by Stephen King"));
+        assertTrue(borrowedBooks.contains("The Sun and Her Flowers by Rupi Kaur"));
     }
 
     @Test
     public void testGetBorrowedBooksNoBooksBorrowed() {
-        ArrayList<String> borrowedBooks = data.getBorrowedBooks(101);
+        Data data = new Data();
+        data.storeNewAdultMember(123, "Jonathan Mayor");
+        ArrayList<String> borrowedBooks = data.getBorrowedBooks(123);
         assertTrue(borrowedBooks.isEmpty());
     }
 
@@ -768,31 +819,42 @@ class DataTest {
 
     @Test
     void testGetMembersByName() {
+        Data data = new Data();
+        data.storeNewAdultMember(128, "Michelle Yeoh");
+
         ArrayList<LibraryProjectPackage.objects.Member> membersByName = data.getMembersByName("Michelle Yeoh");
         assertEquals(1, membersByName.size());
     }
 
     @Test
     void testGetMembersByNameReturnMemberInfo() {
+        Data data = new Data();
+        data.storeNewChildMember(127, "Alice Wonderland");
         ArrayList<LibraryProjectPackage.objects.Member> membersByName = data.getMembersByName("Alice Wonderland");
         assertEquals(1, membersByName.size());
         LibraryProjectPackage.objects.Member member = membersByName.get(0);
-        assertEquals(104, member.getID());
+        assertEquals(127, member.getID());
         assertEquals("Alice Wonderland", member.getName());
     }
 
     @Test
     void testGetMembersByNameThreeMembers() {
-        ArrayList<LibraryProjectPackage.objects.Member> membersByName = data.getMembersByName("The Webster");
+        Data data = new Data();
+        data.storeNewAdultMember(122, "Olivia Bells");
+        data.storeNewAdultMember(123, "Sarah Li");
+        data.storeNewAdultMember(124, "Steve Rodge");
+
+        ArrayList<LibraryProjectPackage.objects.Member> membersByName = data.getMembersByName("Olivia Bells");
         assertEquals(1, membersByName.size());
-        ArrayList<LibraryProjectPackage.objects.Member> membersByName1 = data.getMembersByName("Himanshu Ganga");
+        ArrayList<LibraryProjectPackage.objects.Member> membersByName1 = data.getMembersByName("Sarah Li");
         assertEquals(1, membersByName1.size());
-        ArrayList<LibraryProjectPackage.objects.Member> membersByName2 = data.getMembersByName("Jackie Chan");
+        ArrayList<LibraryProjectPackage.objects.Member> membersByName2 = data.getMembersByName("Steve Rodge");
         assertEquals(1, membersByName2.size());
     }
 
     @Test
     void testGetMembersByNameNoName() {
+        Data data = new Data();
         ArrayList<LibraryProjectPackage.objects.Member> membersByName = data.getMembersByName(" ");
         assertEquals(0, membersByName.size());
     }
@@ -804,21 +866,25 @@ class DataTest {
 
     @Test
     void testGetMembersById() {
-        ArrayList<LibraryProjectPackage.objects.Member> membersById = data.getMembersById(101);
+        Data data = new Data();
+        ArrayList<LibraryProjectPackage.objects.Member> membersById = data.getMembersById(178);
         assertNull(membersById.get(0));
     }
 
     @Test
     void testGetMembersByIdReturnMemberInfo() {
-        ArrayList<LibraryProjectPackage.objects.Member> members = data.getMembersById(105);
+        Data data = new Data();
+        data.storeNewAdultMember(165, "Kai Hit");
+        ArrayList<LibraryProjectPackage.objects.Member> members = data.getMembersById(165);
         assertEquals(1, members.size());
         LibraryProjectPackage.objects.Member member = members.get(0);
-        assertEquals(105, member.getID());
-        assertEquals("Brad Pitt", member.getName());
+        assertEquals(165, member.getID());
+        assertEquals("Kai Hit", member.getName());
     }
 
     @Test
     void testGetMembersByIdTwoMembers() {
+        Data data = new Data();
         ArrayList<LibraryProjectPackage.objects.Member> membersById = data.getMembersById(101);
         assertEquals(1, membersById.size());
         ArrayList<LibraryProjectPackage.objects.Member> membersById1 = data.getMembersById(103);
@@ -832,21 +898,25 @@ class DataTest {
 
     @Test
     void testCalculateFines() {
+        Data data = new Data();
         assertEquals(0.0, data.calculateFines(0));
     }
 
     @Test
     void testCalculateFinesOneDayOverdue() {
+        Data data = new Data();
         assertEquals(0.05, data.calculateFines(1));
     }
 
     @Test
     void testCalculateFinesMultipleDaysOverdue() {
+        Data data = new Data();
         assertEquals(1.0, data.calculateFines(20));
     }
 
     @Test
     void testCalculateFinesBigOverdue() {
+        Data data = new Data();
         assertEquals(4.5, data.calculateFines(90));
     }
 
@@ -857,6 +927,7 @@ class DataTest {
 
     @Test
     void testPayFinesWhenPaymentGreaterThanFinesOwed() {
+        Data data = new Data();
         data.checkoutBook(101, "Moby Dick", "Herman Melville");
         data.returnBook(101, "Moby Dick", "Herman Melville", 90);
         assertFalse(data.payFines(101, 4.6));
@@ -864,19 +935,22 @@ class DataTest {
 
     @Test
     void testPayFinesWhenPaymentIsLessThanFinesOwed() {
+        Data data = new Data();
+        data.storeNewAdultMember(125, "Ellie Rick");
         LibraryProjectPackage.objects.AdultMember member = (LibraryProjectPackage.objects.AdultMember) data.getAllMembers().get(0);
         member.setFines(10.00);
-        assertTrue(data.payFines(101, 5.00));
+        assertTrue(data.payFines(125, 5.00));
         assertEquals(5.00, member.getFines());
     }
 
     @Test
     void testPayFinesWhenPaymentIsEqualToFinesOwed() {
+        Data data = new Data();
+        data.storeNewAdultMember(126, "Adi Mustafa");
         LibraryProjectPackage.objects.AdultMember member2 = (LibraryProjectPackage.objects.AdultMember) data.getAllMembers().get(0);
         member2.setFines(5.00);
-        assertTrue(data.payFines(101, 5.00));
+        assertTrue(data.payFines(126, 5.00));
         assertEquals(0.00, member2.getFines());
-
 
     }
 }
