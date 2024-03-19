@@ -23,6 +23,7 @@ public class ChildMember extends Member {
         memString.append("\n--------------------");
         memString.append("\nID: ").append(this.getID());
         memString.append("\nName: ").append(this.getName());
+        memString.append("\nMember Type: Child");
         memString.append("\nBooks Borrowed:");
         for (String book: LibraryProjectPackage.Data.getBorrowedBooks(this.getID())){
             memString.append("\n     ").append(book);
