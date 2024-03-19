@@ -208,6 +208,21 @@ public class Menu {
     }
 
     /**
+     * Prints all books of selected type using menuViewAnyBookList
+     */
+    private static void searchByBookType(){
+        String type = getBookType();
+        StringBuilder viewBooksMessage = new StringBuilder();
+        if(type.equals("PHYSICAL")) {
+            viewBooksMessage.append("All Physical Books:");
+        } else if(type.equals("AUDIO")) {
+            viewBooksMessage.append("All Audio Books:");
+        }
+        ArrayList<Books> bookList = data.getBooksByBookType();
+        System.out.println(viewAnyBookList(viewBooksMessage.toString(), bookList));
+    }
+
+    /**
      * Prints all unavailable books in library using menuViewAnyBookList
      */
     private static void menuViewUnavailable() {
