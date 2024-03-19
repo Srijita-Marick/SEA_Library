@@ -22,11 +22,11 @@ public class BookRecords {
             fw.write("Books\n");
             for (Books book : data.getAllBooks()) {
                 if (book instanceof PhysicalBooks physicalBooks) {
-                    fw.write(String.format("Physical,%s,%s,%s,%s", physicalBooks.getTitle(), physicalBooks.getAuthor(), physicalBooks.getGenre(), physicalBooks.getAvailabilityStatus()));
+                    fw.write(String.format("PHYSICAL,%s,%s,%s,%s", physicalBooks.getTitle(), physicalBooks.getAuthor(), physicalBooks.getGenre(), physicalBooks.getAvailabilityStatus()));
 
                     fw.write("\n"); //new line after each book
                } else if (book instanceof AudioBooks audioBooks) {
-                    fw.write(String.format("Audio,%s,%s,%s,%s", audioBooks.getTitle(), audioBooks.getAuthor(), audioBooks.getNarrator(), audioBooks.getGenre(), audioBooks.getAvailabilityStatus()));
+                    fw.write(String.format("AUDIO,%s,%s,%s,%s,%s", audioBooks.getTitle(), audioBooks.getAuthor(), audioBooks.getNarrator(), audioBooks.getGenre(), audioBooks.getAvailabilityStatus()));
                    fw.write("\n"); //new line after each book
                 }
             }
