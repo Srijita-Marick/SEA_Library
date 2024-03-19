@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="recovering lost code">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="implemented menuLoadAllData">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/savedBooks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/savedBooks.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/savedMembers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/savedMembers.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/util/MemberRecords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/util/MemberRecords.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +110,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
+    </task>
+    <task id="LOCAL-00047" summary="added getBooksByAuthorReturnsCorrectNumberOfBooks1 test">
+      <option name="closed" value="true" />
+      <created>1708990838312</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1708990838312</updated>
     </task>
     <task id="LOCAL-00048" summary="added getBooksByAuthorEmptyAuthor test">
       <option name="closed" value="true" />
@@ -498,15 +503,7 @@
       <option name="project" value="LOCAL" />
       <updated>1710874603987</updated>
     </task>
-    <task id="LOCAL-00096" summary="recovering lost code">
-      <option name="closed" value="true" />
-      <created>1710877993544</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1710877993544</updated>
-    </task>
-    <option name="localTasksCounter" value="97" />
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -536,6 +533,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created setters in Books" />
     <MESSAGE value="slight update to make Menu and Data match new fines restrictions" />
     <MESSAGE value="Stylization fix and used instanceof in ViewAnyBookList" />
     <MESSAGE value="Made DataTest go back to initial form" />
@@ -560,21 +558,28 @@
     <MESSAGE value="Implemented menuSaveAllData" />
     <MESSAGE value="Debugged save and implemented menuLoadAllData" />
     <MESSAGE value="implemented menuLoadAllData" />
-    <MESSAGE value="recovering lost code" />
-    <option name="LAST_COMMIT_MESSAGE" value="recovering lost code" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented menuLoadAllData" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>760</line>
-          <option name="timeStamp" value="32" />
+          <line>779</line>
+          <properties class="LibraryProjectPackage.Menu">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>764</line>
-          <option name="timeStamp" value="33" />
+          <line>796</line>
+          <properties class="LibraryProjectPackage.Menu">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
