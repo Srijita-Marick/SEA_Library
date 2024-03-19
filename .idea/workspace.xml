@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Set up skeleton for searchByMemberType">
-      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" afterDir="false" />
-    </list>
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Implemented searchByMemberType" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,14 +107,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00042" summary="added getBooksByTitleReturnsCorrectBookInfo test">
-      <option name="closed" value="true" />
-      <created>1708988229014</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1708988229014</updated>
     </task>
     <task id="LOCAL-00043" summary="added getBooksByTitleWhenTitleNotFound test">
       <option name="closed" value="true" />
@@ -503,7 +492,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710808601022</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Implemented searchByMemberType">
+      <option name="closed" value="true" />
+      <created>1710808846836</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1710808846837</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -530,7 +527,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created Book Object classes" />
     <MESSAGE value="Initial Setup for OOP structure in Books" />
     <MESSAGE value="Created getters for Books" />
     <MESSAGE value="Updated Data.java and replaced Object[] with class &quot;Books&quot;" />
@@ -555,7 +551,8 @@
     <MESSAGE value="Implemented searchByBookType in Menu" />
     <MESSAGE value="Fixed bug in search" />
     <MESSAGE value="Set up skeleton for searchByMemberType" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set up skeleton for searchByMemberType" />
+    <MESSAGE value="Implemented searchByMemberType" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented searchByMemberType" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
