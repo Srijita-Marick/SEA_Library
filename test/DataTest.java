@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DataTest {
     /**
-     * The following five functions are to test data.storeNewBook
+     * The following five functions are to test data.storeNewPhysicalBook
      * Each checks a different way in which we can save books to the Library
      * and checking to see if the book has been saved with the correct details
      */
@@ -128,6 +128,66 @@ class DataTest {
         assertFalse(success);
         assertEquals(0, data.getAllBooks().size());
 
+    }
+
+    /**
+     * The following two functions are to test data.storeNewAudioBook
+     * Each checks a different way in which we can save books to the Library
+     * and checking to see if the book has been saved with the correct details
+     */
+    @Test
+    void storeNewAudioBook() {
+        Data d = new Data();
+        String title = "The Sun is Also a Star";
+        String author = "Nicola Yoon";
+        String narrator = "Raymond Lee";
+        String genre = "Romance";
+        String availabilityStatus = "Available";
+        assertEquals(0, d.getAllBooks().size());
+        boolean success = d.storeNewAudioBook(title, author, narrator, genre, availabilityStatus);
+        assertTrue(success);
+
+        LibraryProjectPackage.objects.Books newBook = d.getAllBooks().getFirst();
+        assertEquals(1, d.getAllBooks().size());
+        assertEquals(title, newBook.getTitle());
+        assertEquals(author, newBook.getAuthor());
+        assertEquals(genre, newBook.getGenre());
+        assertEquals(availabilityStatus, newBook.getAvailabilityStatus());
+    }
+
+    @Test
+    void storeTwoAudioBooks() {
+        Data data = new Data();
+        String title = "American Gods";
+        String author = "Neil Gaiman";
+        String narrator = "Ron McLarty";
+        String genre = "Fantasy";
+        String availabilityStatus = "Available";
+        assertEquals(0, data.getAllBooks().size());
+        boolean success = data.storeNewAudioBook(title, author, narrator, genre, availabilityStatus);
+        assertTrue(success);
+
+        LibraryProjectPackage.objects.Books newBook1 = data.getAllBooks().getFirst();
+        assertEquals(1, data.getAllBooks().size());
+        assertEquals(title, newBook1.getTitle());
+        assertEquals(author, newBook1.getAuthor());
+        assertEquals(genre, newBook1.getGenre());
+        assertEquals(availabilityStatus, newBook1.getAvailabilityStatus());
+
+        title = "Pride and Prejudice";
+        author = "Jane Austen";
+        narrator = "Elizabeth Klett";
+        genre = "Romance";
+        availabilityStatus = "Available";
+        success = data.storeNewAudioBook(title, author, narrator, genre, availabilityStatus);
+        assertTrue(success);
+
+        LibraryProjectPackage.objects.Books newBook2 = data.getAllBooks().get(1);
+        assertEquals(2, data.getAllBooks().size());
+        assertEquals(title, newBook2.getTitle());
+        assertEquals(author, newBook2.getAuthor());
+        assertEquals(genre, newBook2.getGenre());
+        assertEquals(availabilityStatus, newBook2.getAvailabilityStatus());
     }
 
     /**
