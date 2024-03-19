@@ -94,6 +94,7 @@ public class Menu {
         options1.add("View Available Books");
         options1.add("View Unavailable Books");
         options1.add("Search");
+        options1.add("Most Popular Book by Genre");
         options1.add("Load Book Data");
         options1.add("Save Book Data");
         options1.add("Exit to Main Menu");
@@ -134,9 +135,10 @@ public class Menu {
                     case 6 -> menuViewAvailable();
                     case 7 -> menuViewUnavailable();
                     case 8 -> menuSearchBooks();
-                    case 9 -> menuLoadBooks();
-                    case 10 -> menuSaveBooks();
-                    case 11 -> run = false;
+                    case 9 -> menuMostPopularBookByGenre();
+                    case 10 -> menuLoadBooks();
+                    case 11 -> menuSaveBooks();
+                    case 12 -> run = false;
                     default -> System.out.printf("Option %d not recognized!%n", option1);
                 }
             } else{
@@ -339,6 +341,12 @@ public class Menu {
                 System.out.printf("\n%s by %s was deleted from the library!\n",title,author);
             }
         } while (!success);
+    }
+
+    private static void menuMostPopularBookByGenre(){
+        String genre = getGenre();
+        System.out.printf("The most popular %s book is....",genre);
+        System.out.println(data.mostPopularBookByGenre(genre));
     }
 
     private static void menuLoadBooks(){
@@ -575,7 +583,7 @@ public class Menu {
     private static void menuRemoveMember(){
         boolean success;
         do {
-            Integer ID = getId();
+            int ID = getId();
             String name = getMember();
             success = data.removeMember(ID, name);
             if (!success){

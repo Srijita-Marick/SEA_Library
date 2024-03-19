@@ -482,7 +482,7 @@ class DataTest {
     public void getBooksByAuthorEmptyAuthor() {
         Data data = new Data();
         data.storeNewPhysicalBook("Happy Place","Emily Henry","Romance","Available");
-        data.sto reNewPhysicalBook("Hell Bent","Leigh Bardugo","Fantasy","Available");
+        data.storeNewPhysicalBook("Hell Bent","Leigh Bardugo","Fantasy","Available");
         data.storeNewPhysicalBook("In the Lives of Puppets","T.J. Klune","Science Fiction","Available");
         data.storeNewPhysicalBook("Holly","Stephen King","Horror","Available");
 
