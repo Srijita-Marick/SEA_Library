@@ -193,10 +193,12 @@ public class Data {
     public void checkoutBook(Integer id, String title, String author){
         for (Books book: books){ //goes through every book until it finds one matching title and author
             if (book.getTitle().equals(title) && book.getAuthor().equals(author)){
+
                 availableBooks.remove(book);
                 book.setAvailabilityStatus("Unavailable");
-                unAvailableBooks.add(book);
-                for (Member member: members){ //goes through members until it finds one with ID
+                unAvailableBooks.add(book); // updates the book availability and add to unavailable list
+
+                for (Member member: members){ // goes through members until it finds one with ID
                     if (member.getID()==id){
                         //saves to member's borrowed books list as a String
                         member.addBookToMember(title+" by "+author);
