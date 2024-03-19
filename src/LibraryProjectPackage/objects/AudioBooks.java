@@ -19,7 +19,7 @@ public class AudioBooks extends Books {
         bookString.append("\nTitle: ").append(this.getTitle());
         bookString.append("\nAuthor: ").append(this.getAuthor());
         bookString.append("\nNarrator: ").append(this.getNarrator());
-        bookString.append("\nGenre:").append(this.getGenre());
+        bookString.append("\nGenre: ").append(this.getGenre());
         bookString.append("\nType: AUDIO");
         bookString.append("\nStatus: ").append(this.getAvailabilityStatus());
         return bookString.toString();

@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="first half of DataTest works now">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="removed printed mentions of LibraryProjectPackage in menu displays">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/objects/ChildMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/objects/ChildMember.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/objects/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/objects/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/DataTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,57 +48,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkBookAvailable.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkBookAvailableCaseSensitivity.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkBookAvailableEmptyTitle.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkBookAvailableTitleWithNullAuthor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkBookDoesNotExist.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkBookUnavailable.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkExistBook.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkExistBookAuthorMismatch.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkExistBookEmptyTitleAndAuthor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.checkExistBookTitleWithNullAuthor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByAuthorEmptyAuthor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByAuthorReturnsCorrectBookInfo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByAuthorReturnsCorrectNumberOfBooks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByAuthorReturnsCorrectNumberOfBooks1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByAuthorWhenAuthorNotFound.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByTitleEmptyTitle.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByTitleReturnsCorrectBookInfo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByTitleReturnsCorrectNumberOfBooks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByTitleReturnsCorrectNumberOfBooks1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.getBooksByTitleWhenTitleNotFound.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.storeDuplicatePhysicalBooks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.storeEmptyTitle.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.storeNewPhysicalBook.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.storeTwoPhysicalBooks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.storeTwoPhysicalBooksSameAuthor.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetAllAvailableBooks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetAllBooks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetAllBooksAndReturnBookInfo.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetAllBooksEmptyLibrary.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetAllBooksMatchAllDetails.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.DataTest.testGetAllBooksMatchDetails.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetBorrowedBooks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetMembersById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DataTest.testGetUnavailableBooks.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.DataTest.checkBookAvailable.executor": "Run",
+    "JUnit.DataTest.checkBookAvailableCaseSensitivity.executor": "Run",
+    "JUnit.DataTest.checkBookAvailableEmptyTitle.executor": "Run",
+    "JUnit.DataTest.checkBookAvailableTitleWithNullAuthor.executor": "Run",
+    "JUnit.DataTest.checkBookDoesNotExist.executor": "Run",
+    "JUnit.DataTest.checkBookUnavailable.executor": "Run",
+    "JUnit.DataTest.checkExistBook.executor": "Run",
+    "JUnit.DataTest.checkExistBookAuthorMismatch.executor": "Run",
+    "JUnit.DataTest.checkExistBookEmptyTitleAndAuthor.executor": "Run",
+    "JUnit.DataTest.checkExistBookTitleWithNullAuthor.executor": "Run",
+    "JUnit.DataTest.executor": "Run",
+    "JUnit.DataTest.getBooksByAuthorEmptyAuthor.executor": "Run",
+    "JUnit.DataTest.getBooksByAuthorReturnsCorrectBookInfo.executor": "Run",
+    "JUnit.DataTest.getBooksByAuthorReturnsCorrectNumberOfBooks.executor": "Run",
+    "JUnit.DataTest.getBooksByAuthorReturnsCorrectNumberOfBooks1.executor": "Run",
+    "JUnit.DataTest.getBooksByTitleEmptyTitle.executor": "Run",
+    "JUnit.DataTest.getBooksByTitleReturnsCorrectBookInfo.executor": "Run",
+    "JUnit.DataTest.getBooksByTitleReturnsCorrectNumberOfBooks.executor": "Run",
+    "JUnit.DataTest.getBooksByTitleReturnsCorrectNumberOfBooks1.executor": "Run",
+    "JUnit.DataTest.getBooksByTitleWhenTitleNotFound.executor": "Run",
+    "JUnit.DataTest.storeDuplicatePhysicalBooks.executor": "Run",
+    "JUnit.DataTest.storeEmptyTitle.executor": "Run",
+    "JUnit.DataTest.storeNewPhysicalBook.executor": "Run",
+    "JUnit.DataTest.storeTwoPhysicalBooks.executor": "Run",
+    "JUnit.DataTest.storeTwoPhysicalBooksSameAuthor.executor": "Run",
+    "JUnit.DataTest.testGetAllAvailableBooks.executor": "Run",
+    "JUnit.DataTest.testGetAllBooks.executor": "Run",
+    "JUnit.DataTest.testGetAllBooksAndReturnBookInfo.executor": "Run",
+    "JUnit.DataTest.testGetAllBooksEmptyLibrary.executor": "Run",
+    "JUnit.DataTest.testGetAllBooksMatchAllDetails.executor": "Debug",
+    "JUnit.DataTest.testGetAllBooksMatchDetails.executor": "Run",
+    "JUnit.DataTest.testGetBorrowedBooks.executor": "Run",
+    "JUnit.DataTest.testGetMembersById.executor": "Run",
+    "JUnit.DataTest.testGetUnavailableBooks.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.DataTest.getBooksByAuthorWhenAuthorNotFound">
     <configuration name="DataTest.getBooksByAuthorEmptyAuthor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CPSC233PROJECT" />
       <option name="PACKAGE_NAME" value="" />
@@ -178,6 +173,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
+    </task>
+    <task id="LOCAL-00039" summary="added javadoc comments to Menu.java">
+      <option name="closed" value="true" />
+      <created>1708982413682</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1708982413682</updated>
     </task>
     <task id="LOCAL-00040" summary="got rid of unnecessary import statements">
       <option name="closed" value="true" />
@@ -563,15 +566,7 @@
       <option name="project" value="LOCAL" />
       <updated>1710802050680</updated>
     </task>
-    <task id="LOCAL-00088" summary="first half of DataTest works now">
-      <option name="closed" value="true" />
-      <created>1710814086329</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1710814086329</updated>
-    </task>
-    <option name="localTasksCounter" value="89" />
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -598,6 +593,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="javadoc commenting - DataTest function set 8" />
     <MESSAGE value="added checkoutBookWhenBookDoesNotExist test" />
     <MESSAGE value="minor \n additions" />
     <MESSAGE value="Created Book Object classes" />
@@ -622,8 +618,7 @@
     <MESSAGE value="coded the load method in MemberRecords.java" />
     <MESSAGE value="completed MemberRecords.java so it is now fully functional" />
     <MESSAGE value="removed printed mentions of LibraryProjectPackage in menu displays" />
-    <MESSAGE value="first half of DataTest works now" />
-    <option name="LAST_COMMIT_MESSAGE" value="first half of DataTest works now" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed printed mentions of LibraryProjectPackage in menu displays" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -648,7 +643,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>672</line>
+          <line>671</line>
           <properties class="LibraryProjectPackage.Menu">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -657,7 +652,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>716</line>
+          <line>715</line>
           <properties class="LibraryProjectPackage.Menu">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
