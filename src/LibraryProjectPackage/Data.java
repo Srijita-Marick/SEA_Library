@@ -263,6 +263,24 @@ public class Data {
         return false; //book did not exist, so it can't be removed
     }
 
+    /**
+     * gets a list of books in desired genre and finds the most popular one
+     * @param genre is the genre to find most popular book in
+     * @return a string of the most popular book in genre
+     */
+    public String mostPopularBookByGenre(String genre){
+        ArrayList<Books> books = getBooksByGenre(genre);
+        int checkOutTotal=0;
+        String bookString="";
+        for (Books book:books){
+            if (book.getNumOfCheckOuts()>checkOutTotal){
+                checkOutTotal=book.getNumOfCheckOuts();
+                bookString=book.toString();
+            }
+        }
+        return bookString;
+    }
+
     // EVERYTHING BELOW HERE IS TO STORE MEMBER DATA
 
     final ArrayList<Member> members = new ArrayList<>();
@@ -397,11 +415,43 @@ public class Data {
     }
 
     /**
+     * Goes through all child members and finds the one with the highest read-count
+     * @return a String with that child's information
+     */
+    public String getMostActiveChild(){
+        int highestCount=0;
+        String mostActiveChildString="";
+        boolean existsChild=false; //in case there are no children at the library
+
+        for (Member member:members){
+            if (member instanceof ChildMember child){
+                existsChild=true;
+                if(child.getReadCount()>=highestCount){
+                    highestCount= child.getReadCount();
+                    mostActiveChildString=child.toString();
+                }
+            }
+        }
+
+        if (existsChild){
+            return  mostActiveChildString;
+        }
+        return null; //if there are no children in library
+    }
+
+    /**
      * @param id of member to get books for
      * @return list of Strings representing books the member has checked out
      */
     public static ArrayList<String> getBorrowedBooks(Integer id){
-        return memberIDs.get(id).getBorrowed();
+        Member member = memberIDs.get(id);
+        if (member != null) {
+            return member.getBorrowed();
+        } else {
+            System.err.println("Member not found for ID: " + id);
+            // Handle the case where member is not found, e.g., return an empty list or throw an exception
+            return new ArrayList<>(); // Empty list as a fallback
+        }
     }
 
     /**

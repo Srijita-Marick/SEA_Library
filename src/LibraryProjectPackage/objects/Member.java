@@ -43,6 +43,9 @@ public abstract class Member {
 
     public void addBookToMember(String book){
         borrowed.add(book);
+        if (this instanceof ChildMember childMember){
+            childMember.addToReadCount();
+        }
     }
     public void removeBookFromMember(String book){
         borrowed.remove(book);

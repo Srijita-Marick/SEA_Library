@@ -1,4 +1,5 @@
-package LibraryProjectPackage; /**
+package LibraryProjectPackage;
+/**
  * CPSC 233 W24 Group Project
  * Library Management System
  * @author Anna Littkemann, Emily Ng Kwong Sang, Srijita Marick
@@ -93,6 +94,7 @@ public class Menu {
         options1.add("View Available Books");
         options1.add("View Unavailable Books");
         options1.add("Search");
+        options1.add("Most Popular Book by Genre");
         options1.add("Load Book Data");
         options1.add("Save Book Data");
         options1.add("Exit to Main Menu");
@@ -133,9 +135,10 @@ public class Menu {
                     case 6 -> menuViewAvailable();
                     case 7 -> menuViewUnavailable();
                     case 8 -> menuSearchBooks();
-                    case 9 -> menuLoadBooks();
-                    case 10 -> menuSaveBooks();
-                    case 11 -> run = false;
+                    case 9 -> menuMostPopularBookByGenre();
+                    case 10 -> menuLoadBooks();
+                    case 11 -> menuSaveBooks();
+                    case 12 -> run = false;
                     default -> System.out.printf("Option %d not recognized!%n", option1);
                 }
             } else{
@@ -340,6 +343,12 @@ public class Menu {
         } while (!success);
     }
 
+    private static void menuMostPopularBookByGenre(){
+        String genre = getGenre();
+        System.out.printf("The most popular %s book is....",genre);
+        System.out.println(data.mostPopularBookByGenre(genre));
+    }
+
     private static void menuLoadBooks(){
         String filename;
         File file;
@@ -499,6 +508,7 @@ public class Menu {
         options2.add("Search Members");
         options2.add("Pay fines");
         options2.add("Average Days Overdue");
+        options2.add("Most Active Child");
         options2.add("Load Member Data");
         options2.add("Save Member Data");
         options2.add("Exit to Main Menu");
@@ -534,9 +544,10 @@ public class Menu {
                     case 4 -> menuSearchMembers();
                     case 5 -> menuPayFines();
                     case 6 -> menuAverageDaysOverdue();
-                    case 7 -> menuLoadMember();
-                    case 8 -> menuSaveMember();
-                    case 9 -> run = false;
+                    case 7 -> menuMostActiveChild();
+                    case 8 -> menuLoadMember();
+                    case 9 -> menuSaveMember();
+                    case 10 -> run = false;
                     default -> System.out.printf("Option %d not recognized!%n\n", option2);
                 }
             } else {
@@ -572,7 +583,7 @@ public class Menu {
     private static void menuRemoveMember(){
         boolean success;
         do {
-            Integer ID = getId();
+            int ID = getId();
             String name = getMember();
             success = data.removeMember(ID, name);
             if (!success){
@@ -743,6 +754,17 @@ public class Menu {
         System.out.printf("On average, books are returned %d days late.%n",data.getAverageDaysOverdue());
     }
 
+    private static void menuMostActiveChild(){
+        String childString = data.getMostActiveChild();
+        if (childString != null){
+            System.out.print("Congratulations to our Most Active Child Reader!");
+            System.out.println(data.getMostActiveChild());
+        } else {
+            System.out.println("There are currently no children at the library.");
+        }
+
+    }
+
 
     /** called by menuAddMember, menuRemoveMember, searchByName
      * Used to get the member name
@@ -779,7 +801,7 @@ public class Menu {
         do {
             System.out.println("Is this member a child or adult? ");
             memberType = scanner.nextLine().trim().toUpperCase();
-        }while (memberType.isEmpty()||(!memberType.equals("CHILD")&&!memberType.equals("ADULT")));
+        } while (memberType.isEmpty()||(!memberType.equals("CHILD")&&!memberType.equals("ADULT")));
         return memberType;
     }
 
