@@ -13,7 +13,7 @@ public class PhysicalBooks extends Books {
         bookString.append("\n--------------------");
         bookString.append("\nTitle: ").append(this.getTitle());
         bookString.append("\nAuthor: ").append(this.getAuthor());
-        bookString.append("\nGenre:").append(this.getGenre());
+        bookString.append("\nGenre: ").append(this.getGenre());
         bookString.append("\nType: PHYSICAL");
         bookString.append("\nStatus: ").append(this.getAvailabilityStatus());
         return bookString.toString();

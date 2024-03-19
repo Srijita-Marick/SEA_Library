@@ -27,7 +27,7 @@ public class BookRecords {
 
                     fw.write("\n"); //new line after each book
                 } else if (book instanceof AudioBooks audioBooks) {
-                    fw.write(String.format("AUDIO,%s,%s,%s,%s,%s", audioBooks.getTitle(), audioBooks.getAuthor(), audioBooks.getNarrator(), audioBooks.getGenre(), audioBooks.getAvailabilityStatus()));
+                    fw.write(String.format("AUDIO,%s,%s,%s,%s,%s", audioBooks.getTitle(), audioBooks.getAuthor(), audioBooks.getGenre(), audioBooks.getAvailabilityStatus(), audioBooks.getNarrator()));
                    fw.write("\n"); //new line after each book
                 }
             }
@@ -64,10 +64,10 @@ public class BookRecords {
                 String genre = parts[3];
                 String availabilityStatus = parts[4];
 
-                if (type.equals("Physical")) { // adds new PhysicalBook
+                if (type.equals("PHYSICAL")) { // adds new PhysicalBook
                     data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
 
-                } else if (type.equals("Audio")) { // adds new AudioBook
+                } else if (type.equals("AUDIO")) { // adds new AudioBook
                     String narrator = parts[5];
                     data.storeNewAudioBook(title, author, narrator, genre, availabilityStatus);
                 }
