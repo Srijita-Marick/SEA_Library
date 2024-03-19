@@ -351,6 +351,10 @@ public class Menu {
             file = new File(filename);
         } while (!file.exists()||!file.canRead());
         BookRecords.load(file,data);
+        Data newData = BookRecords.load(file, data);
+        if (newData != null) {
+            data = newData;
+        }
     }
     private static void menuSaveBooks(){
         String filename;
@@ -362,9 +366,13 @@ public class Menu {
             } while (filename.isEmpty());
             file = new File(filename);
         } while (!file.exists()||!file.canWrite());
-        BookRecords.save(file,data);
-    }
-
+        if (BookRecords.save(file,data)){
+            System.out.printf("Saved Book Data to file %s%n",filename);
+        }
+        else {
+            System.err.printf("Failed to save file %s%n",filename);
+        }
+}
     /**
      * Used in menuLibraryData to add books to the Library's main dataset
      */
