@@ -2,7 +2,7 @@ package LibraryProjectPackage.objects;
 
 import LibraryProjectPackage.util.BookType;
 
-public abstract class Books implements Comparable<Books>{
+public abstract class Books{
     private final String title, author, genre;
     private String availabilityStatus;
     private final BookType type;
@@ -44,9 +44,6 @@ public abstract class Books implements Comparable<Books>{
         return numOfCheckOuts;
     }
 
-    public int compareTo(Books book){
-        return title.compareTo(book.title);
-    }
     @Override
     public abstract String toString();
 }

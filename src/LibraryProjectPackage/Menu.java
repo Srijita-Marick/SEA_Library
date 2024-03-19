@@ -63,11 +63,6 @@ public class Menu {
         if(bookFile!=null && memberFile!=null){
             menuLoadAllData(bookFile,memberFile);
         }
-        else {
-            File savedBooks = new File("savedBooks.csv");
-            File savedMembers = new File("savedMembers.csv");
-            menuLoadAllData(savedBooks,savedMembers);
-        }
         int option = 0;
         boolean run = true; // Flag to control the loop
         while (run) {
@@ -129,34 +124,25 @@ public class Menu {
 
     private static void menuLoadAllData() {
         System.out.println("Loading data from library...");
-        //book file
-        String bookilename;
-        File bookfile;
-        do {
-            do {
-                System.out.println("Enter a filename: ");
-                bookilename = scanner.nextLine().trim();
-            } while (bookilename.isEmpty());
-            bookfile = new File(bookilename);
-        } while (!bookfile.exists()||!bookfile.canRead());
-        //member file now
-        String memfilename;
-        File memfile;
-        do {
-            do {
-                System.out.println("Enter a filename for member: ");
-                memfilename = scanner.nextLine().trim();
-            } while (memfilename.isEmpty());
-            memfile = new File(memfilename);
-        } while (!memfile.exists()||!memfile.canRead());
-        menuLoadAllData(bookfile, memfile);
+        System.out.println("Press B to load all BookRecords: ");
+        String selected = scanner.nextLine().trim().toUpperCase();
+        System.out.println("Press M to load all MemberRecords: ");
+        String selected1 = scanner.nextLine().trim().toUpperCase();
+        if(selected.equals("B") && selected1.equals("M")){
+            menuLoadBooks();
+            System.out.println("Successfully Loaded from BookRecords!");
+            menuLoadMember();;
+            System.out.println("Successfully Loaded from MemberRecords!");
+        } else {
+            System.out.println("Please enter valid options");
+        }
     }
 
     private static void menuLoadAllData(File bookFile, File memberFile) {
-        Data data = BookRecords.load(bookFile,new Data());
+        Data data = BookRecords.load(bookFile,null);
         data = MemberRecords.load(memberFile,data);
-        System.out.printf("Loaded book data from file %s%n",bookFile);
-        System.out.printf("Loaded member data from file %s%n",memberFile);
+        System.out.printf("Loaded data from file %s%n",bookFile);
+        System.out.printf("Loaded data from file %s%n",memberFile);
         Menu.data = data;
     }
     private static final ArrayList<String> options1 = new ArrayList<>();
