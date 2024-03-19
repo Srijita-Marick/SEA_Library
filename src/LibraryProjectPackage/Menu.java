@@ -124,17 +124,33 @@ public class Menu {
 
     private static void menuLoadAllData() {
         System.out.println("Loading data from library...");
-        System.out.println("Press B to load all BookRecords: ");
-        String selected = scanner.nextLine().trim().toUpperCase();
-        System.out.println("Press M to load all MemberRecords: ");
-        String selected1 = scanner.nextLine().trim().toUpperCase();
-        if(selected.equals("B") && selected1.equals("M")){
-            menuLoadBooks();
-            System.out.println("Successfully Loaded from BookRecords!");
-            menuLoadMember();;
-            System.out.println("Successfully Loaded from MemberRecords!");
-        } else {
-            System.out.println("Please enter valid options");
+        //book file
+        String bookilename;
+        File bookfile;
+        do {
+            do {
+                System.out.println("Enter a filename: ");
+                bookilename = scanner.nextLine().trim();
+            } while (bookilename.isEmpty());
+            bookfile = new File(bookilename);
+        } while (!bookfile.exists()||!bookfile.canRead());
+        Data newData = BookRecords.load(bookfile, data);
+        if (newData != null) {
+            data = newData;
+        }
+        //member file now
+        String memfilename;
+        File memfile;
+        do {
+            do {
+                System.out.println("Enter a filename for member: ");
+                memfilename = scanner.nextLine().trim();
+            } while (memfilename.isEmpty());
+            memfile = new File(memfilename);
+        } while (!memfile.exists()||!memfile.canRead());
+        newData = MemberRecords.load(memfile, data);
+        if (newData != null){
+            data = newData;
         }
     }
 
