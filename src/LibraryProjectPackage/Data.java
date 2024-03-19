@@ -285,10 +285,10 @@ public class Data {
 
     // EVERYTHING BELOW HERE IS TO STORE MEMBER DATA
 
-    final ArrayList<Member> members = new ArrayList<>();
-    static final HashMap<Integer, Member> memberIDs = new HashMap<>();
+    protected final ArrayList<Member> members = new ArrayList<>();
+    protected static final HashMap<Integer, Member> memberIDs = new HashMap<>();
 
-    final ArrayList<Integer> daysOverDue = new ArrayList<>(); // is added to every time a book is returned late
+    protected final ArrayList<Integer> daysOverDue = new ArrayList<>(); // is added to every time a book is returned late
 
 
     /**
