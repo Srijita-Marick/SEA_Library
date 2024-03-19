@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Fixed bug in loading and saving BookRecords">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Edited Main.java to take command arguments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,14 +111,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00043" summary="added getBooksByTitleWhenTitleNotFound test">
-      <option name="closed" value="true" />
-      <created>1708988462668</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1708988462668</updated>
     </task>
     <task id="LOCAL-00044" summary="added getBooksByTitleReturnsCorrectNumberOfBooks1 test">
       <option name="closed" value="true" />
@@ -503,7 +496,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710819883867</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Edited Main.java to take command arguments">
+      <option name="closed" value="true" />
+      <created>1710820450883</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1710820450883</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -530,7 +531,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial Setup for OOP structure in Books" />
     <MESSAGE value="Created getters for Books" />
     <MESSAGE value="Updated Data.java and replaced Object[] with class &quot;Books&quot;" />
     <MESSAGE value="Updated Data.java and used getters from Books" />
@@ -555,14 +555,15 @@
     <MESSAGE value="Fixed bug in search" />
     <MESSAGE value="Set up skeleton for searchByMemberType" />
     <MESSAGE value="Fixed bug in loading and saving BookRecords" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug in loading and saving BookRecords" />
+    <MESSAGE value="Edited Main.java to take command arguments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited Main.java to take command arguments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>697</line>
+          <line>742</line>
           <properties class="LibraryProjectPackage.Menu">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -571,7 +572,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>714</line>
+          <line>759</line>
           <properties class="LibraryProjectPackage.Menu">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
