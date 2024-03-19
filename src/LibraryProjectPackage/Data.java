@@ -263,12 +263,17 @@ public class Data {
         return false; //book did not exist, so it can't be removed
     }
 
+    /**
+     * gets a list of books in desired genre and finds the most popular one
+     * @param genre is the genre to find most popular book in
+     * @return a string of the most popular book in genre
+     */
     public String mostPopularBookByGenre(String genre){
         ArrayList<Books> books = getBooksByGenre(genre);
         int checkOutTotal=0;
         String bookString="";
         for (Books book:books){
-            if (book.getNumOfCheckOuts()>=checkOutTotal){
+            if (book.getNumOfCheckOuts()>checkOutTotal){
                 checkOutTotal=book.getNumOfCheckOuts();
                 bookString=book.toString();
             }

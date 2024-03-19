@@ -37,9 +37,7 @@ public abstract class Books {
 
     public void setAvailabilityStatus(String availabilityStatus) {
         this.availabilityStatus = availabilityStatus;
-        if (availabilityStatus.equals("Unavaiable")){
-            numOfCheckOuts++;
-        }
+        numOfCheckOuts++;
     }
     public int getNumOfCheckOuts(){
         return numOfCheckOuts;
