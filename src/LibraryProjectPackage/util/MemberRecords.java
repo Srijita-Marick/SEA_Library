@@ -33,7 +33,7 @@ public class MemberRecords {
                     }
                     fw.write("\n"); //new line after each member
                 } else if (member instanceof ChildMember childMember) {
-                    fw.write(String.format("CHILDREN,%s,%s", childMember.getID(), childMember.getName()));
+                    fw.write(String.format("CHILD,%s,%s", childMember.getID(), childMember.getName()));
                     for (String book : childMember.getBorrowed()) {
                         fw.write(String.format(",%s", book));
                     }
