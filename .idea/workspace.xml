@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Fixed bug in search">
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Set up skeleton for searchByMemberType">
+      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,14 +110,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00041" summary="added getBooksByTitleReturnsCorrectNumberOfBooks test">
-      <option name="closed" value="true" />
-      <created>1708988004548</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1708988004548</updated>
     </task>
     <task id="LOCAL-00042" summary="added getBooksByTitleReturnsCorrectBookInfo test">
       <option name="closed" value="true" />
@@ -502,7 +495,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710808084092</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Set up skeleton for searchByMemberType">
+      <option name="closed" value="true" />
+      <created>1710808601021</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1710808601022</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -529,7 +530,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="minor \n additions" />
     <MESSAGE value="Created Book Object classes" />
     <MESSAGE value="Initial Setup for OOP structure in Books" />
     <MESSAGE value="Created getters for Books" />
@@ -554,14 +554,15 @@
     <MESSAGE value="Created getBooksByBookType in Data" />
     <MESSAGE value="Implemented searchByBookType in Menu" />
     <MESSAGE value="Fixed bug in search" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug in search" />
+    <MESSAGE value="Set up skeleton for searchByMemberType" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up skeleton for searchByMemberType" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>683</line>
+          <line>697</line>
           <properties class="LibraryProjectPackage.Menu">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -570,7 +571,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>700</line>
+          <line>714</line>
           <properties class="LibraryProjectPackage.Menu" method="menuSaveMember">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

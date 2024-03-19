@@ -643,8 +643,8 @@ public class Menu {
     private static void searchByMemberType(){
         String type = getMemberType();
         String viewMembersMessage = """
-             All books of that type:""";
-        ArrayList<Books> memberList = null;
+             All members of that type:""";
+        ArrayList<Member> memberList = data.getMembersByMemberType(type);
         System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
     }
 

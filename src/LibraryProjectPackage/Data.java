@@ -371,6 +371,16 @@ public class Data {
         return membersWithId;
     }
 
+    public ArrayList<Member> getMembersByMemberType(String type) {
+        ArrayList<Member> membersOfGivenType = new ArrayList<>();
+        for (Member member: members){
+            if (member.getMemberType().toString().equals(type)) {
+                membersOfGivenType.add(member);
+            }
+        }
+        return membersOfGivenType;
+    }
+
     /**
      * @param id of member to get books for
      * @return list of Strings representing books the member has checked out
