@@ -426,7 +426,14 @@ public class Data {
      * @return list of Strings representing books the member has checked out
      */
     public static ArrayList<String> getBorrowedBooks(Integer id){
-        return memberIDs.get(id).getBorrowed();
+        Member member = memberIDs.get(id);
+        if (member != null) {
+            return member.getBorrowed();
+        } else {
+            System.err.println("Member not found for ID: " + id);
+            // Handle the case where member is not found, e.g., return an empty list or throw an exception
+            return new ArrayList<>(); // Empty list as a fallback
+        }
     }
 
     /**
