@@ -152,7 +152,7 @@ public class Menu {
         searchOptions.add("Title");
         searchOptions.add("Author");
         searchOptions.add("Genre");
-        searchOptions.
+        searchOptions.add("Book Type");
         StringBuilder searchString = new StringBuilder(); // formatted list of the search options with instruction
         searchString.append("How would you like to search for books?\n");
         for (int i = 1; i < searchOptions.size(); i++) {
@@ -172,6 +172,7 @@ public class Menu {
                 case 1 -> searchByTitle();//title
                 case 2 -> searchByAuthor();//author
                 case 3 -> searchByGenre();//genre
+                case 4 -> searchByBookType();//book type
                 default -> System.out.printf("Option %d not recognized!%n", option);
             }
         }
@@ -589,6 +590,7 @@ public class Menu {
         searchOptions.add("Blank"); //this is a placeholder that is never displayed to user
         searchOptions.add("Member Name");
         searchOptions.add("Member ID");
+        searchOptions.add("Member Type");
         StringBuilder searchString = new StringBuilder(); // formatted list of the search options with instruction
         searchString.append("How would you like to search for members?\n");
         for (int i = 1; i < searchOptions.size(); i++) {
@@ -607,6 +609,7 @@ public class Menu {
             switch(option){
                 case 1 -> searchByName();//member name
                 case 2 -> searchById();//member id
+                case 3 -> searchByMemberType();//member type
                 default -> System.out.printf("Option %d not recognized!%n", option);
             }
         }
@@ -631,6 +634,17 @@ public class Menu {
         String viewMembersMessage = """
              Member with given ID:""";
         ArrayList<Member> memberList = data.getMembersById(id);
+        System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
+    }
+
+    /**
+     * Used in menuSearchMembers to look for a member by ID only
+     */
+    private static void searchByMemberType(){
+        String type = getMemberType();
+        String viewMembersMessage = """
+             All books of that type:""";
+        ArrayList<Books> memberList = null;
         System.out.println(viewAnyMemberList(viewMembersMessage, memberList));
     }
 
