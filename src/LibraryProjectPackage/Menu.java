@@ -152,6 +152,7 @@ public class Menu {
         searchOptions.add("Title");
         searchOptions.add("Author");
         searchOptions.add("Genre");
+        searchOptions.
         StringBuilder searchString = new StringBuilder(); // formatted list of the search options with instruction
         searchString.append("How would you like to search for books?\n");
         for (int i = 1; i < searchOptions.size(); i++) {
@@ -212,14 +213,10 @@ public class Menu {
      */
     private static void searchByBookType(){
         String type = getBookType();
-        StringBuilder viewBooksMessage = new StringBuilder();
-        if(type.equals("PHYSICAL")) {
-            viewBooksMessage.append("All Physical Books:");
-        } else if(type.equals("AUDIO")) {
-            viewBooksMessage.append("All Audio Books:");
-        }
-        ArrayList<Books> bookList = data.getBooksByBookType();
-        System.out.println(viewAnyBookList(viewBooksMessage.toString(), bookList));
+        String viewBooksMessage = """
+             All books of that type:""";
+        ArrayList<Books> bookList = data.getBooksByBookType(type);
+        System.out.println(viewAnyBookList(viewBooksMessage, bookList));
     }
 
     /**

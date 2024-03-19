@@ -172,10 +172,10 @@ public class Data {
         return booksInGenre;
     }
 
-    public ArrayList<Books> getBooksByBookType(BookType type) {
+    public ArrayList<Books> getBooksByBookType(String type) {
         ArrayList<Books> booksOfGivenType = new ArrayList<>();
         for (Books book: books){
-            if (book.getType().equals(type)) {
+            if (book.getType().toString().equals(type)) {
                 booksOfGivenType.add(book);
             }
         }
@@ -225,7 +225,7 @@ public class Data {
                 for (Member member: members){ //goes through members until it finds the one with ID
                     member.removeBookFromMember(title+" by "+author); //member no longer has book borrowed
                      if (member.getID()==id && member instanceof AdultMember adultMember){
-                        adultMember.setFines(adultMember.getFines() + calculateFines(daysOverdue)); ; //adds fines
+                        adultMember.setFines(adultMember.getFines() + calculateFines(daysOverdue));  //adds fines
                     }
                 }
             }
