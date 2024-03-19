@@ -350,7 +350,6 @@ public class Menu {
             } while (filename.isEmpty());
             file = new File(filename);
         } while (!file.exists()||!file.canRead());
-        BookRecords.load(file,data);
         Data newData = BookRecords.load(file, data);
         if (newData != null) {
             data = newData;
