@@ -218,6 +218,7 @@ public class Data {
      */
     public void returnBook(Integer id, String title, String author, int daysOverdue) {
         for (Books book: books){ //goes through every book until it finds one with title and author
+            daysOverDue.add(daysOverdue);
             if (book.getTitle().equals(title) && book.getAuthor().equals(author)){
                 unAvailableBooks.remove(book);
                 book.setAvailabilityStatus("Available");
@@ -262,10 +263,12 @@ public class Data {
         return false; //book did not exist, so it can't be removed
     }
 
-    //  EVERYTHING BELOW HERE IS TO STORE MEMBER DATA
+    // EVERYTHING BELOW HERE IS TO STORE MEMBER DATA
 
     final ArrayList<Member> members = new ArrayList<>();
     static final HashMap<Integer, Member> memberIDs = new HashMap<>();
+
+    final ArrayList<Integer> daysOverDue = new ArrayList<>();
 
 
     /**
@@ -379,6 +382,18 @@ public class Data {
             }
         }
         return membersOfGivenType;
+    }
+
+    /**
+     * Goes through daysOverdue list and calculates the average
+     * @return the average amount of days overdue that books are returned
+     */
+    public int getAverageDaysOverdue(){
+        int total=0;
+        for (int days:daysOverDue){
+            total+=days;
+        }
+        return (int)((total/daysOverDue.size())+0.5);
     }
 
     /**

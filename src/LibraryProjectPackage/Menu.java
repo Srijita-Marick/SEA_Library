@@ -491,6 +491,7 @@ public class Menu {
         options2.add("View All Members");
         options2.add("Search Members");
         options2.add("Pay fines");
+        options2.add("Average Days Overdue");
         options2.add("Load Member Data");
         options2.add("Save Member Data");
         options2.add("Exit to Main Menu");
@@ -525,9 +526,10 @@ public class Menu {
                     case 3 -> menuViewAllMembers();
                     case 4 -> menuSearchMembers();
                     case 5 -> menuPayFines();
-                    case 6 -> menuLoadMember();
-                    case 7 -> menuSaveMember();
-                    case 8 -> run = false;
+                    case 6 -> menuAverageDaysOverdue();
+                    case 7 -> menuLoadMember();
+                    case 8 -> menuSaveMember();
+                    case 9 -> run = false;
                     default -> System.out.printf("Option %d not recognized!%n\n", option2);
                 }
             } else {
@@ -728,6 +730,10 @@ public class Menu {
         else {
             System.err.printf("Failed to save file %s%n",filename);
         }
+    }
+
+    private static void menuAverageDaysOverdue(){
+        System.out.printf("On average, books are returned %d days late.%n",data.getAverageDaysOverdue());
     }
 
 
