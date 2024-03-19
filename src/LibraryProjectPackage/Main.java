@@ -22,7 +22,7 @@ public class Main {
             }
             Menu.menuLoop(bookFile,memberFile);
         }else {
-            Menu.menuLoop(null);
+            Menu.menuLoop(null,null);
         }
     }
 }
