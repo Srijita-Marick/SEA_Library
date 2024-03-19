@@ -50,4 +50,8 @@ public abstract class Member {
     public void removeBookFromMember(String book){
         borrowed.remove(book);
     }
+
+    public int compareTo(Member member){
+        return Integer.compare(id,member.id);
+    }
 }
