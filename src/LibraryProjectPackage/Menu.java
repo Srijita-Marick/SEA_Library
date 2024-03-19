@@ -7,8 +7,10 @@ package LibraryProjectPackage;
  * srijita.marick@ucalgary.ca
  * @UCID 30212220, 30230290, 30230880
  * @date Feb 21-27 2024 (DEMO 1)
+ * @date Mar 16-19 2024 (DEMO 2)
  * @tutorial T03 Tue  3:00PM -  4:50PM
  * Used "Group Project Part 1 Long Example" by Jonathan Hudson as code source
+ * Used "Group Project Part 2 Long Example" by Jonathan Hudson as code source
  */
 
 import LibraryProjectPackage.comparators.MemberNameComparator;
