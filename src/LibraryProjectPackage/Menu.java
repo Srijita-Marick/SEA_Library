@@ -90,17 +90,35 @@ public class Menu {
 
     private static void menuSaveAllData() {
         System.out.println("Saving data to library...");
-        System.out.println("Press B to save all BookRecords: ");
-        String selected = scanner.nextLine().trim().toUpperCase();
-        System.out.println("Press M to save all MemberRecords: ");
-        String selected1 = scanner.nextLine().trim().toUpperCase();
-        if(selected.equals("B") && selected1.equals("M")){
-            menuSaveBooks();
-            System.out.println("Successfully Saved to BookRecords!");
-            menuSaveMember();
-            System.out.println("Successfully Saved to MemberRecords!");
-        } else{
-            System.out.println("Please enter valid options");
+        String bookFilename;
+        File bookFile;
+        do {
+            do {
+                System.out.println("Enter a filename for books: ");
+                bookFilename = scanner.nextLine().trim();
+            } while (bookFilename.isEmpty());
+            bookFile = new File(bookFilename);
+        } while (!bookFile.exists()||!bookFile.canWrite());
+        if (BookRecords.save(bookFile,data)){
+            System.out.printf("Saved Book Data to file %s%n",bookFilename);
+        }
+        else {
+            System.err.printf("Failed to save file %s%n",bookFilename);
+        }
+        String memFilename;
+        File memFile;
+        do {
+            do {
+                System.out.println("Enter a filename for members: ");
+                memFilename = scanner.nextLine().trim();
+            } while (memFilename.isEmpty());
+            memFile = new File(memFilename);
+        } while (!memFile.exists()||!memFile.canWrite());
+        if (MemberRecords.save(memFile,data)){
+            System.out.printf("Saved Member Data to file %s%n",memFilename);
+        }
+        else {
+            System.err.printf("Failed to save file %s%n",memFilename);
         }
     }
 
@@ -118,6 +136,14 @@ public class Menu {
         } else {
             System.out.println("Please enter valid options");
         }
+    }
+
+    private static void menuLoadAllData(File bookFile, File memberFile) {
+        Data data = BookRecords.load(bookFile,null);
+        data = MemberRecords.load(memberFile,data);
+        System.out.printf("Loaded data from file %s%n",bookFile);
+        System.out.printf("Loaded data from file %s%n",memberFile);
+        Menu.data = data;
     }
     private static final ArrayList<String> options1 = new ArrayList<>();
 
