@@ -6,6 +6,7 @@ import LibraryProjectPackage.objects.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class BookRecords {
     /**
@@ -35,7 +36,42 @@ public class BookRecords {
     }
 
     public static Data load(File file, Data data) {
+        try (Scanner scanner = new Scanner(file)) {
+            String line = scanner.nextLine();
+            if (!line.equals("Books")) {
+                System.err.println("File did not have correct header, so loading failed.");
+                return null;
+            }
 
+            for (Books book:data.getAllBooks()){ //removes pre-existing book information
+                data.removeBook(book.getTitle(),book.getAuthor());
+            }
+
+            while (scanner.hasNextLine()) {
+                line = scanner.nextLine();
+                String[] parts = line.split(",");
+                String type = parts[0];
+                String title = parts[1];
+                String author = parts[2];
+                String genre = parts[3];
+                String availabilityStatus = parts[4];
+
+                if (type.equals("PHYSICAL")){ // adds new PhysicalBook
+                    data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
+
+                } else if (type.equals("AUDIO")) { // adds new AudioBook
+                    String narrator = parts[5];
+                    data.storeNewAudioBook(title, author, narrator, genre, availabilityStatus);
+                    }
+                }
+
+            }
+
+        catch (IOException e) {
+            System.err.println("Incorrect file format. Loading failed.");
+            return null;
+        }
         return data;
     }
+
 }
