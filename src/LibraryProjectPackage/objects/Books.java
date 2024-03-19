@@ -2,8 +2,6 @@ package LibraryProjectPackage.objects;
 
 import LibraryProjectPackage.util.BookType;
 
-import java.util.Comparator;
-
 public abstract class Books{
     private final String title, author, genre;
     private String availabilityStatus;

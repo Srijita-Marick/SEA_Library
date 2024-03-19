@@ -5,20 +5,16 @@ import LibraryProjectPackage.util.MemberType;
 import java.util.ArrayList;
 
 public abstract class Member {
-    private String name;
-    private int id;
+    private final String name;
+    private final int id;
     private ArrayList<String> borrowed;
-    private MemberType memberType;
+    private final MemberType memberType;
 
     public Member(int id,String name,MemberType memberType){
         this.id = id;
         this.name = name;
         this.borrowed = new ArrayList<String>(); //when someone joins library for first time they don't have books yet
         this.memberType=memberType;
-    }
-
-    public void setName(String name){
-        this.name=name;
     }
 
     public int getID() {
