@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="removed printed mentions of LibraryProjectPackage in menu displays">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saved" beforeDir="false" afterPath="$PROJECT_DIR$/saved" afterDir="false" />
+    <list default="true" id="db9d4445-968f-4525-9c9c-afe73ee241c3" name="Changes" comment="Set up skeleton for searchByMemberType">
+      <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Data.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,8 +90,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DataTest.testGetMembersById" />
         <item itemvalue="JUnit.DataTest.testGetBorrowedBooks" />
+        <item itemvalue="JUnit.DataTest.testGetMembersById" />
       </list>
     </recent_temporary>
   </component>
@@ -111,30 +110,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708560036477</updated>
-    </task>
-    <task id="LOCAL-00039" summary="added javadoc comments to Menu.java">
-      <option name="closed" value="true" />
-      <created>1708982413682</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1708982413682</updated>
-    </task>
-    <task id="LOCAL-00040" summary="got rid of unnecessary import statements">
-      <option name="closed" value="true" />
-      <created>1708987428635</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1708987428635</updated>
-    </task>
-    <task id="LOCAL-00041" summary="added getBooksByTitleReturnsCorrectNumberOfBooks test">
-      <option name="closed" value="true" />
-      <created>1708988004548</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1708988004548</updated>
     </task>
     <task id="LOCAL-00042" summary="added getBooksByTitleReturnsCorrectBookInfo test">
       <option name="closed" value="true" />
@@ -496,15 +471,39 @@
       <option name="project" value="LOCAL" />
       <updated>1710801272649</updated>
     </task>
-    <task id="LOCAL-00087" summary="removed printed mentions of LibraryProjectPackage in menu displays">
+    <task id="LOCAL-00087" summary="Created getBooksByBookType in Data">
       <option name="closed" value="true" />
-      <created>1710802050680</created>
+      <created>1710807004016</created>
       <option name="number" value="00087" />
       <option name="presentableId" value="LOCAL-00087" />
       <option name="project" value="LOCAL" />
-      <updated>1710802050680</updated>
+      <updated>1710807004017</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Implemented searchByBookType in Menu">
+      <option name="closed" value="true" />
+      <created>1710807442878</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1710807442878</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Fixed bug in search">
+      <option name="closed" value="true" />
+      <created>1710808084091</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1710808084092</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Set up skeleton for searchByMemberType">
+      <option name="closed" value="true" />
+      <created>1710808601021</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1710808601022</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -531,9 +530,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="javadoc commenting - DataTest function set 8" />
-    <MESSAGE value="added checkoutBookWhenBookDoesNotExist test" />
-    <MESSAGE value="minor \n additions" />
     <MESSAGE value="Created Book Object classes" />
     <MESSAGE value="Initial Setup for OOP structure in Books" />
     <MESSAGE value="Created getters for Books" />
@@ -555,34 +551,19 @@
     <MESSAGE value="coded the save in MemberRecords.java" />
     <MESSAGE value="coded the load method in MemberRecords.java" />
     <MESSAGE value="completed MemberRecords.java so it is now fully functional" />
-    <MESSAGE value="removed printed mentions of LibraryProjectPackage in menu displays" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed printed mentions of LibraryProjectPackage in menu displays" />
+    <MESSAGE value="Created getBooksByBookType in Data" />
+    <MESSAGE value="Implemented searchByBookType in Menu" />
+    <MESSAGE value="Fixed bug in search" />
+    <MESSAGE value="Set up skeleton for searchByMemberType" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set up skeleton for searchByMemberType" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>327</line>
-          <properties class="Menu" method="menuLoadBooks">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>339</line>
-          <properties class="Menu" method="menuSaveBooks">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>671</line>
-          <properties class="Menu" method="menuLoadMember">
+          <line>697</line>
+          <properties class="LibraryProjectPackage.Menu">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -590,7 +571,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/LibraryProjectPackage/Menu.java</url>
-          <line>715</line>
+          <line>714</line>
           <properties class="LibraryProjectPackage.Menu" method="menuSaveMember">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

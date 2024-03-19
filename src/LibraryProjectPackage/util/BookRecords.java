@@ -1,7 +1,9 @@
 package LibraryProjectPackage.util;
 
 import LibraryProjectPackage.Data;
-import LibraryProjectPackage.objects.*;
+import LibraryProjectPackage.objects.Books;
+import LibraryProjectPackage.objects.PhysicalBooks;
+import LibraryProjectPackage.objects.AudioBooks;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -20,11 +22,11 @@ public class BookRecords {
             fw.write("Books\n");
             for (Books book : data.getAllBooks()) {
                 if (book instanceof PhysicalBooks physicalBooks) {
-                    fw.write(String.format("PHYSICAL BOOKS,%s,%s,%s,%s", physicalBooks.getTitle(), physicalBooks.getAuthor(), physicalBooks.getGenre(), physicalBooks.getAvailabilityStatus()));
+                    fw.write(String.format("PHYSICAL,%s,%s,%s,%s", physicalBooks.getTitle(), physicalBooks.getAuthor(), physicalBooks.getGenre(), physicalBooks.getAvailabilityStatus()));
 
                     fw.write("\n"); //new line after each book
                } else if (book instanceof AudioBooks audioBooks) {
-                    fw.write(String.format("AUDIO BOOKS,%s,%s,%s,%s", audioBooks.getTitle(), audioBooks.getAuthor(), audioBooks.getGenre(), audioBooks.getAvailabilityStatus()));
+                    fw.write(String.format("AUDIO,%s,%s,%s,%s,%s", audioBooks.getTitle(), audioBooks.getAuthor(), audioBooks.getNarrator(), audioBooks.getGenre(), audioBooks.getAvailabilityStatus()));
                    fw.write("\n"); //new line after each book
                 }
             }
@@ -56,10 +58,10 @@ public class BookRecords {
                 String genre = parts[3];
                 String availabilityStatus = parts[4];
 
-                if (type.equals("PHYSICAL")){ // adds new PhysicalBook
+                if (type.equals("Physical")){ // adds new PhysicalBook
                     data.storeNewPhysicalBook(title, author, genre, availabilityStatus);
 
-                } else if (type.equals("AUDIO")) { // adds new AudioBook
+                } else if (type.equals("Audio")) { // adds new AudioBook
                     String narrator = parts[5];
                     data.storeNewAudioBook(title, author, narrator, genre, availabilityStatus);
                     }
